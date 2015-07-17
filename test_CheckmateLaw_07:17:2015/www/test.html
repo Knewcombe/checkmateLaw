@@ -1,0 +1,113 @@
+<!--This page is for reference only, this will be used to test features that will be
+added on a later date.-->
+
+<nav-header></nav-header>
+<!--Start the page with only the selector showing. This is temp-->
+<div ng-init="init()">
+    <!--Back button and location name. allows the user to know where they are at all times.-->
+    <div class="row topDiv">
+        <div class="col-xs-2">
+            <button type="button" class="btn backButton" ng-click="backButton()"><span class="backButton glyphicon glyphicon-arrow-left"></span></button>
+        </div>
+        <div class="col-xs-9">
+            <p class="titleTop">{{titleTop}}</p>
+        </div>
+    </div>
+    <!--Lists all report type, this is temp-->
+    <div ng-repeat="item in pass">
+        <div class="sectionDiv questionLabel ">
+            <p type="button" class=" questionText questionPadding {{item.type}}" ng-click="showHideInfo(item.type, item.id)">{{item.name}}</p>
+        </div>
+        <div>
+            <div class="titleInput">
+                <label class="titleInput"> Name:
+                    <input type="text" name="titleName" class="titleInput" ng-model="headerTitle.text" ng-pattern="headerTitle.word"/>
+                </label>
+            </div>
+            <!--Lists the sections.-->
+            <div ng-repeat="section in item.sections">
+                <div class="sectionDiv {{section.type}} {{section.type}}{{item.id}}">
+                    <div class="questionLabel {{section.type}} {{section.type}}{{item.id}}">
+                        <div class="row">
+                            <div class="col-xs-9 sectionText">
+                                <!--On click will hide the sections and show the questions.-->
+                                <p ng-click="showHideInfo(section.type, section.id)" class=" questionText questionPadding {{section.type}} {{section.type}}{{item.id}}">{{section.title}}</p>                    
+                            </div>
+                            <div class="col-xs-3">
+                                <label>
+                                    <!--Same checkmark logic as before-->
+                                    <input type="checkbox" ng-model="section.state" name="1" class="ng-valid ng-dirty">
+                                    <img ng-src="{{section.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Lists the questions within the sections-->
+                <div ng-repeat="question in section.questions">
+                    <div class="sectionDiv {{question.type}} {{question.type}}{{section.id}}">
+                        <div class="questionLabel {{question.type}} {{question.type}}{{section.id}}">
+                            <div class="row">
+                                <div class="col-xs-3 col-xs-push-9">
+                                    <label>
+                                        <!--Some checkmark logic as before-->
+                                        <input type="checkbox" ng-model="question.state" name="1" class="ng-valid ng-dirty">
+                                        <img ng-src="{{question.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+                                    </label>
+                                </div>
+                                <!--On click will hide questions and show either additional output, or additional questions-->
+                                <div class="col-xs-9 col-xs-pull-3 sectionText">
+                                    <p class="questionText questionPadding {{question.type}} {{question.type}}{{section.id}}" ng-click="showHideInfo(question.type, question.id)">{{question.output}}</p>
+                                </div>
+                            </div>
+                            <div class="questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{question.id}}{{section.id}}">
+                                <!--additional output will show the user more info about this question, and allow the user to add their input.-->
+                                <p ng-if="question.additionalOutput" type="button" class="questionText questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{question.id}}{{section.id}}">{{question.additionalOutput}}</p>
+                                <div class="questionText">
+                                    <textarea class="form-control" ng-model="question.notes"></textarea><br/>
+                                    <div>
+                                        <!--buttons for images and memos, currently not working.-->
+                                        <button type="button" class="btn" ng-click="takePic(question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+                                        <button ng-if="!timer" type="button" class="btn" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Record</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--If the question has any additional questions they are listed.-->
+                    <div ng-if="question.additionalQuestions" ng-repeat="addQuestions in question.additionalQuestions">
+                        <div class="sectionDiv {{addQuestions.type}} {{addQuestions.type}}{{question.id}}{{section.id}}">
+                            <div class="questionLabel {{addQuestions.type}} {{addQuestions.type}}{{question.id}}{{section.id}}">
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-push-9">
+                                        <label>
+                                            <!--Same checkmark logic as before-->
+                                            <input type="checkbox" ng-model="addQuestions.state" name="1" class="ng-valid ng-dirty">
+                                            <img ng-src="{{addQuestions.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+                                        </label>                    
+                                    </div>
+                                    <!--On click will open additional output, additional questions will never have questions.-->
+                                    <div class="col-xs-9 col-xs-pull-3 sectionText">
+                                        <p class="questionText questionLabel {{addQuestions.type}} {{addQuestions.type}}{{question.id}}{{section.id}}" ng-click="showHideInfo(addQuestions.type, addQuestions.id)">{{addQuestions.output}}</p>
+                                    </div>
+                                </div>
+                                <!--additional output-->
+                                <div class="questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{addQuestions.id}}{{question.id}}{{section.id}}">
+                                    <p ng-if="addQuestions.additionalOutput" type="button" class="questionText questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{addQuestions.id}}{{question.id}}{{section.id}}">{{addQuestions.additionalOutput}}</p>
+                                    <div class="questionText">
+                                        <textarea class="form-control" ng-model="question.notes"></textarea><br/>
+                                        <div>
+                                            <!--buttons for camera and memos, currently not working.-->
+                                            <button type="button" class="btn" ng-click="takePic(question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+                                            <button ng-if="!timer" type="button" class="btn" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Record</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>

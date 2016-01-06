@@ -1,0 +1,26 @@
+<nav-header></nav-header>
+<div>
+    <p class="titleTop">{{referanceList.name}}</p>
+    <p class="titleTop">{{outPut.title}}</p>
+</div>
+<div class="questionain">
+    <div class="content">
+        <div ng-repeat="items in outPut.sections" class="sectionDiv">
+                <div class="sectionDiv">
+                    <div class="questionLabel">
+                        <div class="row resizeDiv">
+                            <!--On click will hide questions and show either additional output, or additional questions-->
+                            <div class="col-xs-8 sectionText">
+                                <div>
+                                    <p class="questionLabel">{{items.title}}</p>
+                                    <p class="questionLabel">{{items.output}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav-footer></nav-footer>

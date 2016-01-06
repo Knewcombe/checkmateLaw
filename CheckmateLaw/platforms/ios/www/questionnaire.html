@@ -1,0 +1,18 @@
+<nav-header></nav-header>
+<div>
+    <p class="titleTop">{{quesionAir.name}}</p>
+</div>
+<div class="questionain">
+    <div class="sectionDiv">
+        <p class="sectionText question questionLabel centerText">{{outPut.title}}</p>
+        <p class="sectionText questionLabel centerText" ng-if="outPut.reference">{{outPut.reference}}</p>
+        <div class="questionText questionainBtn row container">
+            <button type="button" class="btn btnWhite col-xs-10" ng-if="outPut.type === 'input'" ng-click="continue()">Ok</button>
+            <button type="button" class="btn btnWhite col-xs-10" ng-if="outPut.type === 'Selection'" ng-click="yes()">Yes</button>
+            <button type="button" class="btn btnWhite col-xs-10" ng-if="outPut.type === 'Selection' && outPut.no" ng-click="no()">No</button>
+            <button type="button" class="btn btnWhite col-xs-10" ng-if="outPut.type === 'end'" ng-click="done()">Done</button>
+        </div>
+    </div>
+</div>
+
+<nav-footer></nav-footer>

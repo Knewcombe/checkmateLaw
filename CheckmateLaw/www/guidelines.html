@@ -1,0 +1,10 @@
+<nav-header></nav-header>
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div ng-repeat="buttonNames in buttonNames">
+            <button class="btnNormal btnWhite" ng-click="selected(buttonNames.item)">{{buttonNames.name}}</button>
+            <p class="questionPadding centerText">{{buttonNames.explanation}}</p>
+        </div>
+    </div>
+</div>

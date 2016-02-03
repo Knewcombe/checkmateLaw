@@ -423,7 +423,7 @@
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Severity of B&E, value, victims on scene buring, has there been a rash of breaks lately, etc...",
+                                "output": "Severity of B&E, value, victims on scene during, has there been a rash of breaks lately, etc...",
                                 "inputs": [{
                                     "dateChange":"",
                                     "notes": "",

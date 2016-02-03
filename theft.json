@@ -1,0 +1,1222 @@
+"0": {
+        "id": "TH",
+        "title": "",
+        "name": "Theft",
+        "dateStamp": "",
+        "type": "reportTitle",
+        "sections": [
+            {
+                "id": 0,
+                "title": "Initial Complaint",
+                "type": "section",
+                "count": 0,
+                "amount": 5,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "question",
+                        "state": false,
+                        "output": "Who's the caller? Name, DOB, Address, Phone #",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "question",
+                        "state": false,
+                        "output": "Address of theft",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 2,
+                        "type": "question",
+                        "state": false,
+                        "output": "What was stolen? When?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 3,
+                        "type": "question",
+                        "state": false,
+                        "output": "Who's the victim: Name, DOB, Address, Phone #",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 4,
+                        "type": "question",
+                        "state": false,
+                        "output": "Any suspects: Name, description",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    }]
+            },
+            {
+                "id": 1,
+                "title": "First responder and Scene examination",
+                "type": "section",
+                "count": 0,
+                "amount": 19,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "question",
+                        "state": false,
+                        "output": "Obtain Victim statement",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "question",
+                        "state": false,
+                        "output": "Is there a witness? Obtain a witness statement",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 2,
+                        "type": "question",
+                        "state": false,
+                        "output": "What was stolen: Make and Model",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 3,
+                        "type": "question",
+                        "state": false,
+                        "output": "Is there a serial number: Make or Model number",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 4,
+                        "type": "question",
+                        "state": false,
+                        "output": "Description of stolen item(s). Colors, distinguishing marks, anything written on it? etc.",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 5,
+                        "type": "question",
+                        "state": false,
+                        "output": "Does the victim have a picture of the stolen item?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 6,
+                        "type": "question",
+                        "state": false,
+                        "output": "Photograph where the item was stolen from",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 7,
+                        "type": "question",
+                        "state": false,
+                        "output": "If item was shoplifted, photograph identical items in store along with price tag",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 8,
+                        "type": "question",
+                        "state": false,
+                        "output": "Conduct an inventory of item(s) believed missing",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 9,
+                        "type": "question",
+                        "state": false,
+                        "output": "How much is the stolen item worth?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 10,
+                        "type": "question",
+                        "state": false,
+                        "output": "Does the victim have a receipt?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 11,
+                        "type": "question",
+                        "state": false,
+                        "output": "Does the victim have the box the stolen item came in?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 12,
+                        "type": "question",
+                        "state": false,
+                        "output": "Location the item was stolen from?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 13,
+                        "type": "question",
+                        "state": false,
+                        "output": "Name and/or description of any suspects",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 14,
+                        "type": "question",
+                        "state": false,
+                        "output": "Why are they suspects?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 15,
+                        "type": "question",
+                        "state": false,
+                        "output": "Is there video?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 16,
+                        "type": "multiQuestion",
+                        "state": false,
+                        "output": "Is there a need for Forensic Identification Unit to attend?",
+                        "count": 0,
+                        "amount":7,
+                        "additionalQuestions": [
+                            {
+                                "id": 0,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Do fingerprints need to be lifted from secured objects",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 1,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Shoe or foot impressions off of secured objects",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 2,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Severity of Theft: Value, victims on scene during, had there been a rash of thefts lately, etc.",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 3,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Need for more professional photographs",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 4,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Likelyhood of fingerprints/footprints/shoe impressions being lifted. Dusty surfaces, smeared prints, gloves being used",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 5,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Tire impressions",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 6,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "DNA left behind: Broken glass, cigarette butts, urine, feces, saliva, etc.",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            }]
+                    },
+                    {
+                        "id": 17,
+                        "type": "multiQuestion",
+                        "state": false,
+                        "output": "If identifications services needed",
+                        "count": 0,
+                        "amount": 3,
+                        "additionalQuestions": [
+                            {
+                                "id": 0,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Keep scene secure",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 1,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Cover outside evidence until identification section attends",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 2,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Begin taking statements",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            }]
+                    },
+                    {
+                        "id": 18,
+                        "type": "question",
+                        "state": false,
+                        "output": "If Identification services not required to attend, continue with investigation",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 19,
+                        "type": "question",
+                        "state": false,
+                        "output": "Was it a crime of opportunity?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    }]
+            },
+            {
+                "id": 2,
+                "title": "Follow up Investigation",
+                "type": "section",
+                "count": 0,
+                "amount": 7,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "question",
+                        "state": false,
+                        "output": "Neighborhood inquiries",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "question",
+                        "state": false,
+                        "output": "Contact pawn shops with description of stolen items",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 2,
+                        "type": "question",
+                        "state": false,
+                        "output": "Media Release",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 3,
+                        "type": "question",
+                        "state": false,
+                        "output": "Social Media sites",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 4,
+                        "type": "question",
+                        "state": false,
+                        "output": "Search Internet Classified ads sites: (kijiji.com, ebay.com, etc...) for stolen items",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 5,
+                        "type": "question",
+                        "state": false,
+                        "output": "Talk to or email other members of your police force to determine if they have any related files lately with any suspects",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 6,
+                        "type": "question",
+                        "state": false,
+                        "output": "If they took place in a business. Consider having staff complete a view questionnaire to try to pinpoint a suspect",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    }]
+            },
+            {
+                "id": 3,
+                "title": "Arrest of Suspect",
+                "type": "section",
+                "count": 0,
+                "amount": 15,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "question",
+                        "state": false,
+                        "output": "If suspect on scene or located later. Arrest for theft under/over (Sec 10(a) C.C.C.)",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "question",
+                        "state": false,
+                        "output": "Read Rights to Counsel Sec 10(b) C.C.C. make note of responses",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 2,
+                        "type": "question",
+                        "state": false,
+                        "output": "Read Police Caution, make note of responses",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 3,
+                        "type": "question",
+                        "state": false,
+                        "output": "If the accused was or could have been talking to another police officer read the Secondary Police Caution",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 4,
+                        "type": "question",
+                        "state": false,
+                        "output": "Handcuff suspect",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 5,
+                        "type": "multiQuestion",
+                        "state": false,
+                        "output": "Search incident to arrest",
+                        "count": 0,
+                        "amount": 3,
+                        "additionalQuestions": [
+                            {
+                                "id": 0,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "(1) to ensure the safety of the police and the public",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 1,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "(2)To protect evidence",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 2,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "(3) to discover evidence",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            }]
+                    },
+                    {
+                        "id": 6,
+                        "type": "question",
+                        "state": false,
+                        "output": "Seize any evidence related to the offence",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 7,
+                        "type": "question",
+                        "state": false,
+                        "output": "If the item is re-sellable. Photograph the item and return to store",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 8,
+                        "type": "question",
+                        "state": false,
+                        "output": "If the item is not re-sellable. Seize exhibit and process same for court",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 9,
+                        "type": "question",
+                        "state": false,
+                        "output": "Bring suspect back to Detachment/sation",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 10,
+                        "type": "question",
+                        "state": false,
+                        "output": "Obtain Cautioned statement",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 11,
+                        "type": "question",
+                        "state": false,
+                        "output": "Fingerprint and Photograph",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 12,
+                        "type": "question",
+                        "state": false,
+                        "output": "If suspect is to be remanded. Bring to a Justice of the Peace for same",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 13,
+                        "type": "question",
+                        "state": false,
+                        "output": "If suspect is to be released. Serve Appearance Notice/Recognizance with or without sureties/or Promise to appear with an Undertaking providing conditions to stay away or have no contact with victim or business",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 14,
+                        "type": "question",
+                        "state": false,
+                        "output": "If charges are not going to be laid with an undertaking. Consider serving a trespass notice on the suspect",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    }]
+            },
+            {
+                "id": 4,
+                "title": "Statements",
+                "type": "section",
+                "count": 0,
+                "amount": 2,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "multiQuestion",
+                        "state": false,
+                        "output": "Victim(s)",
+                        "count": 0,
+                        "amount": 11,
+                        "additionalQuestions": [
+                            {
+                                "id": 0,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Tombstone data: Full name, DOB, Address, Phone number",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 1,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Determine timeline. When property as stolen, when last seen? when noticed missing?",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 2,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 3,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Any prior issues with anyone/suspects in the past? Debts owed, other disputes, disgruntled employees, family disputes, disputes with clients? etc.",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 4,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Any suspects? Description",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 5,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Why are they suspect?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 6,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Determine relationship with the suspect",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 7,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Try to determine how the suspect stolen the item",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 8,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Does the accused has any ownership to the stolen property?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 9,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Could the victim pick the suspect out of a photo lineup?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 10,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Why would anyone commit the theft?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 11,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Are they insured or are they making a claim through insurance",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 12,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Suspect cautioned statement should be under statements",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "multiQuestion",
+                        "state": false,
+                        "output": "Witness",
+                        "count": 0,
+                        "amount": 14,
+                        "additionalQuestions": [
+                            {
+                                "id": 0,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Tombstone Data: Full name, DOB, Address, Phone number",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 1,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "What did he/she witness?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 2,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Where was the item when it was taken?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 3,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Any suspects? If yes, why do they suspect take the item",
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 4,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Did the witness see the suspect take the item",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 5,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Did the witness see the suspect take the item",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 6,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Describe the suspect",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 7,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "When was the item stolen",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 8,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "What role does the witness have in the theft",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 9,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Does the witness know the suspect and how?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 10,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Do they know who owns the items stolen?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 11,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Does the witness know if the suspect know who owns the item stolen",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 12,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Any previous history between the suspect and victim or witness?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            },
+                            {
+                                "id": 13,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Could the witness pick the suspect out of a photo lineup?",
+
+                                "inputs": [{
+                                    "notes": "",
+                                    "photos": [],
+                                    "recording": []
+                                }]
+                            }]
+                    }]
+            },
+            {
+                "id": 5,
+                "title": "Suspect Cautioned statement",
+                "type": "section",
+                "count": 0,
+                "amount": 9,
+                "state": false,
+                "questions": [
+                    {
+                        "id": 0,
+                        "type": "question",
+                        "state": false,
+                        "output": "Tombstone Data: Full Name, DOB, Address, Phone number",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 1,
+                        "type": "question",
+                        "state": false,
+                        "output": "Did they take the item?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 2,
+                        "type": "question",
+                        "state": false,
+                        "output": "Did they move it with intent to steal it?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 3,
+                        "type": "selectionQuestion",
+                        "state": false,
+                        "output": "Why did they take it?",
+                        "options": [
+                            {
+                                "id": 0,
+                                "type": "questionsOption",
+                                "state": "selected",
+                                "title": "To convert it for their use or the user of another person"
+                            },
+                            {
+                                "id": 1,
+                                "type": "questionsOption",
+                                "state": "selected",
+                                "title": "To deprive the owner or anyone other person of it"
+                            },
+                            {
+                                "id": 2,
+                                "type": "questionsOption",
+                                "state": "selected",
+                                "title": "To use it for a deposit or security"
+                            },
+                            {
+                                "id": 3,
+                                "type": "questionsOption",
+                                "state": "selected",
+                                "title": "To damage it or cause it inoperable"
+                            },
+                            {
+                                "id": 4,
+                                "type": "questionsOption",
+                                "state": "selected",
+                                "title": "To deal with it in such a manner that it cannot be restored in the condition it was when taken"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "type": "question",
+                        "state": false,
+                        "output": "Who owned it?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 5,
+                        "type": "question",
+                        "state": false,
+                        "output": "When did they take it?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 6,
+                        "type": "question",
+                        "state": false,
+                        "output": "How did they take it?",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 7,
+                        "type": "question",
+                        "state": false,
+                        "output": "If the suspect denies taking the item, then consider interrogating the suspect",
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    },
+                    {
+                        "id": 8,
+                        "type": "question",
+                        "state": false,
+                        "output": "Consider the user of a polygraph examiner",
+
+                        "inputs": [{
+                            "notes": "",
+                            "photos": [],
+                            "recording": []
+                        }]
+                    }]
+            }]
+    }

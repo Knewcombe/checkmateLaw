@@ -1,4 +1,4 @@
-  "0": {
+"0": {
     "id": "BE",
     "title": "",
     "name": "Brake and Enter",
@@ -10,7 +10,7 @@
         "title": "Initial Complaint",
         "type": "section",
         "count": 0,
-        "amount": 11,
+        "amount": 14,
         "state": false,
         "questions": [
           {
@@ -216,7 +216,7 @@
         "title": "First responder and Scene examination",
         "type": "section",
         "count": 0,
-        "amount": 38,
+        "amount": 40,
         "state": false,
         "questions": [
           {
@@ -462,7 +462,7 @@
             "type": "multiQuestion",
             "state": false,
             "count": 0,
-            "amount": 7,
+            "amount": 8,
             "output": "Determine if Forensic Identification Section required",
             "additionalQuestions": [
               {
@@ -902,7 +902,7 @@
             "type": "multiQuestion",
             "state": false,
             "count": 0,
-            "amount": 21,
+            "amount": 23,
             "output": "Victim(s)",
             "additionalQuestions": [
               {
@@ -1371,7 +1371,7 @@
         "title": "Follow Up",
         "type": "section",
         "count": 0,
-        "amount": 15,
+        "amount": 16,
         "state": false,
         "questions": [
           {
@@ -1638,4 +1638,3 @@
       }
     ]
   }
-

@@ -1,82 +1,85 @@
 <nav-header></nav-header>
 <!--Lists the questions within the sections-->
 <div class="row titleTop">
-        <div class="col-xs-12">
-            <p class="checklistTitle">{{viewReport.title}}</p>
-            <p>{{viewReport.dateStamp}}</p>
-            <p>{{viewReport.sections[selectedSection].questions[selectedQuestion].output}}</p>
-        </div>
-    </div>
+	<div class="col-xs-12">
+		<p class="checklistTitle">{{viewReport.title}}</p>
+		<p>{{viewReport.dateStamp}}</p>
+		<p>{{viewReport.sections[selectedSection].questions[selectedQuestion].output}}</p>
+	</div>
+</div>
 
-               <!--If the addQuestions has any additional questions they are listed.-->
-               <div ng-init="init()">
-                   <div class="content">
-                        <div ng-repeat="addQuestions in viewReport.sections[selectedSection].questions[selectedQuestion].additionalQuestions">
-                            <div class="sectionDiv {{addQuestions.type}} {{addQuestions.type}}">
-                                <div class="questionLabel {{addQuestions.type}} {{addQuestions.type}}">
-                                    <div class="row resizeDiv">
-                                        <!--On click will open additional output, additional questions will never have questions.-->
-                                        <div class="col-xs-8 sectionText">
-                                            <p class="questionText questionLabel questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.type, addQuestions.id)">{{addQuestions.output}}</p>
-                                        </div>
-                                        <div class="col-xs-4 ">
-                                            <!--Some checkmark logic as before-->
-                                            <div class="row">
-                                                <div class="col-xs-4">
-                                                    <img ng-if = "addQuestions.state !== null " ng-click="count(addQuestions.state, addQuestions.type, addQuestions.id)" ng-src="{{addQuestions.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="addQuestions mark">
-                                                    <img ng-if = "addQuestions.state === null " ng-click="count(addQuestions.state, addQuestions.type, addQuestions.id)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="addQuestions mark">
-                                                </div>
-                                                </div>                
-                                        </div>
-                                    </div>
-                                    <!--additional output-->
-                                    <div class="questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{addQuestions.id}}">
-                                        <div class="questionText">
-                                            <div>
-                                                <button type="button" class="btn" ng-click="nan(addQuestions.state, addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
-                                            </div>
-                                            <div class="lineBreak"></div>
-                                <p class="questionText">Notes:</p>
-                                            <textarea class="form-control" ng-model="addQuestions.notes"></textarea><br/>
-                                            <div class="lineBreak"></div>
-                                <div class="btn-toolbar questionText">
-                                                <!--buttons for camera and memos, currently not working.-->
-                                                <button type="button" class="btn" ng-click="takePic(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
-                                                <button ng-if="!timer" type="button" class="btn" ng-click="startRecording(addQuestions)"><span class="glyphicon glyphicon-record"></span>Record</button>
-                                                <button  ng-if="timer > 0" type="button" class="btn" ng-click="stopRecording(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-stop"></span><br />Stop Recording</button>
-                                            </div>
-                                            <p ng-if="timer >= 1 && currentQuestion === question">Recording... {{timer}} seconds</p>
-                                            <div ng-if="addQuestions.inputs[0].photos.length >= 1">
-                                                <div ng-repeat="photo in addQuestions.inputs[0].photos">
-                                                    <div class="lineBreak"></div>
-                                        <p class="questionText">Photo {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '');}}</p>
-                                                     <img class="thumbnail" ng-click="editImage(addQuestions, $index)" src="{{tryThis}}{{photo}}"/>
-                                                     <button type="button" ng-click="deleteImage(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span><br/>Delete</button>
-                                                </div>
-                                            </div>
-                                            <div ng-if="addQuestions.inputs[0].recording.length >= 1">
-                                                <div class="btn-toolbar" ng-repeat="memo in addQuestions.inputs[0].recording">
-                                                    <div class="lineBreak"></div>
-                                                    <p>Memo {{memo.replace('documents://media/', '').replace(viewReport.title, '').replace('-','').replace('.wav', '')}}</p>
-                                                    <button type="button" class="btn" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
-                                                    <button type="button" class="btn" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
-                                                    <button type="button" class="btn" ng-click="deleteRecording(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
-                                                                                            <p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
-                                            <span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
-                                        </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   <div class="splash loading">
-            <div id="loadingDiv">
-            <div class="spinner2"></div>
-    </div>
-    </div>
-               </div>
-               <nav-footer></nav-footer>
+<!--If the addQuestions has any additional questions they are listed.-->
+<div ng-init="init()">
+	<div class="content">
+		<div ng-repeat="addQuestions in viewReport.sections[selectedSection].questions[selectedQuestion].additionalQuestions">
+			<div class="sectionDiv {{addQuestions.type}} {{addQuestions.type}}">
+				<div class="questionLabel {{addQuestions.type}} {{addQuestions.type}}">
+					<div class="row resizeDiv">
+						<!--On click will open additional output, additional questions will never have questions.-->
+						<div class="col-xs-8 sectionText">
+							<p class="questionText questionLabel questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.type, addQuestions.id)">{{addQuestions.output}}</p>
+						</div>
+						<div class="col-xs-4 ">
+							<!--Some checkmark logic as before-->
+							<div class="row">
+								<div class="col-xs-4">
+									<img ng-if = "addQuestions.state !== null " ng-click="count(addQuestions.state, addQuestions.type, addQuestions.id)" ng-src="{{addQuestions.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="addQuestions mark">
+									<img ng-if = "addQuestions.state === null " ng-click="count(addQuestions.state, addQuestions.type, addQuestions.id)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="addQuestions mark">
+								</div>
+							</div>                
+						</div>
+					</div>
+					<!--additional output-->
+					<div class="questionLabel sectionDiv questionPadding additionalOutput additionalOutput{{addQuestions.id}}">
+						<div class="questionText">
+							<div>
+								<button type="button" class="btn" ng-click="nan(addQuestions.state, addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
+							</div>
+							<div class="lineBreak"></div>
+							<p class="questionText">Notes:</p>
+							<textarea class="form-control" ng-model="addQuestions.notes"></textarea><br/>
+							<!--This is where I put the button for notes.-->
+							<p>{{question.inputs[0].notes}}</p>
+							<button type="button" class="btn" ng-click="notes(addQuestion.id, addQuestion.type)">Add Note</button>
+							<div class="lineBreak"></div>
+							<div class="btn-toolbar questionText">
+								<!--buttons for camera and memos, currently not working.-->
+								<button type="button" class="btn" ng-click="takePic(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+								<button ng-if="!timer" type="button" class="btn" ng-click="startRecording(addQuestions)"><span class="glyphicon glyphicon-record"></span>Record</button>
+								<button  ng-if="timer > 0" type="button" class="btn" ng-click="stopRecording(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-stop"></span><br />Stop Recording</button>
+							</div>
+							<p ng-if="timer >= 1 && currentQuestion === question">Recording... {{timer}} seconds</p>
+							<div ng-if="addQuestions.inputs[0].photos.length >= 1">
+								<div ng-repeat="photo in addQuestions.inputs[0].photos">
+									<div class="lineBreak"></div>
+									<p class="questionText">Photo {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '');}}</p>
+									<img class="thumbnail" ng-click="editImage(addQuestions, $index)" src="{{tryThis}}{{photo}}"/>
+									<button type="button" ng-click="deleteImage(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span><br/>Delete</button>
+								</div>
+							</div>
+							<div ng-if="addQuestions.inputs[0].recording.length >= 1">
+								<div class="btn-toolbar" ng-repeat="memo in addQuestions.inputs[0].recording">
+									<div class="lineBreak"></div>
+									<p>Memo {{memo.replace('documents://media/', '').replace(viewReport.title, '').replace('-','').replace('.wav', '')}}</p>
+									<button type="button" class="btn" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
+									<button type="button" class="btn" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
+									<button type="button" class="btn" ng-click="deleteRecording(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+									<p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
+										<span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="splash loading">
+		<div id="loadingDiv">
+			<div class="spinner2"></div>
+		</div>
+	</div>
+</div>
+<nav-footer></nav-footer>
 

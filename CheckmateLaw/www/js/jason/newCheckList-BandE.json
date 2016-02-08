@@ -6970,7 +6970,7 @@
                 "title": "Vehicle Stop",
                 "type": "section",
                 "count": 0,
-                "amount": 9,
+                "amount": 8,
                 "state": false,
                 "questions": [
                     {
@@ -7058,18 +7058,6 @@
                         "id": 7,
                         "type": "question",
                         "state": false,
-                        "output": "How many occupants of the vehicle",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 8,
-                        "type": "question",
-                        "state": false,
                         "output": "Query plate advise communications center of location",
 
                         "inputs": [{
@@ -7084,7 +7072,7 @@
                 "title": "Vehicle and Driver approach",
                 "type": "section",
                 "count": 0,
-                "amount": 14,
+                "amount": 13,
                 "state": false,
                 "questions": [
                     {
@@ -7217,7 +7205,7 @@
                         "id": 11,
                         "type": "question",
                         "state": false,
-                        "output": "Isolate passenger after checking conditions",
+                        "output": "Isolate driver from passengers if officer is unsure if the smell of alcohol is from driver or from passengers.",
 
                         "inputs": [{
                             "notes": "",
@@ -7229,19 +7217,7 @@
                         "id": 12,
                         "type": "question",
                         "state": false,
-                        "output": "If driver detained longer than 15 mins, advise of rights. Otherwise reading of rights is not required",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 13,
-                        "type": "question",
-                        "state": false,
-                        "output": "If driver resists readside altogether, arrest for refusal",
+                        "output": "If further investigation required proceed to arrest of driver section. If not release driver",
 
                         "inputs": [{
                             "notes": "",
@@ -7262,7 +7238,7 @@
                         "id": 0,
                         "type": "question",
                         "state": false,
-                        "output": "If reasonable suspicion has been formed, demand approved screening device test while roadside",
+                        "output": "If reasonable suspicion has been formed advise driver they are being detained for purpose of ASD test. Read driver ASD demand. Notes: Driver detained for ASD not entitled to rights. If driver is detained 15 minutes or longer, they are entitled to their rights.",
 
                         "inputs": [{
                             "notes": "",
@@ -7274,7 +7250,7 @@
                         "id": 1,
                         "type": "question",
                         "state": false,
-                        "output": "If driver does not provide proper samples, arrest on refusal",
+                        "output": "If driver does not provide proper samples, arrest on refusal of roadside.",
 
                         "inputs": [{
                             "notes": "",
@@ -7298,7 +7274,7 @@
                         "id": 3,
                         "type": "question",
                         "state": false,
-                        "output": "Test Results:<br/>Test Fail: Proceed to arrest<br/>Test Pass: Proceed with procedure for pass<br/> Warning (Level at .05 or lower) Provide seven day suspension, Take license from driver, Impound vehicle ( varies according to prior convictions )",
+                        "output": "Test Results: Test Fail: Proceed to arrest for impaired operation of a motor vehicle, advise of rights and caution. Test Pass: Proceed with procedure for pass. Warning (Level at .05 or lower) Provide driver seven day suspension, Take license from driver, Impound vehicle. Serve vehicle impound notice ( This is depending on proior convictions )",
 
                         "inputs": [{
                             "notes": "",

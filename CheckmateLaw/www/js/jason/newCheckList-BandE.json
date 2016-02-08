@@ -5,8 +5,7 @@
         "name": "Brake and Enter",
         "dateStamp": "",
         "type": "reportTitle",
-        "sections": 
-        [
+        "sections": [
             {
                 "id": 0,
                 "title": "Initial Complaint",
@@ -20,143 +19,198 @@
                         "type": "question",
                         "state": false,
                         "output": "Who is the caller? Tombstone Data: Full Name, DOB, Address, Phone #",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
-                        "output": "Is B&E in progress or not?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Is B&E in progress or not? ( If in progress, advise other units ) ",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
-                        "output": "Caller's relationship to property broken into",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "In the event of an ' in progress ' break and enter, acquire details of the property ( entrances and exits )",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
-                        "output": "Who owns the property?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Any weapons on premises",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
-                        "output": "Who noticed the B&E?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Caller's relationship to property broken into",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
-                        "output": "Did anyone enter? If yes, who and what path did they take?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Who owns the property?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
-                        "output": "Did anyone touch anything? If so, what?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Who noticed the B&E?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
-                        "output": "Who will be on the scene when police/investigator attend?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Did anyone enter? If yes, who and what path did they take?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
-                        "output": "Did they notice anyone suspicious in the area?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Did anyone touch anything? If so, what?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 9,
                         "type": "question",
                         "state": false,
-                        "output": "Any suspects, witnesses or physical evidence?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Who will be on the scene when police/investigator attend?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 10,
                         "type": "question",
                         "state": false,
+                        "output": "Did they notice anyone suspicious in the area?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "type": "question",
+                        "state": false,
+                        "output": "Any suspects, witnesses or physical evidence?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 12,
+                        "type": "question",
+                        "state": false,
                         "output": "Tell caller not to let anyone near the scene until police arrive.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
-                    }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 13,
+                        "type": "question",
+                        "state": false,
+                        "output": "If in progress, consider canine unit ( Fresh scent of perpetrator on scene )",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 1,
@@ -171,221 +225,238 @@
                         "type": "question",
                         "state": false,
                         "output": "Anybody fleeing scene while enroute? On foot, in vehicle",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Don't drive on scene, park away to not disturb or contemirate any evidence or foot/tire prints",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "Confirm B&E with whoever reported it.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
                         "output": "Secure scene(s)",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
                         "output": "Take pictures of scene with whoever is on scene in it",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
                         "output": "Separate witness",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
                         "output": "Commence a scene log to track who comes and goes (Take Names of everyone on scene)",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
                         "output": "Find out who victim/owner of property is.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
                         "output": "Document the crime scene as you found it.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 9,
                         "type": "question",
                         "state": false,
                         "output": "One entrance One exit.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 10,
                         "type": "question",
                         "state": false,
-                        "output": "Ask when floors were cleaned",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "What path did perpetrator take? Include both Inside premises and outside premises perimeter",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 11,
                         "type": "question",
                         "state": false,
-                        "output": "Skirt Wall, walk along wal, suspect(s) will take path of least resistance",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Ask when floors were cleaned",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 12,
                         "type": "question",
                         "state": false,
-                        "output": "Any suspect footprints or tire impressions outside building? Flight path?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Skirt Wall, walk along wal, suspect(s) will take path of least resistance",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 13,
                         "type": "question",
                         "state": false,
                         "output": "Glass is where best footprints are found",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 14,
                         "type": "question",
                         "state": false,
                         "output": "Confirm if scene was disturbed. Who, when and where did they go?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 15,
                         "type": "question",
                         "state": false,
                         "output": "Take names of everyone on scene.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 16,
                         "type": "question",
                         "state": false,
-                        "output": "Search perimeter for evidence. Footprints in mud, dirt, snow, flower beds, tire impressions tools used to break in, suspects clothing/disguises, cigarette butts, etc..",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "Search perimeter for evidence. Footprints in mud, dirt, snow, flower beds, tire impressions tools used to break in, suspects clothing/disguises, cigarette butts, etc. Footprints/shoe impressions inside property. Check inside and perimeter area for footprints.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 17,
@@ -400,454 +471,422 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Do fingerprints need to be lifted from secured objects?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Shoe or foot impressions off of secured objects",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Severity of B&E, value, victims on scene during, has there been a rash of breaks lately, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Severity of B&E, value, victims on scene buring, has there been a rash of breaks lately, etc...",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Need for more professional photographs",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Likelihood of fingerprints/footprints/shoe impressions being lifted? Dusty surfaces, smeared prints, gloves being used, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Tire impressions",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "DNA left behind. Broke glass, cigarette butts, urine, feces, saliva, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 7,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Determine if other special units are required/available. B&E section, General Investigation Section, etc...",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 18,
                         "type": "question",
                         "state": false,
-                        "output": "Identifications services needed.",
-                        "additinalQuestions": [
+                        "output": "Determine force used to enter property",
+                        "inputs": [
                             {
-                                "id": 0,
-                                "type": "additionalQuestion",
-                                "state": false,
-                                "output": "Keep scene secure.",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            },
-                            {
-                                "id": 1,
-                                "type": "additionalQuestion",
-                                "state": false,
-                                "output": "Cover outside evidence until identification section attends.",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            },
-                            {
-                                "id": 2,
-                                "type": "additionalQuestion",
-                                "state": false,
-                                "output": "Begin taking statements.",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-
-                            }]
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 19,
                         "type": "question",
                         "state": false,
-                        "output": "Determine if Police Dog service is required.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-
+                        "output": "When was scene found broken into? Date and Time",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 20,
                         "type": "question",
                         "state": false,
-                        "output": "Determine if other special units are required/available. B&E section, General Investigation Section, etc...",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "What was the point of entry?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 21,
                         "type": "question",
                         "state": false,
-                        "output": "Determine force used to enter property",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Method of entry?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 22,
                         "type": "question",
                         "state": false,
-                        "output": "When was scene found broken into? Date and Time",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "What path did perpetrator take? Inside and out",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 23,
                         "type": "question",
                         "state": false,
-                        "output": "What was the point of entry?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "What was stolen? Make, Model, serial #'s, description, color, value, number of items taken, receipts",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 24,
                         "type": "question",
                         "state": false,
-                        "output": "Method of entry?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Describe items without serial numbers with great detail, include defects and other identifiers.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 25,
                         "type": "question",
                         "state": false,
-                        "output": "Footprints/shoe impressions inside property",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Try to obtain photos of stolen items from victim",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
-                        "id": 26, 
+                        "id": 26,
                         "type": "question",
                         "state": false,
-                        "output": "What path did perpetrator take? Inside and out",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Where were stolen items located prior to removal?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 27,
                         "type": "question",
                         "state": false,
-                        "output": "Any other points of contact made by suspect? Some suspects have been known to use the bathroom, eat and/or drink on scene",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Was anything disturbed or touched?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 28,
                         "type": "question",
                         "state": false,
-                        "output": "What was stolen? Make, Model, serial #'s, description, color, value, number of items taken, receipts",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Is there signs of any unusual suspect behavior? Drinking alcohol, smoking, burning matches, defecation, handling of female undergarments, made themselves at home, urination, used gloves, mask, telephone, tissue/towels, weapons, graffiti, vandalism.  Any other points of contact made by suspect? Some suspects have been known to use the bathroom, eat and/or drink on scene",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 29,
                         "type": "question",
                         "state": false,
-                        "output": "Describe items without serial numbers with great detail, include defects and other identifiers.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Photograph and describe any evidence that you cannot take.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 30,
                         "type": "question",
                         "state": false,
-                        "output": "Try to obtain photos of stolen items from victim",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Can physical evidence be seized? Items possibly handled or disturbed ie. Papers, removable drawers, screens, tools, etc...",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 31,
                         "type": "question",
                         "state": false,
-                        "output": "Where were stolen items located prior to removal?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Take samples of material that might match the evidence on a suspect",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 32,
                         "type": "question",
                         "state": false,
-                        "output": "Was anything disturbed or touched?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Point of exit",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 33,
                         "type": "question",
                         "state": false,
-                        "output": "Is there physical evidence? Fingerprints, damaged items, foot/shoe impressions, broken glass, clothing, gloves, trace fibers, paint chips, etc...",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Photograph scene. including POE's, pathway, where stolen items taken from, damages, any type of impressions (tire, foot, fingerprints)",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 34,
                         "type": "question",
                         "state": false,
-                        "output": "Is there signs of any unusual suspect behavior? Drinking alcohol, smoking, burning matches, defecation, handling of female undergarments, made themselves at home, urination, used gloves, mask, telephone, tissue/towels, weapons, graffiti, vandalism",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Is there surveillance video available?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 35,
                         "type": "question",
                         "state": false,
-                        "output": "Photograph and describe any evidence that you cannot take.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Is there an alarm and was the phone line cut?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 36,
                         "type": "question",
                         "state": false,
-                        "output": "Can physical evidence be seized? Items possibly handled or disturbed ie. Papers, removable drawers, screens, tools, etc...",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "If there was an alarm was it activated or disabled? When?",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 37,
                         "type": "question",
                         "state": false,
-                        "output": "Take samples of material that might match the evidence on a suspect",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Determine timeline. When last person attended the property prior to break, first person to arrive after break.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 38,
                         "type": "question",
                         "state": false,
-                        "output": "Point of exit",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Neighborhood inquiries to find out if anyone suspicious in area prior to break or in the past. Noises heard, did they notice any lights on, what time they went to bed and woke up, likelihood of hearing or seeing break.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 39,
                         "type": "question",
                         "state": false,
-                        "output": "Photograph scene. including POE's, pathway, where stolen items taken from, damages, any type of impressions (tire, foot, fingerprints)",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 40,
-                        "type": "question",
-                        "state": false,
-                        "output": "Is there surveillance video available?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 41,
-                        "type": "question",
-                        "state": false,
-                        "output": "Is there an alarm and was the phone line cut?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 42,
-                        "type": "question",
-                        "state": false,
-                        "output": "If there was an alarm was it activated or disabled? When?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 43,
-                        "type": "question",
-                        "state": false,
-                        "output": "Determine timeline. When last person attended the property prior to break, first person to arrive after break.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 44,
-                        "type": "question",
-                        "state": false,
-                        "output": "Neighborhood inquiries to find out if anyone suspicious in area prior to break or in the past. Noises heard, did they notice any lights on, what time they went to bed and woke up, likelihood of hearing or seeing break.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 45,
-                        "type": "question",
-                        "state": false,
                         "output": "Take detailed notes.",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     }
                 ]
             },
@@ -871,253 +910,324 @@
                                 "id": 0,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Determine timeline, when property was last scene prior to break, when break was noticed, by whom?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Who would know where valuables are in the building? ( ie. Hidden safe is stolen indicating suspects )",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Was property secured?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Determine timeline, when property was last scene prior to break, when break was noticed, by whom?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "State property was left in prior break. Floors and counters just cleaned, preparing for seasonal use, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Was property secured?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Did the make any changes to the scene before the police arrived?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "State property was left in prior break. Floors and counters just cleaned, preparing for seasonal use, etc...",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "What was damaged?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Did the make any changes to the scene before the police arrived?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "What was damaged?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "What is at the scene that normally wouldn't be there?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 7,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Does anyone else have access to property? Possible suspects, witnesses for elimination prints, past or present employees/keyholders, ect...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "What is at the scene that normally wouldn't be there?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 8,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Do they suspect anyone?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Does anyone else have access to property? Possible suspects, witnesses for elimination prints, past or present employees/keyholders, ect...",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 9,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Any prior issues with any individual? Friends, Family, acquaintances, employees past or present, neighbors, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Do they suspect anyone?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 10,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Unusual loiterers, visitors, parked cars, or phone calls before the break and enter?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Any prior issues with any individual? Friends, Family, acquaintances, employees past or present, neighbors, etc...",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 11,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Who would have had the opportunity to act?",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Unusual loiterers, visitors, parked cars, or phone calls before the break and enter?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 12,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Any previous B&E's at the property or other properties owned by the victim(s)?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Who would have had the opportunity to act?",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 13,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Possibility of inside job",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Any previous B&E's at the property or other properties owned by the victim(s)?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 14,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "If it is a business, name of employees",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Possibility of inside job",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 15,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Would employees be willing to fill out view questionnaire or agree to polygraph?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "If it is a business, name of employees",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 16,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Insurance company and if there will be a claim",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Would employees be willing to fill out view questionnaire or agree to polygraph?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 17,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Is the victim a suspect for insurance fraud?  (read rights)",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Insurance company and if there will be a claim",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 18,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Does the victim have an alibi and who can confirm?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Is the victim a suspect for insurance fraud?  (read rights)",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 19,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Do you need to move into an interrogation?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Does the victim have an alibi and who can confirm?",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 20,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Would the victim be willing to take a polygraph?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "output": "Do you need to move into an interrogation? If so, take a video statement in a recorded room.  Bring accused back to station",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 21,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Would the victim be willing to take a polygraph? Have victim sign a form ' Polygraph Consent Form ' ( Used later to setup an appointment.  Only on suspicion ).",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 22,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Advise the victim of ' Victim Impact Statement '",
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -1132,110 +1242,130 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Tombstone Data: Full Name, DOB, Address, Phone #",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Relationship to property/victim",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Determine Timeline Who was last to attend property and first to find property broken into",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "What they witnessed Suspects, other witnesses, scene, stolen items, etc... (will vary depending on witness involvement)",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "If they witnessed suspects, provide detail description of suspect and clothing. Where they saw suspect, how suspect fled the scene, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Whom they suspect as being involved and why?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any knowledge of what was stolen description, value, serial numbers, etc...",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 7,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Is information provided reliable how and why?",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 8,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any other pertinent information that can be provided will vary from witness to witness",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
-                    }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 3,
@@ -1250,159 +1380,199 @@
                         "type": "question",
                         "state": false,
                         "output": "Determine Modus Operandi is this crime similar to others in the area?",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Check prior B&E's for suspects and suspect vehicles",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "Add all stolen items and serial numbers to CPIC. NCIC in US",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
                         "output": "Contact Owner/victim/witnesses to see if they have any new avenues to follow up with",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
                         "output": "Contact pawn shops to see if stolen items have been pawned",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
-                        "output": "Canvass sources for information",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "If items are located in contacted pawn shop, seize items.  Obtain video within timeline when item was pawned and get statement from employee.",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
-                        "output": "Media release",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Canvass sources for information",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
-                        "output": "Email to other members not working and other detachments or police forces, as well as other intelligence sections working on similar files",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Media release. City website and crime stoppers",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
-                        "output": "Complete required documents. Occurrence reports, exhibit reports, forensic identification requests, enter all data, photos, statements, notes, receipts, referral forms, cpic printouts added to file",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Email to other members not working and other detachments or police forces, as well as other intelligence sections working on similar files",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 9,
                         "type": "question",
                         "state": false,
-                        "output": "Contact criminal intelligence section to see if rash of B&E's or if there are suspects in other files that meet MO",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Complete required documents. Occurrence reports, exhibit reports, forensic identification requests, enter all data, photos, statements, notes, receipts, referral forms, cpic printouts added to file",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 10,
                         "type": "question",
                         "state": false,
-                        "output": "Keep eye out for other possible related B&E or suspects",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Contact criminal intelligence section to see if rash of B&E's or if there are suspects in other files that meet MO",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 11,
                         "type": "question",
                         "state": false,
-                        "output": "Have other members to question any detained clients with regards to this crime",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Keep eye out for other possible related B&E or suspects",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 12,
                         "type": "question",
                         "state": false,
-                        "output": "Determine if stolen electronics can be tracked via GPS Smart phones, laptops, ipads, etc...",
-                        "inputs": [{
-                            "dateChange":"",
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Have other members to question any detained clients with regards to this crime",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 13,
+                        "type": "question",
+                        "state": false,
+                        "output": "Determine if stolen electronics can be tracked via GPS Smart phones, laptops, ipads, etc...",
+                        "inputs": [
+                            {
+                                "dateChange": "",
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 14,
                         "type": "question",
                         "state": false,
                         "output": "Solvability factors",
@@ -1412,45 +1582,50 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Update ident an Investigation (Suspect Names)",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Elimination Prints as soon as possible",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Tools and metal compnents con be ccompared",
-                                "inputs": [{
-                                    "dateChange":"",
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "dateChange": "",
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }]
                             }]
                     },
                     {
-                        "id": 14,
+                        "id": 15,
                         "type": "question",
                         "state": false,
-                        "output": "Have any physical evidence analyzed",
+                        "output": "Have any physical evidence analyzed. Foresenics adds documentation for physical evidence.",
                         "inputs": [{
-                            "dateChange":"",
+                            "dateChange": "",
                             "notes": "",
                             "photos": [],
                             "recording": []
@@ -6795,7 +6970,7 @@
                 "title": "Vehicle Stop",
                 "type": "section",
                 "count": 0,
-                "amount": 9,
+                "amount": 8,
                 "state": false,
                 "questions": [
                     {
@@ -6883,18 +7058,6 @@
                         "id": 7,
                         "type": "question",
                         "state": false,
-                        "output": "How many occupants of the vehicle",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 8,
-                        "type": "question",
-                        "state": false,
                         "output": "Query plate advise communications center of location",
 
                         "inputs": [{
@@ -6909,7 +7072,7 @@
                 "title": "Vehicle and Driver approach",
                 "type": "section",
                 "count": 0,
-                "amount": 14,
+                "amount": 13,
                 "state": false,
                 "questions": [
                     {
@@ -7042,7 +7205,7 @@
                         "id": 11,
                         "type": "question",
                         "state": false,
-                        "output": "Isolate passenger after checking conditions",
+                        "output": "Isolate driver from passengers if officer is unsure if the smell of alcohol is from driver or from passengers.",
 
                         "inputs": [{
                             "notes": "",
@@ -7054,19 +7217,7 @@
                         "id": 12,
                         "type": "question",
                         "state": false,
-                        "output": "If driver detained longer than 15 mins, advise of rights. Otherwise reading of rights is not required",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    },
-                    {
-                        "id": 13,
-                        "type": "question",
-                        "state": false,
-                        "output": "If driver resists readside altogether, arrest for refusal",
+                        "output": "If further investigation required proceed to arrest of driver section. If not release driver",
 
                         "inputs": [{
                             "notes": "",
@@ -7087,7 +7238,7 @@
                         "id": 0,
                         "type": "question",
                         "state": false,
-                        "output": "If reasonable suspicion has been formed, demand approved screening device test while roadside",
+                        "output": "If reasonable suspicion has been formed advise driver they are being detained for purpose of ASD test. Read driver ASD demand. Notes: Driver detained for ASD not entitled to rights. If driver is detained 15 minutes or longer, they are entitled to their rights.",
 
                         "inputs": [{
                             "notes": "",
@@ -7099,7 +7250,7 @@
                         "id": 1,
                         "type": "question",
                         "state": false,
-                        "output": "If driver does not provide proper samples, arrest on refusal",
+                        "output": "If driver does not provide proper samples, arrest on refusal of roadside.",
 
                         "inputs": [{
                             "notes": "",
@@ -7123,7 +7274,7 @@
                         "id": 3,
                         "type": "question",
                         "state": false,
-                        "output": "Test Results:<br/>Test Fail: Proceed to arrest<br/>Test Pass: Proceed with procedure for pass<br/> Warning (Level at .05 or lower) Provide seven day suspension, Take license from driver, Impound vehicle ( varies according to prior convictions )",
+                        "output": "Test Results: Test Fail: Proceed to arrest for impaired operation of a motor vehicle, advise of rights and caution. Test Pass: Proceed with procedure for pass. Warning (Level at .05 or lower) Provide driver seven day suspension, Take license from driver, Impound vehicle. Serve vehicle impound notice ( This is depending on proior convictions )",
 
                         "inputs": [{
                             "notes": "",
@@ -7902,7 +8053,7 @@
                         }]
                     }]
             }]
-    },
+},
     "3": {
         "id": "TH",
         "title": "",
@@ -7923,58 +8074,67 @@
                         "type": "question",
                         "state": false,
                         "output": "Who's the caller? Name, DOB, Address, Phone #",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Address of theft",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "What was stolen? When?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
                         "output": "Who's the victim: Name, DOB, Address, Phone #",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
                         "output": "Any suspects: Name, description",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 1,
@@ -7989,188 +8149,208 @@
                         "type": "question",
                         "state": false,
                         "output": "Obtain Victim statement",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Is there a witness? Obtain a witness statement",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "What was stolen: Make and Model",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
                         "output": "Is there a serial number: Make or Model number",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
                         "output": "Description of stolen item(s). Colors, distinguishing marks, anything written on it? etc.",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
                         "output": "Does the victim have a picture of the stolen item?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
                         "output": "Photograph where the item was stolen from",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
                         "output": "If item was shoplifted, photograph identical items in store along with price tag",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
                         "output": "Conduct an inventory of item(s) believed missing",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 9,
                         "type": "question",
                         "state": false,
                         "output": "How much is the stolen item worth?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 10,
                         "type": "question",
                         "state": false,
                         "output": "Does the victim have a receipt?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 11,
                         "type": "question",
                         "state": false,
                         "output": "Does the victim have the box the stolen item came in?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 12,
                         "type": "question",
                         "state": false,
                         "output": "Location the item was stolen from?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 13,
                         "type": "question",
                         "state": false,
                         "output": "Name and/or description of any suspects",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 14,
                         "type": "question",
                         "state": false,
                         "output": "Why are they suspects?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 15,
                         "type": "question",
                         "state": false,
                         "output": "Is there video?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 16,
@@ -8178,89 +8358,113 @@
                         "state": false,
                         "output": "Is there a need for Forensic Identification Unit to attend?",
                         "count": 0,
-                        "amount":7,
+                        "amount": 8,
                         "additionalQuestions": [
                             {
                                 "id": 0,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Do fingerprints need to be lifted from secured objects",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "If somebody touched an item that is to be fingerprinted, get their information. Same applies to footprints.",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Shoe or foot impressions off of secured objects",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Do fingerprints need to be lifted from secured objects",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Severity of Theft: Value, victims on scene during, had there been a rash of thefts lately, etc.",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Shoe or foot impressions off of secured objects",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Need for more professional photographs",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Severity of Theft: Value, victims on scene during, had there been a rash of thefts lately, etc.",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Likelyhood of fingerprints/footprints/shoe impressions being lifted. Dusty surfaces, smeared prints, gloves being used",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Need for more professional photographs",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
-                                "output": "Tire impressions",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "output": "Likelyhood of fingerprints/footprints/shoe impressions being lifted. Dusty surfaces, smeared prints, gloves being used",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
+                                "output": "Tire impressions",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 7,
+                                "type": "additionalQuestion",
+                                "state": false,
                                 "output": "DNA left behind: Broken glass, cigarette butts, urine, feces, saliva, etc.",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 17,
@@ -8275,220 +8479,256 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Keep scene secure",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Cover outside evidence until identification section attends",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Begin taking statements",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 18,
                         "type": "question",
                         "state": false,
                         "output": "If Identification services not required to attend, continue with investigation",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 19,
                         "type": "question",
                         "state": false,
                         "output": "Was it a crime of opportunity?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 2,
                 "title": "Follow up Investigation",
                 "type": "section",
                 "count": 0,
-                "amount": 7,
+                "amount": 8,
                 "state": false,
                 "questions": [
                     {
                         "id": 0,
                         "type": "question",
                         "state": false,
-                        "output": "Neighborhood inquiries",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "If anything can be added to CPIC, add it!( Ex. Item serial number) ",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
-                        "output": "Contact pawn shops with description of stolen items",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Neighborhood inquiries",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
-                        "output": "Media Release",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Contact pawn shops with description of stolen items. If stolen item is there, seize item. Get surveillance video and employee statement.",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
-                        "output": "Social Media sites",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Media Release, Crime stoppers, city website, and bulletin to other agencies.",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
-                        "output": "Search Internet Classified ads sites: (kijiji.com, ebay.com, etc...) for stolen items",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Social Media sites",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
-                        "output": "Talk to or email other members of your police force to determine if they have any related files lately with any suspects",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "Search Internet Classified ads sites: (kijiji.com, ebay.com, etc...) for stolen items",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
+                        "output": "Talk to or email other members of your police force to determine if they have any related files lately with any suspects",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "type": "question",
+                        "state": false,
                         "output": "If they took place in a business. Consider having staff complete a view questionnaire to try to pinpoint a suspect",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 3,
                 "title": "Arrest of Suspect",
                 "type": "section",
                 "count": 0,
-                "amount": 15,
+                "amount": 16,
                 "state": false,
                 "questions": [
                     {
                         "id": 0,
                         "type": "question",
                         "state": false,
-                        "output": "If suspect on scene or located later. Arrest for theft under/over (Sec 10(a) C.C.C.)",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "output": "If suspect on scene, or located later. Arrest for theft or possession of stolen property. Whichever applies.",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Read Rights to Counsel Sec 10(b) C.C.C. make note of responses",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "Read Police Caution, make note of responses",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
                         "type": "question",
                         "state": false,
                         "output": "If the accused was or could have been talking to another police officer read the Secondary Police Caution",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 4,
                         "type": "question",
                         "state": false,
                         "output": "Handcuff suspect",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
@@ -8503,141 +8743,173 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "(1) to ensure the safety of the police and the public",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "(2)To protect evidence",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "(3) to discover evidence",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
                         "output": "Seize any evidence related to the offence",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
                         "output": "If the item is re-sellable. Photograph the item and return to store",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
                         "output": "If the item is not re-sellable. Seize exhibit and process same for court",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 9,
                         "type": "question",
                         "state": false,
                         "output": "Bring suspect back to Detachment/sation",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 10,
                         "type": "question",
                         "state": false,
                         "output": "Obtain Cautioned statement",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 11,
                         "type": "question",
                         "state": false,
                         "output": "Fingerprint and Photograph",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 12,
                         "type": "question",
                         "state": false,
                         "output": "If suspect is to be remanded. Bring to a Justice of the Peace for same",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 13,
                         "type": "question",
                         "state": false,
                         "output": "If suspect is to be released. Serve Appearance Notice/Recognizance with or without sureties/or Promise to appear with an Undertaking providing conditions to stay away or have no contact with victim or business",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 14,
                         "type": "question",
                         "state": false,
                         "output": "If charges are not going to be laid with an undertaking. Consider serving a trespass notice on the suspect",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
-                    }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 15,
+                        "type": "question",
+                        "state": false,
+                        "output": "If suspect is first time offender, consider alternative measures program or recommend youth program. If suspect is young offender ",
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 4,
@@ -8653,159 +8925,204 @@
                         "state": false,
                         "output": "Victim(s)",
                         "count": 0,
-                        "amount": 11,
+                        "amount": 15,
                         "additionalQuestions": [
                             {
                                 "id": 0,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Tombstone data: Full name, DOB, Address, Phone number",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Determine timeline. When property as stolen, when last seen? when noticed missing?",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any prior issues with anyone/suspects in the past? Debts owed, other disputes, disgruntled employees, family disputes, disputes with clients? etc.",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any suspects? Description",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Why are they suspect?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Determine relationship with the suspect",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 7,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Try to determine how the suspect stolen the item",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 8,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Does the accused has any ownership to the stolen property?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 9,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Could the victim pick the suspect out of a photo lineup?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 10,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Why would anyone commit the theft?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 11,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Are they insured or are they making a claim through insurance",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 12,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Suspect cautioned statement should be under statements",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 13,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "Advise victim of victim impact statement and victim services",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 14,
+                                "type": "additionalQuestion",
+                                "state": false,
+                                "output": "If item stolen is not sellable or damaged. Get the restitution form signed by victim",
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "id": 1,
@@ -8820,168 +9137,186 @@
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Tombstone Data: Full name, DOB, Address, Phone number",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 1,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "What did he/she witness?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 2,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Where was the item when it was taken?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 3,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any suspects? If yes, why do they suspect take the item",
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 4,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Did the witness see the suspect take the item",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 5,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Did the witness see the suspect take the item",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 6,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Describe the suspect",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 7,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "When was the item stolen",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 8,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "What role does the witness have in the theft",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 9,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Does the witness know the suspect and how?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 10,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Do they know who owns the items stolen?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 11,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Does the witness know if the suspect know who owns the item stolen",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 12,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Any previous history between the suspect and victim or witness?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
                             },
                             {
                                 "id": 13,
                                 "type": "additionalQuestion",
                                 "state": false,
                                 "output": "Could the witness pick the suspect out of a photo lineup?",
-
-                                "inputs": [{
-                                    "notes": "",
-                                    "photos": [],
-                                    "recording": []
-                                }]
-                            }]
-                    }]
+                                "inputs": [
+                                    {
+                                        "notes": "",
+                                        "photos": [],
+                                        "recording": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": 5,
@@ -8996,35 +9331,39 @@
                         "type": "question",
                         "state": false,
                         "output": "Tombstone Data: Full Name, DOB, Address, Phone number",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 1,
                         "type": "question",
                         "state": false,
                         "output": "Did they take the item?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 2,
                         "type": "question",
                         "state": false,
                         "output": "Did they move it with intent to steal it?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 3,
@@ -9069,59 +9408,64 @@
                         "type": "question",
                         "state": false,
                         "output": "Who owned it?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 5,
                         "type": "question",
                         "state": false,
                         "output": "When did they take it?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 6,
                         "type": "question",
                         "state": false,
                         "output": "How did they take it?",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 7,
                         "type": "question",
                         "state": false,
                         "output": "If the suspect denies taking the item, then consider interrogating the suspect",
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }
+                        ]
                     },
                     {
                         "id": 8,
                         "type": "question",
                         "state": false,
                         "output": "Consider the user of a polygraph examiner",
-
-                        "inputs": [{
-                            "notes": "",
-                            "photos": [],
-                            "recording": []
-                        }]
+                        "inputs": [
+                            {
+                                "notes": "",
+                                "photos": [],
+                                "recording": []
+                            }]
                     }]
             }]
     },
@@ -9616,7 +9960,7 @@
                         }]
                     }]
             }]
-    },
+},
     "5": {
         "id": "SA",
         "title": "",
@@ -10242,7 +10586,7 @@
                             }]
                     }]
             }]
-    },
+},
     "6": {
         "id": "AU",
         "title": "",
@@ -11930,5 +12274,5 @@
                             }]
                     }]
             }]
-    }
+}
 }

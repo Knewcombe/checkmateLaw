@@ -89,9 +89,9 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         templateUrl: 'email.html',
         controller: 'emailController'
     });
-    $routeProvider.when('/test',{
-        templateUrl: 'test.html',
-        controller: 'testController'
+    $routeProvider.when('/note',{
+        templateUrl: 'note.html',
+        controller: 'noteController'
     });
     
 

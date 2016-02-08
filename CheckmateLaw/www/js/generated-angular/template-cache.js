@@ -79,8 +79,8 @@ angular.module("app").run(["$templateCache", function($templateCache) {
                        "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"guidelines()\">Guidelines</button>\r" +
                        "\n"+
                        "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"about()\">About</button>\r" +
-//                       "\n" +
-//                       "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"test()\">Test</button>\r" +
+                       "\n" +
+                       "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"test()\">Test</button>\r" +
                        "\n" +
                        " </div>\r" +
                        "\n"

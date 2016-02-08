@@ -20,6 +20,8 @@ angular.module("app").controller('HomeController', function($scope, $location, $
         $location.path('/guidelines');
     };
     $scope.test = function(){
-        $location.path('/test');
+        $location.path('/note');
     }
+	
+	console.log($location.path());
 });

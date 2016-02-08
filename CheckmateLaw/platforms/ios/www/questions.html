@@ -36,7 +36,10 @@
                                 </div>
                                 <div class="lineBreak"></div>
                                 <p class="questionText">Notes: {{question.inputs[0].dateChange}}</p>
-                                <textarea class="form-control" ng-model="question.inputs[0].notes" ng-change="dateAndTime(question.id)"></textarea><br/>
+<!--                                <textarea class="form-control" ng-model="question.inputs[0].notes" ng-change="dateAndTime(question.id)"></textarea><br/>-->
+								<!--This is where I put the button for notes.-->
+								<p ng-if='question.inputs[0].notes[0]';>{{question.inputs[0].notes[0]}}</p>
+								<button type="button" class="btn" ng-click="note(question.id, question.type)">Add Note</button>
                                 <div class="lineBreak"></div>
                                 <div class="btn-toolbar questionText">
                                     <!--buttons for images and memos, currently not working.-->

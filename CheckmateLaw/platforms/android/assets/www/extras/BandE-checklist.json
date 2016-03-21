@@ -1,0 +1,949 @@
+{
+    "BE":{
+            "name": "Break and Enter",
+            "questions":
+                [
+                    {
+                        "id": 1,
+                        "text": "Initial Complaint",
+                        "type": "header",
+                        "entryType": "text",
+                        "state": "false",
+                        "subQuestions": [
+                            {
+                                "id": 1,
+                                "text": "Who the caller is? (Tombstone Data, ie: Full Name, DOB, Address, Phone #)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 2,
+                                "text": "Is B&E in progress or not?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 3,
+                                "text": "Caller\\'s relationship to property broken into (Owner, property rep, keyholder, family, friend, passerby, etc...)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 4,
+                                "text": "Who owns the property?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 5,
+                                "text": "Who noticed the B&E?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 6,
+                                "text": "Did anyone enter? If yes, who and what path did they take?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 7,
+                                "text": "Did anyone touch anything? If so, what?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 8,
+                                "text": "Who will be on scene when police/investigator attend?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 9,
+                                "text": "Did they notice anyone suspicious in the area?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 10,
+                                "text": "Any suspects, witnesses or physical evidence?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 11,
+                                "text": "Tell caller not to let anyone near the scene until police arrive.",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "text": "First Responder & Scene Examination",
+                        "type": "header",
+                        "entryType": "text",
+                        "state": "false",
+                        "subQuestions": [
+                            {
+                                "id": 1,
+                                "text": "Anybody fleeing scene while enroute? On foot, in vehicle?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 2,
+                                "text": "Confirm B&E with whoever reported it",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 3,
+                                "text": "Secure scene",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 4,
+                                "text": "Find out who victim/owner of property is",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 5,
+                                "text": "Document the crime scene as you found it",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 6,
+                                "text": "Any suspect foot prints or tire impressions outside building (flight path)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 7,
+                                "text": "Confirm if scene was disturbed, by who, when, and where did they go?",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 8,
+                                "text": "Take names of everyone on scene",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 9,
+                                "text": "Determine force used to enter property",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 10,
+                                "text": "Determine if Forensic Identification Section required",
+                                "type": "radio",
+                                "additional": [
+                                    {"text": "Do fingerprints need to be lifted from secured objects?"},
+                                    {"text": "Shoe or foot impressions off of secured objects"},
+                                    {"text": "Severity of B&E (Value, victims on scene during, has there been a rash of breaks lately, etc...)"},
+                                    {"text": "Need for more professional photographs - Likelihood of fingerprints/footprints/shoe impressions being lifted (dusty surfaces, smeared prints, gloves being used, etc...)"},
+                                    {"text": "Tire impressions"},
+                                    {"text": "DNA left behind (broken glass, cigarette butts, urine, feces, saliva, etc...)"}
+                                ],
+                                "yes": false,
+                                "no": false,
+                                "entryType": "text",
+                                "state": "false",
+                                "truequestions": [
+                                    {
+                                        "id": 1,
+                                        "text": "Keep scene secure",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 2,
+                                        "text": "Cover outside evidence until identification section attends",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 3,
+                                        "text": "Begin taking statements",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    }
+                                ],
+                                "falsequestions": [
+                                    {
+                                        "id": 1,
+                                        "text": "Determine if Police Dog Services are required",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 2,
+                                        "text": "Determine if other special units are required/available. (B&E section, General - Investigation Section, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 3,
+                                        "text": "Search perimeter for evidence (footprints in mud, dirt, snow, flower beds, tire impressions, tools used to break in, suspects clothing/disguises, cigarette butts, etc...",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 4,
+                                        "text": "When was scene found broken into (Date and time)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 5,
+                                        "text": "What was the point of entry?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 6,
+                                        "text": "Method of entry?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 7,
+                                        "text": "Footprints/shoe impressions inside property?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 8,
+                                        "text": "What path did perpetrator take? Inside and out.",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 9,
+                                        "text": "Any other points of contact made by suspect? (Some suspects have been known to use the bathroom, eat and/or drink on scene)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 10,
+                                        "text": "What was stolen? Make, Model, serial#\"s, description, color, value, number of items taken, receipts",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 11,
+                                        "text": "Describe items without serial numbers with great detail . include defects and other identifiers",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 12,
+                                        "text": "Try to obtain photos of stolen items from victim",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 13,
+                                        "text": "Where were stolen items locted prior to removal?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 14,
+                                        "text": "Was anything disturbed or touched?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 15,
+                                        "text": "Is there physical evidence? (fingerprints, damaged items, foot/shoe impressions, broken glass, clothing, gloves, trace fibres, paint chips, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 16,
+                                        "text": "Is there signs of any unusual suspect behavior? (drinking alcohol, smoking, burning matches, defecation, handling of female undergarments, made themselves at home, urination,  sed gloves, mask, telephone, tissue/towels, weapons, graffiti, vandalism?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 17,
+                                        "text": "Photograph and describe any evidence that you cannot take",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 18,
+                                        "text": "Can physical evidence be seized? (items possibly handled or disturbed ie. Papers, removable drawers, screens, tools, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 19,
+                                        "text": "Take samples of material that might match the evidence on a suspect",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 20,
+                                        "text": "Point of exit",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 21,
+                                        "text": "Photograph scene including POE\"s, pathway, where stolen items taken from, damages, any type of impressions (tire, foot, fingerprints), any physical evidence, rest of property,  etc...",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 22,
+                                        "text": "Is there surveillance video available?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 23,
+                                        "text": "Is there an alarm and was the phone line cut?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 24,
+                                        "text": "If there was an alarm was it activated or disabled? When?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 25,
+                                        "text": "Were locks plugged with anything?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 26,
+                                        "text": "Determine timeline (when last person attended the property prior to break, first person to arrive after break)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 27,
+                                        "text": "Neighborhood inquiries to find out if anyone suspicious in area prior to break or in the past, noises heard, did they notice any lights on, what time they went to bed and woke up, likelyhood of hearing or seeing break.",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 28,
+                                        "text": "Take detailed notes",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "text": "Statements",
+                        "type": "header",
+                        "entryType": "text",
+                        "state": "false",
+                        "subQuestions": [
+                            {
+                                "id":1,
+                                "text": "Victim(s)",
+                                "type": "header",
+                                "entryType": "text",
+                                "state": "false",
+                                "subQuestions": [
+                                    {
+                                        "id": 1,
+                                        "text": "Tombstone data (Full name, DOB, Address, Ph#)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 2,
+                                        "text": "Determine timeline (when property was last scene prior to break, when break was noticed, by whom?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 3,
+                                        "text": "Was property secured?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 4,
+                                        "text": "State property was left in prior to break. (floors and counters just cleaned, preparing for seasonal use, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 5,
+                                        "text": "Did they make any changes to the scene before the police arrived?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 6,
+                                        "text": "What is at the scene that normally wouldn\\'t be there?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 7,
+                                        "text": "What was damaged?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 8,
+                                        "text": "What was stolen? (Make, model, description, current or original value ($), serial numbers)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 9,
+                                        "text": "Does anyone else have access to property? (possible suspects, witnesses for elimination prints, past or present employees/keyholders, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 10,
+                                        "text": "Do they suspect anyone?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 11,
+                                        "text": "Any prior issues with friends, family, aquaintances, employees past or present, neighbors, etc... Unusual loiterers, visitors, parked cars, or phone calls before the break and enter?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 12,
+                                        "text": "Who would have had the opportunity to act?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 13,
+                                        "text": "Any previous B&E\\'s at the property or other properties owned by the victim(s)?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 14,
+                                        "text": "Possibility of inside job",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 15,
+                                        "text": "If it is a business, name of employees",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 16,
+                                        "text": "Would employees be willing to fill out view questionaire or agree to polygraph?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 17,
+                                        "text": "Insurance company and if there will be a claim",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 18,
+                                        "text": "Is the victim a suspect for insurance fraud? (read rights)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 19,
+                                        "text": "Does the victim have an alibi and who can confirm",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 20,
+                                        "text": "Do you need to move into an interrogation?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 21,
+                                        "text": "Would the victim be willing to take a polygraph?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    }
+
+                                ]
+                            },
+                            {
+                                "id":2,
+                                "text": "Witness",
+                                "type": "header",
+                                "entryType": "text",
+                                "state": "false",
+                                "subQuestions": [
+                                    {
+                                        "id": 1,
+                                        "text": "Tombstone Data",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 2,
+                                        "text": "Relationship to property/victim",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 3,
+                                        "text": "Determine Timeline (Who was last to attend property and first to find property broken into)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 4,
+                                        "text": "What they witnessed ie: Suspects, other witnesses, scene, stolen items, etc... (will vary depending on witness involvement)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 5,
+                                        "text": "If they witnessed suspects, provide detail description of suspect and clothing, where they saw suspect, how suspect fled the scene, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 6,
+                                        "text": "Who they suspect as being involved and why?",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 7,
+                                        "text": "Any knowledge of what was stolen (description, value, serial numbers, etc...)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 8,
+                                        "text": "Is information provided reliable (how and why?)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    },
+                                    {
+                                        "id": 9,
+                                        "text": "Any other pertinent information that can be provided (will vary from witness to witness)",
+                                        "entryType": "text",
+                                        "state": "false",
+                                        "notes": "",
+                                        "photos": [],
+                                        "memos": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "text": "Follow Up",
+                        "type": "header",
+                        "entryType": "text",
+                        "state": "false",
+                        "subQuestions": [
+                            {
+                                "id": 1,
+                                "text": "Determine Modus Operandi (is this crime similar to others in the area?)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 2,
+                                "text": "Check prior B&E\\'s for suspects and suspect vehicles",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 3,
+                                "text": "Add all stolen items and serial numbers to CPIC (NCIC in US)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 4,
+                                "text": "Contact Owner/victim/witnesses to see if they have any new avenues to follow up with",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 5,
+                                "text": "Contact pawn shops to see if stolen items have been pawned",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 6,
+                                "text": "Canvass sources for information",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 7,
+                                "text": "Media release",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 8,
+                                "text": "Email to other members not working and other detachments or police forces, as well as other intelligence sections working on similar files",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 9,
+                                "text": "Complete required documents (Occurrence reports, exhibit reports, forensic identification requests, enter all data, photos, statements, notes, receipts, referral forms, CPIC printouts added to file)",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 10,
+                                "text": "Contact criminal intelligence section to see if rash of B&E\\'s or if there are suspects in other files that meet MO",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 11,
+                                "text": "Keep eye out for other possible related B&E or suspects",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 12,
+                                "text": "Have other members to question any detained clients with regards to this crime",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 13,
+                                "text": "Determine if stolen electronics (Smart phones, laptops, ipads, etc...) can be tracked via GPS",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 14,
+                                "text": "Solveability factors",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            },
+                            {
+                                "id": 15,
+                                "text": "Have any physical evidence analyzed",
+                                "entryType": "text",
+                                "state": "false",
+                                "notes": "",
+                                "photos": [],
+                                "memos": []
+                            }
+                        ]
+                    }
+                ],
+            "dateStamp": ""
+        }
+}

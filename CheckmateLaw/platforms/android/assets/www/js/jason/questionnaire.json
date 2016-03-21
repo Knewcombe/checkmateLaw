@@ -1,0 +1,868 @@
+{  
+    "0": {
+        "id": "RFC",
+        "name": "Compel to Court & Release Procedure",
+        "explanation": "Use when unsure when to arrest suspect",
+        "dateStamp": "",
+        "type": "reportTitle",
+        "item": "questionnaire",
+        "sections": [{
+
+            "id": 0,
+            "title": "Did an offence take place(Are all elements present)?",
+            "type": "Selection",
+            "yes": [{
+                "id": 0,
+                "title": "What type of offence(S.C, Dual, ind)?",
+                "type": "input",
+                "input": ""
+            },
+                    {
+                        "id": 1,
+                        "title": "Do I have Basic Powers of Arrest",
+                        "reference": "Sec. 495(1) C.C.",
+                        "type": "Selection",
+                        "yes": [
+                            {
+                                "id": 0,
+                                "title": "Is there a Limitation to the POWER OF ARREST?",
+                                "reference": "Sec. 495(2) C.C.",
+                                "type": "Selection",
+                                "yes": [
+                                    {
+                                        "id": 0,
+                                        "title": "Are Public Interest and Court Satisfied?",
+                                        "type": "Selection",
+                                        "yes": [
+                                            {
+                                                "id": 0,
+                                                "title": "SHALL NOT ARREST",
+                                                "info": "P.O. compel to court by way of Appearance Notice",
+                                                "reference": "Sec.496 C.C. or summons Sec. 509 C.C.",
+                                                "type": "end"
+                                            }],
+                                        "no": [
+                                            {
+                                                "id": 0,
+                                                "title": "Do public Interest and Court become satisfied prior to appear before a Justice?",
+                                                "type": "Selection",
+                                                "yes": [
+                                                    {
+                                                        "id": 0,
+                                                        "title": "Are conditions required to satisfy Public Interest and Court?",
+                                                        "type": "Selection",
+                                                        "yes": [
+                                                            {
+                                                                "id": 0,
+                                                                "title": "P.O. or MAY compel to court by way of Promise to Appear, Recognizance, without an attached undertaking",
+                                                                "reference": "Sec. 503(2) C.C. or with an attached undertaking Sec. 503(2.1) C.C.",
+                                                                "type": "end"
+                                                            }],
+                                                        "no": [
+                                                            {
+                                                                "id": 0,
+                                                                "title": "Is the Arresting P.O. still available?",
+                                                                "type": "Selection",
+                                                                "yes": [
+                                                                    {
+                                                                        "id": 0,
+                                                                        "title": "P.O. compel to court by way of Appearance Notice or summons",
+                                                                        "reference": "Sec. 497 C.C.",
+                                                                        "type": "end"
+                                                                    },
+                                                                    {
+                                                                        "id": 1,
+                                                                        "title": "OIC or any P.O. Compel to court by way of Promise to Appear, Recognizance, or Summons",
+                                                                        "reference": "Sec. 498 C.C.",
+                                                                        "type": "end"
+                                                                    }],
+                                                                "no": [
+                                                                    {
+                                                                        "id": 0,
+                                                                        "title": "P.O. compel to court by way of Appearance Notice or summons",
+                                                                        "reference": "Sec. 497 C.C.",
+                                                                        "type": "end"
+                                                                    },
+                                                                    {
+                                                                        "id": 1,
+                                                                        "title": "OIC or any P.O. Compel to court by way of Promise to Appear, Recognizance, or Summons",
+                                                                        "reference": "Sec. 498 C.C.",
+                                                                        "type": "end"
+                                                                    }]
+
+                                                            }]
+                                                    }],
+                                                "no": [
+                                                    {
+                                                        "id": 0,
+                                                        "title": "Bring Before Justice As Soon As Possible",
+                                                        "reference": "Sec. 503(1) C.C. and/or Sec. 503(1)(c) C.C. / Sec. 503(1)(d) C.C.",
+                                                        "type": "end"
+                                                    }]
+                                            }]
+
+                                    }],
+                                "no": [
+                                    {
+                                        "id": 0,
+                                        "title": "Is it an Indictable Offence Punishable by 5 years or less?",
+                                        "type": "Selection",
+                                        "yes": [
+                                            {
+                                                "id": 0,
+                                                "title": "Are Public Interest and Court Satisfied?",
+                                                "type": "Selection",
+                                                "yes": [
+                                                    {
+                                                        "id": 0,
+                                                        "title": "OIC or any P.O. Compel to court by way of Promise to Appear, Recognizance, or Summons",
+                                                        "reference": "Sec. 498 C.C.",
+                                                        "type": "end"
+                                                    }],
+                                                "no":[
+                                                    {
+                                                        "id": 0,
+                                                        "title": "Bring Before Justice As Soon As Possible",
+                                                        "reference": "Sec. 503(1) C.C. and/or Sec. 503(1)(c) C.C. / Sec. 503(1)(d) C.C.",
+                                                        "type": "end"
+                                                    }]
+                                            }],
+                                        "no":[
+                                            {
+                                                "id": 0,
+                                                "title": "Is it an Offence listed in Sec. 522/469 C.C.?",
+                                                "type": "Selection",
+                                                "yes": [
+                                                    {
+                                                        "id": 0,
+                                                        "title": "Bring Before Superior Court Judge.",
+                                                        "reference": "Sec. 522 C.C.",
+                                                        "type": "end"
+                                                    }],
+                                                "no": [
+                                                    {
+                                                        "id": 0,
+                                                        "title": "Are Public Interest and Court Satisfied?",
+                                                        "type": "Selection",
+                                                        "yes": [
+                                                            {
+                                                                "id": 0,
+                                                                "title": "P.O. or MAY compel to court by way of Promise to Appear, Recognizance, without an attached undertaking",
+                                                                "reference": "Sec. 503(2) C.C. or with an attached undertaking Sec. 503(2.1) C.C.",
+                                                                "type": "end"
+                                                            }],
+                                                        "no":[
+                                                            {
+                                                                "id": 0,
+                                                                "title": "Bring Before Justice As Soon As Possible",
+                                                                "reference": "Sec. 503(1) C.C. and/or Sec. 503(1)(c) C.C. / Sec. 503(1)(d) C.C.",
+                                                                "type": "end"
+                                                            }]
+                                                    }]
+                                            }]
+                                    }]
+
+                            }],
+                        "no": [
+                            {
+                                "id": 0,
+                                "title": "CAN NOT ARREST",
+                                "info": "If evidence supports a charge, compel to court by way of summons.",
+                                "type": "end"
+                            }]
+                    }]
+        }]
+    },
+    "1": {
+        "id": "FA",
+        "name": "Firearms",
+        "explanation": "Use when unsure of rules and regulations of a given firearm",
+        "dateStamp": "",
+        "type": "fireArm",
+        "item": "referanceList",
+        "sections": [{
+                         "id": 0,
+                         "title": "Definitions",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "Firearm (Sec 2 C.C.)",
+                                 "output": "Barrelled weapon from which a shot/bullet/other projectile can be discharged and that is capable of causing serious bodily injury or death to a person.  Includes frame or receiver of such a barrelled weapon and anything that can be adapted for use as a firearm. Certain weapons deemed not to be firearms for the purposes of licensing and registration are listed in s.84(3) C.C.  (i.e. Low velocity air guns)."
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "item",
+                                 "title": "Non Restricted Firearms",
+                                 "output": "Commonly used for hunting or sporting purposes that are not restricted or prohibited "
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "item",
+                                 "title": "Restricted Firearms (Sec 84(1) C.C. and Regulations Part 2)",
+                                 "output": "(a) a handgun that is not a prohibited firearm  \n  (b) a firearm that:  \n  (i) is not a prohibited firearm  \n  (ii) has a barrel less than 470mm in length, and  \n  (iii) is capable of discharging centre-fire ammunition in a semi-automatic manner,  \n  (c) a firearm that is designed or adapted to be fired when reduced to a length of less than 660mm by folding, telescoping or otherwise, or  \n  (d) a firearm of any other kind that is prescribed to be a restricted firearm "
+                             },
+                             {
+                                 "id": 3,
+                                 "type": "item",
+                                 "title": "Prohibited Firearm (Sec 84(1) C.C. and Regulations Part 1):",
+                                 "output": "(a) a handgun that:  \n  (i) has a barrel equal to or less than 105mm in length, or  \n  (ii) is designed or adapted to discharge a 25 or 32 calibre cartridge, but does not include any such handgun that is prescribed, where the handgun is for use in international sporting competitions governed by the rules of International Shooting Union,  \n  (b) a firearm that is adapted from a rifle or shotgun, whether by sawing, cutting or any other alteration, and that, as so adapted  \n  (i) is less than 660mm in length, or  \n  (ii) is 660mm or greater in length and has a barrel less than 457mm in length,  \n  (c) an automatic firearm, whether or not it has been altered to discharge only one projectile with one pressure of the trigger, or  \n  (d) any firearm that is prescribed to be a prohibited firearm; "
+                             },
+                             {
+                                 "id": 4,
+                                 "type": "item",
+                                 "title": "Weapon (Sec 2 C.C.)",
+                                 "output": "Any thing used, designed to be used, or intended for use in causing death or injury to a person, or for the purpose of threatening/intimidating any person.  Includes firearms"
+                             },
+                             {
+                                 "id": 5,
+                                 "type": "item",
+                                 "title": "Cross Bow (Sec 84(1) C.C.) ",
+                                 "output": "Device with a bow and bowstring mounted on a stock that is designed to propel an arrow/bolt/quarrel/similar projectile on a trajectory guided by a barrel or groove and that is capable of causing serious bodily injury or death to a person. "
+                             },
+                             {
+                                 "id": 6,
+                                 "type": "item",
+                                 "title": "Restricted Weapon (Sec 84(1) C.C.) ",
+                                 "output": "Any weapon, other than a firearm, that is prescribed to be a restricted weapon"
+                             },
+                             {
+                                 "id": 7,
+                                 "type": "item",
+                                 "title": "Prohibited Weapon (Sec 84(1) C.C. and Regulations Part 3)",
+                                 "output": "(a) a knife that has a blade that opens automatically by gravity or centrifugal force or by hand pressure applied to a button, spring or other device in or attached to a handle of the knife or  \n  (b) any weapon, other than a firearm, that is prescribed to be a prohibited weapon "
+                             },
+                             {
+                                 "id": 8,
+                                 "type": "item",
+                                 "title": "Prohibited Device (Sec 84(1) C.C. and Regulations Part 4)",
+                                 "output": "(a) any component or part  weapon, or any accessory for use with a weapon, that is prescribed to be a prohibited device  \n  (b) a handgun barrel that is equal to or less than 105mm in length, but does not include any such handgun barrel that is prescribed, where the handgun barrel is for use in international sporting competitions governed by the rules of the International Shooting Union,  \n  (c) a device or contrivance designed or intended to muffle or stop the sound or report of a firearm  \n  (d) a cartridge magazine that is prescribed to be a prohibited device, or  \n  (e) a replica firearm  \n  (f) prescribed components/parts of a weapon or any accessory for use with a weapon "
+                             },
+                             {
+                                 "id": 9,
+                                 "type": "item",
+                                 "title": "Ammunition (Sec 84(1) C.C. and Regulations Part 3)",
+                                 "output": "Cartridge containing projectile designed to be discharged from a firearm. Includes careless cartridges and shot shells."
+                             },
+                             {
+                                 "id": 10,
+                                 "type": "item",
+                                 "title": "Prohibited Ammunition (Sec 84(1) C.C. and Regulations Part 5)",
+                                 "output": "Ammunition or a projectile of any kind, that is prescribed to be prohibited ammunition namely  \n  Cartridge capable of being discharged from a commonly available handgun with a projectile designed/manufactured/altered so as to be capable of penetrating body armour, including KTW, THV and 5.7x28mm P-90 cartridges  \n  Projectile designed/manufactured/altered to ignite or explode on impact, where designed for use in or in conjunction with a cartridge and does not exceed 15mm in diameter  \n  Cartridge capable of being discharged from a shotgun and that contains projectiles known as “flechettes” or any similar projectile "
+                             },
+                             {
+                                 "id": 11,
+                                 "type": "item",
+                                 "title": "Cartridge Magazine (s.84(1) C.C.)",
+                                 "output": "A device or container from which ammunition may be fed into the firing chamber of a firearm.  Some may be considered “prohibited devices (See Regulations Part 4)"
+                             },
+                             {
+                                 "id": 12,
+                                 "type": "item",
+                                 "title": "Replica Firearm (Sec 84(1) C.C.)",
+                                 "output": "Device designed or intended to exactly resemble, or resemble with near precision, a firearm, and that its not itself a firearm.  Does not include a device designed/intended to exactly resemble, or resemble with near precision, an antique firearm. "
+                             },
+                             {
+                                 "id": 13,
+                                 "type": "item",
+                                 "title": "Imitation Firearm (Sec 84(1) C.C.) ",
+                                 "output": "Anything that imitates a firearm.  Includes Replica Firearms."
+                             },
+                             {
+                                 "id": 14,
+                                 "type": "item",
+                                 "title": "Handgun (Sec 84(1) C.C.)",
+                                 "output": "Firearm designed, altered, or intended to be aimed and fired by the action of one hand, whether or not it has been redesigned or subsequently altered to be aimed and fired by the action of both hands."
+                             },
+                             {
+                                 "id": 15,
+                                 "type": "item",
+                                 "title": "Antique Firearm (s.84(1) C.C. And Regulations Prescribing Antique Firearms)",
+                                 "output": "Any firearm manufactured before 1898 that was not designed and has not been redesigned to discharge rim-fire or centre-fire ammunition  \n  Reproduction of a flintlock/wheel-lock/matchlock firearm, other than a handgun, manufactured after 1897  \n  Pre-1898 rifle, shotgun, or handgun capable of discharging only rim-fire cartridges, other than 22 Calibre Short, 22 Calibre Long, or 22 Calibre Long Rifle cartridges  \n  Pre-1898 rifle capable of discharging centre-fire cartridges, having a bore diameter (smooth or rifled) of 8.3mm or more, except for a repeating firearm fed by any type of cartridge magazine  \n  Pre-1898 shotgun capable of discharging centre-fire cartridges, other than 10,12, 16,20, 28 or 410 gauge cartridges   \n  Pre-1898 handgun capable of discharging centre-fire cartridges, other than a handgun designed or altered to discharge 32 Short Colt, 32 Long Colt, 32 Smith and Wesson, 32 Smith and Wesson Long, 32-20 Winchester, 38 Smith and Wesson, 38 Short Colt, 38 Long Colt, 38-40 Winchester, 44-40 Winchester, or 45 Colt cartridges  "
+                             }
+                         ]
+                     },
+                     {
+                         "id": 1,
+                         "title": "Licenses and Authorizations",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "section",
+                                 "title": "Licences",
+                                 "output": "(Everyone in possession of a firearm must be the holder of a valid license)",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "Firearms Acquisition Certificate (FAC) ",
+                                         "output": "Allows adults to possess, acquire, and borrow firearms"
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "Possession & Acquisition License (PAL) ",
+                                         "output": "Allows adults to possess, acquire, and borrow specified classes of firearms"
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "Possession Only Licence (POL) ",
+                                         "output": "Allows adults to possess and borrow firearms of the same class"
+                                     },
+                                     {
+                                         "id": 3,
+                                         "type": "item",
+                                         "title": "Minor's Licence",
+                                         "output": "Allows minors to possess non-restricted firearms while in Canada for a specified 60 day period"
+                                     },
+                                     {
+                                         "id": 4,
+                                         "type": "item",
+                                         "title": "Confirmed Customs Declaration",
+                                         "output": "Allows adult non-residents to possess the listed firearms in Canada for a specified 60 day period"
+                                     }]
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "section",
+                                 "title": "Authorizations",
+                                 "output": "",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "Authorization to Transport ",
+                                         "output": "Are required when individuals transport restricted or prohibited firearms "
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "Authorizations to Carry",
+                                         "output": "Are issued to individuals who need to possess restricted firearms or s12(6) prohibited handguns on their person for their lawful profession or occupation or, in rare cases for the protection of life"
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "One might also come across Authorizations to Import and Authorizations to Export issued by the Department of Foreign Affairs and International trade."
+                                     }]
+                             }]
+                     },
+                     {
+                         "id": 2,
+                         "title": "Storage, Display, Transportation and Handling Requirements",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "Non Restricted Firearms",
+                                 "output": "",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "Storage ",
+                                         "output": "Firearms must be unloaded  \n  Store firearm in a:  \n  Securely locked cabinet/vault/safe, or  \n  Securely locked location, or  \n  Location accessible only to the owner/employee of the business "
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "Display ",
+                                         "output": "Firearms must be unloaded  \n  Make firearm inoperable with a secure locking device, such as a trigger lock: AND Lock firearm in a display case/cabinet or at a location only accessible to the owner/employee  \n  OR  \n  Securely attach all firearms with a chain/metal cable passed through trigger guard or metal bar with both ends attached by a lock to a wall/permanent fixture so that only an owner/employee can detach "
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "Transportation (non-restricted & Restricted firearm and 12(6) handguns):",
+                                         "output": "Firearm must be unloaded  \n  Lock firearm in a sturdy, opaque container that cannot easily be broken open/into, or accidentally opened during transportation  \n  Opaque container cannot be marked in a way that indicates it's contents – unless the only marking is a name or address OR contents are being imported into/exported from Canada "
+                                     },
+                                     {
+                                         "id": 3,
+                                         "type": "item",
+                                         "title": "Transportation  (Prohibited Firearms and Prohibited Weapons/Devices/Ammunition)",
+                                         "output": "1. Items#1 and #2 set out in transportation of Non-restricted & restricted firearms and 12(6) handguns are required in addition to #2 below.  \n  2. Opaque container must be sealed unless item is prohibited firearm converted to fire only blank cartridges being transported by a licensed business from it’s premises to a location for use in a motion picture/video/television/theatrical production (or between production locations); AND remove bolt or bolt carrier from and automatic firearm (if removable); AND If being transported by carrier, employee with shipment must be able to communicate by radio/cellular phone/other communication device.  Business must maintain meticulous records on contents of shipment, employees involved, route taken, and temporary storage facilities en route; AND If being transported by business licensed to supply these items for use in a motion picture/video/television/theatrical production, business must report to CFO the location of item after it is moved from one municipality to another (for firearms) or from one province to another (for prohibited weapons/devices/ammunition).  \n  - Business premises must be equipped with an electronic burglar alarm system AND every exterior door/window must be able to be securely locked.  \n  - Storage of firearms for customers - these must be stored apart from other firearms AND in a location where they cannot be seen by other customers  \n  Storage of prohibited weapons/devices/ammunition/restricted weapons & their components/parts in a securely locked vault/safe/room built or adapted for their storage  \n  - Storage and display by a business - CFO can approve alternate storage and display methods to what is listed here, Firearms displayed by a business can be handled by a person under the direct and immediate supervision of an owner/employee.  \n  Display by a museum - Firearms must always be unloaded. CFO can approve alternate display methods to what is listed here. "
+                                     }]
+                             }]
+                     },
+                     {
+                         "id": 3,
+                         "title": "Public Agents firearms Regulations",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "",
+                                 "output": "Agency firearms, prohibited weapons/devices/ammunition, and restricted weapons in the possession of public service agency or a public agent must be in a securely locked container/vault/safe/room that cannot easily be broken open/into when not in use by a public agent."
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "item",
+                                 "title": "",
+                                 "output": "If stored at home, agency firearm must be stored under requirements for individuals unless another method has been authorized in writing by a person in authority designated by the public service agency"
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "item",
+                                 "title": "",
+                                 "output": "If ready access to agency firearm to carry out duties is required, a person in authority designated by the public service agency can provide written instructions to store in another reasonably safe manner."
+                             }]
+                     },
+                     {
+                         "id": 4,
+                         "title": "Investigation",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "First response",
+                                 "output": "",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "First Response",
+                                         "output": "CFRO – Canadian Firearms Registry On-Line  \n  CFRS – Canadian Firearms Registration System  \n  CPIC – Canadian Police Information Centre  \n  CRPQ – Centre de Renseignements Policiers du Quebec  \n  RWRO – Restricted Weapons Registry On-Line  \n  RWRS – Restricted Weapons Registration System"
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "Conduct CFRO queries on:",
+                                         "output": "Person's full name  \n  Address  \n  Telephone  \n  Business"
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "Conduct CPIC queries on subject",
+                                         "output": ""
+                                     },
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "As CFRO queries record in the Canadian Firearms Registration System (CFRS) and/or Restricted Weapons Registration Systems (RWRS).  Results should bring forth a License number.  A second query should then be conducted on the "
+                                     }]
+                             }]
+                     },
+                     {
+                         "id": 5,
+                         "title": "Search and Seizure",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "sections",
+                                 "title": "Search for public safety Reasons",
+                                 "output": "",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Police must have reasonable grounds to believe that it is not desirable in the interests of safety of the person, or any person, for the person to possess any weapon, prohibited device, ammunition, prohibited ammunition, or explosive substance (s. 117.04(1) C.C.)"
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "If these grounds exist",
+                                         "output": "police may apply to a justice for a warrant to search for and seize  \n  Any weapon or other regulated item, and  \n  Documents relating to these items (e.g. Licences)"
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "There are provisions for search and seizure without a warrant where there is a possible danger to the safety of persons",
+                                         "output": "– a judicial return is required (s. 117.04(2) C.C.)"
+                                     },
+                                     {
+                                         "id": 3,
+                                         "type": "item",
+                                         "title": "See related authority in s.529.3C.C.",
+                                         "output": "- entry into a dwelling-house without a warrant to arrest/apprehend"
+                                     }]
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "sections",
+                                 "title": "Search for Evidence of an Offence",
+                                 "output": "",
+                                 "section": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Police may apply for a warrant if they have reasonable grounds to believe that any thing related to an offence or planned offence is in a building, in a receptacle or other place (s.487(1) C.C.)"
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Police may conduct a search of a place other than a dwelling-house without a warrant if there are exigent circumstances (s.117.02 C.C.) "
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Note: The inspection powers held by police to enforce the previous legislation are no longer available for use unless the police officer is designated in writing as a Firearms Officer or Inspector."
+                                     }]
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "section",
+                                 "title": "Seizure",
+                                 "output": "",
+                                 "section": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "A firearm or other regulated item may be seized if the person in possession of the item fails to show documentation authorizing the possession of the item upon request (s.117.03(1) C.C.) unless the individual's possession in the circumstances is authorized by Part III of the Criminal Code of Canada (exception persons including ss.98,117.07 to 117.1 C.C.) "
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Note s.117.03(1) C.C. Does not authorize a search of any kind  \n  Return within 14 days (s.117.03(2) C.C.)  \n  Disposition (s.117.03(3)C.C) "
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "Seizure as evidence of an offence is under standard Criminal Code rules.  Forfeiture, return to lawful owner, disposition (s. 491 C.C.)"
+                                     }]
+                             }]
+                     },
+                     {
+                         "id": 6,
+                         "title": "Criminal Code Offences to Consider",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "s. 85",
+                                 "output": "Using firearm or imitation in the commission of an offence"
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "item",
+                                 "title": "s. 86(1)",
+                                 "output": "Careless use, storage, handling, and transport of firearm"
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "item",
+                                 "title": "s. 86(2)",
+                                 "output": "Contravention of storage, etc.... regulations"
+                             },
+                             {
+                                 "id": 3,
+                                 "type": "item",
+                                 "title": "s. 87",
+                                 "output": "Pointing a firearm"
+                             },
+                             {
+                                 "id": 4,
+                                 "type": "item",
+                                 "title": "s. 88",
+                                 "output": "Possession of a weapon for a dangerous purpose"
+                             },
+                             {
+                                 "id": 5,
+                                 "type": "item",
+                                 "title": "s. 89",
+                                 "output": "carrying a weapon while attending public meeting"
+                             },
+                             {
+                                 "id": 6,
+                                 "type": "item",
+                                 "title": "s. 90",
+                                 "output": "carrying concealed weapon"
+                             },
+                             {
+                                 "id": 7,
+                                 "type": "item",
+                                 "title": "s. 91",
+                                 "output": "Unauthorized possession of firearm (e.g. No licence)"
+                             },
+                             {
+                                 "id": 8,
+                                 "type": "item",
+                                 "title": "s. 92",
+                                 "output": "Possession of firearm knowing it is unauthorized"
+                             },
+                             {
+                                 "id": 9,
+                                 "type": "item",
+                                 "title": "s. 93",
+                                 "output": "Possession at unauthorized place"
+                             },
+                             {
+                                 "id": 10,
+                                 "type": "item",
+                                 "title": "s. 94",
+                                 "output": "Unauthorized possession in a motor vehicle"
+                             },
+                             {
+                                 "id": 11,
+                                 "type": "item",
+                                 "title": "s. 95",
+                                 "output": "Possession of prohibited/restricted firearm with ammunition"
+                             },
+                             {
+                                 "id": 12,
+                                 "type": "item",
+                                 "title": "s. 96",
+                                 "output": "Possession of weapon obtained by commission of offence"
+                             },
+                             {
+                                 "id": 13,
+                                 "type": "item",
+                                 "title": "s. 99",
+                                 "output": "Weapons trafficking"
+                             },
+                             {
+                                 "id": 14,
+                                 "type": "item",
+                                 "title": "s. 100",
+                                 "output": "Possession for the purpose of weapons trafficking"
+                             },
+                             {
+                                 "id": 15,
+                                 "type": "item",
+                                 "title": "s. 101",
+                                 "output": "Possession for the purpose of weapons trafficking"
+                             },
+                             {
+                                 "id": 16,
+                                 "type": "item",
+                                 "title": "s. 102",
+                                 "output": "Making automatic firearm "
+                             },
+                             {
+                                 "id": 17,
+                                 "type": "item",
+                                 "title": "s. 103",
+                                 "output": "Importing or exporting knowing it is unauthorized"
+                             },
+                             {
+                                 "id": 18,
+                                 "type": "item",
+                                 "title": "s. 104",
+                                 "output": "Unauthorized importing or exporting"
+                             },
+                             {
+                                 "id": 19,
+                                 "type": "item",
+                                 "title": "s. 105",
+                                 "output": "Failing to report lost/stolen/found weapon"
+                             },
+                             {
+                                 "id": 20,
+                                 "type": "item",
+                                 "title": "s. 106",
+                                 "output": "failing to report the destruction of weapons"
+                             },
+                             {
+                                 "id": 21,
+                                 "type": "item",
+                                 "title": "s. 107 ",
+                                 "output": "False statement on loss/theft/destruction of weapons"
+                             },
+                             {
+                                 "id": 22,
+                                 "type": "item",
+                                 "title": "s. 108",
+                                 "output": "Tampering with serial number"
+                             },
+                             {
+                                 "id": 23,
+                                 "type": "item",
+                                 "title": "s. 117.01(1)",
+                                 "output": "Possession of weapons contrary to prohibition order"
+                             },
+                             {
+                                 "id": 24,
+                                 "type": "item",
+                                 "title": "s. 117.01(2)",
+                                 "output": "Failure to surrender documents once prohibited"
+                             },
+                             {
+                                 "id": 25,
+                                 "type": "item",
+                                 "title": "s. 244.1",
+                                 "output": "Causing bodily harm with an air gun or pistol"
+                             },
+                             {
+                                 "id": 26,
+                                 "type": "item",
+                                 "title": "s. 267",
+                                 "output": "Assault with a weapon or causing bodily harm"
+                             },
+                             {
+                                 "id": 27,
+                                 "type": "item",
+                                 "title": "Note",
+                                 "output": "that exceptions exist for ss.91,92,93,94,95,96,108,&117.01 – see actual provisions"
+                             }
+
+                         ]
+                     },
+                     {
+                         "id": 7,
+                         "title": "Firearms Act offences to Consider",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "item",
+                                 "title": "s. 106",
+                                 "output": "Making false statement to obtain documents (e.g.licence)"
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "item",
+                                 "title": "s. 107",
+                                 "output": "Tampering with documents (e.g. Licence)"
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "item",
+                                 "title": "s. 108",
+                                 "output": "Unauthorized possession of ammunition by business"
+                             },
+                             {
+                                 "id": 3,
+                                 "type": "item",
+                                 "title": "s. 109",
+                                 "output": "Contravention of various Firearms Act Regulations"
+                             },
+                             {
+                                 "id": 4,
+                                 "type": "item",
+                                 "title": "s. 110",
+                                 "output": "Contravention of conditions of documents (e.g. Licence)"
+                             },
+                             {
+                                 "id": 5,
+                                 "type": "item",
+                                 "title": "s. 111",
+                                 "output": "Failing to assist inspector"
+                             },
+                             {
+                                 "id": 6,
+                                 "type": "item",
+                                 "title": "s. 112",
+                                 "output": "Possession of non-restricted firearm without registration certificate"
+                             },
+                             {
+                                 "id": 7,
+                                 "type": "item",
+                                 "title": "s. 113",
+                                 "output": "Failure to produce firearm on demand"
+                             },
+                             {
+                                 "id": 8,
+                                 "type": "item",
+                                 "title": "s. 114",
+                                 "output": "Failure to surrender revoked document (e.g. Licence)"
+                             },
+                             {
+                                 "id": 9,
+                                 "type": "item",
+                                 "title": "Note:",
+                                 "output": "“Proceeds of crime” provisions can apply to firearms.  Please see s.462.3 C.C. For details."
+                             }
+                         ]
+
+                     },
+                     {
+                         "id": 8,
+                         "title": "Prohibition Orders",
+                         "type": "section",
+                         "state": false,
+                         "items": [
+                             {
+                                 "id": 0,
+                                 "type": "section",
+                                 "title": "Types",
+                                 "output": "",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "Mandatory ",
+                                         "output": "s.109 C.C."
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "Discretionary",
+                                         "output": "s. 110 C.C."
+                                     },
+                                     {
+                                         "id": 2,
+                                         "type": "item",
+                                         "title": "Preventative",
+                                         "output": "s. 111 & s. 117.05 C.C."
+                                     }]
+                             },
+                             {
+                                 "id": 1,
+                                 "type": "item",
+                                 "title": "",
+                                 "output": "Orders can be partially lifted for sustenance and employment reasons by a competent authority s.113 C.C"
+                             },
+                             {
+                                 "id": 2,
+                                 "type": "item",
+                                 "title": "",
+                                 "output": "The court must consider imposing prohibition orders as part of probation orders and conditional sentences (s.731.1 and 742.2 C.C.)"
+                             },
+                             {
+                                 "id": 3,
+                                 "type": "item",
+                                 "title": "Note:",
+                                 "output": "Hearing rules of evidence apply to both prohibition and limitation order applications – may proceed ex part.  S. 114 to 117 C.C. For conditions on surrender and amendment of documents, forfeiture of firearms, and return of firearms to a lawful owner – conditions may be attached to all prohibition orders"
+                             },
+                             {
+                                 "id": 4,
+                                 "type": "item",
+                                 "title": "Preventative Prohibition Orders",
+                                 "output": "Are those where the individual has not committed an offence that would allow or require prohibition order.  Violence, threats of violence, or a history of violence (s.5 Firearms Act) allows police to apply for preventive prohibition orders in two situations",
+                                 "sections": [
+                                     {
+                                         "id": 0,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "You have reasonable grounds to believe it is not in the interests of public safety for someone to possess weapons. You can apply to a provincial court judge for an order prohibiting that person from possessing weapons for up to five years (s.111 C.C.)"
+                                     },
+                                     {
+                                         "id": 1,
+                                         "type": "item",
+                                         "title": "",
+                                         "output": "If you have seized a firearm or other item under 117.04(1) or 117.04(2) C.C., you can apply for a preventive prohibition order at the post-seizure disposition hearing (s.117.05 C.C.)"
+                                     }]
+                             },
+                             {
+                                 "id": 5,
+                                 "type": "item",
+                                 "title": "Limitations on access Orders",
+                                 "output": "If you have reasonable grounds to believe that a person prohibited from possessing weapons might have access to someone else's weapons, a judge may impose terms and conditions on the cohabitant's/associate's use and possession of weapons (s.117.011 C.C.)  \n  Which might simply require the cohabitant/associate to store the weapons more securely, or store them elsewhere"
+                             }]
+
+                     }]
+    }
+}

@@ -80,8 +80,6 @@ angular.module("app").run(["$templateCache", function($templateCache) {
                        "\n"+
                        "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"about()\">About</button>\r" +
                        "\n" +
-                       "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"test()\">Test</button>\r" +
-                       "\n" +
                        " </div>\r" +
                        "\n"
                       );
@@ -373,7 +371,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
                        "\n" +
                        "    <div class=\"list-group\">\r" +
                        "\n" +
-                       "        <ul class=\"list-group-item list-no-bullet\" ng-repeat=\"savedChecklist in $storage.savedChecklist\">\r" +
+                       "        <ul class=\"list-group-item list-no-bullet\" ng-repeat=\"savedChecklist in $storage.savedChecklist | orderBy:'index' : reverse\">\r" +
                        "\n" +
                        "            <li  ng-click=\"edit($index)\">{{savedChecklist.title}} - {{savedChecklist.dateStamp | date: 'dd-MMM-yyyy'}}</li>\r" +
                        "\n" +

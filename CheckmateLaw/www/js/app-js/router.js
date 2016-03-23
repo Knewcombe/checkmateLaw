@@ -34,7 +34,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 
     $routeProvider.when('/report/image', {
         templateUrl: 'reportImage.html',
-        controller: 'ReportQuestionController'
+        controller: 'ImageController'
     });
 
     $routeProvider.when('/about', {
@@ -44,7 +44,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     
     $routeProvider.when('/sections', {
        templateUrl: 'sections.html',
-       controller: 'ReportQuestionController'
+       controller: 'ReportSectionController'
     });
     
     $routeProvider.when('/newReport',{
@@ -59,39 +59,35 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     
     $routeProvider.when('/addQuestions',{
         templateUrl: 'additionalQuestions.html',
-        controller: 'ReportQuestionController'
+        controller: 'ReportAddQuestionController'
     });
     $routeProvider.when('/guidelines', {
         templateUrl: 'guidelines.html',
-        controller: 'guidelinesController'
+        controller: 'GuidelinesController'
     });
     
     $routeProvider.when('/questionnaire', {
         templateUrl: 'questionnaire.html',
-        controller: 'questionnaireController'
+        controller: 'QuestionnaireController'
     });
     
     $routeProvider.when('/referanceList',{
         templateUrl: 'referanceList.html',
-        controller: 'referanceListController'
+        controller: 'ReferanceListController'
     });
     
     $routeProvider.when('/referanceListItems',{
         templateUrl: 'referanceListItems.html',
-        controller: 'referanceListControllerItems'
+        controller: 'ReferenceListControllerItems'
     });
     
     $routeProvider.when('/referanceListAddItems',{
         templateUrl: 'referanceListAddItems.html',
-        controller: 'referanceListControllerAddItems'
+        controller: 'ReferenceListControllerAddItems'
     });
-    $routeProvider.when('/report/email',{
-        templateUrl: 'email.html',
-        controller: 'emailController'
-    });
-    $routeProvider.when('/note',{
+    $routeProvider.when('/report/note',{
         templateUrl: 'note.html',
-        controller: 'noteController'
+        controller: 'NoteController'
     });
     
 

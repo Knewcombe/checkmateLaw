@@ -11,408 +11,11 @@
  *
  */
 
-angular.module('app').controller('ReportQuestionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval) {
-
-
-	//Using currentPath for Header to show the title of the report, this will change
-	//Reprot name will be removed from the header.
-	$scope.currentPath = $location.path();
-	$localStorage.saveIndex = [];
-	$scope.$storage = $localStorage;
-	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
-	$rootScope.isHomepage = false;
-	$rootScope.isResizeDiv = true;
-	$scope.selectedSection = $sessionStorage.sectionIndex;
-	$scope.selectedQuestion = $sessionStorage.questionIndex;
-	$('.loading').show();
-	$('.content').hide();
-
-	console.log("This is a test for the console plugin, just to see what is hapening");
-
-	function gotFS(fileSystem){
-		$scope.tryThis = fileSystem.root.toURL();
-	}
-
-	function fail(){
-		alert("Derp");
-	}
-
-	//Used for header title.
-	$scope.headerTitle = {
-		text: '',
-		word: /^\s*\w*\s*$/
-
-	};
-
-	$scope.dateAndTime = function(id){
-		var date = new Date();
-		var dateAndTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id].inputs[0];
-		$scope.currentQuestion.dateChange = dateAndTime;
-		$scope.$apply();
-	}
-	//To insure everything looks right on load.
-	$scope.init = function () {
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-		setTimeout(function () {    
-			$('.section').show();
-			$('.additionalOutput').hide();
-			$('.topDiv').show();
-			$('.sectionOption').hide();
-			$('.titleTop').show();
-			if ($scope.currentPath === '/sections') {
-
-				for (var i = 0; $scope.viewReport.sections.length - 1 >= i; i++) {
-					if ($scope.viewReport.sections[i].type === 'selectionSection') {
-						if($scope.viewReport.sections[i].selected.length >= 1){
-							$('.' + $scope.viewReport.sections[i].options[$scope.viewReport.sections[i].selected].title).show();
-						}
-					}
-				}
-			}
-			setTimeout(function () {
-				$('.loading').hide();
-				$('.content').show();
-			}, 1000);
-		}, 100);
-	};
-
-	$scope.nan = function (state, type, id) {
-		if(type === 'question'){
-			$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id];
-			$scope.previousSection = $scope.viewReport.sections[$scope.selectedSection];
-		}else{
-			if(type === 'additionalQuestion'){
-				$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id];
-				$scope.previousSection = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion];
-			}
-		}
-		if(state !== true){
-			if(state === null){
-				$scope.currentQuestion.state = false;
-				$scope.previousSection.count--;
-			}else{
-				$scope.currentQuestion.state = null;
-				$scope.previousSection.count++;
-			}
-		}else{
-			if(state === true){
-				$scope.currentQuestion.state = null;
-			}
-		}
-	};
-
-
-	//When users select checkmark it will add count and toggle boolean values.
-	$scope.count = function (state, type, id) {
-		if (type === 'question') {
-			if (state !== true) {
-				if(state === false){
-					$scope.viewReport.sections[$scope.selectedSection].questions[id].state = true;
-					$scope.viewReport.sections[$scope.selectedSection].count++;
-				}else{
-					if(state === null){
-						$scope.viewReport.sections[$scope.selectedSection].questions[id].state = true;
-					}
-				}
-			}
-			if (state === true) {
-				$scope.viewReport.sections[$scope.selectedSection].questions[id].state = false;
-				$scope.viewReport.sections[$scope.selectedSection].count--;
-			}
-			if ($scope.viewReport.sections[$scope.selectedSection].count === $scope.viewReport.sections[$scope.selectedSection].amount) {
-				if ($scope.viewReport.sections[$scope.selectedSection].state !== true) {
-					$scope.viewReport.sections[$scope.selectedSection].state = true;
-				}
-
-			} else {
-				if ($scope.viewReport.sections[$scope.selectedSection].state === true) {
-					$scope.viewReport.sections[$scope.selectedSection].state = false;
-				}
-			}
-		}
-		if (type === 'additionalQuestion') {
-			if (state !== true) {
-				if(state === false){
-					$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id].state = true;
-					$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count++;
-				}else{
-					if(state === null){
-						$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id].state = true;
-					}
-				}
-			}
-			if (state === true) {
-				$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id].state = false;
-				$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count--;
-			}
-			if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count ===                                   $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].amount) {
-				if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state !== true) {
-					$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state = true;
-					$scope.viewReport.sections[$scope.selectedSection].count++;
-					if ($scope.viewReport.sections[$scope.selectedSection].count === $scope.viewReport.sections[$scope.selectedSection].amount) {
-						if ($scope.viewReport.sections[$scope.selectedSection].state !== true) {
-							$scope.viewReport.sections[$scope.selectedSection].state = true;
-						}
-					} else {
-						if ($scope.viewReport.sections[$scope.selectedSection].state === true) {
-							$scope.viewReport.sections[$scope.selectedSection].state = false;
-						}
-					}
-				}
-			} else {
-				if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state === true) {
-					$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state = false;
-					$scope.viewReport.sections[$scope.selectedSection].count--;
-				}
-				if ($scope.viewReport.sections[$scope.selectedSection].count === $scope.viewReport.sections[$scope.selectedSection].amount) {
-					if ($scope.viewReport.sections[$scope.selectedSection].state !== true) {
-						$scope.viewReport.sections[$scope.selectedSection].state = true;
-					}
-				} else {
-					if ($scope.viewReport.sections[$scope.selectedSection].state === true) {
-						$scope.viewReport.sections[$scope.selectedSection].state = false;
-					}
-				}
-			}
-		};
-	};
-	//Funtion to change the pages within the report menu.
-	$scope.changeMenus = function (type, index) {
-		if (type === 'section' || type === 'sectionOption') {
-			$sessionStorage.sectionIndex = index;
-			$location.path('/questions');
-		}
-		if (type === 'multiQuestion') {
-			$sessionStorage.questionIndex = index;
-			$location.path('/addQuestions');
-		}
-	};
-
-	$scope.note = function(index, type){
-		if(type === 'question'){
-			$sessionStorage.questionIndex  = index;
-			$location.path('/note');
-		}
-		if(type === 'additionalQuestion'){
-			$sessionStorage.addQuestionIndex = index;
-			$location.path('/note');
-		}
-	}
-
-	//This is for selection sections and questions.
-	$scope.showHideInfo = function (type, id, option) {
-		if (type === 'selectionSection') {
-			$('.sectionOption').hide();
-			$('.' + $scope.viewReport.sections[id].options[option].title).show();
-			$scope.selectOption = option;
-			$scope.viewReport.sections[id].selected = option;
-
-		} else {
-			if (type === 'question') {
-				$scope.questionselected = id;
-
-				if ($('.additionalOutput').is(':visible')) {
-					if ($('.additionalOutput' + id).is(':visible')) {
-						$('.additionalOutput' + id).hide();
-					} else {
-						$('.additionalOutput').hide();
-						$('.additionalOutput' + id).show();
-					}
-				} else {
-					$('.additionalOutput' + id).show();
-				}
-			} else {
-				if (type === 'additionalQuestion') {
-					if ($('.additionalOutput').is(':visible')) {
-						if ($('.additionalOutput' + id).is(':visible')) {
-							$('.additionalOutput' + id).hide();
-						} else {
-							$('.additionalOutput').hide();
-							$('.additionalOutput' + id).show();
-						}
-					} else {
-						$('.additionalOutput' + id).show();
-					}
-				}
-			}
-		}
-	};
-
-	//Camera stuff below
-
-	$scope.takePic = function (type, inputId) {
-		if(type === 'question'){
-			$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[inputId].inputs[0];
-		}else{
-			if(type === 'additionalQuestion'){
-				$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId].inputs[0];
-			}
-		}
-
-		var options = {
-			quality: 100,
-			destinationType: Camera.DestinationType.FILE_URI,
-			sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-			encodingType: 0, // 0=JPG 1=PNG
-			correctOrientation: 1,
-			saveToPhotoAlbum: 1
-		};
-		navigator.camera.getPicture(onSuccess, onFail, options);
-	};
-
-	var onSuccess = function (FILE_URI) {
-		movePic(FILE_URI);
-	};
-	var onFail = function (e) {
-		alert('Error taking picture');
-	};
-
-	function movePic(file) {
-		window.resolveLocalFileSystemURI(file, resolveOnSuccessImage, resOnError);
-	}
-
-	//Callback function when the file system uri has been resolved
-	function resolveOnSuccessImage(entry) {
-		var d = new Date();
-		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes();//This is where to get the formate for the time.
-		//new file name
-		var newFileName = $scope.viewReport.title + "-" + n + ".jpg";
-		var myFolderApp = "Images";
-
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
-			//The folder is created if doesn't exis
-			var root  = fileSys.root;
-			$scope.tryThis = root.toURL();
-			fileSys.root.getDirectory(myFolderApp,
-									  {create: true, exclusive: false},
-									  function (directory) {
-				entry.moveTo(directory, newFileName, successMoveImage, resOnError);
-			},
-									  resOnError);
-		},
-								 resOnError);
-	}
-
-	//Callback function when the file has been moved successfully - inserting the complete path
-	function successMoveImage(entry) {
-		//I do my insert with "entry.fullPath" as for the path
-		var path = entry.fullPath;
-		$scope.currentQuestion.photos.push(path);
-		$scope.$apply();
-	}
-
-	function resOnError(error) {
-		alert(error.code);
-	}
-
-	$scope.deleteImage = function (type, questionId, index) {
-		if(type === 'question'){
-			$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[questionId].inputs[0];
-		}else{
-			if(type === 'additionalQuestion'){
-				$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId].inputs[0];
-			}
-		}
-		$scope.currentQuestion.photos.splice(index, 1);
-	};
-
-	$scope.editImage = function (rootUrl, imageUrl) {
-		$localStorage.tempImage = rootUrl + imageUrl;
-		$sessionStorage.imagePath = $scope.currentPath;
-		$location.path('/report/image');
-	};
-
-	//MEMO SECTION
-	$scope.startRecording = function (type, questionId) {
-
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
-			fileSys.root.getDirectory('media', {create: true});
-		})
-		var date = new Date();
-		var src = 'documents://media/'+$scope.viewReport.title + "-" + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+date.getMinutes() + ".wav";
-		$scope.myMedia = new Media(src);
-		// Record audio
-		$scope.myMedia.startRecord();
-		$scope.timer = 0;
-		$scope.promise = $interval(function () {
-			$scope.timer = $scope.timer + 1;
-		}, 1000);
-	};
-
-	$scope.stopRecording = function (type, questionId) {
-		if(type === 'question'){
-			$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[questionId].inputs[0];
-		}else{
-			if(type === 'additionalQuestion'){
-				$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId].inputs[0];
-			}
-		}
-
-		$interval.cancel($scope.promise);
-		$scope.timer = 0;
-		$scope.myMedia.stopRecord();
-		$scope.currentQuestion.recording.push($scope.myMedia.src);
-		clearInterval($scope.recInterval);
-		$scope.$apply();
-	};
-
-	var mediaTimer = null;
-	$scope.playRecording = function (memo) {
-		$scope.currentMemo = memo;
-		$scope.newMediaObject = new Media(memo);
-		$scope.newMediaObject.play();
-		if (mediaTimer === null) {
-
-			mediaTimer = setInterval(function () {
-				$scope.duration = $scope.newMediaObject.getDuration();
-				// get my_media position
-				$scope.newMediaObject.getCurrentPosition(
-					// success callback
-					function (position) {
-						if (position > -1 && position <= $scope.duration) {
-							$scope.currentPosition = Math.round(position);
-							$scope.roundedDuration = Math.round($scope.duration);
-							$scope.$apply();
-						} else {
-							$scope.currentPosition = 0;
-							$scope.roudedDuration = 0;
-						}
-					},
-					// error callback
-					function (e) {
-						alert("Error playing memo");
-					}
-				);
-			}, 1000);
-		}
-	};
-	$scope.getTime = function (tracker) {
-		var minutes = Math.floor((tracker / 60)).toFixed(0);
-		var seconds = (tracker % 60);
-		if (minutes <= 9) {
-			minutes = "0" + minutes;
-		}
-		if (seconds <= 9) {
-			seconds = "0" + seconds;
-		}
-		return (minutes + ":" + seconds);
-	};
-
-	$scope.stopPlayRecording = function () {
-		$scope.newMediaObject.stop();
-		$interval.cancel($scope.playPromise);
-	};
-
-	$scope.deleteRecording = function (question, index) {
-		question.inputs[0].recording.splice(index, 1);
-		alert("Deleted");
-	};
-})
 //Controler for when creating a new report.
-	.controller('ReportNewController', function ($scope, dataContext, JsonTemplateService, $localStorage, $location, $interval, $rootScope) {
+angular.module('app').controller('ReportNewController', function ($scope, dataContext, JsonTemplateService, $localStorage, $location, $interval, $rootScope) {
 	$scope.templates = dataContext.templates.getAll();
 	$scope.currentPath = $location.path();
+	$scope.$storage = $localStorage;
 	$scope.contentLoaded = false;
 	$scope.loadDropdown = true;
 	$rootScope.isHomepage = false;
@@ -426,7 +29,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$scope.selectTemplate = function (selection) {
 		$scope.selection = selection;
 		$scope.tempReport = $scope.selection;
-		console.log($scope.tempReport);
+		console.log(selection);
 	};
 	$scope.next = function (tempReport) {
 		if (typeof $localStorage.savedChecklist === 'undefined') {
@@ -434,13 +37,13 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		}
 		var date = new Date();
 		tempReport.dateStamp = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
-		$localStorage.savedChecklist.push(tempReport);
+		$localStorage.savedChecklist.unshift(tempReport);
 		if ($localStorage.savedChecklist.length >= 1) {
-			$scope.$storage.savedIndex = $localStorage.savedChecklist.length - 1;
+			$scope.$storage.savedIndex = 0;
 		} else {
-			$scope.$storage.savedIndex = $localStorage.savedChecklist.length;
+			$scope.$storage.savedIndex = 0;
 		}
-
+		console.log($scope.$storage.savedIndex);
 		$location.path('/sections');
 	};
 
@@ -461,15 +64,31 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$rootScope.isResizeDiv = true;
 
 	$scope.backButton = function () {
-
+		$scope.currentPath = $location.path();
 		if ($scope.currentPath === '/questions') {
 			$location.path('/sections');
+			$scope.scrollPos[$scope.currentPath] = 0;
 		}
 		if ($scope.currentPath === '/addQuestions') {
 			$location.path('/questions');
 		}
 		if($scope.currentPath === '/report/image'){
 			$location.path($sessionStorage.imagePath);
+		}
+		if($scope.currentPath === '/report/note'){
+			$location.path($sessionStorage.notePath);
+		}
+		if($scope.currentPath === '/referanceList'){
+			$location.path('/guidelines');
+		}
+		if($scope.currentPath === '/referanceListItems'){
+			$location.path('/referanceList');
+		}
+		if($scope.currentPath === '/referanceListAddItems'){
+			$location.path('/referanceListItems');
+		}
+		if($scope.currentPath === '/questionnaire'){
+			$location.path('/guidelines');
 		}
 	};
 
@@ -490,24 +109,42 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$rootScope.isResizeDiv = false;
 
 	$scope.emailList = function($index){
+
+		function email(path, fileName){
+			cordova.plugins.email.open({
+				//			to:          [""], // email addresses for TO field
+				//			cc:          [""], // email addresses for CC field
+				//			bcc:         [""], // email addresses for BCC field
+				attachments: path+fileName, // file paths or base64 data streams
+				//			subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
+				body:       "This is a test to see how this works", // email body (for HTML, set isHtml to true)
+				isHtml:    true, // indicats if the body is HTML or plain text
+			}, function () {
+				console.log('email view dismissed');
+				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+					fileSystem.root.getFile(fileName, {create:false}, function(fileEntry){
+						fileEntry.remove(function(file){
+							console.log("File removed!");
+						},function(){
+							console.log("error deleting the file " + error.code);
+						});
+					},function(){
+						console.log("file does not exist");
+					});
+				},function(evt){
+					console.log(evt.target.error.code);
+				});
+			},
+									   this);
+		}
+
 		$scope.$storage.savedIndex = $index;
 		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
+		//USING A CALLBACK FOR THE PDF STUFF
+		PdfFromat.getPDF($localStorage.checklistPdf, email);
+		//		console.log("This is in the email "+$scope.pdfAttachemtn);
+		//		console.log($scope.pdfAttachemtn);
 
-		$scope.pdfAttachemtn = PdfFromat.getPDF($localStorage.checklistPdf);
-		cordova.plugins.email.open({
-			to:          [""], // email addresses for TO field
-			cc:          [""], // email addresses for CC field
-			bcc:         [""], // email addresses for BCC field
-			attachments: [$scope.pdfAttachemtn], // file paths or base64 data streams
-			subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
-			body:       "", // email body (for HTML, set isHtml to true)
-			isHtml:    true, // indicats if the body is HTML or plain text
-		}, function () {
-			console.log('email view dismissed');
-		},
-								   this);
-
-		//        $location.path('/report/email');
 	}
 
 	$scope.deleteList = function ($index) {
@@ -538,7 +175,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	};
 })
 //
-	.controller('questionnaireController', function($scope, $location, $rootScope, ListService, $sessionStorage, $localStorage){
+	.controller('QuestionnaireController', function($scope, $location, $rootScope, ListService, $sessionStorage, $localStorage){
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
@@ -566,7 +203,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 })
 
-	.controller('guidelinesController', function($scope, $location, $rootScope, ListService){
+	.controller('GuidelinesController', function($scope, $location, $rootScope, ListService){
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = true;
@@ -578,11 +215,12 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		$scope.buttonNames = $scope.quesionAir;
 	})
 	$scope.selected = function(item){
+		console.log(item);
 		$location.path('/'+item);
 	}
 })
 
-	.controller('referanceListController', function($sessionStorage, $scope, $location, $rootScope, ListService){
+	.controller('ReferanceListController', function($sessionStorage, $scope, $location, $rootScope, ListService){
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
@@ -594,15 +232,13 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		$scope.outPut = $scope.referanceList.sections;
 	})
 	$scope.itemSelect = function(id){
+		console.log("Called "+id);
 		$sessionStorage.itemId = id;
 		$location.path('/referanceListItems');
 	}
-	$scope.backButton = function(){
-		$location.path('/guidelines');
-	};
 })
 
-	.controller('referanceListControllerItems', function($sessionStorage, $scope, $location, $rootScope, ListService){
+	.controller('ReferenceListControllerItems', function($sessionStorage, $scope, $location, $rootScope, ListService){
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
@@ -614,15 +250,13 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		$scope.outPut = $scope.referanceList.sections[$sessionStorage.itemId];
 	})
 	$scope.itemSelect = function(id){
+		console.log("This is the id " + id);
 		$sessionStorage.sectionId = id;
 		$location.path('/referanceListAddItems');
 	}
-	$scope.backButton = function(){
-		$location.path('/referanceList');
-	};
 })
 
-	.controller('referanceListControllerAddItems', function($sessionStorage, $scope, $location, $rootScope, ListService){
+	.controller('ReferenceListControllerAddItems', function($sessionStorage, $scope, $location, $rootScope, ListService){
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
@@ -637,31 +271,53 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	})
 })
 
-	.controller('noteController', function($sessionStorage, $scope,$location, $rootScope, JsonTemplateService){		
-		//Need to figure out how to do this, could just add the timestamp at the begining of the note, but im not sure...
-		//Unless I make a array and pass it in
-		$scope.inputArray = [];
-		$scope.input = "";
-	if($location.path() === '/question'){	$scope.output  = $scope.viewReport.sections[$scope.selectedSection].question[$sessionStorage.questionIndex];
-												}
-			if($location.path() === '/addQuestion'){	$scope.output  = $scope.viewReport.sections[$scope.selectedSection].question[$scope.selectedQuestion].additionalQuestions[$sessionStorage.addQuestionIndex];
-												   }
-		
-		//This is how I will be able to pass in the comments with the time stampe for repeating..
-		//When the user submits the comment, I will take the time stamp and note I will pass it into the array, when the user wants to view the items, they will select the button and will be taken to the page that they are able to view it....
-		$scope.submitComment = function(){
-			alert('testing');
-					var date = new Date();
-		$scope.time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
+	.controller('NoteController', function($localStorage, $sessionStorage, $scope, $location, $rootScope){
+
+	$scope.init = function () {
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+		setTimeout(function () {    
+			$('.loading').show();
+			$('.content').hide();
+			setTimeout(function () {
+				$('.loading').hide();
+				$('.content').show();
+			}, 1000);
+		}, 100);
+	};
+
+	//Need to figure out how to do this, could just add the timestamp at the begining of the note, but im not sure...
+	//Unless I make a array and pass it in
+	$rootScope.isHomepage = false;
+	$rootScope.isResizeDiv = true;
+
+	$scope.inputArray = [];
+	$scope.input = "";
+	$scope.mainTitle = $localStorage.savedChecklist[$localStorage.savedIndex].title;
+
+	$scope.dateStamp = $localStorage.savedChecklist[$localStorage.savedIndex].dateStamp;
+
+	$scope.output = $rootScope.output.output;
+	$scope.testOutput = $rootScope.output;
+
+	//This is how I will be able to pass in the comments with the time stamp for repeating..
+	//When the user submits the comment, I will take the time stamp and note I will pass it into the array, when the user wants to view the items, they will select the button and will be taken to the page that they are able to view it....
+	$scope.submitComment = function(){
+		if($scope.input == ""){
+			alert("Note is empty");
+		}else{
+			var date = new Date();
+			$scope.time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
 
 			$scope.inputArray = {key: $scope.time, value: $scope.input};
-			
-			if($location.path() === '/question'){	$scope.viewReport.sections[$scope.selectedSection].question[$sessionStorage.questionIndex].inputs[0].notes.push($scope.inputArray);
-												}
-			if($location.path() === '/addQuestion'){	$scope.viewReport.sections[$scope.selectedSection].question[$scope.selectedQuestion].additionalQuestions[$sessionStorage.addQuestionIndex].inputs[0].notes.push($scope.inputArray);
-												   }
+
+			$scope.testOutput.inputs[0].notes.push($scope.inputArray);
+			$scope.$apply();
 		}
-		console.log($scope.viewReport.sections[$scope.selectedSection].question[$sessionStorage.questionIndex].inputs[0].notes);
+	}
+})
+
+	.controller('ImageController', function ($localStorage, $sessionStorage, $scope, $location, $rootScope){
+	alert($sessionStorage.imagePath);
+	alert($location.path());
+	$scope.fullImage = $localStorage.tempImage;
 });
-
-

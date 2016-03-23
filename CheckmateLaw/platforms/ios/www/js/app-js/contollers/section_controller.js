@@ -14,8 +14,9 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 	$('.loading').show();
 	$('.content').hide();
 	$sessionStorage.questionselected = null;
-	console.log();
+	
 	function gotFS(fileSystem){
+		console.log("gotFS called");
 		$scope.fileSystem = fileSystem.root.toURL();
 	}
 
@@ -25,7 +26,7 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 
 	//To insure everything looks right on load.
 	$scope.init = function () {
-
+		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {
 			$('.section').show();
@@ -65,3 +66,4 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 		$scope.viewReport.sections[id].selected = option;
 	};
 });
+

@@ -45,7 +45,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//To insure everything looks right on load.
 	$scope.init = function () {
-
+		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {    
 			$('.section').show();
@@ -205,7 +205,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	};
 
 	function movePic(file) {
-		window.resolveLocalFileSystemURI(file, resolveOnSuccessImage, resOnError);
+		window.resolveLocalFileSystemURL(file, resolveOnSuccessImage, resOnError);
 	}
 
 	//Callback function when the file system uri has been resolved

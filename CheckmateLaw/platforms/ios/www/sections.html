@@ -39,17 +39,21 @@ added on a later date.-->
 					</div>
 				</div>
 			</div>
-		</div>
-		<div ng-if="section.type === 'selectionSection'">
-			<div class="sectionDiv {{section.type}} {{section.type}}">
-				<div class="questionText {{section.type}} {{section.type}}">
-					<div class="row resizeDiv">
-						<div class="col-xs-9 sectionText">
-							<!--On click will hide the sections and show the questions.-->
-							<p class=" questionText questionPadding {{section.type}} {{section.type}}">{{section.title}}</p>                    
-							<label class=" questionText questionText sectionDiv questionPadding {{section.type}} {{section.type}}">
-								<select ng-model='selectionid' ng-options="selection.id as selection.title for selection in section.options" ng-change="showHideInfo(section.type, section.id, selectionid)"></select>
-							</label>
+			<div ng-if="section.type === 'selectionSection'">
+				<div ng-if="section.selected === ''">
+					<div class="list-group {{section.type}} {{section.type}}">
+						<div class="questionText {{section.type}} {{section.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-9 sectionText">
+									<!--On click will hide the sections and show the questions.-->
+									<p class="questionPadding {{section.type}} {{section.type}}">{{section.title}}</p>                    
+									<label class="questionPadding {{section.type}} {{section.type}}">
+										<select class="form-control selectInput" ng-model='selectionid' ng-options="selection.id as selection.title for selection in section.options" ng-change="showHideInfo(section.type, section.id, selectionid)">
+											<option disabled="disabled" value="">- Please select -</option> 
+										</select>
+									</label>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -57,8 +61,8 @@ added on a later date.-->
 		</div>
 	</div>
 	<div class="splash loading">
-        <div id="loadingDiv">
-            <div class="spinner2"></div>
-        </div>
-    </div>
+		<div id="loadingDiv">
+			<div class="spinner2"></div>
+		</div>
+	</div>
 </div>

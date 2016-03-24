@@ -53,10 +53,6 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		alert('Checklist saved!');
 		$location.path('/');
 	};
-	setTimeout(function () {
-		$scope.contentLoaded = true;
-		$scope.$apply();
-	}, 3000);
 })
 //Header controller to add functionality in the report menu.
 	.controller('ReportHeaderController', function ($rootScope, $scope, $location, $sessionStorage) {
@@ -117,7 +113,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 				//			bcc:         [""], // email addresses for BCC field
 				attachments: path+fileName, // file paths or base64 data streams
 				//			subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
-				body:       "This is a test to see how this works", // email body (for HTML, set isHtml to true)
+				body:       "", // email body (for HTML, set isHtml to true)
 				isHtml:    true, // indicats if the body is HTML or plain text
 			}, function () {
 				console.log('email view dismissed');
@@ -311,13 +307,12 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 			$scope.inputArray = {key: $scope.time, value: $scope.input};
 
 			$scope.testOutput.inputs[0].notes.push($scope.inputArray);
+			$scope.input = "";
 			$scope.$apply();
 		}
 	}
 })
 
 	.controller('ImageController', function ($localStorage, $sessionStorage, $scope, $location, $rootScope){
-	alert($sessionStorage.imagePath);
-	alert($location.path());
 	$scope.fullImage = $localStorage.tempImage;
 });

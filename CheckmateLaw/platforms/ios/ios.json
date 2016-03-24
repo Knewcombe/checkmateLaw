@@ -106,6 +106,9 @@
         },
         "cordova-plugin-email-composer": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "com.jjdltc.cordova.plugin.zip": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
     "dependent_plugins": {},
@@ -483,6 +486,14 @@
             "clobbers": [
                 "cordova.plugins.email",
                 "plugin.email"
+            ]
+        },
+        {
+            "file": "plugins/com.jjdltc.cordova.plugin.zip/www/JJzip.js",
+            "id": "com.jjdltc.cordova.plugin.zip.JJzip",
+            "pluginId": "com.jjdltc.cordova.plugin.zip",
+            "clobbers": [
+                "JJzip"
             ]
         }
     ]

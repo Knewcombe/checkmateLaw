@@ -1,29 +1,29 @@
 <nav-header></nav-header>
-<div class="row topDiv">
-	<div class="col-xs-12">
-		<p class="checklistTitle">{{viewReport.title}}</p>
-		<p>{{viewReport.dateStamp}}</p>
-		<p>{{viewReport.sections[selectedSection].title}}</p>
-		<p>{{viewReport.sections[selectedSection].questions[selectedQuestion].output}}</p>
+<div class="row topDiv list-group" ng-controller="NoteController">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{mainTitle}}</p>
+		<p>{{output}}</p>
 	</div>
 </div>
 <div>
-	<div>
-		<textarea class="form-control" ng-model="input" ng-change="input"></textarea><br/>
-		<div class="btn-toolbar questionText">
-			<button type="button" class="btn" ng-click="submitComment()">Submit</button>
-		</div>
-	</div>
-	<div class="content">
-		<div class="sectionDiv {{addQuestions.type}} {{addQuestions.type}}">
-			<div class="questionLabel {{addQuestions.type}} {{addQuestions.type}}">
-				<div class="row resizeDiv">
-					<div class="col-xs-10 sectionText">
-						<h3>Notes:</h3>
-						<div class="lineBreak"></div>
-						<div ng-repeat="note in output.notes">
-							<p>{{note.key}} - {{note.value}}</p>
-							<div class="lineBreak"></div>
+	<div ng-init="init()">
+		<div class="content">
+			<div>
+				<textarea class="form-control" ng-model="input" ng-change="input"></textarea><br/>
+				<div class="btn-toolbar questionText">
+					<button type="button" class="btn" ng-click="submitComment()">Submit</button>
+				</div>
+			</div>
+			<div class="list-group">
+				<div class="{{addQuestions.type}} {{addQuestions.type}}">
+					<div class="{{addQuestions.type}} {{addQuestions.type}}">
+						<div class="row resizeDiv">
+							<div class="col-xs-11">
+								<h3 class="centerText">Notes:</h3>
+								<div ng-repeat="note in testOutput.inputs[0].notes | orderBy:'-key':reverse" class="list-group-item">
+									<p>{{note.key}} - {{note.value}}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

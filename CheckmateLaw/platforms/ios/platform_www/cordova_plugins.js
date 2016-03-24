@@ -374,6 +374,14 @@ module.exports = [
             "cordova.plugins.email",
             "plugin.email"
         ]
+    },
+    {
+        "file": "plugins/com.jjdltc.cordova.plugin.zip/www/JJzip.js",
+        "id": "com.jjdltc.cordova.plugin.zip.JJzip",
+        "pluginId": "com.jjdltc.cordova.plugin.zip",
+        "clobbers": [
+            "JJzip"
+        ]
     }
 ];
 module.exports.metadata = 

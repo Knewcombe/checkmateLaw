@@ -4,7 +4,6 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 	//Out how to output it to the PDF...
 	//Code provided by ANDREW TRICE @ http://www.tricedesigns.com/2014/01/08/generating-pdf-inside-of-phonegap-apps/
 	this.getPDF = function (data, callback) {
-		console.log(data);
 		var doc = new jsPDF;
 		var fileName = $localStorage.checklistPdf.title +"-"+$localStorage.checklistPdf.name+".pdf";
 		var path; 
@@ -31,15 +30,15 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 		//When outputting the comments and images, I could use the cells table
 		//This will make it neat and tidey for the user to be able to read.
 		$.each(checklist.sections, function(secIndex){
-			doc.text(15, sectionsCount, checklist.sections[secIndex].title+'\n');
 			if(checklist.sections[secIndex].state == true){
-				doc.addImage(checkedImagePath, 'PNG', 0, sectionsCount, 0, 0);
+				doc.addImage(checkedImagePath, 'PNG', 0, sectionsCount-6, 0, 0);
 			}else{
 				if(checklist.sections[secIndex].state == false){
-					doc.addImage(unCheckedImagePath, 'PNG', 0, sectionsCount, 0, 0);
+					doc.addImage(unCheckedImagePath, 'PNG', 0, sectionsCount-6, 0, 0);
 				}else{
-					doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount, 0, 0);
+					doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount-6, 0, 0);
 				}
+				doc.text(15, sectionsCount, checklist.sections[secIndex].title);
 			}
 			questionCount = sectionsCount + 10;
 			if (questionCount >= pageHeight)
@@ -47,11 +46,19 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 				doc.addPage();
 				questionCount = 10 // Restart height position
 			}
-			//			console.log("Questions: " + questionCount);
 			//Output questions within section
 			$.each(checklist.sections[secIndex].questions, function(quesIndex){
+				if(checklist.sections[secIndex].questions[quesIndex].state == true){
+					doc.addImage(checkedImagePath, 'PNG', 0, questionCount-6, 0, 0);
+				}else{
+					if(checklist.sections[secIndex].questions[quesIndex].state == false){
+						doc.addImage(unCheckedImagePath, 'PNG', 0, questionCount-6, 0, 0);
+					}else{
+						doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount-6, 0, 0);
+					}
+				}
 				if(checklist.sections[secIndex].questions[quesIndex].additionalQuestions){
-					doc.text(20, questionCount, checklist.sections[secIndex].questions[quesIndex].output+'\n');
+					doc.text(20, questionCount, checklist.sections[secIndex].questions[quesIndex].output);
 					//Output additionalQuestions
 					$.each(checklist.sections[secIndex].questions[quesIndex].additionalQuestions, function(addIndex){
 						addQuestionsCount = questionCount +10;
@@ -63,20 +70,18 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 						var addQuestionWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].output, pageWidth);
 						doc.text(25, addQuestionsCount, addQuestionWrap);
 						if(checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].state == true){
-							doc.addImage(checkedImagePath, 'PNG', 0, addQuestionsCount, 0, 0);
+							doc.addImage(checkedImagePath, 'PNG', 0, addQuestionsCount-6, 0, 0);
 						}else{
 							if(checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].state == false){
-								doc.addImage(unCheckedImagePath, 'PNG', 0, addQuestionsCount, 0, 0);
+								doc.addImage(unCheckedImagePath, 'PNG', 0, addQuestionsCount-6, 0, 0);
 							}else{
-								doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount, 0, 0);
+								doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount-6, 0, 0);
 							}
-
 						}
 						//MultiQuestion count added
 						questionCount = addQuestionsCount;
-
 						//Additional question count
-						addQuestionsCount = questionCount + 10;
+						addQuestionsCount = questionCount;
 						if (addQuestionsCount >= pageHeight || questionCount >= pageHeight)
 						{
 							doc.addPage();
@@ -89,16 +94,36 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 					doc.text(20, questionCount, questionWrap);
 					if(questionWrap.length >= 2){
 						$.each(questionWrap, function(newLine){
-							questionCount += 5 * newLine;
+							questionCount += 2 * newLine;
+							if (questionCount >= pageHeight)
+							{
+								doc.addPage();
+								questionCount = 10; // Restart height position
+							}
 						});
 					}
-					if(checklist.sections[secIndex].questions[quesIndex].state == true){
-						doc.addImage(checkedImagePath, 'PNG', 0, questionCount, 0, 0);
-					}else{
-						if(checklist.sections[secIndex].questions[quesIndex].state == false){
-							doc.addImage(unCheckedImagePath, 'PNG', 0, questionCount, 0, 0);
-						}else{
-							doc.addImage(nanCheckedPath, 'PNG', 0, addQuestionsCount, 0, 0);
+					if(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes.length > 0){
+						questionCount = questionCount + 5;
+						$.each(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes, function(noteIndex){
+							var noteWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].key +" : "+ checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].value, pageWidth);
+							doc.text(30, questionCount, noteWrap);
+							if(noteWrap.length >= 2){
+								$.each(noteWrap, function(newLine){
+									questionCount += 2 * newLine;
+									if (questionCount >= pageHeight)
+									{
+										doc.addPage();
+										questionCount = 10; // Restart height position
+									}
+								});
+							}
+							//Question count added.
+							questionCount = questionCount + 5;
+						});
+						if (questionCount >= pageHeight)
+						{
+							doc.addPage();
+							questionCount = 10; // Restart height position
 						}
 					}
 				}
@@ -121,9 +146,9 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 
 		var PDF = doc.output('arraybuffer');
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-			
-//			console.log("File system name"+fileSystem.name);
-//			console.log("File system root name"+fileSystem.root.name);
+
+			//			console.log("File system name"+fileSystem.name);
+			//			console.log("File system root name"+fileSystem.root.name);
 			console.log("File system root toURL - "+fileSystem.root.toURL());
 			path = fileSystem.root.toURL();
 			fileSystem.root.getFile(fileName, {create: true}, function(entry) {
@@ -149,7 +174,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 			});
 		},
 								 function(event){
-				console.log( evt.target.error.code );
+			console.log( evt.target.error.code );
 		});
 	}
 });

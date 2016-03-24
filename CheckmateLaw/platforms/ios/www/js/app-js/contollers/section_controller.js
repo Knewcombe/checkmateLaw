@@ -26,7 +26,6 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 
 	//To insure everything looks right on load.
 	$scope.init = function () {
-		
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {
 			$('.section').show();
@@ -35,10 +34,9 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 			$('.sectionOption').hide();
 			$('.titleTop').show();
 			if ($scope.currentPath === '/sections') {
-
 				for (var i = 0; $scope.viewReport.sections.length - 1 >= i; i++) {
 					if ($scope.viewReport.sections[i].type === 'selectionSection') {
-						if($scope.viewReport.sections[i].selected.length >= 1){
+						if($scope.viewReport.sections[i].selected !== ''){
 							$('.' + $scope.viewReport.sections[i].options[$scope.viewReport.sections[i].selected].title).show();
 						}
 					}

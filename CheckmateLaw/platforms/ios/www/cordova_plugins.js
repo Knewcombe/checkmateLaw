@@ -49,6 +49,15 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+        "id": "cordova-plugin-email-composer.EmailComposer",
+        "pluginId": "cordova-plugin-email-composer",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "id": "cordova-plugin-file.DirectoryEntry",
         "pluginId": "cordova-plugin-file",
@@ -367,20 +376,27 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
-        "id": "cordova-plugin-email-composer.EmailComposer",
-        "pluginId": "cordova-plugin-email-composer",
+        "file": "plugins/cordova-plugin-zip/zip.js",
+        "id": "cordova-plugin-zip.Zip",
+        "pluginId": "cordova-plugin-zip",
         "clobbers": [
-            "cordova.plugins.email",
-            "plugin.email"
+            "zip"
         ]
     },
     {
-        "file": "plugins/com.jjdltc.cordova.plugin.zip/www/JJzip.js",
-        "id": "com.jjdltc.cordova.plugin.zip.JJzip",
-        "pluginId": "com.jjdltc.cordova.plugin.zip",
+        "file": "plugins/org.apache.cordova.plugin.cache/www/Cache.js",
+        "id": "org.apache.cordova.plugin.cache.Cache",
+        "pluginId": "org.apache.cordova.plugin.cache",
         "clobbers": [
-            "JJzip"
+            "cache"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
         ]
     }
 ];

@@ -24,7 +24,7 @@
 						<div class="col-xs-14 resizeDiv">
 							<!--On click will open additional output, additional questions will never have questions.-->
 							<div class="col-xs-10 sectionText">
-								<p class="questionText questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.id)">{{addQuestions.output}}</p>
+								<p class="questionText questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.id)">{{(addQuestions.id+1)}}. {{addQuestions.output}}</p>
 							</div>
 						</div>
 					</div>
@@ -46,7 +46,7 @@
 									<div class="col-xs-3">
 										<div class="thumbnail">
 											<img ng-click="editImage(fileSystem, photo)" src="{{fileSystem}}{{photo}}"/>
-											<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '');}}</p>
+											<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '');}}</p>
 											<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(addQuestions.id, $index)"><span class="glyphicon glyphicon-trash"></span></button>
 										</div>
 									</div>
@@ -54,20 +54,18 @@
 							</div>
 							<div class="lineBreak"></div>
 							<p class="questionPadding typeText centerText">Memos:</p>
-							<button ng-if="!timer" type="button" class="btn" ng-click="startRecording(addQuestions)"><span class="glyphicon glyphicon-record"></span>Record</button>
-							<button  ng-if="timer > 0" type="button" class="btn" ng-click="stopRecording(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-stop"></span><br />Stop Recording</button>
+							<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording(addQuestions.id)"><span class="glyphicon glyphicon-record"></span>Record</button>
+							<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(addQuestions.id)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
 							<p ng-if="timer >= 1 && currentQuestion === addQuestions">Recording... {{timer}} seconds</p>
-							<div ng-if="addQuestions.inputs[0].recording.length >= 1">
-								<div class="btn-toolbar" ng-repeat="memo in addQuestions.inputs[0].recording">
-									<div class="lineBreak"></div>
-									<p>Memo {{memo.replace('documents://media/', '').replace(viewReport.title, '').replace('-','').replace('.wav', '')}}</p>
-									<button type="button" class="btn" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
-									<button type="button" class="btn" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
-									<button type="button" class="btn" ng-click="deleteRecording(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
-									<p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
-										<span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
-									</p>
-								</div>
+							<div ng-if="addQuestions.inputs[0].recording[0]" ng-repeat="memo in addQuestions.inputs[0].recording">
+								<div class="lineBreak"></div>
+								<p class="questionText">Memo: {{memo.replace('documents://media/', '').replace(viewReport.title, '').replace('-','').replace('.wav', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '')}}</p>
+								<button type="button" class="btn navButton" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
+								<button type="button" class="btn navButton" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
+								<button type="button" class="btn navButton" ng-click="deleteRecording(addQuestions, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+								<p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
+									<span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -75,10 +73,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="splash loading">
-		<div id="loadingDiv">
-			<div class="spinner2"></div>
-		</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
 	</div>
 </div>
 <nav-footer></nav-footer>

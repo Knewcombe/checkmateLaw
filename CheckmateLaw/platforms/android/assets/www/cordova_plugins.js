@@ -1,13 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/com.jjdltc.cordova.plugin.zip/www/JJzip.js",
-        "id": "com.jjdltc.cordova.plugin.zip.JJzip",
-        "clobbers": [
-            "JJzip"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
         "id": "cordova-plugin-camera.Camera",
         "clobbers": [
@@ -309,12 +302,32 @@ module.exports = [
         "file": "plugins/cordova-plugin-whitelist/whitelist.js",
         "id": "cordova-plugin-whitelist.whitelist",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-zip/zip.js",
+        "id": "cordova-plugin-zip.Zip",
+        "clobbers": [
+            "zip"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.plugin.cache/www/Cache.js",
+        "id": "org.apache.cordova.plugin.cache.Cache",
+        "clobbers": [
+            "cache"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "com.jjdltc.cordova.plugin.zip": "0.0.4",
     "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-console": "1.0.2",
     "cordova-plugin-email-composer": "0.8.3",
@@ -325,7 +338,10 @@ module.exports.metadata =
     "cordova-plugin-media": "2.1.0",
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-vibration": "2.1.0",
-    "cordova-plugin-whitelist": "1.2.1"
+    "cordova-plugin-whitelist": "1.2.1",
+    "cordova-plugin-zip": "3.1.0",
+    "org.apache.cordova.plugin.cache": "1.0.5",
+    "cordova-plugin-statusbar": "2.1.2"
 };
 // BOTTOM OF METADATA
 });

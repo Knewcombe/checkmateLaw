@@ -45,7 +45,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//To insure everything looks right on load.
 	$scope.init = function () {
-		
+
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {    
 			$('.section').show();
@@ -185,9 +185,9 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$scope.takePic = function (type, inputId) {
 
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[inputId].inputs[0];
-
+		$scope.questionId = inputId;
 		var options = {
-			quality: 100,
+			quality: 10,
 			destinationType: Camera.DestinationType.FILE_URI,
 			sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Photo Album
 			encodingType: 0, // 0=JPG 1=PNG
@@ -213,7 +213,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		var d = new Date();
 		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes()+d.getSeconds();//This is where to get the formate for the time.
 		//new file name
-		var newFileName = $scope.viewReport.title + "-" + n + ".jpg";
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.questionId + 1)+ "_" + n + ".jpg";
 		var myFolderApp = "Images";
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
@@ -236,6 +236,20 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		var path = entry.fullPath;
 		$scope.currentQuestion.photos.push(path);
 		$scope.$apply();
+		document.addEventListener('deviceready', onDeviceReady);
+		function onDeviceReady()
+		{
+			var success = function(status) {
+				//				alert('Message: ' + status);
+			}
+
+			var error = function(status) {
+				//				alert('Error: ' + status);
+			}
+
+			window.cache.clear( success, error );
+			window.cache.cleartemp(); //  
+		}
 	}
 
 	function resOnError(error) {
@@ -256,12 +270,12 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//MEMO SECTION
 	$scope.startRecording = function (questionId) {
-
+		$scope.questionId = questionId;
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
 			fileSys.root.getDirectory('media', {create: true});
 		});
 		var date = new Date();
-		var src = 'documents://media/'+$scope.viewReport.title + "-" + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+".wav";
+		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.questionId + 1)+ "_" + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+".wav";
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[questionId];
 		$scope.myMedia = new Media(src);
 		// Record audio

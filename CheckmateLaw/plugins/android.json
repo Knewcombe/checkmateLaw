@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.jjdltc.cordova.plugin.zip": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
@@ -41,6 +38,15 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "org.apache.cordova.plugin.cache": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },

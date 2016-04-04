@@ -53,6 +53,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		alert('Checklist saved!');
 		$location.path('/');
 	};
+
 })
 //Header controller to add functionality in the report menu.
 	.controller('ReportHeaderController', function ($rootScope, $scope, $location, $sessionStorage) {
@@ -104,23 +105,62 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = false;
 
+	function gotFS(fileSystem){
+		console.log("gotFS called");
+		$scope.fileSystem = fileSystem.root.toURL();
+	}
+
+	function fail(){
+		alert("Derp");
+	}
+
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
 	$scope.emailList = function($index){
 
-		function email(path, fileName){
+		$scope.$storage.savedIndex = $index;
+		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
+
+		function email(path, fileName, zipFileName){
 			cordova.plugins.email.open({
 				//			to:          [""], // email addresses for TO field
 				//			cc:          [""], // email addresses for CC field
 				//			bcc:         [""], // email addresses for BCC field
-				attachments: path+fileName, // file paths or base64 data streams
-				//			subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
+				attachments: [path+fileName, path+zipFileName],// file paths or base64 data streams
+				subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
 				body:       "", // email body (for HTML, set isHtml to true)
 				isHtml:    true, // indicats if the body is HTML or plain text
 			}, function () {
 				console.log('email view dismissed');
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+					//Removing the pdf file after the email.
 					fileSystem.root.getFile(fileName, {create:false}, function(fileEntry){
 						fileEntry.remove(function(file){
-							console.log("File removed!");
+							console.log("PDF File removed!");
+							document.addEventListener('deviceready', onDeviceReady);
+							function onDeviceReady()
+							{
+								var success = function(status) {
+									//									alert('Message: ' + status);
+								}
+
+								var error = function(status) {
+									//									alert('Error: ' + status);
+								}
+
+								window.cache.clear( success, error );
+								window.cache.cleartemp();
+							}
+						},function(){
+							console.log("error deleting the file " + error.code);
+						});
+					},function(){
+						console.log("file does not exist");
+					});
+					//Removing the zip file after the email is complete.
+					fileSystem.root.getFile(zipFileName, {create:false}, function(fileEntry){
+						fileEntry.remove(function(file){
+							console.log("ZIP File removed!");
 						},function(){
 							console.log("error deleting the file " + error.code);
 						});
@@ -133,14 +173,98 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 			},
 									   this);
 		}
+		//For the zip file.
+		var inputsArray = [];
+		$.each($localStorage.checklistPdf.sections, function(sections){
+			$.each($localStorage.checklistPdf.sections[sections].questions, function(questions){
+				if($localStorage.checklistPdf.sections[sections].questions[questions].type == "multiQuestion"){
+					$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions, function(additional){
+						if($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].photos.length > 0){
+							$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].photos, function(photos){
+								//ADDING TO IMAGE ARRAY
+								inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].photos[photos]);
+							});
+						}
+						if($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording.length > 0){
+							$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording, function(recording){		
+								//ADDING TO RECORDING ARRAY
+								inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording[recording].replace('documents://',''));
+							});
+						}
+					});
+				}else{
+					if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos.length > 0){
+						$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos, function(photos){
+							//ADDING TO IMAGE ARRAY
+							inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos[photos]);
+						});
+					}
+					if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording.length > 0){
+						$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording, function(recording){
+							//ADDING TO RECORDING ARRAY
+							inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording[recording].replace('documents://',''));
+						});
+					}
+				}
+			});
+		});
+		var zip = new JSZip();
+		var arrayList = [];
+		var zipFileName = $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip";
+		function saveZip(){
+			console.log("_______THIS IS WRITING THE FILE ZIP FILE________");
+			var content = zip.generate({
+				type: 'blob',
+				compressionOptions : {level:9}
+			});
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+				console.log("File system root toURL - "+fileSystem.root.toURL());
+				path = fileSystem.root.toURL();
+				fileSystem.root.getFile(zipFileName, {create: true}, function(entry) {
+					console.log("File system First path - "+path);
+					var fileEntry = entry;
+					console.log(entry);
+					entry.createWriter(function(writer) {
+						writer.onwrite = function(evt) {
+							console.log("write success");
+							//USING A CALLBACK FOR THE PDF STUFF
+							PdfFromat.getPDF($localStorage.checklistPdf, email, zipFileName);
+						};
+						console.log("writing to file");
+						console.log("File system Third path - "+path);
+						writer.write(content);
+					}, function(error) {
+						console.log(error);
+					});
 
-		$scope.$storage.savedIndex = $index;
-		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
-		//USING A CALLBACK FOR THE PDF STUFF
-		PdfFromat.getPDF($localStorage.checklistPdf, email);
-		//		console.log("This is in the email "+$scope.pdfAttachemtn);
-		//		console.log($scope.pdfAttachemtn);
-
+				}, function(error){
+					console.log(error);
+				});
+			},
+									 function(event){
+				console.log( evt.target.error.code );
+			});
+		}
+		function addToZip(link, zip){
+			var deferred = $.Deferred();
+			JSZipUtils.getBinaryContent($scope.fileSystem+link, function (err, data) {
+				if(err) {
+					console.log(err);
+					deferred.resolve(zip);
+				}
+				zip.file(link, data, {base64:true});
+				deferred.resolve(zip);
+			});
+			return deferred;
+		}
+		if(inputsArray.length > 0){
+			for(var pIndex=0; pIndex<inputsArray.length; pIndex++){
+				arrayList.push(addToZip(inputsArray[pIndex], zip))
+			}
+			$.when.apply(window, arrayList).done(saveZip);	
+		}else{
+			PdfFromat.getPDF($localStorage.checklistPdf, email, "");
+		}
 	}
 
 	$scope.deleteList = function ($index) {

@@ -28,13 +28,11 @@
     <string>????</string>
     <key>CFBundleVersion</key>
     <string>0.0.1</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>mailto</string>
+    </array>
     <key>LSRequiresIPhoneOS</key>
-    <true/>
-    <key>NSMainNibFile</key>
-    <string></string>
-    <key>NSMainNibFile~ipad</key>
-    <string></string>
-    <key>UIRequiresFullScreen</key>
     <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
@@ -43,9 +41,11 @@
     </dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string></string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>mailto</string>
-    </array>
+    <key>NSMainNibFile</key>
+    <string></string>
+    <key>NSMainNibFile~ipad</key>
+    <string></string>
+    <key>UIRequiresFullScreen</key>
+    <true/>
   </dict>
 </plist>

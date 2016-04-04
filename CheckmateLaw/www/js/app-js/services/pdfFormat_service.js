@@ -3,7 +3,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 	//$localStorage.checklistName is where the file will be saved, and I will need to figure
 	//Out how to output it to the PDF...
 	//Code provided by ANDREW TRICE @ http://www.tricedesigns.com/2014/01/08/generating-pdf-inside-of-phonegap-apps/
-	this.getPDF = function (data, callback) {
+	this.getPDF = function (data, callback, zipFileName) {
 		var doc = new jsPDF;
 		var fileName = $localStorage.checklistPdf.title +"-"+$localStorage.checklistPdf.name+".pdf";
 		var path; 
@@ -58,7 +58,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 					}
 				}
 				if(checklist.sections[secIndex].questions[quesIndex].additionalQuestions){
-					doc.text(20, questionCount, checklist.sections[secIndex].questions[quesIndex].output);
+					doc.text(20, questionCount, (checklist.sections[secIndex].questions[quesIndex].id+1)+". "+checklist.sections[secIndex].questions[quesIndex].output);
 					//Output additionalQuestions
 					$.each(checklist.sections[secIndex].questions[quesIndex].additionalQuestions, function(addIndex){
 						addQuestionsCount = questionCount +10;
@@ -67,7 +67,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 							doc.addPage();
 							addQuestionsCount = 10 // Restart height position
 						}
-						var addQuestionWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].output, pageWidth);
+						var addQuestionWrap = doc.splitTextToSize((checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].id+1)+". "+checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].output, pageWidth);
 						doc.text(25, addQuestionsCount, addQuestionWrap);
 						if(checklist.sections[secIndex].questions[quesIndex].additionalQuestions[addIndex].state == true){
 							doc.addImage(checkedImagePath, 'PNG', 0, addQuestionsCount-6, 0, 0);
@@ -90,7 +90,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 						}
 					});
 				}else{
-					var questionWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].output, pageWidth);
+					var questionWrap = doc.splitTextToSize((checklist.sections[secIndex].questions[quesIndex].id+1)+". "+checklist.sections[secIndex].questions[quesIndex].output, pageWidth);
 					doc.text(20, questionCount, questionWrap);
 					if(questionWrap.length >= 2){
 						$.each(questionWrap, function(newLine){
@@ -159,7 +159,9 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 				entry.createWriter(function(writer) {
 					writer.onwrite = function(evt) {
 						console.log("write success");
-						callback(path, fileName);
+						PDF = null;
+						doc = null;
+						callback(path, fileName, zipFileName);
 					};
 
 					console.log("writing to file");

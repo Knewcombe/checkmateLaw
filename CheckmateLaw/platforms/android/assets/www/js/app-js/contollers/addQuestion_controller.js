@@ -160,9 +160,9 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	$scope.takePic = function (type, inputId) {
 		
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId].inputs[0];
-
+		$scope.questionId = inputId;
 		var options = {
-			quality: 100,
+			quality: 10,
 			destinationType: Camera.DestinationType.FILE_URI,
 			sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Photo Album
 			encodingType: 0, // 0=JPG 1=PNG
@@ -186,9 +186,9 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	//Callback function when the file system uri has been resolved
 	function resolveOnSuccessImage(entry) {
 		var d = new Date();
-		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes();//This is where to get the formate for the time.
+		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes()+d.getSeconds();//This is where to get the formate for the time.
 		//new file name
-		var newFileName = $scope.viewReport.title + "-" + n + ".jpg";
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+ "_" + n + ".jpg";;
 		var myFolderApp = "Images";
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
@@ -230,13 +230,13 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	};
 
 	//MEMO SECTION
-	$scope.startRecording = function (type, questionId) {
-
+	$scope.startRecording = function (questionId) {
+		$scope.questionId = questionId;
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
 			fileSys.root.getDirectory('media', {create: true});
 		})
 		var date = new Date();
-		var src = 'documents://media/'+$scope.viewReport.title + "-" + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+date.getMinutes() + ".wav";
+		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+"_"+date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+date.getMinutes() + ".wav";
 		$scope.myMedia = new Media(src);
 		// Record audio
 		$scope.myMedia.startRecord();

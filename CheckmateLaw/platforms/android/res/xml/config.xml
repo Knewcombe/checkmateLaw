@@ -20,9 +20,6 @@
     <feature name="Globalization">
         <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
     </feature>
-    <feature name="Media">
-        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
-    </feature>
     <feature name="Capture">
         <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
     </feature>
@@ -33,9 +30,6 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Zip">
-        <param name="android-package" value="org.apache.cordova.Zip" />
-    </feature>
     <feature name="Cache">
         <param name="android-package" value="org.apache.cordova.plugin.cache.Cache" />
     </feature>
@@ -43,14 +37,23 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Zip">
+        <param name="android-package" value="org.apache.cordova.Zip" />
+    </feature>
     <allow-intent href="market:*" />
     <name>CheckmateLaw</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
+		A sample Apache Cordova application that responds to the deviceready event.
+	</description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+		Apache Cordova Team
+	</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

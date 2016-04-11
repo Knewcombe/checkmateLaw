@@ -228,20 +228,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-media/www/MediaError.js",
-        "id": "cordova-plugin-media.MediaError",
-        "clobbers": [
-            "window.MediaError"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-media/www/Media.js",
-        "id": "cordova-plugin-media.Media",
-        "clobbers": [
-            "window.Media"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
         "id": "cordova-plugin-media-capture.CaptureAudioOptions",
         "clobbers": [
@@ -323,6 +309,27 @@ module.exports = [
         "clobbers": [
             "window.StatusBar"
         ]
+    },
+    {
+        "file": "plugins/cordova-media-with-compression/www/MediaError.js",
+        "id": "cordova-media-with-compression.MediaError",
+        "clobbers": [
+            "window.MediaError"
+        ]
+    },
+    {
+        "file": "plugins/cordova-media-with-compression/www/Media.js",
+        "id": "cordova-media-with-compression.Media",
+        "clobbers": [
+            "window.Media"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -335,13 +342,14 @@ module.exports.metadata =
     "cordova-plugin-file-transfer": "1.5.0",
     "cordova-plugin-geolocation": "2.1.0",
     "cordova-plugin-globalization": "1.0.3",
-    "cordova-plugin-media": "2.1.0",
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-vibration": "2.1.0",
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-zip": "3.1.0",
     "org.apache.cordova.plugin.cache": "1.0.5",
-    "cordova-plugin-statusbar": "2.1.2"
+    "cordova-plugin-statusbar": "2.1.2",
+    "cordova-media-with-compression": "2.0.20",
+    "cordova-plugin-device": "1.1.1"
 };
 // BOTTOM OF METADATA
 });

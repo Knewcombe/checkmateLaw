@@ -20,6 +20,13 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.loadDropdown = true;
 	$rootScope.isHomepage = false;
 
+	$scope.dateAndTime = function(){
+		var date = new Date();
+		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		console.log("Date: "+dateAndTime);
+		return dateAndTime;
+	}
+
 	var promise = JsonTemplateService.getList();
 	$scope.$storage = $localStorage;
 	promise.then(function (data) {
@@ -35,8 +42,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		if (typeof $localStorage.savedChecklist === 'undefined') {
 			$localStorage.savedChecklist = [];
 		}
-		var date = new Date();
-		tempReport.dateStamp = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
+		tempReport.dateStamp = $scope.dateAndTime();
 		$localStorage.savedChecklist.unshift(tempReport);
 		if ($localStorage.savedChecklist.length >= 1) {
 			$scope.$storage.savedIndex = 0;
@@ -393,6 +399,13 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	.controller('NoteController', function($localStorage, $sessionStorage, $scope, $location, $rootScope){
 
+	$scope.dateAndTime = function(){
+		var date = new Date();
+		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		console.log("Date: "+dateAndTime);
+		return dateAndTime;
+	}
+
 	$scope.init = function () {
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {    
@@ -413,11 +426,9 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.inputArray = [];
 	$scope.input = "";
 	$scope.mainTitle = $localStorage.savedChecklist[$localStorage.savedIndex].title;
-
 	$scope.dateStamp = $localStorage.savedChecklist[$localStorage.savedIndex].dateStamp;
-
 	$scope.output = $rootScope.output.output;
-	$scope.testOutput = $rootScope.output;
+	$scope.noteIndex = $rootScope.output;
 
 	//This is how I will be able to pass in the comments with the time stamp for repeating..
 	//When the user submits the comment, I will take the time stamp and note I will pass it into the array, when the user wants to view the items, they will select the button and will be taken to the page that they are able to view it....
@@ -425,12 +436,11 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		if($scope.input == ""){
 			alert("Note is empty");
 		}else{
-			var date = new Date();
-			$scope.time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
+			$scope.time = $scope.dateAndTime();
+			$scope.key = ($scope.noteIndex.inputs[0].notes.length +1);
+			$scope.inputArray = {key: $scope.time+"-"+$scope.key, value: $scope.input};
 
-			$scope.inputArray = {key: $scope.time, value: $scope.input};
-
-			$scope.testOutput.inputs[0].notes.push($scope.inputArray);
+			$scope.noteIndex.inputs[0].notes.push($scope.inputArray);
 			$scope.input = "";
 			$scope.$apply();
 		}
@@ -439,4 +449,5 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	.controller('ImageController', function ($localStorage, $sessionStorage, $scope, $location, $rootScope){
 	$scope.fullImage = $localStorage.tempImage;
+	console.log($scope.fullImage);
 });

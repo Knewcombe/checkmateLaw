@@ -28,9 +28,6 @@
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
@@ -47,6 +44,12 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-media-with-compression": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },

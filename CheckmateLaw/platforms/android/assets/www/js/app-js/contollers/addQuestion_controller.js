@@ -26,12 +26,11 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 
 	};
 
-	$scope.dateAndTime = function(id){
+	$scope.dateAndTime = function(){
 		var date = new Date();
-		var dateAndTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id].inputs[0];
-		$scope.currentQuestion.dateChange = dateAndTime;
-		$scope.$apply();
+		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		console.log("Date: "+dateAndTime);
+		return dateAndTime;
 	}
 
 	//To insure everything looks right on load.
@@ -63,7 +62,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 
 	$scope.nan = function (state, type, id) {
 
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id];
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id];
 		$scope.previousSection = $scope.viewReport.sections[$scope.selectedSection];
 
 		if(state !== true){
@@ -127,7 +126,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 			}
 		}
 	};
-	
+
 	//This is for selection sections and questions.
 	$scope.showHideInfo = function (id) {
 		$sessionStorage.questionselected = null;
@@ -158,8 +157,8 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	//Camera stuff below
 
 	$scope.takePic = function (type, inputId) {
-		
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId].inputs[0];
+
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId];
 		$scope.questionId = inputId;
 		var options = {
 			quality: 10,
@@ -167,7 +166,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 			sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Photo Album
 			encodingType: 0, // 0=JPG 1=PNG
 			correctOrientation: 1,
-			saveToPhotoAlbum: 1
+			saveToPhotoAlbum: 0
 		};
 		navigator.camera.getPicture(onSuccess, onFail, options);
 	};
@@ -185,10 +184,8 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 
 	//Callback function when the file system uri has been resolved
 	function resolveOnSuccessImage(entry) {
-		var d = new Date();
-		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes()+d.getSeconds();//This is where to get the formate for the time.
 		//new file name
-		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+ "_" + n + ".jpg";;
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+ "_" +$scope.dateAndTime() +"-"+($scope.currentQuestion.inputs[0].photos.length+1)+".jpg";;
 		var myFolderApp = "Images";
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
@@ -209,7 +206,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	function successMoveImage(entry) {
 		//I do my insert with "entry.fullPath" as for the path
 		var path = entry.fullPath;
-		$scope.currentQuestion.photos.push(path);
+		$scope.currentQuestion.inputs[0].photos.push(path);
 		$scope.$apply();
 	}
 
@@ -218,7 +215,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	}
 
 	$scope.deleteImage = function (type, questionId, index) {
-
+		//Need to remove image
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId].inputs[0];
 		$scope.currentQuestion.photos.splice(index, 1);
 	};
@@ -235,8 +232,9 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
 			fileSys.root.getDirectory('media', {create: true});
 		})
-		var date = new Date();
-		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+"_"+date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+date.getMinutes() + ".wav";
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId];
+		
+		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+$scope.dateAndTime()+"-"+($scope.currentQuestion.inputs[0].recording.length+1)+".wav";
 		$scope.myMedia = new Media(src);
 		// Record audio
 		$scope.myMedia.startRecord();
@@ -246,13 +244,11 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 		}, 1000);
 	};
 
-	$scope.stopRecording = function (type, questionId) {
-
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId].inputs[0];
+	$scope.stopRecording = function (questionId) {
 		$interval.cancel($scope.promise);
 		$scope.timer = 0;
 		$scope.myMedia.stopRecord();
-		$scope.currentQuestion.recording.push($scope.myMedia.src);
+		$scope.currentQuestion.inputs[0].recording.push($scope.myMedia.src);
 		clearInterval($scope.recInterval);
 		$scope.$apply();
 	};

@@ -71,6 +71,9 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="SecureStorage">
+        <param name="ios-package" value="SecureStorage" />
+    </feature>
     <feature name="Zip">
         <param name="ios-package" value="ZipPlugin" />
     </feature>

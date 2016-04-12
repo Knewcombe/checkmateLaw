@@ -1,6 +1,7 @@
 <nav-header></nav-header>
 <div class="row topDiv list-group" ng-controller="ReportQuestionController">
 	<div class="col-xs-12 titleTop">
+		<p>Occurrance Number: {{viewReport.occurranceNumber}}</p>
 		<p class="checklistTitle">{{viewReport.sections[selectedSection].title}}</p>
 	</div>
 </div>
@@ -38,7 +39,7 @@
 						<button type="button" class="btn navButton" ng-click="note(question.id, question.type)">More...</button>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Images:</p>
-						<button type="button" class="btn navButton" ng-click="takePic(question.type, question.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+						<button type="button" class="btn navButton" ng-click="takePic(question.type, question.id, question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
 						<div class="row" ng-if="question.inputs[0].photos[0]">
 							<div ng-repeat="photo in question.inputs[0].photos">
 								<div class="col-xs-3">

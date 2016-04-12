@@ -185,7 +185,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	//Callback function when the file system uri has been resolved
 	function resolveOnSuccessImage(entry) {
 		//new file name
-		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+ "_" +$scope.dateAndTime() +"-"+($scope.currentQuestion.inputs[0].photos.length+1)+".jpg";;
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+ "_" +$scope.dateAndTime() +"-"+($scope.currentQuestion.inputs[0].photos.length+1)+".jpg";
 		var myFolderApp = "Images";
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
@@ -225,19 +225,22 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 		$sessionStorage.imagePath = $scope.currentPath;
 		$location.path('/report/image');
 	};
-
 	//MEMO SECTION
 	$scope.startRecording = function (questionId) {
 		$scope.questionId = questionId;
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
-			fileSys.root.getDirectory('media', {create: true});
-		})
+
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId];
-		
-		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+$scope.dateAndTime()+"-"+($scope.currentQuestion.inputs[0].recording.length+1)+".wav";
+
+		var src = "tempRecording.m4a";
 		$scope.myMedia = new Media(src);
+		var options = {
+			SampleRate: 12000,
+			NumberOfChannels: 1
+		}
+
 		// Record audio
-		$scope.myMedia.startRecord();
+		//		$scope.myMedia.startRecord();
+		$scope.myMedia.startRecordWithCompression(options);
 		$scope.timer = 0;
 		$scope.promise = $interval(function () {
 			$scope.timer = $scope.timer + 1;
@@ -245,21 +248,84 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	};
 
 	$scope.stopRecording = function (questionId) {
+
+		window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, fileGot, fail);
+
+		function fileGot(fileSys){
+			fileSys.root.getFile("tempRecording.m4a", {create: true, exclusive: false}, gotFileEntry, fail);
+		}
+
+		function gotFileEntry(fileEntry){
+			moveMedia(fileEntry.toURL());
+		}
+
+		function moveMedia(file) {
+			window.resolveLocalFileSystemURL(file, resolveOnSuccessMeida, resOnError);
+		}
+
+		//Callback function when the file system uri has been resolved
+		function resolveOnSuccessMeida(entry) {
+			//new file name
+			var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+$scope.dateAndTime()+"-"+($scope.currentQuestion.inputs[0].recording.length+1)+".m4a";
+			var myFolderApp = "Media";
+
+			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
+				//The folder is created if doesn't exis
+				var root  = fileSys.root;
+				$scope.fileSystem = root.toURL();
+				fileSys.root.getDirectory(myFolderApp,
+										  {create: true, exclusive: false},
+										  function (directory) {
+					entry.moveTo(directory, newFileName, successMoveMedia, resOnError);
+				},
+										  resOnError);
+			},
+									 resOnError);
+		}
+
+		//Callback function when the file has been moved successfully - inserting the complete path
+		function successMoveMedia(entry) {
+			//I do my insert with "entry.fullPath" as for the path
+			var path = entry.fullPath;
+			$scope.currentQuestion.inputs[0].recording.push(path);
+			$scope.$apply();
+			document.addEventListener('deviceready', onDeviceReady);
+			function onDeviceReady()
+			{
+				var success = function(status) {
+					//				alert('Message: ' + status);
+				}
+
+				var error = function(status) {
+					//				alert('Error: ' + status);
+				}
+
+				window.cache.clear( success, error );
+				window.cache.cleartemp(); //  
+			}
+		}
+
+		function resOnError(error) {
+			alert("Error"+error.code);
+		}
 		$interval.cancel($scope.promise);
 		$scope.timer = 0;
 		$scope.myMedia.stopRecord();
-		$scope.currentQuestion.inputs[0].recording.push($scope.myMedia.src);
 		clearInterval($scope.recInterval);
-		$scope.$apply();
+		//		$scope.$apply();
 	};
 
 	var mediaTimer = null;
 	$scope.playRecording = function (memo) {
-		$scope.currentMemo = memo;
-		$scope.newMediaObject = new Media(memo);
+		//WILL NEED TO CHECK HOW TO DO THIS WITH ANDROID.
+		//		if(device.platform === "Android"){
+		//			$scope.currentMemo = $scope.fileSystem+memo;
+		//		}else{
+		//		}
+		$scope.currentMemo = 'documents:/'+memo;
+		$scope.newMediaObject = new Media($scope.currentMemo);
 		$scope.newMediaObject.play();
 		if (mediaTimer === null) {
-
 			mediaTimer = setInterval(function () {
 				$scope.duration = $scope.newMediaObject.getDuration();
 				// get my_media position

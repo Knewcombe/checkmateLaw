@@ -180,8 +180,8 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//Camera stuff below
 
-	$scope.takePic = function (type, inputId) {
-
+	$scope.takePic = function (type, inputId, question) {
+		console.log(question);
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[inputId];
 		$scope.questionId = inputId;
 		var options = {

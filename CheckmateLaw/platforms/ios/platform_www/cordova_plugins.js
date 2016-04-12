@@ -406,6 +406,20 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-secure-storage/www/securestorage.js",
+        "id": "cordova-plugin-secure-storage.SecureStorage",
+        "pluginId": "cordova-plugin-secure-storage",
+        "clobbers": [
+            "SecureStorage"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-secure-storage/www/sjcl_ss.js",
+        "id": "cordova-plugin-secure-storage.sjcl_ss",
+        "pluginId": "cordova-plugin-secure-storage",
+        "runs": true
     }
 ];
 module.exports.metadata = 

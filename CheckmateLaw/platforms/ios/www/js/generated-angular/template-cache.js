@@ -1143,6 +1143,12 @@ angular.module("app").run(["$templateCache", function($templateCache) {
                        "            <label for=\"checklistName\">Name for Checklist: &nbsp;</label><input class=\"form-control\" id=\"checklistName\" type=\"text\" ng-model=\"$storage.savedChecklist[$storage.savedIndex].title\" required/>\r" +
                        "\n" +
                        "        </div>\r" +
+					   "\n" +
+					   "        <div class=\"form-group\">\r" +
+                       "\n" +
+                       "            <label for=\"occurranceNumber\">Occurrance Number: &nbsp;</label><input class=\"form-control\" id=\"occurranceNumber\" type=\"text\" ng-model=\"$storage.savedChecklist[$storage.savedIndex].occurranceNumber\" required/>\r" +
+                       "\n" +
+                       "        </div>\r" +
                        "\n" +
                        "        <input type=\"submit\" value=\"View/Edit\" class=\"btnWhite btnInput\"/>\r" +
                        "\n" +

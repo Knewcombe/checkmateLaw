@@ -51,6 +51,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-secure-storage": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
     "dependent_plugins": {}

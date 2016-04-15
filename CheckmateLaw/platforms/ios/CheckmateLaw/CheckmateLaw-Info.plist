@@ -8,8 +8,6 @@
     <string>${PRODUCT_NAME}</string>
     <key>CFBundleExecutable</key>
     <string>${EXECUTABLE_NAME}</string>
-    <key>CFBundleIconFile</key>
-    <string>icon.png</string>
     <key>CFBundleIcons</key>
     <dict/>
     <key>CFBundleIcons~ipad</key>
@@ -28,11 +26,13 @@
     <string>????</string>
     <key>CFBundleVersion</key>
     <string>0.0.1</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>mailto</string>
-    </array>
     <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSMainNibFile</key>
+    <string/>
+    <key>NSMainNibFile~ipad</key>
+    <string/>
+    <key>UIRequiresFullScreen</key>
     <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
@@ -40,12 +40,10 @@
       <true/>
     </dict>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string></string>
-    <key>NSMainNibFile</key>
-    <string></string>
-    <key>NSMainNibFile~ipad</key>
-    <string></string>
-    <key>UIRequiresFullScreen</key>
-    <true/>
+    <string/>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>mailto</string>
+    </array>
   </dict>
 </plist>

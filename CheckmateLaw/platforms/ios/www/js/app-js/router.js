@@ -58,8 +58,8 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     });
     
     $routeProvider.when('/addQuestions',{
-        templateUrl: 'additionalQuestions.html',
-        controller: 'ReportAddQuestionController'
+        templateUrl: 'questions.html',
+        controller: 'ReportQuestionController'
     });
     $routeProvider.when('/guidelines', {
         templateUrl: 'guidelines.html',

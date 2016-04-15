@@ -50,11 +50,11 @@
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
     </feature>
-    <feature name="Zip">
-        <param name="ios-package" value="ZipPlugin" />
-    </feature>
     <feature name="Cache">
         <param name="ios-package" value="Cache" />
+    </feature>
+    <feature name="Zip">
+        <param name="ios-package" value="ZipPlugin" />
     </feature>
     <name>CheckmateLaw</name>
     <description>

@@ -279,6 +279,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.edit = function ($index) {
 		$scope.$storage.savedIndex = $index;
 		$localStorage.checklistName = $localStorage.savedChecklist[$index].title;
+		$localStorage.occurranceNumber = $localStorage.savedChecklist[$index].occurranceNumber;
 		$location.path('/report/saved/edit');
 	};
 

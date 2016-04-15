@@ -51,6 +51,10 @@ for significantly better compression.
 
 #import "CDVSound.h"
 #import "CDVFile.h"
+<<<<<<< HEAD
+=======
+//#import <Cordova/NSArray+Comparisons.h>
+>>>>>>> ImproveCode
 
 #define DOCUMENTS_SCHEME_PREFIX @"documents://"
 #define HTTP_SCHEME_PREFIX @"http://"

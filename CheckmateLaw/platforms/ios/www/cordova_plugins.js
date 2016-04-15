@@ -398,6 +398,7 @@ module.exports = [
         "clobbers": [
             "window.Media"
         ]
+<<<<<<< HEAD
     },
     {
         "file": "plugins/cordova-plugin-device/www/device.js",
@@ -420,6 +421,8 @@ module.exports = [
         "id": "cordova-plugin-secure-storage.sjcl_ss",
         "pluginId": "cordova-plugin-secure-storage",
         "runs": true
+=======
+>>>>>>> ImproveCode
     }
 ];
 module.exports.metadata = 

@@ -37,6 +37,13 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	$scope.init = function () {
 
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+		//This will determain if the selected will be additional questions or questions.
+		if($scope.currentPath === '/addQuestions'){
+			console.log("Additional Questions Path "+$scope.currentPath);
+		}
+		if($scope.currentPath === '/questions'){
+			console.log("Questions Path "+$scope.currentPath);
+		}
 		setTimeout(function () {    
 			$('.section').show();
 			$('.additionalOutput').hide();
@@ -156,9 +163,15 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 
 	//Camera stuff below
 
+<<<<<<< HEAD
 	$scope.takePic = function (type, inputId) {
 
 		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId];
+=======
+	$scope.takePic = function (question, inputId) {
+
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[inputId].inputs[0];
+>>>>>>> ImproveCode
 		$scope.questionId = inputId;
 		var options = {
 			quality: 10,

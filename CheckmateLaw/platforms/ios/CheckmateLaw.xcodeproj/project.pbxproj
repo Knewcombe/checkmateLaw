@@ -50,6 +50,7 @@
 		F5331112A67348FAB6E9CEC3 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = CEFE7AF9F5C54537BED7AEA6 /* sha1.c */; };
 		FB282733701041CF87D8AC07 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F623C0CC5F45FC83BB52F6 /* aeskey.c */; };
 		FB4573534F974152BE2AEC33 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CE5365A309445686A2DE4A /* Cache.m */; };
+<<<<<<< HEAD
 		E633D3F29319486FA7589E4C /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 39720B0A8AEF4F3B96C67FDA /* CDVSound.m */; };
 		F0A8D77AF80D4E969A38A525 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D32C6AAC64B7456DAD24A6E7 /* CDVDevice.m */; };
 		4D46042150B3418188BE1507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4772548D202D4E4487478A75 /* Foundation.framework */; };
@@ -57,6 +58,9 @@
 		79A1C50E39B84FF1AEB51BE8 /* SecureStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F576F992014BC4AFD75124 /* SecureStorage.m */; };
 		E8075F564A83437F9B49891D /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F57627F785C439F909F470F /* SSKeychain.m */; };
 		79AFEF0ABD034607A98A2CD3 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FF50569B0A4B4A6F837738B1 /* SSKeychainQuery.m */; };
+=======
+		A00765F4F01B45BC97A55F4E /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6E4DB909B4DA1AE5F1D99 /* CDVSound.m */; };
+>>>>>>> ImproveCode
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +175,7 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = CheckmateLaw/config.xml; sourceTree = "<group>"; };
 		FD27139A81B1450DB0B6C8C0 /* CDVCapture.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCapture.h; path = "cordova-plugin-media-capture/CDVCapture.h"; sourceTree = "<group>"; };
 		FE02D4D8584E42AD9FAA9361 /* ioapi.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = "cordova-plugin-zip/Plugins/minizip/ioapi.h"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		39720B0A8AEF4F3B96C67FDA /* CDVSound.m */ = {isa = PBXFileReference; name = "CDVSound.m"; path = "cordova-media-with-compression/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		599B16C477554BC88B0556B4 /* CDVSound.h */ = {isa = PBXFileReference; name = "CDVSound.h"; path = "cordova-media-with-compression/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		D32C6AAC64B7456DAD24A6E7 /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
@@ -183,6 +188,10 @@
 		7F2647E8289846449BDFE3D4 /* SecureStorage.h */ = {isa = PBXFileReference; name = "SecureStorage.h"; path = "cordova-plugin-secure-storage/SecureStorage.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		100F1A09905842F9BD103010 /* SSKeychain.h */ = {isa = PBXFileReference; name = "SSKeychain.h"; path = "cordova-plugin-secure-storage/SSKeychain.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		B178806BB3784DCE8CC4335F /* SSKeychainQuery.h */ = {isa = PBXFileReference; name = "SSKeychainQuery.h"; path = "cordova-plugin-secure-storage/SSKeychainQuery.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+=======
+		0EB6E4DB909B4DA1AE5F1D99 /* CDVSound.m */ = {isa = PBXFileReference; name = "CDVSound.m"; path = "cordova-media-with-compression/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		63AE3D69E6EE4B58987256E7 /* CDVSound.h */ = {isa = PBXFileReference; name = "CDVSound.h"; path = "cordova-media-with-compression/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+>>>>>>> ImproveCode
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +379,7 @@
 				78BDC3836FB2453F9B869B72 /* Cache.h */,
 				6CD58363BDC943A28B45CF3B /* CDVStatusBar.m */,
 				7FB7FE231036493A8BB5CCB9 /* CDVStatusBar.h */,
+<<<<<<< HEAD
 				39720B0A8AEF4F3B96C67FDA /* CDVSound.m */,
 				599B16C477554BC88B0556B4 /* CDVSound.h */,
 				D32C6AAC64B7456DAD24A6E7 /* CDVDevice.m */,
@@ -380,6 +390,10 @@
 				7F2647E8289846449BDFE3D4 /* SecureStorage.h */,
 				100F1A09905842F9BD103010 /* SSKeychain.h */,
 				B178806BB3784DCE8CC4335F /* SSKeychainQuery.h */,
+=======
+				0EB6E4DB909B4DA1AE5F1D99 /* CDVSound.m */,
+				63AE3D69E6EE4B58987256E7 /* CDVSound.h */,
+>>>>>>> ImproveCode
 			);
 			name = Plugins;
 			path = CheckmateLaw/Plugins;
@@ -531,11 +545,15 @@
 				C6C7D1D010EE47C592E7EFD8 /* ioapi.c in Sources */,
 				FB4573534F974152BE2AEC33 /* Cache.m in Sources */,
 				EA727AF51A924E9793D35A25 /* CDVStatusBar.m in Sources */,
+<<<<<<< HEAD
 				E633D3F29319486FA7589E4C /* CDVSound.m in Sources */,
 				F0A8D77AF80D4E969A38A525 /* CDVDevice.m in Sources */,
 				79A1C50E39B84FF1AEB51BE8 /* SecureStorage.m in Sources */,
 				E8075F564A83437F9B49891D /* SSKeychain.m in Sources */,
 				79AFEF0ABD034607A98A2CD3 /* SSKeychainQuery.m in Sources */,
+=======
+				A00765F4F01B45BC97A55F4E /* CDVSound.m in Sources */,
+>>>>>>> ImproveCode
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

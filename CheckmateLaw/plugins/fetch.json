@@ -111,6 +111,7 @@
         },
         "is_top_level": true,
         "variables": {}
+<<<<<<< HEAD
     },
     "cordova-plugin-device": {
         "source": {
@@ -127,5 +128,7 @@
         },
         "is_top_level": true,
         "variables": {}
+=======
+>>>>>>> ImproveCode
     }
 }

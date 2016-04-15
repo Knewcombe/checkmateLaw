@@ -68,12 +68,15 @@
     <feature name="Media">
         <param name="ios-package" value="CDVSound" />
     </feature>
+<<<<<<< HEAD
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
     <feature name="SecureStorage">
         <param name="ios-package" value="SecureStorage" />
     </feature>
+=======
+>>>>>>> ImproveCode
     <feature name="Zip">
         <param name="ios-package" value="ZipPlugin" />
     </feature>

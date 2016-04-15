@@ -23,6 +23,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.dateAndTime = function(){
 		var date = new Date();
 		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		console.log("Date: "+dateAndTime);
 		return dateAndTime;
 	}
 
@@ -30,10 +31,12 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.$storage = $localStorage;
 	promise.then(function (data) {
 		$scope.pass = data;
+		console.log($scope.pass);
 	});
 	$scope.selectTemplate = function (selection) {
 		$scope.selection = selection;
 		$scope.tempReport = $scope.selection;
+		console.log(selection);
 	};
 	$scope.next = function (tempReport) {
 		if (typeof $localStorage.savedChecklist === 'undefined') {
@@ -46,7 +49,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		} else {
 			$scope.$storage.savedIndex = 0;
 		}
-
+		console.log($scope.$storage.savedIndex);
 		$location.path('/sections');
 	};
 
@@ -109,6 +112,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$rootScope.isResizeDiv = false;
 
 	function gotFS(fileSystem){
+		console.log("gotFS called");
 		$scope.fileSystem = fileSystem.root.toURL();
 	}
 
@@ -124,7 +128,6 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
 
 		function email(path, fileName, zipFileName){
-			
 			cordova.plugins.email.open({
 				//			to:          [""], // email addresses for TO field
 				//			cc:          [""], // email addresses for CC field
@@ -264,7 +267,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 			for(var pIndex=0; pIndex<inputsArray.length; pIndex++){
 				arrayList.push(addToZip(inputsArray[pIndex], zip))
 			}
-			$.when.apply(window, arrayList).done(saveZip());	
+			$.when.apply(window, arrayList).done(saveZip);	
 		}else{
 			PdfFromat.getPDF($localStorage.checklistPdf, email, "");
 		}
@@ -282,7 +285,6 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.edit = function ($index) {
 		$scope.$storage.savedIndex = $index;
 		$localStorage.checklistName = $localStorage.savedChecklist[$index].title;
-		$localStorage.occurranceNumber = $localStorage.savedChecklist[$index].occurranceNumber;
 		$location.path('/report/saved/edit');
 	};
 

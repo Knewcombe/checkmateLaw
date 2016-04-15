@@ -1,0 +1,35 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{referanceList.name}}</p>
+		<p class="checklistTitle">{{outPut.title}}</p>
+	</div>
+</div>
+<div class="questionain">
+	<div class="content">
+		<div ng-repeat="items in outPut.items">
+			<div class="list-group">
+				<div class="row resizeDiv">
+					<!--On click will hide questions and show either additional output, or additional questions-->
+
+					<div ng-if="!items.sections">
+						<div class="col-xs-12 sectionText">
+							<h5 class="questionText question"><strong>{{items.title}}</strong></h5>
+							<p class="questionText question">{{items.output}}</p>
+						</div>
+					</div>
+					<div ng-if="items.sections" ng-click="itemSelect(items.id)">
+						<div class="col-xs-9 sectionText">
+							<h5 class="questionText question"><strong>{{items.title}}</strong></h5>
+							<p class="questionText question">{{items.output}}</p>
+						</div>
+					</div>
+					<div ng-if="items.sections" class="col-xs-1 sectionText">
+						<p class="questionText question"><span class="glyphicon glyphicon-arrow-right"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav-footer></nav-footer>

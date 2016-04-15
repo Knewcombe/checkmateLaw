@@ -1,0 +1,34 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group" ng-controller="NoteController">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{mainTitle}}</p>
+		<p>{{output}}</p>
+	</div>
+</div>
+<div>
+	<div ng-init="init()">
+		<div class="content">
+			<div>
+				<textarea class="form-control" ng-model="input" ng-change="input"></textarea><br/>
+				<div class="btn-toolbar questionText">
+					<button type="button" class="btn" ng-click="submitComment()">Submit</button>
+				</div>
+			</div>
+			<div class="list-group">
+				<div class="{{addQuestions.type}} {{addQuestions.type}}">
+					<div class="{{addQuestions.type}} {{addQuestions.type}}">
+						<div class="row resizeDiv">
+							<div class="col-xs-11">
+								<h3 class="centerText">Notes:</h3>
+								<div ng-repeat="note in noteIndex.inputs[0].notes | orderBy:'-key':reverse" class="list-group-item">
+									<p>{{note.key}} : {{note.value}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav-footer></nav-footer>

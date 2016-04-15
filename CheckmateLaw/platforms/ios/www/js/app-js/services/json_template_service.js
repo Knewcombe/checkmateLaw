@@ -1,7 +1,6 @@
 angular.module("app").service('JsonTemplateService', function($http, $q) {
     this.getList = function(){
         var deferred = $q.defer();
-		console.log(deferred);
         $http.get('js/jason/newCheckList-BandE.json?callback=JSON_CALLBACK').success(function(templateData) {
             var savedTemplates = angular.fromJson(templateData);
             //This just sets the JSON object to the same format as the template service one. This may go eventually, see Issue #14,

@@ -323,6 +323,13 @@ module.exports = [
         "clobbers": [
             "window.Media"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -341,7 +348,8 @@ module.exports.metadata =
     "cordova-plugin-zip": "3.1.0",
     "org.apache.cordova.plugin.cache": "1.0.5",
     "cordova-plugin-statusbar": "2.1.2",
-    "cordova-media-with-compression": "2.0.20"
+    "cordova-media-with-compression": "2.0.20",
+    "cordova-plugin-device": "1.1.1"
 };
 // BOTTOM OF METADATA
 });

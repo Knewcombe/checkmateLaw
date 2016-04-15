@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "/widget": [
@@ -152,6 +156,9 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-media-with-compression": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
@@ -480,6 +487,13 @@
             "clobbers": [
                 "window.Media"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "clobbers": [
+                "device"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -496,6 +510,7 @@
         "cordova-plugin-zip": "3.1.0",
         "org.apache.cordova.plugin.cache": "1.0.5",
         "cordova-plugin-statusbar": "2.1.2",
-        "cordova-media-with-compression": "2.0.20"
+        "cordova-media-with-compression": "2.0.20",
+        "cordova-plugin-device": "1.1.1"
     }
 }

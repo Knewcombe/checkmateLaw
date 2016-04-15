@@ -5,7 +5,7 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 	//Code provided by ANDREW TRICE @ http://www.tricedesigns.com/2014/01/08/generating-pdf-inside-of-phonegap-apps/
 	this.getPDF = function (data, callback, zipFileName) {
 		var doc = new jsPDF;
-		var fileName = $localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf";
+		var fileName = $localStorage.checklistPdf.title +"-"+$localStorage.checklistPdf.name+".pdf";
 		var path; 
 		var checklist = data;
 

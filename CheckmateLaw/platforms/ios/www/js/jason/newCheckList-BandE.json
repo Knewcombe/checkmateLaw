@@ -4,7 +4,6 @@
 		"title": "",
 		"name": "Break and Enter",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -1642,7 +1641,6 @@
 		"title": "",
 		"name": "Sudden Death",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -6968,7 +6966,6 @@
 		"title": "",
 		"name": "Impaired Driving",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -8065,7 +8062,6 @@
 		"title": "",
 		"name": "Theft",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -9482,7 +9478,6 @@
 		"title": "",
 		"name": "Fire",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -9974,7 +9969,6 @@
 		"title": "",
 		"name": "Sexual Assault",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": 
 		[
@@ -10601,7 +10595,6 @@
 		"title": "",
 		"name": "Assault",
 		"dateStamp": "",
-		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{

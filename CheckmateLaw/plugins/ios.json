@@ -48,15 +48,9 @@
         },
         "cordova-media-with-compression": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-<<<<<<< HEAD
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "cordova-plugin-secure-storage": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-=======
->>>>>>> ImproveCode
         }
     },
     "dependent_plugins": {}

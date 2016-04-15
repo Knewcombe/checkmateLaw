@@ -2,6 +2,7 @@
 <!--Lists the questions within the sections-->
 <div class="row list-group" ng-controller="ReportAddQuestionController">
 	<div class="col-xs-12 titleTop">
+		<p>Occurrance Number: {{viewReport.occurranceNumber}}</p>
 		<p class="checklistTitle">{{viewReport.sections[selectedSection].questions[selectedQuestion].output}}</p>
 	</div>
 </div>
@@ -40,7 +41,7 @@
 							<button type="button" class="btn navButton" ng-click="note(addQuestions.id, addQuestions.type)">More...</button>
 							<div class="lineBreak"></div>
 							<p class="questionPadding typeText centerText">Images:</p>
-							<button type="button" class="btn navButton" ng-click="takePic(addQuestions.type, addQuestions.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+							<button type="button" class="btn navButton" ng-click="takePic(addQuestions addQuestions.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
 							<div class="row" ng-if="addQuestions.inputs[0].photos[0]">
 								<div ng-repeat="photo in addQuestions.inputs[0].photos">
 									<div class="col-xs-3">

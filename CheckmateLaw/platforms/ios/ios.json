@@ -67,10 +67,17 @@
                         {
                             "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
                             "count": 1
+<<<<<<< HEAD
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SecureStorage\"><param name=\"ios-package\" value=\"SecureStorage\" /></feature>",
+                            "count": 1
+=======
+>>>>>>> ImproveCode
                         }
                     ],
                     "/widget": [
@@ -141,9 +148,15 @@
         },
         "cordova-media-with-compression": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+<<<<<<< HEAD
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-secure-storage": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+=======
+>>>>>>> ImproveCode
         }
     },
     "dependent_plugins": {},
@@ -546,6 +559,7 @@
             "clobbers": [
                 "window.Media"
             ]
+<<<<<<< HEAD
         },
         {
             "file": "plugins/cordova-plugin-device/www/device.js",
@@ -554,6 +568,22 @@
             "clobbers": [
                 "device"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-secure-storage/www/securestorage.js",
+            "id": "cordova-plugin-secure-storage.SecureStorage",
+            "pluginId": "cordova-plugin-secure-storage",
+            "clobbers": [
+                "SecureStorage"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-secure-storage/www/sjcl_ss.js",
+            "id": "cordova-plugin-secure-storage.sjcl_ss",
+            "pluginId": "cordova-plugin-secure-storage",
+            "runs": true
+=======
+>>>>>>> ImproveCode
         }
     ]
 }

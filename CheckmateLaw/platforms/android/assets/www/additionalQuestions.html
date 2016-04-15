@@ -24,7 +24,7 @@
 						<div class="col-xs-14 resizeDiv">
 							<!--On click will open additional output, additional questions will never have questions.-->
 							<div class="col-xs-10 sectionText">
-								<p class="questionText questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.id)"><strong>{{(addQuestions.id+1)}}</strong>. {{addQuestions.output}}</p>
+								<p class="questionText questionPadding {{addQuestions.type}} {{addQuestions.type}}" ng-click="showHideInfo(addQuestions.id)">{{(addQuestions.id+1)}}. {{addQuestions.output}}</p>
 							</div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 							<div class="lineBreak"></div>
 							<p class="questionPadding typeText centerText">Notes:</p>
 							<p class="noteText questionText questionPadding" ng-if='addQuestions.inputs[0].notes[0]' ng-repeat="note in addQuestions.inputs[0].notes | orderBy:'-key':reverse | limitTo:3">
-								{{note.key}} : {{note.value}}
+								{{note.key}} - {{note.value}}
 							</p>
 							<button type="button" class="btn navButton" ng-click="note(addQuestions.id, addQuestions.type)">More...</button>
 							<div class="lineBreak"></div>

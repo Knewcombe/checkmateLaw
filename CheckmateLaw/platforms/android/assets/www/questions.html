@@ -1,6 +1,7 @@
 <nav-header></nav-header>
 <div class="row topDiv list-group" ng-controller="ReportQuestionController">
 	<div class="col-xs-12 titleTop">
+		<p>Occurrance Number: {{viewReport.occurranceNumber}}</p>
 		<p class="checklistTitle">{{viewReport.sections[selectedSection].title}}</p>
 	</div>
 </div>
@@ -38,22 +39,22 @@
 						<button type="button" class="btn navButton" ng-click="note(question.id, question.type)">More...</button>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Images:</p>
-						<button type="button" class="btn navButton" ng-click="takePic(question.type, question.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+						<button type="button" class="btn navButton" ng-click="takePic(question.type, question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
 						<div class="row" ng-if="question.inputs[0].photos[0]">
 							<div ng-repeat="photo in question.inputs[0].photos">
 								<div class="col-xs-3">
 									<div class="thumbnail">
 										<img ng-click="editImage(fileSystem, photo)" src="{{fileSystem}}{{photo}}"/>
 										<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '')}}</p>
-										<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(question.id, $index)"><span class="glyphicon glyphicon-trash"></span></button>
+										<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(question, $index)"><span class="glyphicon glyphicon-trash"></span></button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Memos:</p>
-						<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording(question.id)"><span class="glyphicon glyphicon-record"></span>Record</button>
-						<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(question.id)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
+						<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Record</button>
+						<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(question)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
 						<p ng-if="timer >= 1 && currentQuestion === question">Recording... {{timer}} seconds</p>
 						<div ng-if="question.inputs[0].recording[0]" ng-repeat="memo in question.inputs[0].recording">
 							<div class="lineBreak"></div>

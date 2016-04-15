@@ -1,20 +1,22 @@
 <nav-header></nav-header>
 <div class="row topDiv list-group" ng-controller="ReportQuestionController">
 	<div class="col-xs-12 titleTop">
+		<p>Occurrance Number: {{viewReport.occurranceNumber}}</p>
 		<p class="checklistTitle">{{viewReport.sections[selectedSection].title}}</p>
+		<p ng-if="currentPath === '/addQuestions'" class="checklistTitle">{{viewReport.sections[selectedSection].questions[selectedQuestion].output}}</p>
 	</div>
 </div>
 <!--Lists the questions within the sections-->
 <div ng-init="init()">
 	<div id="content" class="content">
-		<div ng-repeat="question in viewReport.sections[selectedSection].questions">
-			<div ng-if="question.type === 'question'" class="list-group">
+		<div ng-repeat="question in questionOutput">
+			<div ng-if="question.type === 'question' || question.type === 'additionalQuestion'" class="list-group">
 				<div class="col-xs-2">
 					<!--Some checkmark logic as before-->
 					<div class="row">
 						<div class="col-xs-2">
-							<img ng-if = "question.state !== null " ng-click="count(question.state, question.type, question.id)" ng-src="{{question.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
-							<img ng-if = "question.state === null " ng-click="count(question.state, question.type, question.id)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="question mark">
+							<img ng-if = "question.state !== null " ng-click="count(question.state, question)" ng-src="{{question.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+							<img ng-if = "question.state === null " ng-click="count(question.state, question)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="question mark">
 						</div>
 					</div>
 				</div>
@@ -29,35 +31,48 @@
 				<div class="list-group-item questionPadding additionalOutput additionalOutput{{question.id}}">
 					<!--additional output will show the user more info about this question, and allow the user to add their input.-->
 					<div class="questionText">
-						<button type="button" class="btn navButton" ng-click="nan(question.state, question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
+						<button type="button" class="btn navButton" ng-click="nan(question.state, question)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Notes:</p>
 						<p class="noteText questionText questionPadding" ng-if='question.inputs[0].notes[0]' ng-repeat="note in question.inputs[0].notes | orderBy:'-key':reverse | limitTo:3">
 							{{note.key}} : {{note.value}}
 						</p>
-						<button type="button" class="btn navButton" ng-click="note(question.id, question.type)">More...</button>
+						<button type="button" class="btn navButton" ng-click="note(question)">More...</button>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Images:</p>
-						<button type="button" class="btn navButton" ng-click="takePic(question.type, question.id)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+<<<<<<< HEAD
+						<button type="button" class="btn navButton" ng-click="takePic(question.type, question.id, question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+=======
+						<button type="button" class="btn navButton" ng-click="takePic(question.type, question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
+>>>>>>> ImproveCode
 						<div class="row" ng-if="question.inputs[0].photos[0]">
 							<div ng-repeat="photo in question.inputs[0].photos">
 								<div class="col-xs-3">
 									<div class="thumbnail">
 										<img ng-click="editImage(fileSystem, photo)" src="{{fileSystem}}{{photo}}"/>
+<<<<<<< HEAD
 										<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '')}}</p>
 										<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(question.id, $index)"><span class="glyphicon glyphicon-trash"></span></button>
+=======
+										<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '')}}</p>
+										<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(question, $index)"><span class="glyphicon glyphicon-trash"></span></button>
+>>>>>>> ImproveCode
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Memos:</p>
-						<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording(question.id)"><span class="glyphicon glyphicon-record"></span>Record</button>
-						<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(question.id)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
-						<p ng-if="timer >= 1 && currentQuestion === question">Recording... {{timer}} seconds</p>
+						<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording()"><span class="glyphicon glyphicon-record"></span>Record</button>
+						<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(question)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
+						<p ng-if="timer > 0">Recording... {{timer}} seconds</p>
 						<div ng-if="question.inputs[0].recording[0]" ng-repeat="memo in question.inputs[0].recording">
 							<div class="lineBreak"></div>
+<<<<<<< HEAD
 							<p class="questionText">Memo: {{memo.replace('/Media/', '').replace(viewReport.title, '').replace('-','').replace('.m4a', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '')}}</p>
+=======
+							<p class="questionText">Memo: {{memo.replace('/Media/', '').replace(viewReport.title, '').replace('-','').replace('.m4a', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '')}}</p>
+>>>>>>> ImproveCode
 							<button type="button" class="btn navButton" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
 							<button type="button" class="btn navButton" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
 							<button type="button" class="btn navButton" ng-click="deleteRecording(question, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>

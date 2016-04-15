@@ -1,4 +1,4 @@
-angular.module('app').controller('ReportQuestionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval) {
+angular.module('app').controller('ReportQuestionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval, ImageService, FileSystemService, MediaService) {
 
 
 	$rootScope.isHomepage = false;
@@ -35,17 +35,16 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	};
 
-	$scope.dateAndTime = function(id){
+	$scope.dateAndTime = function(){
 		var date = new Date();
-		var dateAndTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id].inputs[0];
-		$scope.currentQuestion.dateChange = dateAndTime;
-		$scope.$apply();
+		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		console.log("Date: "+dateAndTime);
+		return dateAndTime;
 	}
 
 	//To insure everything looks right on load.
 	$scope.init = function () {
-
+		$scope.dateAndTime();
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {    
 			$('.section').show();
@@ -174,92 +173,29 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//Note function will take the user to the notes menu and allow them to enter a new note.
 	$scope.note = function(index, type){
-
 		$rootScope.output = $scope.viewReport.sections[$scope.selectedSection].questions[index];
 		$sessionStorage.notePath = $scope.currentPath;
 		$location.path('/report/note');
 	};
 
 	//Camera stuff below
-
-	$scope.takePic = function (type, inputId) {
-
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[inputId].inputs[0];
-		$scope.questionId = inputId;
-		var options = {
-			quality: 10,
-			destinationType: Camera.DestinationType.FILE_URI,
-			sourceType: 1, // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-			encodingType: 0, // 0=JPG 1=PNG
-			correctOrientation: 1,
-			saveToPhotoAlbum: 1
-		};
-		navigator.camera.getPicture(onSuccess, onFail, options);
-	};
-
-	var onSuccess = function (FILE_URI) {
-		movePic(FILE_URI);
-	};
-	var onFail = function (e) {
-		alert('Error taking picture');
-	};
-
-	function movePic(file) {
-		window.resolveLocalFileSystemURL(file, resolveOnSuccessImage, resOnError);
+	$scope.takePic = function (type, question) {
+		//Image service is called with the question and fileName is passed to the function
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+(question.id + 1)+ "_" + $scope.dateAndTime()+"-"+(question.inputs[0].photos.length+1)+ ".jpg";
+		
+		var imagePromise = ImageService.image(question, newFileName);
+		//Waiting for the results of the image
+		imagePromise.then(function (data) {
+			question.inputs[0].photos.push(data);
+			$scope.$apply();
+		});
 	}
-
-	//Callback function when the file system uri has been resolved
-	function resolveOnSuccessImage(entry) {
-		var d = new Date();
-		var n = d.getFullYear()+'-'+d.getMonth()+'-'+d.getDay()+'-'+d.getHours()+d.getMinutes()+d.getSeconds();//This is where to get the formate for the time.
-		//new file name
-		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.questionId + 1)+ "_" + n + ".jpg";
-		var myFolderApp = "Images";
-
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
-			//The folder is created if doesn't exis
-			var root  = fileSys.root;
-			$scope.fileSystem = root.toURL();
-			fileSys.root.getDirectory(myFolderApp,
-									  {create: true, exclusive: false},
-									  function (directory) {
-				entry.moveTo(directory, newFileName, successMoveImage, resOnError);
-			},
-									  resOnError);
-		},
-								 resOnError);
-	}
-
-	//Callback function when the file has been moved successfully - inserting the complete path
-	function successMoveImage(entry) {
-		//I do my insert with "entry.fullPath" as for the path
-		var path = entry.fullPath;
-		$scope.currentQuestion.photos.push(path);
-		$scope.$apply();
-		document.addEventListener('deviceready', onDeviceReady);
-		function onDeviceReady()
-		{
-			var success = function(status) {
-				//				alert('Message: ' + status);
-			}
-
-			var error = function(status) {
-				//				alert('Error: ' + status);
-			}
-
-			window.cache.clear( success, error );
-			window.cache.cleartemp(); //  
-		}
-	}
-
-	function resOnError(error) {
-		alert("Error"+error.code);
-	}
-
-	$scope.deleteImage = function (type, questionId, index) {
-
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[questionId].inputs[0];
-		$scope.currentQuestion.photos.splice(index, 1);
+	//REMOVE IMAGE FROM APP
+	$scope.deleteImage = function (question, index) {
+		question.inputs[0].photos.splice(index, 1);
+		//Calling the File service to remove the image for the application file system.
+		FileSystemService.removeFile($scope.fileSystem+question.inputs[0].photos[index]);
+		$scope.$apply
 	};
 
 	$scope.editImage = function (rootUrl, imageUrl) {
@@ -269,43 +205,101 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	};
 
 	//MEMO SECTION
-	$scope.startRecording = function (questionId) {
-		console.log(questionId);
-		$scope.questionId = questionId;
-		console.log("Scope"+$scope.questionId);
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
-			fileSys.root.getDirectory('media', {create: true});
-			console.log(fileSys.name);
-			console.log(fileSys.root.name);
-		});
-		var date = new Date();
-		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.questionId + 1)+ "_" + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+".wav";
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[questionId];
-		$scope.myMedia = new Media(src);
-		// Record audio
-		$scope.myMedia.startRecord();
+	$scope.startRecording = function (question) {
+		
+		var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+(question.questionId + 1)+ "_"+$scope.dateAndTime()+"-"+(question.inputs[0].recording.length+1)+".m4a";
+		
+		MediaService.media();
+		
 		$scope.timer = 0;
 		$scope.promise = $interval(function () {
 			$scope.timer = $scope.timer + 1;
 		}, 1000);
 	};
 
-	$scope.stopRecording = function (questionId) {
+	$scope.stopRecording = function (question) {
+		
+		var mediaPromise = MediaService.stopMedia(fileName);
+		mediaPromise.then( function(data){
+			question.inputs[0].photos.push(data);
+		});
+
+//		window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, fileGot, fail);
+//
+//		function fileGot(fileSys){
+//			fileSys.root.getFile("tempRecording.m4a", {create: true, exclusive: false}, gotFileEntry, fail);
+//		}
+//
+//		function gotFileEntry(fileEntry){
+//			moveMedia(fileEntry.toURL());
+//		}
+//
+//		function moveMedia(file) {
+//			window.resolveLocalFileSystemURL(file, resolveOnSuccessMeida, resOnError);
+//		}
+
+		//Callback function when the file system uri has been resolved
+//		function resolveOnSuccessMeida(entry) {
+//			//new file name
+//			var newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.questionId + 1)+ "_"+$scope.dateAndTime()+"-"+($scope.currentQuestion.inputs[0].recording.length+1)+".m4a";
+//			var myFolderApp = "Media";
+//
+//			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
+//				//The folder is created if doesn't exis
+//				var root  = fileSys.root;
+//				$scope.fileSystem = root.toURL();
+//				fileSys.root.getDirectory(myFolderApp,
+//										  {create: true, exclusive: false},
+//										  function (directory) {
+//					entry.moveTo(directory, newFileName, successMoveMedia, resOnError);
+//				},
+//										  resOnError);
+//			},
+//									 resOnError);
+//		}
+
+//		//Callback function when the file has been moved successfully - inserting the complete path
+//		function successMoveMedia(entry) {
+//			//I do my insert with "entry.fullPath" as for the path
+//			var path = entry.fullPath;
+//			$scope.currentQuestion.inputs[0].recording.push(path);
+//			$scope.$apply();
+//			document.addEventListener('deviceready', onDeviceReady);
+//			function onDeviceReady()
+//			{
+//				var success = function(status) {
+//					//				alert('Message: ' + status);
+//				}
+//
+//				var error = function(status) {
+//					//				alert('Error: ' + status);
+//				}
+//
+//				window.cache.clear( success, error );
+//				window.cache.cleartemp(); //  
+//			}
+//		}
+//
+//		function resOnError(error) {
+//			alert("Error"+error.code);
+//		}
 		$interval.cancel($scope.promise);
 		$scope.timer = 0;
-		$scope.myMedia.stopRecord();
-		$scope.currentQuestion.inputs[0].recording.push($scope.myMedia.src);
 		clearInterval($scope.recInterval);
-		$scope.$apply();
+		//		$scope.$apply();
 	};
 
 	var mediaTimer = null;
 	$scope.playRecording = function (memo) {
-		$scope.currentMemo = memo;
-		$scope.newMediaObject = new Media(memo);
+		//WILL NEED TO CHECK HOW TO DO THIS WITH ANDROID.
+		//		if(device.platform === "Android"){
+		//			$scope.currentMemo = $scope.fileSystem+memo;
+		//		}else{
+		//		}
+		$scope.currentMemo = 'documents:/'+memo;
+		$scope.newMediaObject = new Media($scope.currentMemo);
 		$scope.newMediaObject.play();
 		if (mediaTimer === null) {
-
 			mediaTimer = setInterval(function () {
 				$scope.duration = $scope.newMediaObject.getDuration();
 				// get my_media position

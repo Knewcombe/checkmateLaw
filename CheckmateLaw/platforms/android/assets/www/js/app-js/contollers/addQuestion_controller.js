@@ -29,7 +29,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 	$scope.dateAndTime = function(id){
 		var date = new Date();
 		var dateAndTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+':'+date.getMinutes();
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id].inputs[0];
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id].inputs[0];
 		$scope.currentQuestion.dateChange = dateAndTime;
 		$scope.$apply();
 	}
@@ -63,7 +63,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 
 	$scope.nan = function (state, type, id) {
 
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[id];
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[id];
 		$scope.previousSection = $scope.viewReport.sections[$scope.selectedSection];
 
 		if(state !== true){
@@ -237,6 +237,7 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 		})
 		var date = new Date();
 		var src = 'documents://media/'+$scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.questionId + 1)+"_"+date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+date.getMinutes() + ".wav";
+		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId];
 		$scope.myMedia = new Media(src);
 		// Record audio
 		$scope.myMedia.startRecord();
@@ -246,13 +247,11 @@ angular.module('app').controller('ReportAddQuestionController', function ($rootS
 		}, 1000);
 	};
 
-	$scope.stopRecording = function (type, questionId) {
-
-		$scope.currentQuestion = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions[questionId].inputs[0];
+	$scope.stopRecording = function (questionId) {
 		$interval.cancel($scope.promise);
 		$scope.timer = 0;
 		$scope.myMedia.stopRecord();
-		$scope.currentQuestion.recording.push($scope.myMedia.src);
+		$scope.currentQuestion.inputs[0].recording.push($scope.myMedia.src);
 		clearInterval($scope.recInterval);
 		$scope.$apply();
 	};

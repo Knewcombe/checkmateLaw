@@ -33,10 +33,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
                             "count": 1
                         },
@@ -54,6 +50,10 @@
                         },
                         {
                             "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
                         }
                     ],
@@ -85,15 +85,15 @@
                             "count": 2
                         },
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.RECORD_VIDEO\" />",
                             "count": 1
                         }
                     ],
@@ -133,9 +133,6 @@
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
@@ -152,6 +149,9 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-media-with-compression": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
@@ -385,20 +385,6 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-media/www/MediaError.js",
-            "id": "cordova-plugin-media.MediaError",
-            "clobbers": [
-                "window.MediaError"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-media/www/Media.js",
-            "id": "cordova-plugin-media.Media",
-            "clobbers": [
-                "window.Media"
-            ]
-        },
-        {
             "file": "plugins/cordova-plugin-media-capture/www/CaptureAudioOptions.js",
             "id": "cordova-plugin-media-capture.CaptureAudioOptions",
             "clobbers": [
@@ -480,6 +466,20 @@
             "clobbers": [
                 "window.StatusBar"
             ]
+        },
+        {
+            "file": "plugins/cordova-media-with-compression/www/MediaError.js",
+            "id": "cordova-media-with-compression.MediaError",
+            "clobbers": [
+                "window.MediaError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-media-with-compression/www/Media.js",
+            "id": "cordova-media-with-compression.Media",
+            "clobbers": [
+                "window.Media"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -490,12 +490,12 @@
         "cordova-plugin-file-transfer": "1.5.0",
         "cordova-plugin-geolocation": "2.1.0",
         "cordova-plugin-globalization": "1.0.3",
-        "cordova-plugin-media": "2.1.0",
         "cordova-plugin-media-capture": "1.2.0",
         "cordova-plugin-vibration": "2.1.0",
         "cordova-plugin-whitelist": "1.2.1",
         "cordova-plugin-zip": "3.1.0",
         "org.apache.cordova.plugin.cache": "1.0.5",
-        "cordova-plugin-statusbar": "2.1.2"
+        "cordova-plugin-statusbar": "2.1.2",
+        "cordova-media-with-compression": "2.0.20"
     }
 }

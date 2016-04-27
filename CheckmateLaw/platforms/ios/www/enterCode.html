@@ -1,0 +1,19 @@
+<div class="row topDiv list-group" ng-controller="EnterCodeController">
+	<div class="col-lg-6 col-lg-offset-3">
+		<div ng-init="init()">
+			<div class="content">
+				<div class="form-group">
+					<label for="userCode">Please enter a Code: &nbsp;</label>
+					<input type="number" class="form-control" ng-model="userCode" ng-change="userCode" required/><br/>
+					<label for="confirmCode">Confirm your code: &nbsp;</label><input type="number" class="form-control" ng-model="confirmCode" ng-change="confirmCode" required/><br/>
+					<div class="btn-toolbar questionText">
+						<button type="button" class="btn" ng-click="submitCode()">Submit</button>
+					</div>
+				</div>
+				<div class="row">
+					<p class="col-xs-10 sectionText">This code will be used when logging into the app or when using any fetures the requires security access</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

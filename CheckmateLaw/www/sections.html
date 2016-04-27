@@ -7,10 +7,11 @@ added on a later date.-->
 
 <!--Lists all report type, this is temp-->
 <!--    <div ng-repeat="item in tempReport">-->
-
+<!--BODY-->
 <div ng-init="init()">
+	<!--CONTENT-->
 	<div class="content">
-		<!--Lists the sections.-->
+		<!--HEAD TOP-->
 		<div class="row">
 			<div class="col-xs-12 titleTop list-group">
 				<p class="checklistTitle">{{viewReport.title}}</p>
@@ -18,6 +19,8 @@ added on a later date.-->
 				<p>{{viewReport.dateStamp}}</p>
 			</div>
 		</div>
+		<!--/HEAD TOP-->
+		<!--SECTION-->
 		<div ng-repeat="section in viewReport.sections">
 			<div ng-if=" section.type === 'section' || section.type === 'sectionOption'">
 				<div class="list-group {{section.type}} {{section.option}} {{section.type}}">
@@ -60,10 +63,15 @@ added on a later date.-->
 				</div>
 			</div>
 		</div>
+		<!--/SECTION-->
 	</div>
+	<!--/CONTENT-->
+	<!--LOADING-->
 	<div class="splash loading">
 		<div id="loadingDiv">
 			<div class="spinner2"></div>
 		</div>
 	</div>
+	<!--/LOADING-->
 </div>
+<!--/BODY-->

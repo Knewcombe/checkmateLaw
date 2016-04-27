@@ -1,3 +1,14 @@
+/**
+ * @Checkmatelaw Version 0.0.1
+ * (c) 2015-2016 Checkmate Solutions.
+ *
+ * @Author: Kyle Newcombe
+ * @description:
+
+ * Section controller that will handle all functionality for the section menu.
+ *
+ */
+
 angular.module('app').controller('ReportSectionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval) {
 
 

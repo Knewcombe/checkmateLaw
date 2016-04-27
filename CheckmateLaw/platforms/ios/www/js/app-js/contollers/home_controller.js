@@ -1,27 +1,53 @@
-angular.module("app").controller('HomeController', function($scope, $location, $rootScope) {
 
-    $rootScope.isHomepage = true;
-    $rootScope.isResizeDiv = false;
+/**
+ * @Checkmatelaw Version 0.0.1
+ * (c) 2015-2016 Checkmate Solutions.
+ *
+ * @Author: Kyle Newcombe
+ * @description:
 
-    $scope.newReport = function()
-    {
-        $location.path('/newReport/');
-    };
+ * Home Controller, this will only have path change functions
+ *
+ */
+angular.module("app").controller('HomeController', function($scope, $location, $localStorage, $sessionStorage, $rootScope) {
 
-    $scope.savedReports = function()
-    {
-        $location.path('/report/saved/');
-    };
+	$rootScope.isHomepage = true;
+	$rootScope.isResizeDiv = false;
 
-    $scope.about = function(){
-        $location.path('/about');
-    };
-    $scope.guidelines =  function(){
-        $location.path('/guidelines');
-    };
-    $scope.test = function(){
-        $location.path('/note');
-    }
-	
-	console.log($location.path());
+	document.addEventListener('deviceready', onDeviceReady);
+
+	function checkCode(path){
+		if($localStorage.userCode == undefined){
+			$sessionStorage.return = path;
+			$location.path('/enterCode');
+		}else{
+			if($sessionStorage.userCode == undefined){
+				$sessionStorage.return = path;
+				$location.path('/securityCode');
+			}else{
+				$location.path(path);
+			}
+		}
+	};
+
+	$scope.newReport = function()
+	{
+		checkCode('/newReport/');
+		//		$location.path('/newReport/');
+	};
+
+	$scope.savedReports = function()
+	{
+		checkCode('/report/saved/');
+	};
+
+	$scope.about = function(){
+		checkCode('/about');
+	};
+	$scope.guidelines =  function(){
+		checkCode('/guidelines');
+	};
+	$scope.test = function(){
+		checkCode('/note');
+	}
 });

@@ -4,5 +4,7 @@
     "AVFoundation.framework": 1,
     "MessageUI.framework": 1,
     "AudioToolbox.framework": 1,
-    "libz.dylib": 1
+    "libz.dylib": 1,
+    "Foundation.framework": 2,
+    "Security.framework": 2
 }

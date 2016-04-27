@@ -89,6 +89,14 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         templateUrl: 'note.html',
         controller: 'NoteController'
     });
+	$routeProvider.when('/enterCode', {
+        templateUrl: 'enterCode.html',
+        controller: 'EnterCodeController'
+    });
+	$routeProvider.when('/securityCode', {
+        templateUrl: 'securityCode.html',
+        controller: 'CodeController'
+    });
     
 
     // 404

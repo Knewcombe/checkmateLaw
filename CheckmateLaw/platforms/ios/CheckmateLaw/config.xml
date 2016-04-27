@@ -53,6 +53,9 @@
     <feature name="Cache">
         <param name="ios-package" value="Cache" />
     </feature>
+    <feature name="Safe">
+        <param name="ios-package" value="Safe" />
+    </feature>
     <feature name="Zip">
         <param name="ios-package" value="ZipPlugin" />
     </feature>

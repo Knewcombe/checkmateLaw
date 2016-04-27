@@ -1,3 +1,13 @@
+/**
+ * @Checkmatelaw Version 0.0.1
+ * (c) 2015-2016 Checkmate Solutions.
+ *
+ * @Author: Kyle Newcombe
+ * @description:
+
+ * This service will get the JSON file and list all the items when the user is creating a new checklist.
+ *
+ */
 angular.module("app").service('JsonTemplateService', function($http, $q) {
     this.getList = function(){
         var deferred = $q.defer();

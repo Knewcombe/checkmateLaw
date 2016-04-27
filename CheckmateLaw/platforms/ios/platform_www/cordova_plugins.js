@@ -398,6 +398,14 @@ module.exports = [
         "clobbers": [
             "cache"
         ]
+    },
+    {
+        "file": "plugins/cordova-safe/www/disusered.safe.js",
+        "id": "cordova-safe.safe",
+        "pluginId": "cordova-safe",
+        "merges": [
+            "cordova.plugins.disusered"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -416,7 +424,8 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.0",
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-zip": "3.1.0",
-    "org.apache.cordova.plugin.cache": "1.0.5"
+    "org.apache.cordova.plugin.cache": "1.0.5",
+    "cordova-safe": "2.0.1"
 }
 // BOTTOM OF METADATA
 });

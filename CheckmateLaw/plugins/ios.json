@@ -48,6 +48,9 @@
         },
         "org.apache.cordova.plugin.cache": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-safe": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
     "dependent_plugins": {}

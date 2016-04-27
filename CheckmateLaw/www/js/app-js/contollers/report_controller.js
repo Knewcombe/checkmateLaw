@@ -122,6 +122,23 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
 
 		function email(path, fileName, zipFileName){
+			//Testing encription
+//			var safe = cordova.plugins.disusered.safe,
+//				key = 'KEY';
+//
+//			function success(encryptedFile) {
+//				console.log('Encrypted file: ' + encryptedFile);
+//
+////				safe.decrypt(encryptedFile, key, function(decryptedFile) {
+////					console.log('Decrypted file: ' + decryptedFile);
+////				}, error);
+//			}
+//
+//			function error() {
+//				console.log('Error with cryptographic operation');
+//			}
+//
+//			safe.encrypt(path+zipFileName, key, success, error);
 			cordova.plugins.email.open({
 				//			to:          [""], // email addresses for TO field
 				//			cc:          [""], // email addresses for CC field

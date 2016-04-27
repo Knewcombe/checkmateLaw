@@ -4,6 +4,7 @@
 		"title": "",
 		"name": "Brake and Enter",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -145,7 +146,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Who will be on the scene when police/investigator attend?",
+						"output": "Who will be on the scene when police/investigator arrive?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -967,7 +968,7 @@
 								"id": 4,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Did the make any changes to the scene before the police arrived?",
+								"output": "Did they make any changes to the scene before the police arrived?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1106,7 +1107,7 @@
 								"id": 14,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Possibility of inside job",
+								"output": "Possibility of inside job?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1642,6 +1643,7 @@
 		"title": "",
 		"name": "Sudden Death",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -6967,6 +6969,7 @@
 		"title": "",
 		"name": "Impaired Driving",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -8063,6 +8066,7 @@
 		"title": "",
 		"name": "Theft",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -9479,6 +9483,7 @@
 		"title": "",
 		"name": "Fire",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -9970,6 +9975,7 @@
 		"title": "",
 		"name": "Sexual Assault",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": 
 		[
@@ -10596,6 +10602,7 @@
 		"title": "",
 		"name": "Assault",
 		"dateStamp": "",
+		"occurranceNumber": "",
 		"type": "reportTitle",
 		"sections": [
 			{
@@ -10991,7 +10998,7 @@
 						"id": 17,
 						"type": "question",
 						"state": false,
-						"output": "Determine who suspect fled scene and with who",
+						"output": "Determine if the suspect fled scene and with who",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],

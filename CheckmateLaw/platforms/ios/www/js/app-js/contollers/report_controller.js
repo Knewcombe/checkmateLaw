@@ -69,6 +69,9 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		if ($scope.currentPath === '/addQuestions') {
 			$location.path('/questions');
 		}
+		if($scope.currentPath === '/questionnaireItem'){
+			$location.path('/questions');
+		}
 		if($scope.currentPath === '/report/image'){
 			$location.path($sessionStorage.imagePath);
 		}
@@ -89,13 +92,13 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		}
 	};
 
-	$scope.navMenuChange = function (index) {
-		$sessionStorage.sectionIndex = index;
-		$location.path('/questions');
-		setTimeout(function () {
-			window.location.reload();
-		}, 100);
-	};
+	$scope.homeButton = function (){
+		$location.path('/');
+	}
+
+	$scope.sectionButton = function(){
+		$location.path('/sections');
+	}
 
 })
 //Saved reports controller.
@@ -117,28 +120,12 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 	$scope.emailList = function($index){
-
+		console.log("Called");
 		$scope.$storage.savedIndex = $index;
 		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
 
 		function email(path, fileName, zipFileName){
-			//Testing encription
-//			var safe = cordova.plugins.disusered.safe,
-//				key = 'KEY';
-//
-//			function success(encryptedFile) {
-//				console.log('Encrypted file: ' + encryptedFile);
-//
-////				safe.decrypt(encryptedFile, key, function(decryptedFile) {
-////					console.log('Decrypted file: ' + decryptedFile);
-////				}, error);
-//			}
-//
-//			function error() {
-//				console.log('Error with cryptographic operation');
-//			}
-//
-//			safe.encrypt(path+zipFileName, key, success, error);
+			console.log("Works");
 			cordova.plugins.email.open({
 				//			to:          [""], // email addresses for TO field
 				//			cc:          [""], // email addresses for CC field
@@ -210,17 +197,19 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 						}
 					});
 				}else{
-					if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos.length > 0){
-						$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos, function(photos){
-							//ADDING TO IMAGE ARRAY
-							inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos[photos]);
-						});
-					}
-					if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording.length > 0){
-						$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording, function(recording){
-							//ADDING TO RECORDING ARRAY
-							inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording[recording].replace('documents://',''));
-						});
+					if($localStorage.checklistPdf.sections[sections].questions[questions].type == "question"){
+						if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos.length > 0){
+							$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos, function(photos){
+								//ADDING TO IMAGE ARRAY
+								inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].photos[photos]);
+							});
+						}
+						if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording.length > 0){
+							$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording, function(recording){
+								//ADDING TO RECORDING ARRAY
+								inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording[recording].replace('documents://',''));
+							});
+						}
 					}
 				}
 			});

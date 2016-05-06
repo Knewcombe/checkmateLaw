@@ -367,8 +367,6 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 	$templateCache.put("report_saved.html",
 					   "<nav-header></nav-header>\r" +
 					   "\n" +
-					   "<div class=\"row\">\r" +
-					   "\n" +
 					   "    <div class=\"list-group\">\r" +
 					   "\n" +
 					   "        <ul class=\"list-group-item list-no-bullet\" ng-repeat=\"savedChecklist in $storage.savedChecklist | orderBy:'index' : reverse\">\r" +
@@ -377,9 +375,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 					   "\n" +
 					   "        </ul>\r" +
 					   "\n" +
-					   "    </div>\r" +
-					   "\n" +
-					   "</div>"
+					   "    </div>\r" 
 					  );
 
 	$templateCache.put("report_saved_details.html",

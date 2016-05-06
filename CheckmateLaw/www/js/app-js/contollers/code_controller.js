@@ -1,5 +1,5 @@
 angular.module("app").controller('EnterCodeController', function($scope, $rootScope, $localStorage, $sessionStorage, $location) {
-	$rootScope.isHomepage = true;
+	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = false;
 
 	$scope.userCode;
@@ -22,7 +22,7 @@ angular.module("app").controller('EnterCodeController', function($scope, $rootSc
 })
 
 angular.module("app").controller('CodeController', function($scope, $rootScope, $localStorage, $sessionStorage, $location) {
-	$rootScope.isHomepage = true;
+	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = false;
 	$scope.userCode;
 	console.log($localStorage.userCode);

@@ -21,49 +21,51 @@ added on a later date.-->
 		</div>
 		<!--/HEAD TOP-->
 		<!--SECTION-->
-		<div ng-repeat="section in viewReport.sections">
-			<div ng-if=" section.type === 'section' || section.type === 'sectionOption'">
-				<div class="list-group {{section.type}} {{section.option}} {{section.type}}">
-					<div class="questionText {{section.type}} {{section.option}} {{section.type}}">
-						<div class="row resizeDiv">
-							<div class="col-xs-2">
-								<label>
-									<!--Same checkmark logic as before-->
-									<img ng-src="{{section.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
-								</label>
-							</div>
-							<div class="col-xs-7 sectionText">
-								<!--On click will hide the sections and show the questions.-->
-								<p ng-click="changeMenus(section.type, section.id)" class=" questionText questionPadding {{section.type}} {{section.option}} {{section.type}}">{{section.title}}</p>                    
-							</div>
-							<div class="col-xs-2 sectionText count">
-								<p>{{section.count}}/{{section.amount}}</p>
+		<div class="content list-group">
+			<div ng-repeat="section in viewReport.sections">
+				<div ng-if=" section.type === 'section' || section.type === 'sectionOption'">
+					<div class="list-group-item {{section.type}} {{section.option}} {{section.type}}">
+						<div class="questionText {{section.type}} {{section.option}} {{section.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-2">
+									<label>
+										<!--Same checkmark logic as before-->
+										<img ng-src="{{section.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+									</label>
+								</div>
+								<div class="col-xs-7 sectionText">
+									<!--On click will hide the sections and show the questions.-->
+									<p ng-click="changeMenus(section.type, section.id)" class=" questionText questionPadding {{section.type}} {{section.option}} {{section.type}}">{{section.title}}</p>                    
+								</div>
+								<div class="col-xs-2 sectionText count">
+									<p>{{section.count}}/{{section.amount}}</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div ng-if="section.type === 'selectionSection'">
-				<div ng-if="section.selected === ''">
-					<div class="list-group {{section.type}} {{section.type}}">
-						<div class="questionText {{section.type}} {{section.type}}">
-							<div class="row resizeDiv">
-								<div class="col-xs-9 sectionText">
-									<!--On click will hide the sections and show the questions.-->
-									<p class="questionPadding {{section.type}} {{section.type}}">{{section.title}}</p>                    
-									<label class="questionPadding {{section.type}} {{section.type}}">
-										<select class="form-control selectInput" ng-model='selectionid' ng-options="selection.id as selection.title for selection in section.options" ng-change="showHideInfo(section.type, section.id, selectionid)">
-											<option disabled="disabled" value="">- Please select -</option> 
-										</select>
-									</label>
+				<div ng-if="section.type === 'selectionSection'">
+					<div ng-if="section.selected === ''">
+						<div class="list-group-item {{section.type}} {{section.type}}">
+							<div class="questionText {{section.type}} {{section.type}}">
+								<div class="row resizeDiv">
+									<div class="col-xs-9 sectionText">
+										<!--On click will hide the sections and show the questions.-->
+										<p class="questionPadding {{section.type}} {{section.type}}">{{section.title}}</p>                    
+										<label class="questionPadding {{section.type}} {{section.type}}">
+											<select class="form-control selectInput" ng-model='selectionid' ng-options="selection.id as selection.title for selection in section.options" ng-change="showHideInfo(section.type, section.id, selectionid)">
+												<option disabled="disabled" value="">- Please select -</option> 
+											</select>
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!--/SECTION-->
 		</div>
-		<!--/SECTION-->
 	</div>
 	<!--/CONTENT-->
 	<!--LOADING-->

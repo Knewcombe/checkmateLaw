@@ -1,5 +1,11 @@
 @charset "UTF-8";
-body { padding-bottom: 70px; }
+body { 
+	padding-bottom: 70px; 
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .checklistForm {
 	counter-reset: section;
 }
@@ -13,7 +19,14 @@ body { padding-bottom: 70px; }
 	position: relative !important;
 }
 .backgroundItem{
-	background-color: #F6FDFF;
+	background-color: #EAF0E5;
+}
+
+.list-group-item{
+	border-bottom-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
 }
 
 .lineBreak{
@@ -30,7 +43,7 @@ body { padding-bottom: 70px; }
 	font-size: 25px;
 	margin-top: 2%;
 	border-radius: 50px !important; 
-	background-color: #24a9e7;
+	background-color: transparent;
 }
 
 .navMenuButton{
@@ -116,6 +129,18 @@ body { padding-bottom: 70px; }
 	font-size: 16px;
 	font-weight: bold;
 	width: 100%;
+}
+
+.btnQuestionnaire{
+	background: #444;
+	color: #fff;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 15px 0 12px 0;
+	border-radius: 5px;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .logo {
@@ -504,7 +529,7 @@ button .glyphicon { margin-right: 5px; }
 		font-size: 19px !important;
 	}
 	.checklistTitle{
-		font-size: 30px !important;
+		font-size: 25px !important;
 	}
 	.resizeDiv{
 		padding-left: 10%;
@@ -525,7 +550,7 @@ button .glyphicon { margin-right: 5px; }
 		font-size: 13px !important;
 	}
 	.checklistTitle{
-		font-size: 19px !important;
+		font-size: 15px !important;
 	}
 	.resizeDiv{
 		padding-left: 5%;

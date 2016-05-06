@@ -2,7 +2,7 @@
 	"0": {
 		"id": "BE",
 		"title": "",
-		"name": "Brake and Enter",
+		"name": "Break and Enter",
 		"dateStamp": "",
 		"occurranceNumber": "",
 		"type": "reportTitle",
@@ -12,14 +12,14 @@
 				"title": "Initial Complaint",
 				"type": "section",
 				"count": 0,
-				"amount": 14,
+				"amount": 15,
 				"state": false,
 				"questions": [
 					{
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Who is the caller? Tombstone Data: Full Name, DOB, Address, Phone #",
+						"output": "Who is the caller? (Full Name, DOB, Address, Phone #)",
 						"inputs": [
 							{
 
@@ -34,7 +34,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Is B&E in progress or not? (If in progress, advise other units) ",
+						"output": "Is break and enter in progress or not? (If in progress, advise other units) ",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -48,7 +48,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "In the event of an ' in progress ' break and enter, acquire details of the property (entrances and exits)",
+						"output": "In the event of an 'in progress' break and enter, acquire details of the property (entrances and exits)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -62,7 +62,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Any weapons on premises",
+						"output": "Is anyone home?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -74,6 +74,20 @@
 					},
 					{
 						"id": 4,
+						"type": "question",
+						"state": false,
+						"output": "Any weapons on premises?",
+						"inputs": [
+							{
+								"dateChange": "",
+								"notes": [],
+								"photos": [],
+								"recording": []
+							}
+						]
+					},
+					{
+						"id": 5,
 						"type": "question",
 						"state": false,
 						"output": "Caller's relationship to property broken into",
@@ -87,7 +101,7 @@
 						]
 					},
 					{
-						"id": 5,
+						"id": 6,
 						"type": "question",
 						"state": false,
 						"output": "Who owns the property?",
@@ -101,7 +115,7 @@
 						]
 					},
 					{
-						"id": 6,
+						"id": 7,
 						"type": "question",
 						"state": false,
 						"output": "Who noticed the B&E?",
@@ -115,7 +129,7 @@
 						]
 					},
 					{
-						"id": 7,
+						"id": 8,
 						"type": "question",
 						"state": false,
 						"output": "Did anyone enter? If yes, who and what path did they take?",
@@ -129,7 +143,7 @@
 						]
 					},
 					{
-						"id": 8,
+						"id": 9,
 						"type": "question",
 						"state": false,
 						"output": "Did anyone touch anything? If so, what?",
@@ -143,7 +157,7 @@
 						]
 					},
 					{
-						"id": 9,
+						"id": 10,
 						"type": "question",
 						"state": false,
 						"output": "Who will be on the scene when police/investigator arrive?",
@@ -157,7 +171,7 @@
 						]
 					},
 					{
-						"id": 10,
+						"id": 11,
 						"type": "question",
 						"state": false,
 						"output": "Did they notice anyone suspicious in the area?",
@@ -171,7 +185,7 @@
 						]
 					},
 					{
-						"id": 11,
+						"id": 12,
 						"type": "question",
 						"state": false,
 						"output": "Any suspects, witnesses or physical evidence?",
@@ -185,7 +199,7 @@
 						]
 					},
 					{
-						"id": 12,
+						"id": 13,
 						"type": "question",
 						"state": false,
 						"output": "Tell caller not to let anyone near the scene until police arrive.",
@@ -199,10 +213,10 @@
 						]
 					},
 					{
-						"id": 13,
+						"id": 14,
 						"type": "question",
 						"state": false,
-						"output": "If in progress, consider canine unit (Fresh scent of perpetrator on scene)",
+						"output": "If B&E in progress, consider canine unit (Fresh scent of perpetrator on scene)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -216,17 +230,17 @@
 			},
 			{
 				"id": 1,
-				"title": "First responder and Scene examination",
+				"title": "First responder and scene examination",
 				"type": "section",
 				"count": 0,
-				"amount": 40,
+				"amount": 37,
 				"state": false,
 				"questions": [
 					{
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Anybody fleeing scene while en-route? On foot, in vehicle",
+						"output": "Is Anybody fleeing scene while en-route? (On foot, in vehicle, etc...)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -240,7 +254,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Don't drive on scene, park away to not disturb or contaminate any evidence or foot/tire prints",
+						"output": "Do not drive over scene, park away to not disturb or contaminate any evidence or foot/tire prints.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -254,7 +268,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Confirm B&E with whoever reported it.",
+						"output": "Confirm B&E with whomever reported it.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -268,7 +282,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Secure scene(s)",
+						"output": "Secure scene(s).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -282,7 +296,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Take pictures of scene with whoever is on scene in it",
+						"output": "Take names of everyone on scene. (Full Name, DOB, Address, Phone #).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -296,7 +310,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Separate witness",
+						"output": "Take initial picture of the scene when you arrive (Try to capture everyone on site in your photo).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -310,7 +324,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Commence a scene log to track who comes and goes (Take Names of everyone on scene)",
+						"output": "Separate witnesses and/or victim(s).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -324,7 +338,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Find out who victim/owner of property is.",
+						"output": "Determine timeline. When last person attended the property prior to B&E? Also first person to arrive after B&E.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -338,7 +352,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Document the crime scene as you found it.",
+						"output": "Commence a scene log to track who comes and goes (Take names of everyone on scene).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -352,7 +366,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "One entrance One exit.",
+						"output": "Find out who victim/owner of property is.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -366,7 +380,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "What path did perpetrator take? Include both Inside premises and outside premises perimeter",
+						"output": "Document the crime scene as you found it.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -380,7 +394,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Ask when floors were cleaned",
+						"output": "One entrance One exit.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -394,7 +408,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Skirt Wall, walk along wall, suspect(s) will take path of least resistance",
+						"output": "What path did perpetrator take? (Include both inside premises and outside premises and perimeter)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -408,7 +422,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Glass is where best footprints are found",
+						"output": "Ask when floors were cleaned.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -422,7 +436,7 @@
 						"id": 14,
 						"type": "question",
 						"state": false,
-						"output": "Confirm if scene was disturbed. Who, when and where did they go?",
+						"output": "Skirt wall, walk along wall, suspect(s) will take path of least resistance.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -436,7 +450,7 @@
 						"id": 15,
 						"type": "question",
 						"state": false,
-						"output": "Take names of everyone on scene.",
+						"output": "Confirm if scene was disturbed. Who, when and where did they go?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -450,7 +464,7 @@
 						"id": 16,
 						"type": "question",
 						"state": false,
-						"output": "Search perimeter for evidence. Footprints in mud, dirt, snow, flower beds, tire impressions tools used to break in, suspects clothing/disguises, cigarette butts, etc. Footprints/shoe impressions inside property. Check inside and perimeter area for footprints.",
+						"output": "Search perimeter for evidence. Footprints in mud, dirt, snow, flower beds (glass is where best footprints are found), tire impressions. Also look for tools  used to break in, suspects clothing/disguises, cigarette butts, footprints/shoe impressions etc. Check inside and perimeter area for footprints",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -462,123 +476,60 @@
 					},
 					{
 						"id": 17,
-						"type": "multiQuestion",
+						"type": "questionnaire",
 						"state": false,
 						"count": 0,
 						"amount": 8,
-						"output": "Determine if Forensic Identification Section required",
-						"additionalQuestions": [
+						"output": "Determine if 'Forensic Identification Section' required",
+						"note": "If yes to one or more of the items below, contact 'Forensic Identification Section'.",
+						"questions": [
 							{
 								"id": 0,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Do fingerprints need to be lifted from secured objects?",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Do fingerprints need to be lifted from secured objects?"
 							},
 							{
 								"id": 1,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Shoe or foot impressions off of secured objects",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Do Shoe or foot impressions need to be lifted from secured objects?"
 							},
 							{
 								"id": 2,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Severity of B&E, value, victims on scene during, has there been a rash of breaks lately, etc.",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "What is the severity of B&E? (value, victims on scene during) Has there been a rash of breaks lately, etc.?"
 							},
 							{
 								"id": 3,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Need for more professional photographs",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Is there a need for more professional photographs?"
 							},
 							{
 								"id": 4,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Likelihood of fingerprints/footprints/shoe impressions being lifted? Dusty surfaces, smeared prints, gloves being used, etc.",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "What is the likelihood of fingerprints/footprints/shoe impressions being lifted? (Dusty surfaces, smeared prints, gloves being used, etc.)"
 							},
 							{
 								"id": 5,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Tire impressions",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Are there tire impressions?"
 							},
 							{
 								"id": 6,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "DNA left behind. Broke glass, cigarette butts, urine, feces, saliva, etc.",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Was DNA left behind. Broken glass, cigarette butts, urine, feces, saliva, etc.?"
 							},
 							{
 								"id": 7,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "Determine if other special units are required/available. B&E section, General Investigation Section, etc.",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "Are other special units are required/available. B&E section, 'General Investigation Section', etc.?"
 							}
 						]
 					},
@@ -600,7 +551,7 @@
 						"id": 19,
 						"type": "question",
 						"state": false,
-						"output": "When was scene found broken into? Date and Time",
+						"output": "When was scene found broken into? (Date and time)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -642,7 +593,7 @@
 						"id": 22,
 						"type": "question",
 						"state": false,
-						"output": "What path did perpetrator take? Inside and out",
+						"output": "What was stolen? make, model, serial #s, description, color, value, number of items taken. ( are there receipts).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -656,7 +607,7 @@
 						"id": 23,
 						"type": "question",
 						"state": false,
-						"output": "What was stolen? Make, Model, serial #'s, description, color, value, number of items taken, receipts",
+						"output": "Describe items without serial numbers with great detail, include defects and other identifiers. (Include in statement)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -670,7 +621,7 @@
 						"id": 24,
 						"type": "question",
 						"state": false,
-						"output": "Describe items without serial numbers with great detail, include defects and other identifiers.",
+						"output": "Try to obtain photos of stolen items from victim.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -684,7 +635,7 @@
 						"id": 25,
 						"type": "question",
 						"state": false,
-						"output": "Try to obtain photos of stolen items from victim",
+						"output": "Where were stolen items located prior to removal?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -698,7 +649,7 @@
 						"id": 26,
 						"type": "question",
 						"state": false,
-						"output": "Where were stolen items located prior to removal?",
+						"output": "Was anything disturbed or touched?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -712,7 +663,7 @@
 						"id": 27,
 						"type": "question",
 						"state": false,
-						"output": "Was anything disturbed or touched?",
+						"output": "Are there signs of any unusual suspect behavior? Drinking alcohol, smoking, burning matches, defecation, handling of female undergarments, made themselves at home, urination, used gloves, mask, used the telephone, tissue/towels, weapons, graffiti, vandalism.  Any other points of contact made by suspect? (Some suspects have been known to use the bathroom, eat and/or drink on scene)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -726,7 +677,7 @@
 						"id": 28,
 						"type": "question",
 						"state": false,
-						"output": "Is there signs of any unusual suspect behavior? Drinking alcohol, smoking, burning matches, defecation, handling of female undergarments, made themselves at home, urination, used gloves, mask, telephone, tissue/towels, weapons, graffiti, vandalism.  Any other points of contact made by suspect? Some suspects have been known to use the bathroom, eat and/or drink on scene",
+						"output": "Photograph and describe any evidence that you cannot take.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -740,7 +691,7 @@
 						"id": 29,
 						"type": "question",
 						"state": false,
-						"output": "Photograph and describe any evidence that you cannot take.",
+						"output": "Can physical evidence be seized? (Items possibly handled or disturbed i.e. Papers, removable drawers, screens, tools, etc.)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -754,7 +705,7 @@
 						"id": 30,
 						"type": "question",
 						"state": false,
-						"output": "Can physical evidence be seized? Items possibly handled or disturbed i.e. Papers, removable drawers, screens, tools, etc.",
+						"output": "Take samples of material left behind that might match the evidence on a suspect. (clothing, hair, blood, glass, drywall dust, etc).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -768,7 +719,7 @@
 						"id": 31,
 						"type": "question",
 						"state": false,
-						"output": "Take samples of material that might match the evidence on a suspect",
+						"output": "What was the point of exit?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -782,7 +733,7 @@
 						"id": 32,
 						"type": "question",
 						"state": false,
-						"output": "Point of exit",
+						"output": "Photograph scene. including POE's, pathway, where stolen items taken from, any damages, any type of impressions (tire, foot, fingerprints)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -796,7 +747,7 @@
 						"id": 33,
 						"type": "question",
 						"state": false,
-						"output": "Photograph scene. including POE's, pathway, where stolen items taken from, damages, any type of impressions (tire, foot, fingerprints)",
+						"output": "Is there surveillance video available?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -810,7 +761,7 @@
 						"id": 34,
 						"type": "question",
 						"state": false,
-						"output": "Is there surveillance video available?",
+						"output": "If there was an alarm, was it activated or disabled? When? (was the phone line cut?)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -824,7 +775,7 @@
 						"id": 35,
 						"type": "question",
 						"state": false,
-						"output": "Is there an alarm and was the phone line cut?",
+						"output": "Survey Neighbourhood, make inquiries to find out if anyone suspicious in area prior to break or in the past. Did they notice any lights on, any noise, what time they went to bed and woke up, likelihood of hearing or seeing break.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -836,48 +787,6 @@
 					},
 					{
 						"id": 36,
-						"type": "question",
-						"state": false,
-						"output": "If there was an alarm was it activated or disabled? When?",
-						"inputs": [
-							{
-								"dateChange": "",
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 37,
-						"type": "question",
-						"state": false,
-						"output": "Determine timeline. When last person attended the property prior to break, first person to arrive after break.",
-						"inputs": [
-							{
-								"dateChange": "",
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 38,
-						"type": "question",
-						"state": false,
-						"output": "Neighborhood inquiries to find out if anyone suspicious in area prior to break or in the past. Noises heard, did they notice any lights on, what time they went to bed and woke up, likelihood of hearing or seeing break.",
-						"inputs": [
-							{
-								"dateChange": "",
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 39,
 						"type": "question",
 						"state": false,
 						"output": "Take detailed notes.",
@@ -912,7 +821,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Who would know where valuables are in the building? (i.e. Hidden safe is stolen indicating suspects)",
+								"output": "If at any point during the victim statement if the victim becomes a suspect in the offence, read victim his rights and attempt a cautioned statement.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -926,7 +835,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Determine timeline, when property was last scene prior to break, when break was noticed, by whom?",
+								"output": "Who would know where valuables are in the building? (i.e. Possible suspect would know location of safe and hiding spots)",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -940,7 +849,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Was property secured?",
+								"output": "Determine timeline, when property was last seen prior to break, when break was noticed, by whom?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -954,7 +863,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "State property was left in prior break. Floors and counters just cleaned, preparing for seasonal use, etc.",
+								"output": "Was property secured? How?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -968,7 +877,7 @@
 								"id": 4,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Did they make any changes to the scene before the police arrived?",
+								"output": "Identify the condition of the property prior to B&E. Floors and counters just cleaned, preparing for seasonal use, etc.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -982,7 +891,7 @@
 								"id": 5,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "What was damaged?",
+								"output": "Did anyone make any changes to the scene before the police arrived?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -996,7 +905,7 @@
 								"id": 6,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
+								"output": "What was damaged?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1010,7 +919,7 @@
 								"id": 7,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "What is at the scene that normally wouldn't be there?",
+								"output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1024,7 +933,7 @@
 								"id": 8,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Does anyone else have access to property? Possible suspects, witnesses for elimination prints, past or present employees/key-holders, etc.",
+								"output": "What is at the scene that normally wouldn't be there?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1038,7 +947,7 @@
 								"id": 9,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Do they suspect anyone?",
+								"output": "Does anyone else have access to property? Possible suspects, witnesses for elimination prints, past or present employees/key-holders, etc.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1052,7 +961,7 @@
 								"id": 10,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Any prior issues with any individual? Friends, Family, acquaintances, employees past or present, neighbors, etc.",
+								"output": "Do they suspect anyone?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1066,7 +975,7 @@
 								"id": 11,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Unusual loiterers, visitors, parked cars, or phone calls before the break and enter?",
+								"output": "Any prior issues with any individual(s)? Friends, family, acquaintances, employees past or present, neighbors, etc.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1080,6 +989,20 @@
 								"id": 12,
 								"type": "additionalQuestion",
 								"state": false,
+								"output": "Unusual loiterers, visitors, parked cars, or phone calls before the break and enter?",
+								"inputs": [
+									{
+										"dateChange": "",
+										"notes": [],
+										"photos": [],
+										"recording": []
+									}
+								]
+							},
+							{
+								"id": 13,
+								"type": "additionalQuestion",
+								"state": false,
 								"output": "Who would have had the opportunity to act?",
 								"inputs": [
 									{
@@ -1090,7 +1013,7 @@
 								]
 							},
 							{
-								"id": 13,
+								"id": 14,
 								"type": "additionalQuestion",
 								"state": false,
 								"output": "Any previous B&E's at the property or other properties owned by the victim(s)?",
@@ -1104,7 +1027,7 @@
 								]
 							},
 							{
-								"id": 14,
+								"id": 15,
 								"type": "additionalQuestion",
 								"state": false,
 								"output": "Possibility of inside job?",
@@ -1118,24 +1041,10 @@
 								]
 							},
 							{
-								"id": 15,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "If it is a business, name of employees",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
 								"id": 16,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Would employees be willing to fill out view questionnaire or agree to polygraph?",
+								"output": "If it is a business, name of employees. (Full Name, DOB, Address, Phone #).",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1149,7 +1058,7 @@
 								"id": 17,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Insurance company and if there will be a claim",
+								"output": "Would employees be willing to fill out view questionnaire or agree to polygraph?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1163,7 +1072,7 @@
 								"id": 18,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Is the victim a suspect for insurance fraud?  (read rights)",
+								"output": "Insurance company and if there will be a claim?",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1191,7 +1100,7 @@
 								"id": 20,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Do you need to move into an interrogation? If so, take a video statement in a recorded room.  Bring accused back to station",
+								"output": "Do you need to move into an interrogation? If so, take a video recorded statement.  Bring accused back to station",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1243,7 +1152,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Tombstone Data: Full Name, DOB, Address, Phone #",
+								"output": "Full Name, DOB, Address, Phone #",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1257,7 +1166,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Relationship to property/victim",
+								"output": "Relationship to property/victim.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1271,7 +1180,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Determine Timeline Who was last to attend property and first to find property broken into",
+								"output": "Determine timeline (who was last to attend property and first to find property broken into).",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1285,7 +1194,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "What they witnessed Suspects, other witnesses, scene, stolen items, etc. (will vary depending on witness involvement)",
+								"output": "What did they witness? (Suspect(s), other witnesses, scene, stolen items, etc...)",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1299,7 +1208,7 @@
 								"id": 4,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If they witnessed suspects, provide detail description of suspect and clothing. Where they saw suspect, how suspect fled the scene, etc.",
+								"output": "If they have suspect(s), provide detail description(s) of suspect(s) and clothing. Where they saw suspect(s), how suspect(s) fled the scene, etc.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1327,7 +1236,7 @@
 								"id": 6,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Any knowledge of what was stolen description, value, serial numbers, etc.",
+								"output": "Any knowledge of what was stolen (description, value, serial numbers, etc).",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1355,7 +1264,7 @@
 								"id": 8,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Any other pertinent information that can be provided will vary from witness to witness",
+								"output": "Any other pertinent information that can be provided will vary from witness to witness.",
 								"inputs": [
 									{
 										"dateChange": "",
@@ -1374,14 +1283,14 @@
 				"title": "Follow Up",
 				"type": "section",
 				"count": 0,
-				"amount": 16,
+				"amount": 18,
 				"state": false,
 				"questions": [
 					{
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Determine Modus Operandi is this crime similar to others in the area?",
+						"output": "Determine Modus Operandi. Is this crime similar to others in the area?",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1395,7 +1304,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Check prior B&E's for suspects and suspect vehicles",
+						"output": "Check prior B&E's for suspects and suspect vehicles.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1409,7 +1318,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Add all stolen items and serial numbers to CPIC. NCIC in US",
+						"output": "Add all stolen items and serial numbers to CPIC. (NCIC in US).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1423,7 +1332,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Contact Owner/victim/witnesses to see if they have any new avenues to follow up with",
+						"output": "Contact owner/victim/witnesses to see if they have any new avenues to follow up with.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1437,7 +1346,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Contact pawn shops to see if stolen items have been pawned",
+						"output": "Contact pawn shops to see if stolen items have been pawned.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1451,7 +1360,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "If items are located in contacted pawn shop, seize items.  Obtain video within timeline when item was pawned and get statement from employee.",
+						"output": "If items are located in pawn shops. (Seize items, obtain video of suspect pawning items, when was item pawned, obtain statement from pawn shop employee.)",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1465,7 +1374,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Canvass sources for information",
+						"output": "Canvass sources for information.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1479,7 +1388,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Media release. City website and crime stoppers",
+						"output": "Media release, social media and crime stoppers.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1493,7 +1402,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Email to other members not working and other detachments or police forces, as well as other intelligence sections working on similar files",
+						"output": "Email to other members not working and other detachments or police forces, as well as other intelligence sections working on similar files.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1507,7 +1416,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Complete required documents. Occurrence reports, exhibit reports, forensic identification requests, enter all data, photos, statements, notes, receipts, referral forms, CPIC printouts added to file",
+						"output": "Complete required documents. Occurrence reports, exhibit reports, forensic identification requests, enter all data, photos, statements, notes, receipts, referral forms, CPIC printouts added to file.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1521,7 +1430,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Contact criminal intelligence section to see if rash of B&E's or if there are suspects in other files that meet MO",
+						"output": "Contact criminal intelligence section to see if rash of B&E's or if there are suspects in other files that meet MO.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1535,7 +1444,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Keep eye out for other possible related B&E or suspects",
+						"output": "Keep eye out for other possible related B&E or suspects.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1549,7 +1458,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Have other members to question any detained clients with regards to this crime",
+						"output": "Have other members question any detained clients with regards to this crime.",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1563,7 +1472,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Determine if stolen electronics can be tracked via GPS Smart phones, laptops, iPads, etc.",
+						"output": "Determine if stolen electronics can be tracked via GPS (Smart phones, laptops, tablets, etc).",
 						"inputs": [
 							{
 								"dateChange": "",
@@ -1575,60 +1484,50 @@
 					},
 					{
 						"id": 14,
-						"type": "multiQuestion",
+						"type": "additionalQuestion",
 						"state": false,
-						"output": "Solvability factors",
-						"count": 0,
-						"amount": 3,
-						"state": false,
-						"additionalQuestions": [
+						"output": "Update Forensic Identification Section on the investigation (suspect(s) names).",
+						"inputs": [
 							{
-								"id": 0,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Update indent an Investigation (Suspect Names)",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 1,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Elimination Prints as soon as possible",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 2,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Tools and metal components can be compared",
-								"inputs": [
-									{
-										"dateChange": "",
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}]
-							}]
+								"dateChange": "",
+								"notes": [],
+								"photos": [],
+								"recording": []
+							}
+						]
 					},
 					{
 						"id": 15,
+						"type": "additionalQuestion",
+						"state": false,
+						"output": "Elimination Prints as soon as possible.",
+						"inputs": [
+							{
+								"dateChange": "",
+								"notes": [],
+								"photos": [],
+								"recording": []
+							}
+						]
+					},
+					{
+						"id": 16,
+						"type": "additionalQuestion",
+						"state": false,
+						"output": "Tools and metal components can be compared.",
+						"inputs": [
+							{
+								"dateChange": "",
+								"notes": [],
+								"photos": [],
+								"recording": []
+							}]
+					},
+					{
+						"id": 17,
 						"type": "question",
 						"state": false,
-						"output": "Have any physical evidence analyzed. Forensics adds documentation for physical evidence.",
+						"output": "Have any physical evidence analyzed. Ensure forensics adds details to file.",
 						"inputs": [{
 							"dateChange": "",
 							"notes": [],
@@ -1658,7 +1557,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Obtain tombstone data from Complainant's: Full Name, DOB, Address, Phone number",
+						"output": "Full Name, DOB, Address, Phone number",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -1835,7 +1734,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Does the COM know the medical history of the victim?",
+						"output": "Does the complainant know the medical history of the victim?",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -1847,7 +1746,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Does the COM feel the death is accidental, natural, suspicious or suicide?",
+						"output": "Does the Complainant feel the death is accidental, natural, suspicious or suicide?",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -1859,7 +1758,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Next of KIN?",
+						"output": "Next of kin? (Name, DOB, Address, Phone number)",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -1871,7 +1770,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Who will be on scene when police arrive?",
+						"output": "Who will be on scene when police arrive? (Name, DOB, Address, Phone number)",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -1895,7 +1794,7 @@
 			},
 			{
 				"id": 1,
-				"title": "Please select the type of Death",
+				"title": "Please select the type of death",
 				"type": "selectionSection",
 				"selected": "",
 				"options": [
@@ -1922,11 +1821,11 @@
 			},
 			{
 				"id": 2,
-				"title": "Secure Scene",
+				"title": "Secure scene",
 				"option": "Natural-Causes",
 				"type": "sectionOption",
 				"count": 0,
-				"amount": 22,
+				"amount": 29,
 				"state": false,
 				"questions": [
 					{
@@ -1977,7 +1876,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Nobody gets into the scene",
+						"output": "Skirt wall, walk along, not possible pathway of suspect/victim/witness",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -1988,7 +1887,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Skirt wall, walk along, not possible pathway of suspect/victim/witness",
+						"output": "One entrance one exit.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -1999,7 +1898,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Same way in is the same way out",
+						"output": "Examine area to determine if body location is consistent with possible cause of death.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2010,7 +1909,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Examine area to determine if body location is consistent with possible cause of death.",
+						"output": "Is the location of the body logical or true place of death?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2021,7 +1920,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Is the location of the body logical or true place of death?",
+						"output": "Are the injuries consistent with position of body?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2032,7 +1931,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Are the injuries consistent with position of body?",
+						"output": "Is age a causal factor?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2043,7 +1942,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Is age a causal factor?",
+						"output": "Is there evidence of intrusion versus secure premises?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2054,7 +1953,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Is there evidence of intrusion versus secure premises?",
+						"output": "Document scene: Doors locked or open, lights on or off, furniture moved",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2065,7 +1964,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Document scene: Doors locked or open, lights on or off, furniture moved",
+						"output": "Is there evidence of violence or disarray? Blood trail, splatter, human tissue or fluid, weapons, obvious injury, disturbed clothing.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2076,7 +1975,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Is there evidence of violence or disarray? Blood trail, splatter, human tissue or fluid, weapons, obvious injury, disturbed clothing.",
+						"output": "Examine body to ensure no evidence of foul play.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2087,7 +1986,7 @@
 						"id": 14,
 						"type": "question",
 						"state": false,
-						"output": "Examine body to ensure no evidence of foul play.",
+						"output": "What is the ambient temperature Compare body temperature to the environment",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2098,7 +1997,7 @@
 						"id": 15,
 						"type": "question",
 						"state": false,
-						"output": "What is the ambient temperature Compare body temperature to the environment",
+						"output": "Is there insect or vermin alive",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2109,7 +2008,7 @@
 						"id": 16,
 						"type": "question",
 						"state": false,
-						"output": "Is there insect or vermin alive",
+						"output": "Photos of scene and body",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2120,7 +2019,7 @@
 						"id": 17,
 						"type": "question",
 						"state": false,
-						"output": "Photos of scene and body",
+						"output": "Preserve evidence",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2131,7 +2030,7 @@
 						"id": 18,
 						"type": "question",
 						"state": false,
-						"output": "Preserve evidence",
+						"output": "Who found body?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2142,7 +2041,7 @@
 						"id": 19,
 						"type": "question",
 						"state": false,
-						"output": "Who found body?",
+						"output": "Who last saw the victim alive?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2153,7 +2052,7 @@
 						"id": 20,
 						"type": "question",
 						"state": false,
-						"output": "Who last saw the victim alive?",
+						"output": "Next of kin? (Name, DOB, Address, Phone number)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2162,17 +2061,6 @@
 					},
 					{
 						"id": 21,
-						"type": "question",
-						"state": false,
-						"output": "Next of KIN?",
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 22,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
@@ -2236,7 +2124,7 @@
 							}]
 					},
 					{
-						"id": 23,
+						"id": 22,
 						"type": "question",
 						"state": false,
 						"output": "Escort EMS, if they need to be in the scene",
@@ -2247,7 +2135,7 @@
 						}]
 					},
 					{
-						"id": 24,
+						"id": 23,
 						"type": "question",
 						"state": false,
 						"output": "Discuss EMS findings",
@@ -2258,7 +2146,7 @@
 						}]
 					},
 					{
-						"id": 25,
+						"id": 24,
 						"type": "question",
 						"state": false,
 						"output": "Time of death",
@@ -2269,12 +2157,12 @@
 						}]
 					},
 					{
-						"id": 26,
+						"id": 25,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
 						"amount": 6,
-						"output": "Contact Coroner to advise of death",
+						"output": "Contact coroner to advise of death",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -2302,7 +2190,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If attending, keep body secured",
+								"output": "If coroner attending, keep body secured",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2313,7 +2201,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If not attending contact Body Removal Services",
+								"output": "If coroner not attending contact Body Removal Services",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2344,7 +2232,7 @@
 							}]
 					},
 					{
-						"id": 27,
+						"id": 26,
 						"type": "question",
 						"state": false,
 						"output": "Tag body",
@@ -2355,7 +2243,7 @@
 						}]
 					},
 					{
-						"id": 28,
+						"id": 27,
 						"type": "question",
 						"state": false,
 						"output": "Seize valuables on victim or turn over to family present",
@@ -2366,7 +2254,7 @@
 						}]
 					},
 					{
-						"id": 29,
+						"id": 28,
 						"type": "question",
 						"state": false,
 						"output": "Query deceased on CPIC, if has criminal record, fingerprint",
@@ -2414,7 +2302,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 6,
-						"output": "Anyone that can further your investigation",
+						"output": "Anyone that can help further your investigation",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -2431,7 +2319,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Friends who know history or recent activities or behavior of victim",
+								"output": "Friends who know history, recent activities or behavior of victim",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2487,7 +2375,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Any alcohol or drugs used at time of Death?",
+						"output": "Any alcohol or drugs used at time of death?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2592,7 +2480,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Answer any questions",
+								"output": "Answer any questions from family",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2603,7 +2491,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Provide contact info for police and other services e.g. Where body will be located",
+								"output": "Provide contact info for police and other services as to where body will be located",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2614,7 +2502,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Offer any applicable services Victim services",
+								"output": "Offer any applicable services such as Victim Services contact information",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2669,11 +2557,11 @@
 			},
 			{
 				"id": 4,
-				"title": "Secure Scene",
+				"title": "Secure scene",
 				"option": "Accidental",
 				"type": "sectionOption",
 				"count": 0,
-				"amount": 22,
+				"amount": 29,
 				"state": false,
 				"questions": [
 					{
@@ -2724,7 +2612,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Nobody gets into the scene",
+						"output": "Skirt wall, walk along, not possible pathway of suspect/victim/witness",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2735,7 +2623,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Skirt wall, walk along, not possible pathway of suspect/victim/witness",
+						"output": "Same way in is the same way out",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2746,7 +2634,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Same way in is the same way out",
+						"output": "Examine area to determine if body location is consistent with possible cause of death.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2757,7 +2645,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Examine area to determine if body location is consistent with possible cause of death.",
+						"output": "Is the location of the body logical or true place of death?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2768,7 +2656,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Is the location of the body logical or true place of death?",
+						"output": "Are the injuries consistent with position of body?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2779,7 +2667,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Are the injuries consistent with position of body?",
+						"output": "Is age a causal factor?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2790,7 +2678,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Is age a causal factor?",
+						"output": "Is there evidence of intrusion versus secure premises?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2801,7 +2689,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Is there evidence of intrusion versus secure premises?",
+						"output": "Document scene: Doors locked or open, lights on or off, furniture moved",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2812,7 +2700,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Document scene: Doors locked or open, lights on or off, furniture moved",
+						"output": "Is there evidence of violence or disarray? (Blood trail, splatter, human tissue or fluid, weapons, obvious injury, disturbed clothing etc.)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2823,7 +2711,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Is there evidence of violence or disarray? Blood trail, splatter, human tissue or fluid, weapons, obvious injury, disturbed clothing.",
+						"output": "Examine body for evidence of foul play.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2834,7 +2722,7 @@
 						"id": 14,
 						"type": "question",
 						"state": false,
-						"output": "Examine body to ensure no evidence of foul play.",
+						"output": "What is the ambient temperature Compare body temperature to the environment",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2845,7 +2733,7 @@
 						"id": 15,
 						"type": "question",
 						"state": false,
-						"output": "What is the ambient temperature Compare body temperature to the environment",
+						"output": "Is there insect or vermin alive",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2856,7 +2744,7 @@
 						"id": 16,
 						"type": "question",
 						"state": false,
-						"output": "Is there insect or vermin alive",
+						"output": "Photos of scene and body",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2867,7 +2755,7 @@
 						"id": 17,
 						"type": "question",
 						"state": false,
-						"output": "Photos of scene and body",
+						"output": "Preserve evidence",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2878,7 +2766,7 @@
 						"id": 18,
 						"type": "question",
 						"state": false,
-						"output": "Preserve evidence",
+						"output": "Who found body?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2889,7 +2777,7 @@
 						"id": 19,
 						"type": "question",
 						"state": false,
-						"output": "Who found body?",
+						"output": "Who last saw the victim alive?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2900,7 +2788,7 @@
 						"id": 20,
 						"type": "question",
 						"state": false,
-						"output": "Who last saw the victim alive?",
+						"output": "Next of kin? (Name, DOB, Address, Phone number)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -2909,28 +2797,17 @@
 					},
 					{
 						"id": 21,
-						"type": "question",
-						"state": false,
-						"output": "Next of KIN?",
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 22,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
-						"amount": 4,
+						"amount": 5,
 						"output": "Medical history of victim",
 						"additionalQuestions": [
 							{
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Medications Secure for pathologist, send with body",
+								"output": "Medications: secure for pathologist, send with body",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2941,7 +2818,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Past Health Issues Physical and/or mental",
+								"output": "Past health issues: Physical and/or mental",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2952,7 +2829,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Family Doctor",
+								"output": "Family doctor",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2963,7 +2840,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Last seen by doctor Who, where, when, why",
+								"output": "Last seen by doctor: Who, where, when, why",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -2983,7 +2860,7 @@
 							}]
 					},
 					{
-						"id": 23,
+						"id": 22,
 						"type": "question",
 						"state": false,
 						"output": "Escort EMS, if they need to be in the scene",
@@ -2994,7 +2871,7 @@
 						}]
 					},
 					{
-						"id": 24,
+						"id": 23,
 						"type": "question",
 						"state": false,
 						"output": "Discuss EMS findings",
@@ -3005,7 +2882,7 @@
 						}]
 					},
 					{
-						"id": 25,
+						"id": 24,
 						"type": "question",
 						"state": false,
 						"output": "Time of death",
@@ -3016,12 +2893,12 @@
 						}]
 					},
 					{
-						"id": 26,
+						"id": 25,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
-						"amount": 5,
-						"output": "Contact Coroner to advise of death",
+						"amount": 6,
+						"output": "Contact coroner to advise of death",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -3049,7 +2926,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If attending, keep body secured",
+								"output": "If coroner attending, keep body secured",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3060,7 +2937,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If not attending contact Body Removal Services",
+								"output": "If coroner not attending contact Body Removal Services",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3091,7 +2968,7 @@
 							}]
 					},
 					{
-						"id": 27,
+						"id": 26,
 						"type": "question",
 						"state": false,
 						"output": "Tag body",
@@ -3102,7 +2979,7 @@
 						}]
 					},
 					{
-						"id": 28,
+						"id": 27,
 						"type": "question",
 						"state": false,
 						"output": "Seize valuables on victim or turn over to family present",
@@ -3113,7 +2990,7 @@
 						}]
 					},
 					{
-						"id": 29,
+						"id": 28,
 						"type": "question",
 						"state": false,
 						"output": "Query deceased on CPIC, if has criminal record, fingerprint",
@@ -3161,7 +3038,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 6,
-						"output": "Anyone that can further your investigation",
+						"output": "Anyone that can help further your investigation",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -3178,7 +3055,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Friends who know history or recent activities or behavior of victim",
+								"output": "Friends who know history, recent activities or behavior of victim",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3234,7 +3111,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Any alcohol or drugs used at time of Death?",
+						"output": "Any alcohol or drugs used at time of death?",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3339,7 +3216,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Answer any questions",
+								"output": "Answer any questions from family",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3350,7 +3227,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Provide contact info for police and other services e.g. Where body will be located",
+								"output": "Provide contact info for police and other services as to where body will be located",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3361,7 +3238,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Offer any applicable services. Victim services",
+								"output": "Offer any applicable services such as Victim Services contact information.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3416,7 +3293,7 @@
 			},
 			{
 				"id": 6,
-				"title": "First responder and Scene examination",
+				"title": "First responder and scene examination",
 				"option": "Accidental",
 				"type": "sectionOption",
 				"count": 0,
@@ -3526,7 +3403,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Is there evidence of medications or drugs? Special places to look are medicine cabinet, purses, refrigerator and waste baskets",
+						"output": "Is there evidence of medications or drugs? (places to look include: medicine cabinet, purses, refrigerator and waste baskets)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3548,7 +3425,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "Symptoms of hypothermia can resemble death Death can only be confirmed after the body has been warmed to normal temperature and resuscitation efforts have failed.",
+						"output": "Symptoms of hypothermia can resemble death. Death can only be confirmed after the body has been warmed to normal temperature and resuscitation efforts have failed.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3570,7 +3447,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Most Shaken baby cases result in retinal hemorrhages. Ensure an ophthalmologist is consulted. Other injuries consistent with shaken baby syndrome are grab sites (bruises around shoulders or chest) or fractures of skull, ribs, or legs. Neck injuries are rarely observed.",
+						"output": "Most shaken baby cases result in retinal hemorrhages. Ensure an ophthalmologist is consulted. Other injuries consistent with shaken baby syndrome are grab sites (bruises around shoulders or chest) or fractures of skull, ribs, or legs. Neck injuries are rarely observed.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3592,7 +3469,7 @@
 						"id": 15,
 						"type": "question",
 						"state": false,
-						"output": "Consider support services such as General Investigation section (GIS), Major Crimes Unit (MCU), Forensic Identification section (FIS)",
+						"output": "Consider support services such as General Investigation Section (GIS), Major Crimes Unit (MCU), Forensic Identification Section (FIS)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3624,7 +3501,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Check victim for signs of life. Breathing, neck area for pulse",
+						"output": "Check victim for signs of life. (Breathing, neck area for pulse, etc.)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3648,7 +3525,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 2,
-						"output": "Lining victim",
+						"output": "Living victim",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -3679,7 +3556,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 3,
-						"output": "Conscious Victim: If victim is conscious, attempt to obtain the following information",
+						"output": "Conscious victim: If victim is conscious, attempt to obtain the following information",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -3696,7 +3573,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If name of assailant not known to victim, commence identification by description man, woman, race, height, weight, color of hair, eyes, type of clothing, etc.",
+								"output": "If name of assailant not known to victim, commence identification by description: man, woman, race, height, weight, color of hair, eyes, type of clothing, etc.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3719,7 +3596,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Unconscious Victim: If victim is unconscious on arrival at scene Make sure that a police officer remains with victim at all times, including trip to hospital so that any dying declarations made during conscious periods can be noted",
+						"output": "Unconscious Victim: If victim is unconscious on arrival at scene. Make sure that a police officer remains with victim at all times, including trip to hospital so that any dying declarations made during conscious periods can be noted",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3730,7 +3607,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Upon arrival at hospital alert medical personnel of a possibility of dying declarations Request them to note same if made during operative period",
+						"output": "Upon arrival at hospital alert medical personnel of a possibility of dying declarations. Request them to note same if made during operative period",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3755,15 +3632,17 @@
 				"option": "Homicide",
 				"type": "sectionOption",
 				"count": 0,
-				"amount": 4,
+				"amount": 5,
 				"state": false,
 				"questions": [
 					{
 						"id": 0,
-						"type": "question",
+						"type": "multiQuestion",
+						"count": 0,
+						"amount": 3,
 						"state": false,
-						"output": "Before removal",
-						"questions": [
+						"output": "Before removal...",
+						"additionalQuestions": [
 							{
 								"id": 0,
 								"type": "question",
@@ -3824,7 +3703,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "If Necessary for identification items handled by physicians, nurses should be marked by those persons and the chain of custody noted. This is particularly important with items such as bullets, etc. Medical personnel should not attempt to identify caliber or types of firearms used.",
+						"output": "If necessary for identification, items handled by physicians, nurses should be marked by those persons and the chain of custody noted. This is particularly important with items such as bullets, etc. Medical personnel should not attempt to identify caliber or types of firearms used.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3835,7 +3714,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "NOTE: - A failure to follow up on collecting items that left the crime scene with the victim may cause their loss or render them useless as evidence.",
+						"output": "NOTE: A failure to follow up on collecting items that left the crime scene with the victim may cause their loss or render them useless as evidence.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3867,7 +3746,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Notify command of your agency. Request Assistance",
+						"output": "Notify or request notification of Crown Counsel representative. Only for legal questions, do not allow a lawyer to get involved in the actual investigation. Their training limits them to the providing advice on legal issues only.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -3876,17 +3755,6 @@
 					},
 					{
 						"id": 2,
-						"type": "question",
-						"state": false,
-						"output": "Notify or request notification of DA representative. Only for legal questions, do not allow a lawyer to get involved in the actual investigation. Their training limits them to the providing advice on legal issues only.",
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 3,
 						"type": "question",
 						"state": false,
 						"output": "Notify or request notification of medical examiner.",
@@ -3899,7 +3767,7 @@
 			},
 			{
 				"id": 10,
-				"title": "Secure Scene",
+				"title": "Secure scene",
 				"option": "Homicide",
 				"type": "sectionOption",
 				"count": 0,
@@ -3929,7 +3797,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "a) Clear unauthorized person from the scene. NOTE: You cannot worry about hurting someone’s feelings. If they do not belong tell them to leave. This must include any unauthorized police command.",
+								"output": "Clear unauthorized person from the scene. NOTE: You cannot worry about hurting someone’s feelings. If they do not belong tell them to leave. This must include any unauthorized police command.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -3940,7 +3808,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": " Prevent anyone from touching the body or disturbing anything pending the arrival of the medical examiner, identification personnel, and investigative officers.",
+								"output": "Prevent anyone from touching the body or disturbing anything pending the arrival of the medical examiner, identification personnel, and investigative officers.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4024,7 +3892,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "CAUTION - Be aware that there are search and seizure problems in this area. If in doubt you may wish to contact your DA regarding a warrant or other advice.",
+								"output": "CAUTION - Be aware that there are search and seizure problems in this area. If in doubt you may wish to contact your Crown Counsel regarding a warrant or other advice.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4035,7 +3903,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "NOTE: - At night - Obtain adequate lighting before scene processing commences. Artificial lighting used must be adequate for photography and for minute detail search for items such as hair, cartridge cases, etc.",
+								"output": "NOTE: At night, obtain adequate lighting before scene processing commences. Artificial lighting used must be adequate for photography and for minute detail search for items such as hair, cartridge cases, etc.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4046,7 +3914,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "WHEN LIGHTING NOT AVAILABLE secure scene under guard and wait for daylight before processing is commenced.",
+								"output": "WHEN LIGHTING NOT AVAILABLE: Secure scene under guard and wait for daylight before processing is commenced.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4068,7 +3936,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Note Time of arrival",
+						"output": "Note time of arrival",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -4087,7 +3955,7 @@
 						}]
 					},
 					{
-						"id": 3,
+						"id": 2,
 						"type": "question",
 						"state": false,
 						"output": "Check perimeter of scene to insure that all of scene is secured.",
@@ -4098,7 +3966,7 @@
 						}]
 					},
 					{
-						"id": 4,
+						"id": 3,
 						"type": "question",
 						"state": false,
 						"output": "Obtain summary of situation from officer in charge.",
@@ -4109,10 +3977,21 @@
 						}]
 					},
 					{
+						"id": 4,
+						"type": "question",
+						"state": false,
+						"output": "Photograph scene. Take color photographs of the scene from all angles. Work from the perimeter to center (Include photographs of entrance, exit routes to scene.)",
+						"inputs": [{
+							"notes": [],
+							"photos": [],
+							"recording": []
+						}]
+					},
+					{
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Photograph scene Take color photographs of the scene from all angles. Work from the perimeter to center (Include photographs of entrance, exit routes to scene.)",
+						"output": "There is no such thing as too many photographs of a crime scene.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -4123,7 +4002,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "REMEMBER - There is no such thing as too many photographs of a crime scene.",
+						"output": "Make sure that all possible locations relevant to scene are photographed. Particularly important that all rooms a scene are photographed.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -4134,7 +4013,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Make sure that all possible locations relevant to scene are photographed. Particularly important that all rooms a scene are photographed.",
+						"output": "Something may have happened in an adjoining room that will be critical importance as the investigation develops.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -4145,7 +4024,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "REMEMBER - Something may have happened in an adjoining room that will be critical importance as the investigation develops.",
+						"output": "Photograph specific items of evidence such as footprints, cartridge cases, weapons, etc. as observed in place at scene. Where scale is important (footprints, tire tracks, etc.) use ruler scale to show size.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -4154,22 +4033,11 @@
 					},
 					{
 						"id": 9,
-						"type": "question",
-						"state": false,
-						"output": "Photograph specific items of evidence such as footprints, cartridge cases, weapons, etc. as observed in place at scene. Where scale is important (footprints, tire tracks use ruler scale to show size).",
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 10,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
 						"amount": 2,
-						"output": "Overhead photographs",
+						"output": "Take overhead photographs",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4186,7 +4054,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Extension ladders, power company and fire trucks should be utilized for this purpose.",
+								"output": "Drones, Extension ladders, power company and fire trucks should be utilized for this purpose.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4196,12 +4064,12 @@
 						]
 					},
 					{
-						"id": 11,
+						"id": 10,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
 						"amount": 3,
-						"output": "Video Tap",
+						"output": "Video Tape",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4229,7 +4097,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Also video tape defendant, witnesses.",
+								"output": "Also video tape defendant and witnesses.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4238,7 +4106,7 @@
 							}]
 					},
 					{
-						"id": 12,
+						"id": 11,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
@@ -4260,7 +4128,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Photograph deceased as items are removed from body identification, clothing, etc.",
+								"output": "Photograph deceased as items are removed from body: identification, clothing, etc.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4282,7 +4150,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Photograph wounds, injuries - include close-ups. This should be done step by step as body examined, disrobed by medical examiner at scene.",
+								"output": "Photograph wounds, injuries (include close-ups). This should be done step by step as body examined and disrobed by medical examiner at scene.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4291,7 +4159,7 @@
 							}]
 					},
 					{
-						"id": 13,
+						"id": 12,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
@@ -4324,7 +4192,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Location of substances on deceased and his clothing",
+								"output": "Location of substances on deceased and their clothing",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -4344,12 +4212,12 @@
 							}]
 					},
 					{
-						"id": 14,
+						"id": 13,
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
 						"amount": 2,
-						"output": "Survey Scene",
+						"output": "Survey scene",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4527,7 +4395,7 @@
 			},
 			{
 				"id": 13,
-				"title": "Process Defendant",
+				"title": "Process defendant",
 				"option": "Homicide",
 				"type": "sectionOption",
 				"count": 0,
@@ -4540,7 +4408,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 4,
-						"output": "Photograph Defendant",
+						"output": "Photograph defendant",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4635,7 +4503,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 5,
-						"output": "Autopsy Processing",
+						"output": "Autopsy processing",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4699,7 +4567,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 4,
-						"output": "Investigative Personnel",
+						"output": "Investigative personnel",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -4924,13 +4792,13 @@
 						"state": false,
 						"count": 0,
 						"amount": 11,
-						"output": "Receive, Record and Index information received from investigators Establish case book to include the following:",
+						"output": "Receive, record and index information received from investigators Establish case book to include the following:",
 						"additionalQuestions": [
 							{
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "i. Index of contents",
+								"output": "Index of contents",
 
 								"inputs": [{
 									"notes": [],
@@ -4942,7 +4810,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "ii. Initial reports",
+								"output": "Initial reports",
 
 								"inputs": [{
 									"notes": [],
@@ -4954,7 +4822,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "iii. Follow up reports",
+								"output": "Follow up reports",
 
 								"inputs": [{
 									"notes": [],
@@ -4966,7 +4834,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "iv. Evidence reports",
+								"output": "Evidence reports",
 
 								"inputs": [{
 									"notes": [],
@@ -4978,7 +4846,7 @@
 								"id": 4,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "v. Medical reports",
+								"output": "Medical reports",
 
 								"inputs": [{
 									"notes": [],
@@ -4990,7 +4858,7 @@
 								"id": 5,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "vi. Witness statements",
+								"output": "Witness statements",
 
 								"inputs": [{
 									"notes": [],
@@ -5002,7 +4870,7 @@
 								"id": 6,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "vii. Defendants statements",
+								"output": "Defendants statements",
 
 								"inputs": [{
 									"notes": [],
@@ -5014,7 +4882,7 @@
 								"id": 7,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "viii. Background on defendant",
+								"output": "Background on defendant",
 
 								"inputs": [{
 									"notes": [],
@@ -5026,7 +4894,7 @@
 								"id": 8,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "ix. Background on deceased",
+								"output": "Background on deceased",
 
 								"inputs": [{
 									"notes": [],
@@ -5038,7 +4906,7 @@
 								"id": 9,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "x. Evidence Log Book",
+								"output": "Evidence Log Book",
 
 								"inputs": [{
 									"notes": [],
@@ -5050,7 +4918,7 @@
 								"id": 10,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "xi. Books of photographs",
+								"output": "Books of photographs",
 
 								"inputs": [{
 									"notes": [],
@@ -5063,7 +4931,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Provide Copies of case book for principal Investigators  \n  DA's office",
+						"output": "Provide copies of case book for principal Investigators  \n  DA's office",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -5172,7 +5040,7 @@
 						"type": "multiQuestion",
 						"state": false,
 						"count": 0,
-						"amount": 3,
+						"amount": 4,
 						"output": "Establish movements of deceased prior to death to determine:",
 						"additionalQuestions": [
 							{
@@ -5230,7 +5098,7 @@
 						"state": false,
 						"count": 0,
 						"amount": 8,
-						"output": "Examine deceased’s background, including the following:",
+						"output": "Examine deceaseds background, including the following:",
 						"additionalQuestions": [
 							{
 								"id": 0,
@@ -5835,33 +5703,35 @@
 					},
 					{
 						"id": 8,
-						"type": "selectionQuestion",
+						"type": "questionnaire",
 						"state": false,
+						"count": 0,
+						"amount": 4,
 						"output": "Employed at time of death",
-						"options": [
+						"questions": [
 							{
 								"id": 0,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "Full time"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Full time"
 							},
 							{
 								"id": 1,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Part time"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Part time"
 							},
 							{
 								"id": 2,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Seasonal"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Seasonal"
 							},
 							{
 								"id": 3,
-								"type": "questionsOption",
-								"state": "",
-								"title": "self employed"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "self employed"
 							}],
 						"inputs": [{
 							"notes": [],
@@ -5967,51 +5837,53 @@
 					},
 					{
 						"id": 17,
-						"type": "selectionQuestion",
+						"type": "questionnaire",
 						"state": false,
+						"count": 0,
+						"amount": 7,
 						"output": "Method of suicide",
-						"options": [
+						"questions": [
 							{
 								"id": 0,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "Hanging"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Hanging"
 							},
 							{
 								"id": 1,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Overdose"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Overdose"
 							},
 							{
 								"id": 2,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Carbon monoxide"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Carbon monoxide"
 							},
 							{
 								"id": 3,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Poisoning"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Poisoning"
 							},
 							{
 								"id": 4,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Slashing"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Slashing"
 							},
 							{
 								"id": 5,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Gunshot"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Gunshot"
 							},
 							{
 								"id": 6,
-								"type": "questionsOption",
-								"state": "",
-								"title": "Other (specify)"
+								"type": "questionnaireItem",
+								"state": "false",
+								"output": "Other (specify)"
 							}],
 						"inputs": [{
 							"notes": [],
@@ -6140,7 +6012,7 @@
 						"id": 21,
 						"type": "question",
 						"state": false,
-						"output": "Position in family Parent, child other",
+						"output": "Position in family: Parent, child, other, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -6339,7 +6211,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Next to KIN?",
+						"output": "Next to kin? (Name, DOB, Address, Phone number)",
 
 						"inputs": [{
 							"notes": [],
@@ -6738,7 +6610,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Chronic Health problems",
+						"output": "Chronic health problems",
 
 						"inputs": [{
 							"notes": [],
@@ -6786,7 +6658,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "History of criminal conviction other?",
+						"output": "any other History of criminal conviction?",
 
 						"inputs": [{
 							"notes": [],
@@ -6834,7 +6706,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "History of homosexuality?",
+						"output": "History of personal activities (Drinking, drugs, sexuality).",
 
 						"inputs": [{
 							"notes": [],
@@ -6984,7 +6856,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Take note of the current time",
+						"output": "Take note of the current time.",
 
 						"inputs": [{
 							"notes": [],
@@ -7019,7 +6891,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Road and weather conditions",
+						"output": "Road and weather conditions.",
 
 						"inputs": [{
 							"notes": [],
@@ -7031,7 +6903,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Traffic conditions: a lot of vehicles on the road, pedestrians, etc.",
+						"output": "Traffic conditions: A lot of vehicles on the road, pedestrians, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7065,7 +6937,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Query plate advise communications center of location",
+						"output": "Query plate and advise communications center of location.",
 
 						"inputs": [{
 							"notes": [],
@@ -7086,7 +6958,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Check how many occupants in the vehicle again",
+						"output": "Note how many occupants in the vehicle.",
 
 						"inputs": [{
 							"notes": [],
@@ -7098,7 +6970,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Consider calling for assistance when outnumbered",
+						"output": "Consider calling for assistance when outnumbered.",
 
 						"inputs": [{
 							"notes": [],
@@ -7132,7 +7004,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Notice any open liquor or other physical evidence in back or front seat",
+						"output": "Notice any open liquor or other physical evidence in back or front seat.",
 
 						"inputs": [{
 							"notes": [],
@@ -7155,7 +7027,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Note damage to vehicle if any shown",
+						"output": "Note damage to vehicle if any shown.",
 
 						"inputs": [{
 							"notes": [],
@@ -7178,7 +7050,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Does driver have horizontal gaze nostalgia",
+						"output": "Does driver have horizontal gaze nostalgia.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7189,7 +7061,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Did driver provide you with the right documents DL, Registration, insurance or giving you something unrelated",
+						"output": "Did driver provide you with the right documents drivers license, registration, insurance or gave you something unrelated.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7200,7 +7072,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Did driver admit to drinking at all?",
+						"output": "Did the driver admit to drinking or to the use of drugs?",
 
 						"inputs": [{
 							"notes": [],
@@ -7224,7 +7096,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "If further investigation required proceed to arrest of driver section. If not release driver",
+						"output": "If further investigation required proceed to arrest of driver section. If not release driver.",
 
 						"inputs": [{
 							"notes": [],
@@ -7238,14 +7110,14 @@
 				"title": "Arrest of Driver",
 				"type": "section",
 				"count": 0,
-				"amount": 18,
+				"amount": 15,
 				"state": false,
 				"questions": [
 					{
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "If reasonable suspicion has been formed advise driver they are being detained for purpose of ASD test. Read driver ASD demand. Notes: Driver detained for ASD not entitled to rights. If driver is detained 15 minutes or longer, they are entitled to their rights.",
+						"output": "If reasonable grounds to believe driver is impaired exist, arrest/detain for breathalyzer testing.",
 
 						"inputs": [{
 							"notes": [],
@@ -7255,21 +7127,38 @@
 					},
 					{
 						"id": 1,
-						"type": "question",
+						"type": "questionnaire",
 						"state": false,
-						"output": "If driver does not provide proper samples, arrest on refusal of roadside.",
+						"count": 0,
+						"amount": 3,
+						"output": "If reasonable suspicion has been formed advise driver they are being detained for purpose of ASD test. Read driver ASD demand. (Driver detained for ASD not entitled to rights. If driver is detained 15 minutes or longer, they are entitled to their rights).",
 
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
+						"questions": [
+							{
+								"id": 0,
+								"type": "questionnaireItem",
+								"state": false,
+								"output": "Wait 15 minutes from time of last drink to administer roadside screen device test. note results of breathalyzer test and show the driver, 10 minutes for cigarettes, 5 minutes for eating)."
+							},
+							{
+								"id": 1,
+								"type": "questionnaireItem",
+								"state": false,
+								"output": "Test results: Test fail: Proceed to arrest for impaired operation of a motor vehicle, advise of rights and caution. Test Pass: Proceed with procedure for pass. Warning (Level at .05 or lower) Provide driver seven-day suspension, take license from driver, impound vehicle. Serve vehicle impound notice (This is depending on prior convictions)."
+							},
+							{
+								"id": 2,
+								"type": "questionnaireItem",
+								"state": false,
+								"output": "If driver does not provide proper samples, arrest on refusal of roadside."
+							}
+						]
 					},
 					{
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Wait 15 minutes from time of loot drink to administer roadside screen device test: Note results of Breathalyzer test and show the driver, 10 minutes for cigarettes, 5 minutes for eating",
+						"output": "If driver has the inability to provide a breathalyzer test, read blood demand.",
 
 						"inputs": [{
 							"notes": [],
@@ -7281,7 +7170,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Test Results: Test Fail: Proceed to arrest for impaired operation of a motor vehicle, advise of rights and caution. Test Pass: Proceed with procedure for pass. Warning (Level at .05 or lower) Provide driver seven-day suspension, take license from driver, Impound vehicle. Serve vehicle impound notice (This is depending on prior convictions)",
+						"output": "Have driver exit vehicle and walk to the police vehicle.",
 
 						"inputs": [{
 							"notes": [],
@@ -7293,8 +7182,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "If reasonable grounds to believe driver is impaired exist, arrest/detain for Breathalyzer testing.",
-
+						"output": "How was driver when walking? (unsteady on feet, needed assistance, slow and labored).",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7305,8 +7193,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "If driver has the inability to provide a Breathalyzer test, read Blood demand",
-
+						"output": "Note what driver is wearing. (Loose clothes, tied or untied boots or shoes, jacket, anything that could be used as defense as to why they were walking the way they were)",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7317,7 +7204,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Have driver exit vehicle and walk to the police vehicle",
+						"output": "Search and handcuff driver and place in back seat of police vehicle.",
 
 						"inputs": [{
 							"notes": [],
@@ -7329,7 +7216,8 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "How was driver when walking? Unsteady on feet, needed assistance, slow and labored",
+						"output": "Can you detect smell of liquor/drugs on breath while in the back seat of police vehicle?",
+
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7340,7 +7228,8 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Note what driver is wearing. Loose clothes, tied or untied boots or shoes, jacket, anything that could be used as defense as to why he was walking the way he was",
+						"output": "Read Charter, Breath Demand and Caution: Read Blood Demand if no sample provided (due to inability of administering a breathalyzer test).",
+
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7349,42 +7238,6 @@
 					},
 					{
 						"id": 9,
-						"type": "question",
-						"state": false,
-						"output": "Search and Handcuffed driver and place into back seat of police vehicle",
-
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 10,
-						"type": "question",
-						"state": false,
-						"output": "Can you detect smell of liquor/drugs on breath while in the back seat of Police vehicle?",
-
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 11,
-						"type": "question",
-						"state": false,
-						"output": "Read Charter, Breath demand and Caution: Read blood demand if no sample provided (due to inability of administering a Breathalyzer test)",
-
-						"inputs": [{
-							"notes": [],
-							"photos": [],
-							"recording": []
-						}]
-					},
-					{
-						"id": 12,
 						"type": "question",
 						"state": false,
 						"output": "Make detailed notes of responses",
@@ -7396,10 +7249,10 @@
 						}]
 					},
 					{
-						"id": 13,
+						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Search vehicle incidental to arrest seize any physical evidence, liquor bottles, drugs, etc.",
+						"output": "Search vehicle incidental to arrest seize any physical evidence: liquor bottles, drugs, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7407,7 +7260,7 @@
 						}]
 					},
 					{
-						"id": 14,
+						"id": 11,
 						"type": "question",
 						"state": false,
 						"output": "Advise communications operator that you have one in custody and are returning to the office for breath tests.",
@@ -7419,7 +7272,7 @@
 						}]
 					},
 					{
-						"id": 15,
+						"id": 12,
 						"type": "question",
 						"state": false,
 						"output": "Have breath tech attend office or Drug Recognition Expert if applicable.",
@@ -7431,10 +7284,10 @@
 						}]
 					},
 					{
-						"id": 16,
+						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Have vehicle towed by another police officer if possible. If not have it towed yourself but make note of time.",
+						"output": "Have vehicle towed by another police officer if possible. If not have it towed yourself. Make note of time.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7442,10 +7295,10 @@
 						}]
 					},
 					{
-						"id": 17,
+						"id": 14,
 						"type": "question",
 						"state": false,
-						"output": "While en-route what was the suspects demeanor and behavior. Upset, placid, fell asleep, etc.",
+						"output": "While en-route, note the suspects demeanor and behavior: upset, placid, fell asleep, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7465,7 +7318,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "If suspect wanted to speak to a lawyer, immediately bring phone to room upon arrival at detachment/station",
+						"output": "If suspect would like to speak to a lawyer, immediately bring into phone room upon arrival at detachment/station.",
 
 						"inputs": [{
 							"notes": [],
@@ -7477,7 +7330,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Note whether or not suspect needed help calling lawyer",
+						"output": "Note whether or not suspect needed help calling lawyer.",
 
 						"inputs": [{
 							"notes": [],
@@ -7489,7 +7342,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Note lawyer called and time call was received",
+						"output": "Note name of lawyer called and time call was received",
 
 						"inputs": [{
 							"notes": [],
@@ -7501,7 +7354,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Note time call to lawyer ended",
+						"output": "Note time call to lawyer ended.",
 
 						"inputs": [{
 							"notes": [],
@@ -7525,7 +7378,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Proceed to Breathalyzer room",
+						"output": "Proceed to breathalyzer room.",
 
 						"inputs": [{
 							"notes": [],
@@ -7537,7 +7390,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Do not allow suspect to drink anything prior to testing being conducted",
+						"output": "Do not allow suspect to drink anything prior to testing being conducted.",
 
 						"inputs": [{
 							"notes": [],
@@ -7558,7 +7411,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Begin observation period if required prior to testing",
+						"output": "Begin 15 minute observation period if required prior to testing.",
 
 						"inputs": [{
 							"notes": [],
@@ -7570,7 +7423,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Administer first breath test. Make note of how cooperative suspect was with providing breath sample",
+						"output": "Administer first breath test. Make note of how cooperative suspect was with providing breath sample.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7581,7 +7434,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Note if suspect followed all instructions given to him prior to testing",
+						"output": "Note if suspect followed all instructions given to them prior to testing.",
 
 						"inputs": [{
 							"notes": [],
@@ -7593,7 +7446,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "If suspect did not provide sufficient breath samples make note of why. Claims he has medical conditions, refused to provide samples, error on instrument, etc.",
+						"output": "If suspect did not provide sufficient breath samples make note of why. For example: claims of medical conditions, refused to provide samples, error on instrument, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7604,7 +7457,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Seize and exhibit mouth piece if suitable sample not provided",
+						"output": "Seize and exhibit mouth piece if suitable sample not provided.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7615,7 +7468,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "If subject unwilling to provide samples, charge with fail to provide",
+						"output": "If subject is unwilling to provide samples, charge with failure to provide.",
 
 						"inputs": [{
 							"notes": [],
@@ -7627,7 +7480,7 @@
 						"id": 6,
 						"type": "multiQuestion",
 						"state": false,
-						"output": "If claims can't due to medical issues, call EMS to have checked over or bring to hospital to have doctor check subject out",
+						"output": "If the subject claims that they can not due to medical issues, call EMS to have checked over or bring to hospital to have doctor check subject out.",
 						"count": 0,
 						"amount": 2,
 						"additionalQuestions": [
@@ -7647,7 +7500,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If doctor confirms subject is able to provide breath samples. Give opportunity to provide samples again, if refuses again, charge accordingly",
+								"output": "If doctor confirms subject is able to provide breath samples. Give opportunity to provide samples again, if subject refuses again, charge accordingly.",
 								"inputs": [{
 									"notes": [],
 									"photos": [],
@@ -7659,7 +7512,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "If initial test successful, wait 20 minutes and have second test provided",
+						"output": "If initial test was successful, wait 20 minutes and administer second test.",
 
 						"inputs": [{
 							"notes": [],
@@ -7671,7 +7524,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Talk with subject while waiting. Making note of any evidence he provides",
+						"output": "Talk with subject while waiting. Making note of any evidence they may provide.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7682,7 +7535,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Fill out any relevant forms while waiting. Impaired Driving checklists etc.",
+						"output": "Fill out any relevant forms while waiting. Impaired Driving Checklists, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7693,7 +7546,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Second test provided, if within 20mg% conclude testing and charge if charges are available",
+						"output": "Second test provided: if within 20mg%, conclude testing and charge if charges are available.",
 
 						"inputs": [{
 							"notes": [],
@@ -7705,7 +7558,7 @@
 						"id": 11,
 						"type": "question",
 						"state": false,
-						"output": "If difference in tests is above 20mg% conduct a third test",
+						"output": "If difference in tests is above 20mg%, conduct a third test.",
 
 						"inputs": [{
 							"notes": [],
@@ -7717,7 +7570,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Again if charges are available, charge accordingly",
+						"output": "Again, if charges are available, charge accordingly.",
 
 						"inputs": [{
 							"notes": [],
@@ -7738,7 +7591,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Attempt to obtain cautioned statement from subject",
+						"output": "Attempt to obtain Cautioned Statement from subject.",
 
 						"inputs": [{
 							"notes": [],
@@ -7750,7 +7603,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Fingerprint and photograph subject",
+						"output": "Fingerprint and photograph subject.",
 
 						"inputs": [{
 							"notes": [],
@@ -7762,7 +7615,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Query subject on CPIC and other computer applications to determine whether or not subject should be released or remanded",
+						"output": "Query subject on CPIC and other computer applications to determine whether or not subject should be released or remanded.",
 
 						"inputs": [{
 							"notes": [],
@@ -7785,7 +7638,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Complete and serve all required release documents",
+						"output": "Complete and serve all required release documents.",
 
 						"inputs": [{
 							"notes": [],
@@ -7797,7 +7650,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "If driver is found to have prior convictions, provide a 'Seek Grader punishment form'",
+						"output": "If driver is found to have prior convictions, provide a 'Seek greater Punishment Form'.",
 
 						"inputs": [{
 							"notes": [],
@@ -7809,7 +7662,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Verify and provide 'Certificate of Qualified Breath Test’ to accused (Ensure that certificate is verified)",
+						"output": "Verify and provide 'Certificate of Qualified Breath Test’ to accused (Ensure that certificate is verified).",
 
 						"inputs": [{
 							"notes": [],
@@ -7821,7 +7674,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Promise to appear, undertaking, driving prohibition, driving suspension, etc.",
+						"output": "Server with: Promise to Appear, Undertaking, Driving Prohibition, Driving Suspension, etc.",
 
 						"inputs": [{
 							"notes": [],
@@ -7833,7 +7686,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Have subject picked up or dropped off to responsible sober person",
+						"output": "Have subject picked up or dropped off to responsible sober person.",
 
 						"inputs": [{
 							"notes": [],
@@ -7854,7 +7707,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Process all physical evidence into exhibit lockers. Seized liquor or drugs",
+						"output": "Process all physical evidence into exhibit lockers: Seized liquor or drugs, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7865,7 +7718,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Contact complainant if required and obtain statement to obtain driving evidence and/or evidence to support subject's intoxication level",
+						"output": "Contact complainant if available and obtain a statement to capture driving evidence and/or evidence to support subject's intoxication level.",
 
 						"inputs": [{
 							"notes": [],
@@ -7877,7 +7730,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Attempt to obtain statements from any potential witnesses. Bartender, family members, waitresses, etc. if brought to light during investigation",
+						"output": "Attempt to obtain statements from any potential witnesses if brought to light during investigation: bartender, family members, waitresses, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7888,7 +7741,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Attempt interview of subject when sober",
+						"output": "Attempt interview of the subject when sober.",
 
 						"inputs": [{
 							"notes": [],
@@ -7900,7 +7753,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "If tests conducted outside 2-hour time frame, obtain services of breath test expert",
+						"output": "If tests conducted outside 2-hour time frame, obtain services of breath test expert.",
 
 						"inputs": [{
 							"notes": [],
@@ -7912,7 +7765,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Document file in a timely fashion and according to policy",
+						"output": "Document file in a timely fashion and according to policy.",
 
 						"inputs": [{
 							"notes": [],
@@ -7933,7 +7786,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Complete court disclosure forms if required",
+						"output": "Complete court disclosure forms if required.",
 
 						"inputs": [{
 							"notes": [],
@@ -7945,7 +7798,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Provide copies of officer(s) notes",
+						"output": "Provide copies of officer(s) notes.",
 
 						"inputs": [{
 							"notes": [],
@@ -7957,7 +7810,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "certificate of analysis",
+						"output": "Certificate of Analysis.",
 
 						"inputs": [{
 							"notes": [],
@@ -7969,7 +7822,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Evidence tickets from breath instrument",
+						"output": "Evidence tickets from breath instrument.",
 
 						"inputs": [{
 							"notes": [],
@@ -7981,7 +7834,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Release documents: Promise to appear, summons, undertaking, etc.",
+						"output": "Release documents: Promise to Appear, Summons, Undertaking, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -7992,7 +7845,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Provincial documents: Notice of driving prohibition, temporary suspension, vehicle tow form, etc.",
+						"output": "Provincial documents: Notice of Driving Prohibition, Temporary Suspension, Vehicle Tow Form, etc.",
 						"inputs": [{
 							"notes": [],
 							"photos": [],
@@ -8003,7 +7856,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Photographs",
+						"output": "Photographs.",
 
 						"inputs": [{
 							"notes": [],
@@ -8015,7 +7868,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "Photocopy of driver's license",
+						"output": "Photocopy of driver's license.",
 
 						"inputs": [{
 							"notes": [],
@@ -8027,7 +7880,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Occurrence reports",
+						"output": "Occurrence reports.",
 
 						"inputs": [{
 							"notes": [],
@@ -8039,7 +7892,7 @@
 						"id": 9,
 						"type": "question",
 						"state": false,
-						"output": "Criminal record",
+						"output": "Criminal record.",
 
 						"inputs": [{
 							"notes": [],
@@ -8051,7 +7904,7 @@
 						"id": 10,
 						"type": "question",
 						"state": false,
-						"output": "Provincial driving record",
+						"output": "Provincial driving record.",
 
 						"inputs": [{
 							"notes": [],
@@ -8081,7 +7934,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Who's the caller? Name, DOB, Address, Phone #",
+						"output": "Who's the caller? Name, DOB, Address, Phone #, etc...",
 						"inputs": [
 							{
 								"notes": [],
@@ -8094,7 +7947,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Address of theft",
+						"output": "Address of theft.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8120,7 +7973,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Who's the victim: Name, DOB, Address, Phone #",
+						"output": "Who's the victim: Name, DOB, Address, Phone #, etc.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8133,7 +7986,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Any suspects: Name, description",
+						"output": "Any suspects: Name, description.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8156,7 +8009,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Obtain Victim statement",
+						"output": "Obtain victim statement.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8169,7 +8022,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Is there a witness? Obtain a witness statement",
+						"output": "Is there a witness? Obtain a witness statement.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8182,7 +8035,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "What was stolen: Make and Model",
+						"output": "What was stolen? make and model.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8195,7 +8048,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Is there a serial number: Make or Model number",
+						"output": "Is there a serial number?",
 						"inputs": [
 							{
 								"notes": [],
@@ -8208,7 +8061,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Description of stolen item(s). Colors, distinguishing marks, anything written on it? etc.",
+						"output": "Description of stolen item(s). colors, distinguishing marks, anything written on it? etc...",
 						"inputs": [
 							{
 								"notes": [],
@@ -8234,7 +8087,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Photograph where the item was stolen from",
+						"output": "Photograph where the item was stolen from.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8247,7 +8100,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "If item was shoplifted, photograph identical items in store along with price tag",
+						"output": "If item was shoplifted, photograph identical items in store along with price tag.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8260,7 +8113,7 @@
 						"id": 8,
 						"type": "question",
 						"state": false,
-						"output": "Conduct an inventory of item(s) believed missing",
+						"output": "Conduct an inventory of item(s) believed missing.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8312,7 +8165,7 @@
 						"id": 12,
 						"type": "question",
 						"state": false,
-						"output": "Location the item was stolen from?",
+						"output": "Location of where the item was stolen?",
 						"inputs": [
 							{
 								"notes": [],
@@ -8325,7 +8178,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Name and/or description of any suspects",
+						"output": "Name and/or description of any suspects.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8351,7 +8204,7 @@
 						"id": 15,
 						"type": "question",
 						"state": false,
-						"output": "Is there video?",
+						"output": "Is there a surveillance or security video?",
 						"inputs": [
 							{
 								"notes": [],
@@ -8362,6 +8215,19 @@
 					},
 					{
 						"id": 16,
+						"type": "question",
+						"state": false,
+						"output": "If somebody touched an item that is to be fingerprinted, get their information. Same applies to footprints.",
+						"inputs": [
+							{
+								"notes": [],
+								"photos": [],
+								"recording": []
+							}
+						]
+					},
+					{
+						"id": 17,
 						"type": "multiQuestion",
 						"state": false,
 						"output": "Is there a need for Forensic Identification Unit to attend?",
@@ -8372,7 +8238,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "If somebody touched an item that is to be fingerprinted, get their information. Same applies to footprints.",
+								"output": "Do fingerprints need to be lifted from secured objects.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8385,7 +8251,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Do fingerprints need to be lifted from secured objects",
+								"output": "Shoe or foot impressions off of secured objects.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8398,7 +8264,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Shoe or foot impressions off of secured objects",
+								"output": "Severity of Theft: value, victims on scene during, had there been a rash of thefts lately, etc.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8411,7 +8277,7 @@
 								"id": 3,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Severity of Theft: Value, victims on scene during, had there been a rash of thefts lately, etc.",
+								"output": "Need for more professional photographs.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8424,7 +8290,7 @@
 								"id": 4,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Need for more professional photographs",
+								"output": "Likelihood of fingerprints/footprints/shoe impressions being lifted? Dusty surfaces, smeared prints, gloves being used?",
 								"inputs": [
 									{
 										"notes": [],
@@ -8437,7 +8303,7 @@
 								"id": 5,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Likelihood of fingerprints/footprints/shoe impressions being lifted. Dusty surfaces, smeared prints, gloves being used",
+								"output": "Tire impressions.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8448,19 +8314,6 @@
 							},
 							{
 								"id": 6,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Tire impressions",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 7,
 								"type": "additionalQuestion",
 								"state": false,
 								"output": "DNA left behind: Broken glass, cigarette butts, urine, feces, saliva, etc.",
@@ -8475,7 +8328,7 @@
 						]
 					},
 					{
-						"id": 17,
+						"id": 18,
 						"type": "multiQuestion",
 						"state": false,
 						"output": "If identifications services needed",
@@ -8486,7 +8339,7 @@
 								"id": 0,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Keep scene secure",
+								"output": "Keep scene secure.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8499,7 +8352,7 @@
 								"id": 1,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Cover outside evidence until identification section attends",
+								"output": "Cover outside evidence until Forensic Identification Section attends.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8512,7 +8365,7 @@
 								"id": 2,
 								"type": "additionalQuestion",
 								"state": false,
-								"output": "Begin taking statements",
+								"output": "Begin taking statements.",
 								"inputs": [
 									{
 										"notes": [],
@@ -8524,10 +8377,10 @@
 						]
 					},
 					{
-						"id": 18,
+						"id": 19,
 						"type": "question",
 						"state": false,
-						"output": "If Identification services not required to attend, continue with investigation",
+						"output": "If Forensic Identification Section not required to attend, continue with investigation.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8537,7 +8390,7 @@
 						]
 					},
 					{
-						"id": 19,
+						"id": 20,
 						"type": "question",
 						"state": false,
 						"output": "Was it a crime of opportunity?",
@@ -8563,7 +8416,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "If anything can be added to CPIC, add it! (Ex. Item serial number) ",
+						"output": "If anything can be added to CPIC, add it! (Ex. Item serial number).",
 						"inputs": [
 							{
 								"notes": [],
@@ -8576,7 +8429,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Neighborhood inquiries",
+						"output": "Conduct neighbourhood inquiries.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8589,7 +8442,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Contact pawn shops with description of stolen items. If stolen item is there, seize item. Get surveillance video and employee statement.",
+						"output": "Contact pawn shops with description of stolen items. If stolen item is there, seize item and obtain surveillance video and employee statement.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8602,7 +8455,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "Media Release, Crime stoppers, city website, and bulletin to other agencies.",
+						"output": "Media Release, Crime Stoppers, city website, and bulletin to other agencies.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8615,7 +8468,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Social Media sites",
+						"output": "Social Media sites.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8628,7 +8481,7 @@
 						"id": 5,
 						"type": "question",
 						"state": false,
-						"output": "Search Internet Classified ads sites: (kijiji.com, ebay.com, etc.) for stolen items",
+						"output": "Search Internet Classified ads sites: (kijiji.com, ebay.com, etc.) for stolen items.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8641,7 +8494,7 @@
 						"id": 6,
 						"type": "question",
 						"state": false,
-						"output": "Talk to or email other members of your police force to determine if they have any related files lately with any suspects",
+						"output": "Talk to or email other members of your police force to determine if they have any related files with any suspects.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8654,7 +8507,7 @@
 						"id": 7,
 						"type": "question",
 						"state": false,
-						"output": "If they took place in a business. Consider having staff complete a view questionnaire to try to pinpoint a suspect",
+						"output": "If theft took place in a business, consider having staff complete a view questionnaire to try to pinpoint a suspect.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8677,7 +8530,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "If suspect on scene, or located later. Arrest for theft or possession of stolen property. Whichever applies.",
+						"output": "If suspect on scene or located later, arrest for theft or possession of stolen property, whichever applies.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8690,7 +8543,7 @@
 						"id": 1,
 						"type": "question",
 						"state": false,
-						"output": "Read Rights to Counsel Sec 10(b) C.C.C. make note of responses",
+						"output": "Handcuff suspect.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8703,7 +8556,7 @@
 						"id": 2,
 						"type": "question",
 						"state": false,
-						"output": "Read Police Caution, make note of responses",
+						"output": "Read Rights to Counsel Sec 10(b) C.C.C. make note of responses.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8716,7 +8569,7 @@
 						"id": 3,
 						"type": "question",
 						"state": false,
-						"output": "If the accused was or could have been talking to another police officer read the Secondary Police Caution",
+						"output": "Read Police Caution, make note of responses.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8729,7 +8582,7 @@
 						"id": 4,
 						"type": "question",
 						"state": false,
-						"output": "Handcuff suspect",
+						"output": "If the accused was or could have been talking to another police officer read the Secondary Police Caution.",
 						"inputs": [
 							{
 								"notes": [],
@@ -8740,284 +8593,36 @@
 					},
 					{
 						"id": 5,
-						"type": "multiQuestion",
+						"type": "questionnaire",
 						"state": false,
-						"output": "Search incident to arrest",
+						"output": "Search incident to arrest.",
+						"note": "Grounds of search",
 						"count": 0,
 						"amount": 3,
-						"additionalQuestions": [
+						"questions": [
 							{
 								"id": 0,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "(1) to ensure the safety of the police and the public",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "To ensure the safety of the police and the public."
 							},
 							{
 								"id": 1,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "(2) To protect evidence",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "To protect evidence."
 							},
 							{
 								"id": 2,
-								"type": "additionalQuestion",
+								"type": "questionnaireItem",
 								"state": false,
-								"output": "(3) to discover evidence",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							}
-						]
-					},
-					{
-						"id": 6,
-						"type": "question",
-						"state": false,
-						"output": "Seize any evidence related to the offence",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 7,
-						"type": "question",
-						"state": false,
-						"output": "If the item is re-sellable. Photograph the item and return to store",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 8,
-						"type": "question",
-						"state": false,
-						"output": "If the item is not re-sellable. Seize exhibit and process same for court",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 9,
-						"type": "question",
-						"state": false,
-						"output": "Bring suspect back to Detachment/station",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 10,
-						"type": "question",
-						"state": false,
-						"output": "Obtain Cautioned statement",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 11,
-						"type": "question",
-						"state": false,
-						"output": "Fingerprint and Photograph",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 12,
-						"type": "question",
-						"state": false,
-						"output": "If suspect is to be remanded. Bring to a Justice of the Peace for same",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 13,
-						"type": "question",
-						"state": false,
-						"output": "If suspect is to be released. Serve Appearance Notice/Recognizance with or without sureties/or Promise to appear with an Undertaking providing conditions to stay away or have no contact with victim or business",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 14,
-						"type": "question",
-						"state": false,
-						"output": "If charges are not going to be laid with an undertaking. Consider serving a trespass notice on the suspect",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 15,
-						"type": "question",
-						"state": false,
-						"output": "If suspect is first time offender, consider alternative measures program or recommend youth program. If suspect is young offender ",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					}
-				]
-			},
-			{
-				"id": 4,
-				"title": "Statements",
-				"type": "section",
-				"count": 0,
-				"amount": 2,
-				"state": false,
-				"questions": [
-					{
-						"id": 0,
-						"type": "multiQuestion",
-						"state": false,
-						"output": "Victim(s)",
-						"count": 0,
-						"amount": 15,
-						"additionalQuestions": [
-							{
-								"id": 0,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Tombstone data: Full name, DOB, Address, Phone number",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 1,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Determine timeline. When property as stolen, when last seen? when noticed missing?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 2,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "What was stolen? Make, model, description, current or original value ($), serial numbers",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 3,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Any prior issues with anyone/suspects in the past? Debts owed, other disputes, disgruntled employees, family disputes, disputes with clients? etc.",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 4,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Any suspects? Description",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 5,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Why are they suspect?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
+								"output": "To discover evidence."
 							},
 							{
 								"id": 6,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Determine relationship with the suspect",
+								"output": "Seize any evidence related to the offence.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9028,9 +8633,9 @@
 							},
 							{
 								"id": 7,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Try to determine how the suspect stolen the item",
+								"output": "If the item is re-sellable: Photograph the item and return to store.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9041,9 +8646,9 @@
 							},
 							{
 								"id": 8,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Does the accused has any ownership to the stolen property?",
+								"output": "If the item is not re-sellable: Seize exhibit and process same for court.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9054,9 +8659,9 @@
 							},
 							{
 								"id": 9,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Could the victim pick the suspect out of a photo lineup?",
+								"output": "Bring suspect back to detachment/station.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9067,9 +8672,9 @@
 							},
 							{
 								"id": 10,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Why would anyone commit the theft?",
+								"output": "Obtain Cautioned Statement.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9080,9 +8685,9 @@
 							},
 							{
 								"id": 11,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Are they insured or are they making a claim through insurance",
+								"output": "Fingerprint and photograph.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9093,9 +8698,9 @@
 							},
 							{
 								"id": 12,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Suspect cautioned statement should be under statements",
+								"output": "If suspect is to be remanded: Bring to a Justice of the Peace for same",
 								"inputs": [
 									{
 										"notes": [],
@@ -9106,9 +8711,9 @@
 							},
 							{
 								"id": 13,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Advise victim of victim impact statement and victim services",
+								"output": "If suspect is to be released: Serve Appearance Notice/Recognizance with or without sureties/or Promise to appear with an Undertaking providing conditions to stay away or have no contact with victim or business.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9119,9 +8724,22 @@
 							},
 							{
 								"id": 14,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "If item stolen is not sellable or damaged. Get the restitution form signed by victim",
+								"output": "If charges are not going to be laid with an undertaking: Consider serving a trespass notice on the suspect.",
+								"inputs": [
+									{
+										"notes": [],
+										"photos": [],
+										"recording": []
+									}
+								]
+							},
+							{
+								"id": 15,
+								"type": "question",
+								"state": false,
+								"output": "If suspect is first time offender: Consider alternative measures program or recommend youth program. (i.e. If suspect is young offender).",
 								"inputs": [
 									{
 										"notes": [],
@@ -9133,18 +8751,412 @@
 						]
 					},
 					{
-						"id": 1,
-						"type": "multiQuestion",
-						"state": false,
-						"output": "Witness",
+						"id": 4,
+						"title": "Statements",
+						"type": "section",
 						"count": 0,
-						"amount": 14,
-						"additionalQuestions": [
+						"amount": 2,
+						"state": false,
+						"questions": [
 							{
 								"id": 0,
-								"type": "additionalQuestion",
+								"type": "multiQuestion",
 								"state": false,
-								"output": "Tombstone Data: Full name, DOB, Address, Phone number",
+								"output": "Victim(s)",
+								"count": 0,
+								"amount": 15,
+								"additionalQuestions": [
+									{
+										"id": 0,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Full name, DOB, Address, Phone number, etc...",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 1,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Determine timeline. When property was stolen, when last seen? When property was noticed missing?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 2,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "What was stolen? make, model, description, current or original value ($), serial numbers.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 3,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Any prior issues with anyone/suspects in the past? Debts owed, other disputes, disgruntled employees, family disputes, disputes with clients? etc.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 4,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Any suspects? Description.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 5,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Why are they a suspect?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 6,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Determine relationship with the suspect.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 7,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Try to determine how the suspect stole the item.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 8,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Does the accused have any ownership to the stolen property?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 9,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Could the victim pick the suspect out of a photo lineup?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 10,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Why would anyone commit the theft?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 11,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Are they insured or are they making a claim through insurance.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 12,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Suspect Cautioned Statement should be included under statements.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 13,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Advise victim of Victim Impact Statement and Victim Services.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 14,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "If item stolen is not sellable or damaged: Get the restitution form signed by victim.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": 1,
+								"type": "multiQuestion",
+								"state": false,
+								"output": "Witness",
+								"count": 0,
+								"amount": 13,
+								"additionalQuestions": [
+									{
+										"id": 0,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Full name, DOB, Address, Phone number, etc...",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 1,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "What did he/she witness?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 2,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Where was the item when it was taken?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 3,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Any suspects? If yes, why?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 4,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Did the witness see the suspect take the item?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 5,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Describe the suspect.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 6,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "When was the item stolen?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 7,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "What role does the witness have in the theft.",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 8,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Does the witness know the suspect and how?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 9,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Do they know who owns the items stolen?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 10,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Does the witness know if the suspect(s) know who owns the item stolen?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 11,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Any previous history between the suspect and victim or witness?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									},
+									{
+										"id": 12,
+										"type": "additionalQuestion",
+										"state": false,
+										"output": "Could the witness pick the suspect out of a photo lineup?",
+										"inputs": [
+											{
+												"notes": [],
+												"photos": [],
+												"recording": []
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": 5,
+						"title": "Suspect Cautioned statement",
+						"type": "section",
+						"count": 0,
+						"amount": 9,
+						"state": false,
+						"questions": [
+							{
+								"id": 0,
+								"type": "question",
+								"state": false,
+								"output": "Full Name, DOB, Address, Phone number, etc...",
 								"inputs": [
 									{
 										"notes": [],
@@ -9155,9 +9167,9 @@
 							},
 							{
 								"id": 1,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "What did he/she witness?",
+								"output": "Did they take the item?",
 								"inputs": [
 									{
 										"notes": [],
@@ -9168,9 +9180,9 @@
 							},
 							{
 								"id": 2,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Where was the item when it was taken?",
+								"output": "Did they move it with intent to steal it?",
 								"inputs": [
 									{
 										"notes": [],
@@ -9181,22 +9193,49 @@
 							},
 							{
 								"id": 3,
-								"type": "additionalQuestion",
+								"type": "questionnaire",
 								"state": false,
-								"output": "Any suspects? If yes, why do they suspect take the item",
-								"inputs": [
+								"count": 0,
+								"amount": 5,
+								"output": "Why did they take it?",
+								"questions": [
 									{
-										"notes": [],
-										"photos": [],
-										"recording": []
+										"id": 0,
+										"type": "questionnaireItem",
+										"state": "false",
+										"output": "To convert it for their use or the user of another person"
+									},
+									{
+										"id": 1,
+										"type": "questionnaireItem",
+										"state": "false",
+										"output": "To deprive the owner or anyone other person of it"
+									},
+									{
+										"id": 2,
+										"type": "questionnaireItem",
+										"state": "false",
+										"output": "To use it for a deposit or security"
+									},
+									{
+										"id": 3,
+										"type": "questionnaireItem",
+										"state": "false",
+										"output": "To damage it or cause it inoperable"
+									},
+									{
+										"id": 4,
+										"type": "questionnaireItem",
+										"state": "false",
+										"output": "To deal with it in such a manner that it cannot be restored in the condition it was when taken"
 									}
 								]
 							},
 							{
 								"id": 4,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Did the witness see the suspect take the item",
+								"output": "Who owned it?",
 								"inputs": [
 									{
 										"notes": [],
@@ -9207,9 +9246,9 @@
 							},
 							{
 								"id": 5,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Did the witness see the suspect take the item",
+								"output": "When did they take it?",
 								"inputs": [
 									{
 										"notes": [],
@@ -9220,9 +9259,9 @@
 							},
 							{
 								"id": 6,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "Describe the suspect",
+								"output": "How did they take it?",
 								"inputs": [
 									{
 										"notes": [],
@@ -9233,9 +9272,9 @@
 							},
 							{
 								"id": 7,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "When was the item stolen",
+								"output": "If the suspect denies taking the item, consider interrogating the suspect.",
 								"inputs": [
 									{
 										"notes": [],
@@ -9246,233 +9285,15 @@
 							},
 							{
 								"id": 8,
-								"type": "additionalQuestion",
+								"type": "question",
 								"state": false,
-								"output": "What role does the witness have in the theft",
+								"output": "Consider the use of a polygraph examiner.",
 								"inputs": [
 									{
 										"notes": [],
 										"photos": [],
 										"recording": []
-									}
-								]
-							},
-							{
-								"id": 9,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Does the witness know the suspect and how?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 10,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Do they know who owns the items stolen?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 11,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Does the witness know if the suspect know who owns the item stolen",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 12,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Any previous history between the suspect and victim or witness?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							},
-							{
-								"id": 13,
-								"type": "additionalQuestion",
-								"state": false,
-								"output": "Could the witness pick the suspect out of a photo lineup?",
-								"inputs": [
-									{
-										"notes": [],
-										"photos": [],
-										"recording": []
-									}
-								]
-							}
-						]
-					}
-				]
-			},
-			{
-				"id": 5,
-				"title": "Suspect Cautioned statement",
-				"type": "section",
-				"count": 0,
-				"amount": 9,
-				"state": false,
-				"questions": [
-					{
-						"id": 0,
-						"type": "question",
-						"state": false,
-						"output": "Tombstone Data: Full Name, DOB, Address, Phone number",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 1,
-						"type": "question",
-						"state": false,
-						"output": "Did they take the item?",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 2,
-						"type": "question",
-						"state": false,
-						"output": "Did they move it with intent to steal it?",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 3,
-						"type": "selectionQuestion",
-						"state": false,
-						"output": "Why did they take it?",
-						"options": [
-							{
-								"id": 0,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "To convert it for their use or the user of another person"
-							},
-							{
-								"id": 1,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "To deprive the owner or anyone other person of it"
-							},
-							{
-								"id": 2,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "To use it for a deposit or security"
-							},
-							{
-								"id": 3,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "To damage it or cause it inoperable"
-							},
-							{
-								"id": 4,
-								"type": "questionsOption",
-								"state": "selected",
-								"title": "To deal with it in such a manner that it cannot be restored in the condition it was when taken"
-							}
-						]
-					},
-					{
-						"id": 4,
-						"type": "question",
-						"state": false,
-						"output": "Who owned it?",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 5,
-						"type": "question",
-						"state": false,
-						"output": "When did they take it?",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 6,
-						"type": "question",
-						"state": false,
-						"output": "How did they take it?",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 7,
-						"type": "question",
-						"state": false,
-						"output": "If the suspect denies taking the item, then consider interrogating the suspect",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
-							}
-						]
-					},
-					{
-						"id": 8,
-						"type": "question",
-						"state": false,
-						"output": "Consider the user of a polygraph examiner",
-						"inputs": [
-							{
-								"notes": [],
-								"photos": [],
-								"recording": []
+									}]
 							}]
 					}]
 			}]
@@ -9991,7 +9812,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false,
-						"output": "Name of victim (Tombstone data)",
+						"output": "Name of victim",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -10950,7 +10771,7 @@
 						"id": 13,
 						"type": "question",
 						"state": false,
-						"output": "Obtain all tombstone data of all involved",
+						"output": "Obtain all  of all involved",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],
@@ -11489,7 +11310,7 @@
 								"id": 1,
 								"type": "question",
 								"state": false,
-								"output": "Tombstone data (Full name, DOB, Address, Ph#)",
+								"output": "Full name, DOB, Address, Ph#",
 								"inputs": [{
 									"dateChange":"",
 									"notes": [],
@@ -12083,7 +11904,7 @@
 								"id": 0,
 								"type": "question",
 								"state": false,
-								"output": "Tombstone data (Full name, DOB, Address, Ph#)",
+								"output": "Full name, DOB, Address, Ph#",
 								"inputs": [{
 									"dateChange":"",
 									"notes": [],
@@ -12287,4 +12108,3 @@
 			}]
 	}
 }
-

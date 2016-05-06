@@ -1,26 +1,25 @@
 <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-    <div class="container-fluid">
-        <div class="panel-heading">
-            <div class="navbar-header">
-                <div class="row">
-                    <div class="col-xs-6" ng-controller="ReportHeaderController">
-                        <button type="button" class="btn backButton" ng-click="backButton()">
-                            <span class="navLogo col-xs-3 backButton glyphicon glyphicon-arrow-left"></span>
-                        </button>
-                    </div>
-                    <div ng-controller="ReportHeaderController" class="col-xs-6 dropup">
-                        <button class="btn navMenuButton dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="navLogo navMenuButton glyphicon glyphicon-align-justify"></span>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                            <li ng-repeat="sections in viewReport.sections">
-                                <a class="navList" ng-click="navMenuChange(sections.id)">{{sections.title}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<div class="panel-heading">
+			<div class="navbar-header">
+				<div class="row">
+					<div ng-controller="ReportHeaderController" class="col-xs-4">
+						<button type="button" class="btn backButton" ng-click="backButton()" id="backButton">
+							<span class="navLogo backButton glyphicon glyphicon-arrow-left"></span>
+						</button>
+					</div>
+					<div ng-controller="ReportHeaderController" class="col-xs-4">
+						<button class="btn backButton dropdown-toggle" type="button" ng-click="sectionButton()" id="dropdownMenu1">
+							<span class="navLogo backButton glyphicon glyphicon-align-justify"></span>
+						</button>
+					</div>
+					<div ng-controller="ReportHeaderController" class="col-xs-4">
+						<button class="btn backButton dropdown-toggle" type="button" ng-click="homeButton()" id="homeButton">
+							<span class="navLogo backButton glyphicon glyphicon-home"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </nav>

@@ -24,6 +24,14 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
 	$('.loading').show();
 	$('.content').hide();
+	
+	$scope.section = function(){
+		$location.path("/sections");
+	};
+	
+	$scope.question = function(){
+		$location.path("/questions");
+	};
 	//If the user has a previous scroll position, the page will scroll to the position.
 	if($rootScope.scrollPos != undefined){
 		$scope.scrollPos = $rootScope.scrollPos;
@@ -57,19 +65,49 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		return dateAndTime;
 	}
 
+	$scope.questionYes = function(question){
+		question.state = true;
+	};
+
+	$scope.questionNo = function(question){
+		question.state = false;
+	};
+
+	$scope.questionnaireCheck = function(questionnaire){
+		if(questionnaire.state === true){
+			questionnaire.state = false;
+			$scope.viewReport.sections[$scope.selectedSection].count--;
+		}
+		for(var i = 0; questionnaire.questions.length - 1 >= i; i++){
+			if(questionnaire.questions[i].state === true){
+				console.log("True");
+				questionnaire.state = true;
+			};
+		};
+		if(questionnaire.state === true){
+			$scope.viewReport.sections[$scope.selectedSection].count++;
+		}
+	};
+
 	//To insure everything looks right on load.
 	$scope.init = function () {
 		//Getting file system request.
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		//This will determain if the selected will be additional questions or questions.
+		console.log("Question ID "+$scope.selectedQuestion);
 		if($scope.currentPath === '/addQuestions'){
 			console.log("Additional Questions Path "+$scope.currentPath);
 			$scope.questionOutput = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions;
-			console.log($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].additionalQuestions);
+			console.log($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion]);
 		}
 		if($scope.currentPath === '/questions'){
 			console.log("Questions Path "+$scope.currentPath);
 			$scope.questionOutput = $scope.viewReport.sections[$scope.selectedSection].questions;
+		}
+
+		if($scope.currentPath === '/questionnaireItem'){
+			console.log("Additional Questions Path "+$scope.currentPath);
+			$scope.questionOutput = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].questions;
 		}
 		setTimeout(function () {    
 			$('.section').show();
@@ -157,7 +195,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	//When users select checkmark it will add count and toggle boolean values.
 	$scope.count = function (state, question) {
 		console.log(question);
-		if(question.type === 'question'){
+		if(question.type === 'question' || question.type === 'questionnaireItem'){
 			if (state !== true) {
 				if(state === false){
 					question.state = true;
@@ -233,11 +271,15 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	//Funtion to change the pages within the report menu.
 	$scope.changeMenus = function (type, index) {
-
 		$sessionStorage.questionIndex = index;
-		$location.path('/addQuestions');
-		$sessionStorage.selectedDiv = type + index;
 
+		if(type === 'multiQuestion'){
+			console.log(index);
+			$location.path('/addQuestions');
+		}
+		if(type === 'questionnaire'){
+			$location.path('/questionnaireItem');
+		}
 	};
 
 	//This is for selection sections and questions.

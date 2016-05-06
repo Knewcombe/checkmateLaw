@@ -70,6 +70,11 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         templateUrl: 'questionnaire.html',
         controller: 'QuestionnaireController'
     });
+	
+	$routeProvider.when('/questionnaireItem', {
+        templateUrl: 'questions.html',
+        controller: 'ReportQuestionController'
+    });
     
     $routeProvider.when('/referanceList',{
         templateUrl: 'referanceList.html',

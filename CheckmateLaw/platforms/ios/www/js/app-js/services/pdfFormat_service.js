@@ -102,28 +102,31 @@ angular.module("app").service('PdfFromat', function ($localStorage, $sessionStor
 							}
 						});
 					}
-					if(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes.length > 0){
-						questionCount = questionCount + 5;
-						$.each(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes, function(noteIndex){
-							var noteWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].key +" : "+ checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].value, pageWidth);
-							doc.text(30, questionCount, noteWrap);
-							if(noteWrap.length >= 2){
-								$.each(noteWrap, function(newLine){
-									questionCount += 2 * newLine;
-									if (questionCount >= pageHeight)
-									{
-										doc.addPage();
-										questionCount = 10; // Restart height position
-									}
-								});
-							}
-							//Question count added.
+					if(checklist.sections[secIndex].questions[quesIndex].inputs){
+
+						if(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes.length > 0){
 							questionCount = questionCount + 5;
-						});
-						if (questionCount >= pageHeight)
-						{
-							doc.addPage();
-							questionCount = 10; // Restart height position
+							$.each(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes, function(noteIndex){
+								var noteWrap = doc.splitTextToSize(checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].key +" : "+ checklist.sections[secIndex].questions[quesIndex].inputs[0].notes[noteIndex].value, pageWidth);
+								doc.text(30, questionCount, noteWrap);
+								if(noteWrap.length >= 2){
+									$.each(noteWrap, function(newLine){
+										questionCount += 2 * newLine;
+										if (questionCount >= pageHeight)
+										{
+											doc.addPage();
+											questionCount = 10; // Restart height position
+										}
+									});
+								}
+								//Question count added.
+								questionCount = questionCount + 5;
+							});
+							if (questionCount >= pageHeight)
+							{
+								doc.addPage();
+								questionCount = 10; // Restart height position
+							}
 						}
 					}
 				}

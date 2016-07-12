@@ -12,7 +12,7 @@
  * Questions. This can be either true/false/null;
  *
  */
-angular.module('app').controller('ReportQuestionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval, ImageService, FileSystemService, MediaService) {
+angular.module('app').controller('ReportQuestionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval, VideoService, FileSystemService, MediaService) {
 
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
@@ -22,13 +22,14 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
+	$rootScope.footerBool = true;
 	$('.loading').show();
 	$('.content').hide();
-	
+
 	$scope.section = function(){
 		$location.path("/sections");
 	};
-	
+
 	$scope.question = function(){
 		$location.path("/questions");
 	};
@@ -60,7 +61,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	//Date and time function that is called when a date formate is needed in the questions.
 	$scope.dateAndTime = function(){
 		var date = new Date();
-		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2);
+		var dateAndTime = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
 		console.log("Date: "+dateAndTime);
 		return dateAndTime;
 	}
@@ -172,20 +173,63 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 					$scope.currentQuestion.state = null;
 				}
 			}
+			if ($scope.previousSection.count === $scope.previousSection.amount) {
+				if ($scope.previousSection.state !== true) {
+					$scope.previousSection.state = true;
+				}
+
+			} else {
+				if ($scope.previousSection.state === true) {
+					$scope.previousSection.state = false;
+				}
+			}
 		}else{
 			if(question.type === 'additionalQuestion'){
-
+				console.log("Nan counting");
 				if(state !== true){
 					if(state === null){
+						console.log("Item is null and will true to false and remove count from previous");
 						$scope.currentQuestion.state = false;
-						$scope.previousSection.count--;
+						$scope.previousSection.questions[$scope.selectedQuestion].count--;
 					}else{
 						$scope.currentQuestion.state = null;
-						$scope.previousSection.count++;
+						$scope.previousSection.questions[$scope.selectedQuestion].count++;
 					}
 				}else{
 					if(state === true){
+						console.log("The selecting was true and does not count");
 						$scope.currentQuestion.state = null;
+					}
+				}
+				if ($scope.previousSection.questions[$scope.selectedQuestion].count === $scope.previousSection.questions[$scope.selectedQuestion].amount) {
+					console.log("Count is conpaied and is true, will updated the section items as well");
+					console.log($scope.previousSection.questions[$scope.selectedQuestion]);
+					if ($scope.previousSection.questions[$scope.selectedQuestion].state !== true) {
+						$scope.previousSection.questions[$scope.selectedQuestion].state = true;
+						$scope.previousSection.count++;
+						if ($scope.previousSection.count === $scope.previousSection.amount) {
+							if ($scope.previousSection.state !== true) {
+								$scope.previousSection.state = true;
+							}
+						} else {
+							if ($scope.previousSection.state === true) {
+								$scope.previousSection.state = false;
+							}
+						}
+					}
+				} else {
+					if ($scope.previousSection.questions[$scope.selectedQuestion].state === true) {
+						$scope.previousSection.questions[$scope.selectedQuestion].state = false;
+						$scope.previousSection.count--;
+					}
+					if ($scope.previousSection.count === $scope.previousSection.amount) {
+						if ($scope.previousSection.state !== true) {
+							$scope.previousSection.state = true;
+						}
+					} else {
+						if ($scope.previousSection.state === true) {
+							$scope.previousSection.state = false;
+						}
 					}
 				}
 			}
@@ -309,109 +353,25 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 		$location.path('/report/note');
 	};
 
-	//Camera stuff below
-	$scope.takePic = function (type, question) {
-		//Image service is called with the question and fileName is passed to the function
-		var newFileName;
+	$scope.takePic = function (question) {
+		$location.path('/report/imageList');
+		$rootScope.question = question;
+		$rootScope.browsPath = $scope.currentPath;
 		console.log(question);
-		if(question.type === 'additionalQuestion'){
-			newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+(question.id + 1)+ "_"+$scope.dateAndTime()+"-"+(question.inputs[0].recording.length+1)+".jpg";
-			console.log(newFileName);
-		}
-		if(question.type === 'question'){
-			newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+(question.id + 1)+ "_"+$scope.dateAndTime()+"-"+(question.inputs[0].recording.length+1)+".jpg";	console.log(newFileName);
-		}
-
-		var imagePromise = ImageService.image(newFileName);
-		//Waiting for the results of the image
-		imagePromise.then(function (data) {
-			question.inputs[0].photos.push(data);
-			$scope.$apply();
-		});
 	}
-	//REMOVE IMAGE FROM APP
-	$scope.deleteImage = function (question, index) {
-		//Calling the File service to remove the image for the application file system.
-		FileSystemService.removeFile($scope.fileSystem+question.inputs[0].photos[index]);
-		question.inputs[0].photos.splice(index, 1);
-		$scope.$apply();
-	};
-	//Edit image will take the user to the HTML page with a fullscreen image.
-	$scope.editImage = function (rootUrl, imageUrl) {
-		$localStorage.tempImage = rootUrl + imageUrl;
-		$sessionStorage.imagePath = $scope.currentPath;
-		$location.path('/report/image');
-	};
+
+	$scope.video = function(question){
+		$location.path('/report/videoList');
+		$rootScope.question = question;
+		$rootScope.browsPath = $scope.currentPath;
+		console.log(question);
+	}
 
 	//MEMO SECTION
 	//Start recroding will call the media service.
 	$scope.startRecording = function (question) {
-
-		$scope.currentQuestion = question;
-
-		MediaService.media();
-		//Timer to indicate the amount of time the recording is.
-		$scope.timer = 0;
-		$scope.promise = $interval(function () {
-			$scope.timer = $scope.timer + 1;
-		}, 1000);
-	};
-	//Stop recording will call the media service to stop the recording and set the name of the file.
-	$scope.stopRecording = function (question) {
-
-		var newFileName;
-		$interval.cancel($scope.promise);
-		$scope.timer = 0;
-		clearInterval($scope.recInterval);
-		if(question.type === 'additionalQuestion'){
-			newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+(question.id + 1)+ "_"+$scope.dateAndTime()+"-"+(question.inputs[0].recording.length+1)+".m4a";
-		}
-		if(question.type === 'question'){
-			newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+(question.id + 1)+ "_"+$scope.dateAndTime()+"-"+(question.inputs[0].recording.length+1)+".m4a";	
-		}
-
-		var mediaPromise = MediaService.stopMedia(newFileName);
-		mediaPromise.then( function(data){
-			question.inputs[0].recording.push(data);
-		});
-	};
-	//Playing recording will pass the recording path to the Media Service.
-	$scope.playRecording = function (memo) {
-
-		$scope.currentMemo = memo;
-		//Function is a callback from the Media service.
-		//This will get the position of duration of the media playback and will diplay it to the user.
-		var mediaTimer = function(position, duration){
-			$scope.currentPosition = position;
-			$scope.roundedDuration = duration;
-			console.log("Called- "+ position +" : "+duration);
-			$scope.$apply();
-		}
-		MediaService.playFile('documents:/'+memo, mediaTimer);
-	};
-	//Get Time is called in the HTML. It will output the duration and position and in a time formate.
-	$scope.getTime = function (tracker) {
-		var minutes = Math.floor((tracker / 60)).toFixed(0);
-		var seconds = (tracker % 60);
-		if (minutes <= 9) {
-			minutes = "0" + minutes;
-		}
-		if (seconds <= 9) {
-			seconds = "0" + seconds;
-		}
-		return (minutes + ":" + seconds);
-	};
-
-	$scope.stopPlayRecording = function () {
-		MediaService.stopPlaying();
-		$scope.currentPosition = 0;
-		$scope.roundedDuration = 0;
-	};
-
-	$scope.deleteRecording = function (question, index) {
-		//Calling the File service to remove the recording for the application file system.
-		FileSystemService.removeFile($scope.fileSystem+question.inputs[0].recording[index]);
-		question.inputs[0].recording.splice(index, 1);
-		$scope.$apply();
-	};
+		$location.path('/report/audioList');
+		$rootScope.browsPath = $scope.currentPath;
+		$rootScope.question = question;
+	}
 });

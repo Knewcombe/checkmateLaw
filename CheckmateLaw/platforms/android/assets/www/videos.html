@@ -1,0 +1,36 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{videoQuestion.output}}</p>
+	</div>
+	<div class="col-xs-12 titleTop">
+		<button ng-if="currentPath != '/temp/video/select'" type="button" class="btn btn-lg btn-default" ng-click="video()"><span class="glyphicon glyphicon-record"></span>New</button>
+		<button ng-if="currentPath === '/temp/video/select'" type="button" class="btn btn-lg btn-default" ng-click="selectionFinish()"><span class="glyphicon glyphicon-record"></span>Add</button>
+		<button ng-if="currentPath === '/report/videoList'" type="button" class="btn btn-lg btn-default"  ng-click="browse()">Browse</button>
+	</div>
+</div>
+<div>
+	<div ng-init="init()">
+		<div class="content">
+			<div class='list-group'>
+				<div ng-if="videoQuestion.inputs[0].videos[0]">
+					<div ng-if="currentPath != '/temp/video/select'" ng-repeat="video in videoQuestion.inputs[0].videos" class="list-group-item">
+						<p ng-if="currentPath == '/report/videoList'" class="questionText">Video: {{video.replace('/Video/', '')}}</p>
+						<p ng-if="currentPath == '/temp/video'" class="questionText">Video: {{video.replace('/Temp/', '')}}</p>
+						<button type="button" class="btn btn-md btn-success" ng-click="playVideo(video)"><span class="glyphicon glyphicon-play"></span>Play</button>
+						<button type="button" class="btn btn-md btn-default" ng-click="deleteVideo($index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+					</div>
+					<div ng-if="currentPath == '/temp/video/select'" ng-repeat="video in videoQuestion.inputs[0].videos" class="list-group-item">
+						<input type="checkbox" class="tempSelect questionText" ng-model="value" ng-change='itemSelect(value, videoQuestion.inputs[0].videos[$index])'> {{video.replace('/Temp/', '')}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
+	</div>
+</div>
+<nav-footer></nav-footer>

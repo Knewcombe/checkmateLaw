@@ -18,6 +18,11 @@ html, body {
 	font-weight: normal !important;
 	position: relative !important;
 }
+
+.tempSelect{
+	visibility: visible !important;
+}
+
 .backgroundItem{
 	background-color: #EAF0E5;
 }
@@ -348,7 +353,9 @@ button .glyphicon { margin-right: 5px; }
 	width: 100%;
 	margin-left:25%;
 }
-
+.thumbnail{
+	width: 90px !important;
+}
 .label{
 	width:100%;
 }

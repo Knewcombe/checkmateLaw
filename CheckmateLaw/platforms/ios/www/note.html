@@ -11,7 +11,8 @@
 			<div>
 				<textarea class="form-control" ng-model="input" ng-change="input"></textarea><br/>
 				<div class="btn-toolbar questionText">
-					<button type="button" class="btn" ng-click="submitComment()">Submit</button>
+					<button type="button" class="btn" ng-click="submitComment()">Save</button>
+					<button type="button" class="btn" ng-click="done()">Done</button>
 				</div>
 			</div>
 			<div class="list-group">
@@ -29,6 +30,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
 	</div>
 </div>
 <nav-footer></nav-footer>

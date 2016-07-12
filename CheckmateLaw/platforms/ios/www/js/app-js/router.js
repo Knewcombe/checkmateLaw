@@ -34,7 +34,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 
     $routeProvider.when('/report/image', {
         templateUrl: 'reportImage.html',
-        controller: 'ImageController'
+        controller: 'FullImageController'
     });
 
     $routeProvider.when('/about', {
@@ -101,6 +101,46 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/securityCode', {
         templateUrl: 'securityCode.html',
         controller: 'CodeController'
+    });
+	$routeProvider.when('/report/imageList', {
+        templateUrl: 'images.html',
+        controller: 'ImageController'
+    });
+	$routeProvider.when('/report/audioList', {
+        templateUrl: 'audio.html',
+        controller: 'AudioController'
+    });
+	$routeProvider.when('/report/videoList', {
+        templateUrl: 'videos.html',
+        controller: 'VideoController'
+    });
+	$routeProvider.when('/temp', {
+        templateUrl: 'temp.html',
+        controller: 'TempMediaController'
+    });
+	$routeProvider.when('/temp/audio', {
+        templateUrl: 'audio.html',
+        controller: 'AudioController'
+    });
+	$routeProvider.when('/temp/audio/select', {
+        templateUrl: 'audio.html',
+        controller: 'AudioController'
+    });
+	$routeProvider.when('/temp/video', {
+        templateUrl: 'videos.html',
+        controller: 'VideoController'
+    });
+	$routeProvider.when('/temp/video/select', {
+        templateUrl: 'videos.html',
+        controller: 'VideoController'
+    });
+	$routeProvider.when('/temp/image', {
+        templateUrl: 'images.html',
+        controller: 'ImageController'
+    });
+	$routeProvider.when('/temp/image/select', {
+        templateUrl: 'images.html',
+        controller: 'ImageController'
     });
     
 

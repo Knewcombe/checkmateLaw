@@ -9,27 +9,56 @@
  * All functions are seperated into different controls needed to create and play the audio.
  *
  */
-angular.module('app').service('MediaService', ['$q', 'FileSystemService', function($q, FileSystemService){
+angular.module('app').service('MediaService', ['$q', 'FileSystemService','$rootScope', function($q, FileSystemService, $rootScope){
 	//All variables that are shared for each function
 	var src = "tempRecording.m4a";
 	var myMedia;
 	var deferred;
+	var options = {
+		SampleRate: 12000,
+		NumberOfChannels: 1
+	}
 	var mediaTimer = null;
 	//media function will allow the user to begin the recording of the media.
-	this.media = function(){
-		//Creating the new media object
-		myMedia = new Media(src);
-		//Options will hold th bit rate and channels of the media
-		//This can be changed if the quality is too low.
-		var options = {
-			SampleRate: 12000,
-			NumberOfChannels: 1
+	this.media = function(fileName, folder){
+		deferred = $q.defer();
+		var onSuccess = function(media){
+			//Creating promise for the callback.
+			console.log(media);
+			var extension = media[0].name.split(".").pop();
+			var file = FileSystemService.moveFile(media[0].localURL, folder, fileName+"."+extension);
+			//Waiting for a promise from file service and will resolve this service promise.
+			file.then(function(data){
+				console.log("PROMIS: "+data);
+				deferred.resolve(data);
+			});
 		}
-		//Starting recording with comporession. This will take the options object to compress.
-		myMedia.startRecordWithCompression(options);
+
+		var onError = function(err){
+			console.log(err);
+			var promptCallback = function(buttonIndex){
+				if(buttonIndex == 1){
+					window.open('https://play.google.com/store/apps/details?id=com.sonymobile.androidapp.audiorecorder&hl=en', '_blank');
+				}
+			}
+			navigator.notification.confirm("There is no audio recording app install on your device. Please go to Google Play to install one now.", promptCallback, "Unable to record audio", ["Go to Google Play", "Not now"]);
+			deferred.reject();
+		}
+
+		if($rootScope.platform != "Android"){
+			console.log("----------iOS Media----------");
+			myMedia  = new Media(src);
+			console.log(myMedia);
+			myMedia.startRecordWithCompression(options);
+		}else{
+			console.log("----------Android Media----------");
+			myMedia  = navigator.device.capture;
+			myMedia.captureAudio(onSuccess, onError);
+		}
+		return deferred.promise;
 	}
-	//Stop media will stop the media object recording defined above.
-	this.stopMedia = function(fileName){
+	//-----THIS IS FOR IOS ONLY, THIS IS TO ALLOW COMPRESSION----
+	this.stopMedia = function(fileName, folder){
 		myMedia.stopRecord();
 		myMedia = null;
 		//Creating promise for the callback.
@@ -42,7 +71,7 @@ angular.module('app').service('MediaService', ['$q', 'FileSystemService', functi
 		}
 		//If the file is found, will call the file service and move the file to the proper location the we will set.
 		function gotFileEntry(fileEntry){
-			var file = FileSystemService.moveFile(fileEntry.toURL(), "Media", fileName);
+			var file = FileSystemService.moveFile(fileEntry.toURL(), folder, fileName);
 			//Waiting for a promise from file service and will resolve this service promise.
 			file.then(function(data){
 				deferred.resolve(data);
@@ -55,13 +84,24 @@ angular.module('app').service('MediaService', ['$q', 'FileSystemService', functi
 		//Return the promise to controller.
 		return deferred.promise;
 	}
+
 	//Play file will take the path to the file and a callback function.
 	this.playFile = function(recording, callback){
 		var duration = 0;
 		var currentPosition = 0;
 		var roundedDuration = 0;
+		console.log("MEDIA LOCATION "+recording);
 		mediaTimer = null;
-		myMedia = new Media(recording);
+		myMedia = null;
+		var onSucess = function(){
+			console.log("----------MEDIA CREATED----------");
+		}
+		var onError = function(error){
+			console.log("------MEDIA ERROR------");
+			console.log(error);
+		}
+
+		myMedia = new Media(recording, onSucess, onError);
 		myMedia.play();
 		//Media timer will be setting the duration and position for the media file that is playing.
 		if (mediaTimer === null) {
@@ -95,6 +135,7 @@ angular.module('app').service('MediaService', ['$q', 'FileSystemService', functi
 	//This will also clear the interval to stop the position and duration values.
 	this.stopPlaying = function(){
 		myMedia.stop();
+		myMedia.release();
 		myMedia = null;
 		clearInterval(mediaTimer);
 	};

@@ -9,7 +9,7 @@
 						</button>
 					</div>
 					<div ng-controller="ReportHeaderController" class="col-xs-4">
-						<button class="btn backButton dropdown-toggle" type="button" ng-click="sectionButton()" id="dropdownMenu1">
+						<button ng-if="footerBool === true" class="btn backButton dropdown-toggle" type="button" ng-click="sectionButton()" id="dropdownMenu1">
 							<span class="navLogo backButton glyphicon glyphicon-align-justify"></span>
 						</button>
 					</div>

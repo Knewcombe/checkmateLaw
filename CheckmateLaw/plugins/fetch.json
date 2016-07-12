@@ -47,14 +47,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-media-capture": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-media-capture@~1.2.0"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-camera": {
         "source": {
             "type": "registry",
@@ -67,14 +59,6 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-email-composer": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-email-composer"
         },
         "is_top_level": true,
         "variables": {}
@@ -104,6 +88,46 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-safe": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-safe"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-email": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-email"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-media-capture": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-media-capture"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-media-with-compression": {
         "source": {
             "type": "registry",
@@ -112,10 +136,26 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-safe": {
+    "cordova-plugin-dialogs": {
         "source": {
             "type": "registry",
-            "id": "cordova-safe"
+            "id": "cordova-plugin-dialogs"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-buildinfo": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-buildinfo"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.hutchind.cordova.plugins.streamingmedia": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-streaming-media"
         },
         "is_top_level": true,
         "variables": {}

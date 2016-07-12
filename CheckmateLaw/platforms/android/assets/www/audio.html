@@ -1,0 +1,45 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group" ng-controller="AudioController">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{mediaQuestion.output}}</p>
+	</div>
+	<div class="col-xs-12 titleTop">
+		<button ng-if="currentPath != '/temp/audio/select' && !timer" type="button" class="btn btn-lg btn-default" ng-click="startRecording()"><span class="glyphicon glyphicon-record"></span>Record</button>
+		<button  ng-if="timer > 0" type="button" class="btn btn-lg btn-default" ng-click="stopRecording()"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
+		<p ng-if="timer > 0">Recording... {{timer}} seconds</p>
+		<button ng-if="currentPath === '/temp/audio/select'" type="button" class="btn btn-lg btn-default" ng-click="selectionFinish()"><span class="glyphicon glyphicon-record"></span>Add</button>
+		<button ng-if="currentPath === '/report/audioList' && !timer" type="button" class="btn btn-lg btn-default" ng-click="browse()">Browse</button>
+	</div>
+</div>
+<div ng-init="init()">
+	<div class="content">
+		<!--MEMOS-->
+		<!--						<p class="questionPadding typeText centerText">Voice Notes:</p>-->
+		<div class='list-group'>
+			<div ng-if="mediaQuestion.inputs[0].recording[0]">
+				<div ng-if="currentPath != '/temp/audio/select'" ng-repeat="memo in mediaQuestion.inputs[0].recording" class='list-group-item'>
+					<p ng-if="currentPath == '/report/audioList'" class="questionText">Voice Note: {{memo.replace('/Media/', '')}}</p>
+					<p ng-if="currentPath == '/temp/audio'" class="questionText">Voice Note: {{memo.replace('/Temp/', '')}}</p>
+					<button type="button" class="btn btn-md btn-success" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
+					<button type="button" class="btn btn-md btn-danger" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
+					<button type="button" class="btn btn-md btn-default" ng-click="deleteRecording($index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+					<p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
+						<span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
+					</p>
+				</div>
+				<div ng-if="currentPath == '/temp/audio/select'" ng-repeat="memo in mediaQuestion.inputs[0].recording" class="list-group-item">
+					<input type="checkbox" class="tempSelect questionText" ng-model="value" ng-change='itemSelect(value, mediaQuestion.inputs[0].recording[$index])'> {{memo.replace('/Temp/', '')}}
+				</div>
+			</div>
+		</div>
+
+		<!--			<div class="lineBreak"></div>-->
+		<!--/MEMOS-->
+	</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
+	</div>
+</div>
+<nav-footer></nav-footer>

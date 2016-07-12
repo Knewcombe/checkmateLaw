@@ -1,0 +1,28 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">Temporary Media</p>
+	</div>
+</div>
+<div>
+	<div ng-init="init()">
+		<div class="content">
+			<div class="list-group row">
+				<div class="list-group-item col-xs-12">
+					<button type="button" class="btn btn-block btn-default" ng-click="tempAudio()"><span class="glyphicon glyphicon-record"></span>Audio Recordings</button>
+				</div>
+				<div class="list-group-item col-xs-12">
+					<button type="button" class="btn btn-block btn-default" ng-click="tempImage()"><span class="glyphicon glyphicon-camera"></span>Pictures</button>
+				</div>
+				<div class="list-group-item col-xs-12">
+					<button type="button" class="btn btn-block btn-default" ng-click="tempVideo()"><span class="glyphicon glyphicon-facetime-video"></span>Video Recordings</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
+	</div>
+</div>

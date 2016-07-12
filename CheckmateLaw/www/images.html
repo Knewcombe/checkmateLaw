@@ -1,0 +1,46 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">{{imageQuestion.output}}</p>
+	</div>
+	<div class="col-xs-12 titleTop">
+		<button ng-if="currentPath != '/temp/image/select'" type="button" class="btn btn-lg btn-default" ng-click="takePic()"><span class="glyphicon glyphicon-camera"></span>New</button>
+		<button ng-if="currentPath === '/temp/image/select'" type="button" class="btn btn-lg btn-default" ng-click="selectionFinish()"><span class="glyphicon glyphicon-record"></span>Add</button>
+		<button ng-if="currentPath === '/report/imageList'" type="button" class="btn btn-lg btn-default" ng-click="browse()">Browse</button>
+	</div>
+</div>
+<div>
+	<div ng-init="init()">
+		<div class="content">
+			<!--IMAGES-->
+			<div class="row" ng-if="imageQuestion.inputs[0].photos[0]">
+				<div ng-if="currentPath != '/temp/image/select'" ng-repeat="photo in imageQuestion.inputs[0].photos">
+					<div class="col-xs-4">
+						<div class="thumbnail">
+							<img ng-click="editImage(photo)" src="{{root}}{{photo}}"/>
+							<p ng-if="currentPath == '/report/imageList'" class="imageText"> {{photo.replace('/Images/','')}}</p>
+							<p ng-if="currentPath == '/temp/image'" class="imageText"> {{photo.replace('/Temp/','')}}</p>
+							<button type="button" class="btn btn-sm btn-default" ng-click="deleteImage($index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+						</div>
+					</div>
+				</div>
+				<div ng-if="currentPath == '/temp/image/select'" ng-repeat="photo in imageQuestion.inputs[0].photos">
+					<div class="col-xs-4">
+						<div class="thumbnail">
+							<img ng-click="editImage(photo)" src="{{root}}{{photo}}"/>
+							<p class="imageText"> {{photo.replace('/Temp/','')}}</p>
+							<input type="checkbox" class="tempSelect questionText" ng-model="value" ng-change='itemSelect(value, imageQuestion.inputs[0].photos[$index])'>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/IMAGES-->
+		</div>
+	</div>
+</div>
+<div class="splash loading">
+	<div id="loadingDiv">
+		<div class="spinner2"></div>
+	</div>
+</div>
+<nav-footer></nav-footer>

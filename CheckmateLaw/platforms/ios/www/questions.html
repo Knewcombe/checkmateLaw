@@ -54,47 +54,18 @@
 				<div class="list-group-item questionPadding additionalOutput additionalOutput{{question.id}}">
 					<div class="questionText">
 						<!--NOTES-->
-						<button type="button" class="btn navButton" ng-click="nan(question.state, question)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
+						<button type="button" class="btn btn-block btn-warning" ng-click="nan(question.state, question)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
 						<div class="lineBreak"></div>
 						<p class="questionPadding typeText centerText">Notes:</p>
 						<p class="noteText questionText questionPadding" ng-if='question.inputs[0].notes[0]' ng-repeat="note in question.inputs[0].notes | orderBy:'-key':reverse | limitTo:3">
 							{{note.key}} : {{note.value}}
 						</p>
-						<button type="button" class="btn navButton" ng-click="note(question)">More...</button>
+						<button type="button" class="btn btn-block btn-default" ng-click="note(question)">Add Note</button>
 						<div class="lineBreak"></div>
 						<!--/NOTES-->
-						<!--IMAGES-->
-						<p class="questionPadding typeText centerText">Images:</p>
-						<button type="button" class="btn navButton" ng-click="takePic(question.type, question)"><span class="glyphicon glyphicon-camera"></span>Picture</button>
-						<div class="row" ng-if="question.inputs[0].photos[0]">
-							<div ng-repeat="photo in question.inputs[0].photos">
-								<div class="col-xs-3">
-									<div class="thumbnail">
-										<img ng-click="editImage(fileSystem, photo)" src="{{fileSystem}}{{photo}}"/>
-										<p class="imageText"> {{photo.replace('/Images/','').replace(viewReport.title, '').replace('-', '').replace('.jpg', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '')}}</p>
-										<button type="button" class="btn deleteBtn navButton" ng-click="deleteImage(question, $index)"><span class="glyphicon glyphicon-trash"></span></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="lineBreak"></div>
-						<!--/IMAGES-->
-						<!--MEMOS-->
-						<p class="questionPadding typeText centerText">Voice Notes:</p>
-						<button ng-if="!timer" type="button" class="btn navButton" ng-click="startRecording()"><span class="glyphicon glyphicon-record"></span>Record</button>
-						<button  ng-if="timer > 0" type="button" class="btn navButton" ng-click="stopRecording(question)"><span class="glyphicon glyphicon-stop"></span>Stop Recording</button>
-						<p ng-if="timer > 0">Recording... {{timer}} seconds</p>
-						<div ng-if="question.inputs[0].recording[0]" ng-repeat="memo in question.inputs[0].recording">
-							<div class="lineBreak"></div>
-							<p class="questionText">Voice Note: {{memo.replace('/Media/', '').replace(viewReport.title, '').replace('-','').replace('.m4a', '').replace((question.id+1)+'_', '').replace(viewReport.sections[selectedSection].title+'-', '').replace(viewReport.sections[selectedSection].questions[selectedQuestion].output+'-', '')}}</p>
-							<button type="button" class="btn navButton" ng-click="playRecording(memo)"><span class="glyphicon glyphicon-play"></span>Play</button>
-							<button type="button" class="btn navButton" ng-click="stopPlayRecording(memo)"><span class="glyphicon glyphicon-stop"></span>Stop</button>
-							<button type="button" class="btn navButton" ng-click="deleteRecording(question, $index)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
-							<p class="playback playbackDetails" ng-if="currentPosition > 0 && currentMemo === memo">
-								<span ng-if="currentPosition >= 1"> Playing... {{getTime(currentPosition)}} / {{getTime(roundedDuration)}}</span>
-							</p>
-						</div>
-						<!--/MEMOS-->
+						<button type="button" class="btn btn-xs btn-default" ng-click="takePic(question)"><span class="glyphicon glyphicon-camera"></span>Pictures ({{question.inputs[0].photos.length}})</button>
+						<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Audio ({{question.inputs[0].recording.length}})</button>
+						<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="video(question)"><span class="glyphicon glyphicon-facetime-video"></span>Videos ({{question.inputs[0].videos.length}})</button>
 					</div>
 				</div>
 				<!--/INPUTS-->
@@ -152,6 +123,9 @@
 							</div>
 							<div class="col-xs-7 sectionText">
 								<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="changeMenus(question.type, question.id)"><strong>{{(question.id+1)}}. </strong>  {{question.output}}</p>
+							</div>
+							<div class="col-xs-1 sectionText">
+								<p><span class="glyphicon glyphicon-arrow-right"></span></p>
 							</div>
 							<!--On click will hide questions and show either additional output, or additional questions-->
 						</div>

@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-safe": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "org.apache.cordova.plugin.cache": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-media-with-compression": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-buildinfo": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        }
+    }
+}

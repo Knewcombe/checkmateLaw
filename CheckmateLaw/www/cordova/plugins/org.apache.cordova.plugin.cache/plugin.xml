@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.apache.cordova.plugin.cache"
+    version="1.0.0">
+
+    <name>Audio Encoder</name>
+    <repo>https://github.com/keenan/cordova-phonegap-audio-encode.git</repo>
+    <keywords>audio,encoder,ios</keywords>
+    <license>MIT</license>
+    <author>Lyle Pratt</author>
+    <description>
+        &lt;p&gt;This plugin lets you easily convert WAV audio into M4A audio. It is useful when using Phonegap's audio capture or media recording functionality. Uploading WAV files on via cellular connections is not advised. M4A encoded files are 1/4 to 1/10 the size.&lt;/p&gt;
+    </description>
+
+    <js-module src="www/AudioEncode.js" name="AudioEncode">
+        <clobbers target="AudioEncode" /><!-- will be available under window.cache -->
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AudioEncode">
+                <param name="ios-package" value="AudioEncode" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/AudioEncode.h" />
+        <source-file src="src/AudioEncode.m" />
+    </platform>
+</plugin>

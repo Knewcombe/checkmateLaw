@@ -11,7 +11,6 @@
 
 angular.module('app').controller('ReportSectionController', function ($rootScope, $scope, dataContext, $localStorage, $sessionStorage, $location, $interval) {
 
-
 	//Using currentPath for Header to show the title of the report, this will change
 	//Reprot name will be removed from the header.
 	$scope.currentPath = $location.path();
@@ -20,6 +19,7 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.footerBool = true;
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
 	$('.loading').show();
@@ -69,6 +69,7 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 
 	//This is for selection sections and questions.
 	$scope.showHideInfo = function (type, id, option) {
+		$scope.viewReport.name += " - "+ $scope.viewReport.sections[1].options[option].title;
 		$('.sectionOption').hide();
 		$('.' + $scope.viewReport.sections[id].options[option].title).show();
 		$scope.selectOption = option;

@@ -3,8 +3,9 @@
     "CoreLocation.framework": 2,
     "AVFoundation.framework": 1,
     "MessageUI.framework": 1,
-    "AudioToolbox.framework": 1,
+    "AudioToolbox.framework": 2,
     "libz.dylib": 1,
-    "Foundation.framework": 2,
-    "Security.framework": 2
+    "Foundation.framework": 1,
+    "Security.framework": 1,
+    "MediaPlayer.framework": 1
 }

@@ -1,46 +1,108 @@
 Node version: v0.12.6
 
-Cordova version: 6.0.0
+Cordova version: 6.1.1
 
 Config.xml file: 
 
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.checkmate.checkmatelaw" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CheckmateLaw</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
-    <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <plugin name="com.jjdltc.cordova.plugin.zip" spec="~0.0.4" />
+	<name>CheckmateLaw</name>
+	<description>
+		A sample Apache Cordova application that responds to the deviceready event.
+	</description>
+	<author email="dev@cordova.apache.org" href="http://cordova.io">
+		Apache Cordova Team
+	</author>
+	<content src="index.html" />
+	<plugin name="cordova-plugin-whitelist" spec="1" />
+	<access origin="*" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+	<allow-intent href="tel:*" />
+	<allow-intent href="sms:*" />
+	<allow-intent href="mailto:*" />
+	<allow-intent href="geo:*" />
+	<platform name="android">
+		<allow-intent href="market:*" />
+	</platform>
+	<platform name="ios">
+		<preference name="StatusBarOverlaysWebView" value="false" />
+		<preference name="StatusBarBackgroundColor" value="#24a9e7" />
+		<preference name="StatusBarStyle" value="lightcontent" />
+		<allow-intent href="itms:*" />
+		<allow-intent href="itms-apps:*" />
+	</platform>
 </widget>
 
 
 Plugins: 
 
-cordova-plugin-camera,cordova-plugin-console,cordova-plugin-email-composer,cordova-plugin-file,cordova-plugin-file-transfer,cordova-plugin-geolocation,cordova-plugin-globalization,cordova-plugin-media,cordova-plugin-media-capture,cordova-plugin-vibration,cordova-plugin-whitelist,cordova-plugin-zip
+cordova-media-with-compression,cordova-plugin-camera,cordova-plugin-console,cordova-plugin-device,cordova-plugin-email-composer,cordova-plugin-file,cordova-plugin-file-transfer,cordova-plugin-geolocation,cordova-plugin-globalization,cordova-plugin-media-capture,cordova-plugin-statusbar,cordova-plugin-vibration,cordova-plugin-whitelist,cordova-plugin-zip,cordova-safe,org.apache.cordova.plugin.cache
 
-Error retrieving Android platform information: Error: android: Command failed with exit code ENOENT
+Android platform:
+
+Available Android targets:
+----------
+id: 1 or "android-22"
+     Name: Android 5.1.1
+     Type: Platform
+     API level: 22
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in, AndroidWearRound, AndroidWearRound400x400, AndroidWearRoundChin320x290, AndroidWearRoundChin360x325, AndroidWearRoundChin360x330, AndroidWearSquare, AndroidWearSquare320x320, AndroidWearRound, AndroidWearRound400x400, AndroidWearRoundChin320x290, AndroidWearRoundChin360x325, AndroidWearRoundChin360x330, AndroidWearSquare, AndroidWearSquare320x320
+ Tag/ABIs : android-tv/armeabi-v7a, android-tv/x86, android-wear/armeabi-v7a, android-wear/x86, default/armeabi-v7a, default/x86, default/x86_64
+----------
+id: 2 or "android-23"
+     Name: Android 6.0
+     Type: Platform
+     API level: 23
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : android-tv/armeabi-v7a, android-tv/x86, default/armeabi-v7a, default/x86, default/x86_64
+----------
+id: 3 or "android-N"
+     Name: Android N (Preview)
+     Type: Platform
+     API level: N
+     Revision: 1
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+id: 4 or "Google Inc.:Google APIs:22"
+     Name: Google APIs
+     Type: Add-On
+     Vendor: Google Inc.
+     Revision: 1
+     Description: Android + Google APIs
+     Based on Android 5.1.1 (API level 22)
+     Libraries:
+      * com.android.future.usb.accessory (usb.jar)
+          API for USB Accessories
+      * com.google.android.media.effects (effects.jar)
+          Collection of video effects
+      * com.google.android.maps (maps.jar)
+          API for Google Maps
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in, AndroidWearRound, AndroidWearRound400x400, AndroidWearRoundChin320x290, AndroidWearRoundChin360x325, AndroidWearRoundChin360x330, AndroidWearSquare, AndroidWearSquare320x320, AndroidWearRound, AndroidWearRound400x400, AndroidWearRoundChin320x290, AndroidWearRoundChin360x325, AndroidWearRoundChin360x330, AndroidWearSquare, AndroidWearSquare320x320
+ Tag/ABIs : google_apis/armeabi-v7a, google_apis/x86, google_apis/x86_64
+----------
+id: 5 or "Google Inc.:Google APIs:23"
+     Name: Google APIs
+     Type: Add-On
+     Vendor: Google Inc.
+     Revision: 1
+     Description: Android + Google APIs
+     Based on Android 6.0 (API level 23)
+     Libraries:
+      * com.android.future.usb.accessory (usb.jar)
+          API for USB Accessories
+      * com.google.android.media.effects (effects.jar)
+          Collection of video effects
+      * com.google.android.maps (maps.jar)
+          API for Google Maps
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : google_apis/armeabi-v7a, google_apis/x86, google_apis/x86_64
 
 iOS platform:
 
-Xcode 7.2.1
-Build version 7C1002
+Xcode 7.3.1
+Build version 7D1014
 

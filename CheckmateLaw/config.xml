@@ -18,6 +18,8 @@
 	<allow-intent href="geo:*" />
 	<platform name="android">
 		<allow-intent href="market:*" />
+		<allow-navigation href="http://*/*" />
+		<access origin="cdvfile://*" />
 	</platform>
 	<platform name="ios">
 		<preference name="StatusBarOverlaysWebView" value="false" />

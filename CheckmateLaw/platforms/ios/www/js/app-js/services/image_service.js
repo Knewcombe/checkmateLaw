@@ -14,15 +14,15 @@
  */
 angular.module("app").service('ImageService', ['$q','FileSystemService', function($q, FileSystemService) {
 	//Function will take picture. It will require a callback to pass to the move_file_service and the question that the picture is beign take from.
-	this.image = function(newFileName){
-		console.log("Image service: "+newFileName);
+	this.image = function(newFileName, folder){
+		console.log("Image service: "+ newFileName);
 		var deferred = $q.defer();
 		//When picture has been taken will call the move_file_Service.
 		var onSuccess = function (FILE_URI) {
-//			console.log(FILE_URI);
+			console.log(" --------TMP FILE NAME--------- "+FILE_URI); 
 			//Change this to allow the Move file service to move the file.
 			//movePic(FILE_URI, callback);
-			var promise = FileSystemService.moveFile(FILE_URI, "Images", newFileName);
+			var promise = FileSystemService.moveFile(FILE_URI, folder, newFileName);
 			promise.then(function(data){
 				deferred.resolve(data);
 			})

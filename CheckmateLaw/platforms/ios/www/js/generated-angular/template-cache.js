@@ -9,7 +9,13 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 					   "\n" +
 					   "        <h2>About Checkmate</h2>\r" +
 					   "\n" +
+					   "        <p>Email: support@checkmatesolutions.ca</p>\r" +
+					   "\n" +
+					   "        <p>Tel: (902) 569-7306</p>\r" +
+					   "\n" +
 					   "        <p>Version: {{versionNumber}}</p>\r" +
+					   "\n" +
+					   "        <p>Build: {{buildNumber}}</p>\r" +
 					   "\n" +
 					   "        <p>Copyright © {{currentDate | date: 'yyyy'}} Checkmate</p>\r" +
 					   "\n" +
@@ -76,7 +82,9 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 					   "\n" +
 					   "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"savedReports()\">Saved Reports</button>\r" +
 					   "\n" +
-					   "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"guidelines()\">Guidelines</button>\r" +
+					   "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"guidelines()\">Reference Materials</button>\r" +
+					   "\n"+
+					   "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"tempMedia()\">Temporary Media</button>\r" +
 					   "\n"+
 					   "    <button type=\"button\" class=\"btnNormal btnWhite\" ng-click=\"about()\">About</button>\r" +
 					   "\n" +
@@ -371,7 +379,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 					   "\n" +
 					   "        <ul class=\"list-group-item list-no-bullet\" ng-repeat=\"savedChecklist in $storage.savedChecklist | orderBy:'index' : reverse\">\r" +
 					   "\n" +
-					   "            <li  ng-click=\"edit($index)\">{{savedChecklist.title}} - {{savedChecklist.dateStamp | date: 'dd-MMM-yyyy'}}</li>\r" +
+					   "            <li content=\"telephone=no\" ng-click=\"edit($index)\">{{savedChecklist.title}} - {{savedChecklist.dateStamp | date: 'dd-MMM-yyyy'}}</li>\r" +
 					   "\n" +
 					   "        </ul>\r" +
 					   "\n" +
@@ -1124,7 +1132,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 	$templateCache.put("report_saved_edit.html",
 					   "<nav-header></nav-header>\r" +
 					   "\n" +
-					   "<div class=\"col-lg-12\">\r" +
+					   "<div class=\"content col-lg-12\">\r" +
 					   "\n" +
 					   "    <form name=\"newForm\" ng-submit=\"saveEdit()\">\r" +
 					   "\n" +
@@ -1153,6 +1161,16 @@ angular.module("app").run(["$templateCache", function($templateCache) {
 					   "        <button type=\"button\" ng-click=\"emailList($storage.savedIndex)\" class=\"btnWhite btnInput\">Email</button>\r" +
 					   "\n" +
 					   "    </form>\r" +
+					   "\n" +
+					   "</div>"+
+					   "\n" +
+					   "<div class=\"splash loading\">"+
+					   "\n" +
+					   "<div id=\"loadingDiv\">"+
+					   "\n" +
+					   "<div class=\"spinner2\"></div>"+
+					   "\n" +
+					   "</div>"+
 					   "\n" +
 					   "</div>"
 					  );

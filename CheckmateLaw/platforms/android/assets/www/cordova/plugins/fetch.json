@@ -1,0 +1,10 @@
+{
+    "org.apache.cordova.plugin.cache": {
+        "source": {
+            "type": "local",
+            "path": "checkmatelaw/checkmatelaw/plugins/cordova-plugins-audio-encoder"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

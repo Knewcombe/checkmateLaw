@@ -29,133 +29,143 @@
 		</div>
 		<div ng-repeat="question in questionOutput">
 			<!--QUESTION-->
-			<div ng-if="question.type === 'question' || question.type === 'additionalQuestion'" class="list-group-item">
-				<!--CHECKMARK-->
-				<div class="col-xs-2">
-					<div class="row">
-						<div class="col-xs-2">
-							<img ng-if = "question.state !== null " ng-click="count(question.state, question)" ng-src="{{question.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
-							<img ng-if = "question.state === null " ng-click="count(question.state, question)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="question mark">
-						</div>
-					</div>
-				</div>
-				<!--/CHECKMARK-->
-				<!--QUESTIONOUTPUT-->
-				<div class="row">
-					<div class="col-xs-14 resizeDiv">
-						<!--On click will hide questions and show either additional output, or additional questions-->
-						<div class="col-xs-10 sectionText">
-							<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="showHideInfo(question.id)"><strong>{{(question.id+1)}}</strong>. {{question.output}}</p>
-						</div>
-					</div>
-				</div>
-				<!--/QUESTIONOUTPUT-->
-				<!--INPUTS-->
-				<div class="list-group-item questionPadding additionalOutput additionalOutput{{question.id}}">
-					<div class="questionText">
-						<!--NOTES-->
-						<button type="button" class="btn btn-block btn-warning" ng-click="nan(question.state, question)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
-						<div class="lineBreak"></div>
-						<p class="questionPadding typeText centerText">Notes:</p>
-						<p class="noteText questionText questionPadding" ng-if='question.inputs[0].notes[0]' ng-repeat="note in question.inputs[0].notes | orderBy:'-key':reverse | limitTo:3">
-							{{note.key}} : {{note.value}}
-						</p>
-						<button type="button" class="btn btn-block btn-default" ng-click="note(question)">Add Note</button>
-						<div class="lineBreak"></div>
-						<!--/NOTES-->
-						<button type="button" class="btn btn-xs btn-default" ng-click="takePic(question)"><span class="glyphicon glyphicon-camera"></span>Pictures ({{question.inputs[0].photos.length}})</button>
-						<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Audio ({{question.inputs[0].recording.length}})</button>
-						<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="video(question)"><span class="glyphicon glyphicon-facetime-video"></span>Videos ({{question.inputs[0].videos.length}})</button>
-					</div>
-				</div>
-				<!--/INPUTS-->
-				<div class="row">
-					<p class="col-xs-12 centerText">
-						<span class="glyphicon glyphicon-chevron-down"></span>
-					</p>
-				</div>
-			</div>
-			<!--/QUESTION-->
-			<!--MULTIQUESTION-->
-			<div ng-if="question.type === 'multiQuestion'">
-				<div class="list-group-item {{question.type}} {{question.type}}">
-					<div class="{{question.type}}">
-						<div class="row resizeDiv">
-							<div class="col-xs-2">
-								<!--Some checkmark logic as before-->
-								<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
-							</div>
-							<div class="col-xs-7 sectionText">
-								<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="changeMenus(question.type, question.id)"><strong>{{(question.id+1)}}</strong>. {{question.output}}</p>
-							</div>
-							<div class="col-xs-2 sectionText count">
-								<p>{{question.count}}/{{question.amount}}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/MULTIQUESTION-->
-			<!--SELECTQUESTION-->
-			<div ng-if="question.type === 'selectionQuestion'">
-				<div class="list-group-item {{question.type}} {{question.type}}">
-					<div class="{{question.type}} {{question.type}}">
+			<div ng-if="question.hide === false">
+				<div ng-if="question.type === 'question' || question.type === 'additionalQuestion'" class="list-group-item">
+					<!--CHECKMARK-->
+					<div class="col-xs-2">
 						<div class="row">
-							<div class="col-xs-8 sectionText">
-								<p class=" questionText questionPadding {{question.type}} {{question.type}}">{{question.output}}</p>                    
-								<label class=" questionText questionPadding {{question.type}} {{question.type}}">
-									<select ng-model="question.id" ng-options="selection.id as selection.title for selection in question.options" ng-change="showHideInfo(section.type, selection.id)"></select>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/SELECTQUESTION-->
-			<!--QUESTIONNAIRE-->
-			<div ng-if="question.type === 'questionnaire'" ng-init="questionnaireCheck(question)">
-				<div class="list-group-item {{question.type}} {{question.type}}">
-					<div class="{{question.type}}">
-						<div class="row resizeDiv">
 							<div class="col-xs-2">
-								<!--Some checkmark logic as before-->
-								<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+								<img ng-if="question.state !== null " ng-click="count(question.state, question)" ng-src="{{question.state === true && 'img/checked.png'|| 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+								<img ng-if="question.state === null " ng-click="count(question.state, question)" ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="question mark">
 							</div>
-							<div class="col-xs-7 sectionText">
-								<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="changeMenus(question.type, question.id)"><strong>{{(question.id+1)}}. </strong>  {{question.output}}</p>
-							</div>
-							<div class="col-xs-1 sectionText">
-								<p><span class="glyphicon glyphicon-arrow-right"></span></p>
-							</div>
+						</div>
+					</div>
+					<!--/CHECKMARK-->
+					<!--QUESTIONOUTPUT-->
+					<div ng-click="showHideInfo(question.id)" class="row">
+						<div class="col-xs-14 resizeDiv">
 							<!--On click will hide questions and show either additional output, or additional questions-->
+							<div class="col-xs-10 sectionText">
+								<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}</strong>. {{question.output}}</p>
+							</div>
+						</div>
+					</div>
+					<!--/QUESTIONOUTPUT-->
+					<!--INPUTS-->
+					<div class="list-group-item questionPadding additionalOutput additionalOutput{{question.id}}">
+						<div class="questionText">
+							<!--NOTES-->
+							<button type="button" class="btn btn-block btn-warning" ng-click="nan(question.state, question)"><span class="glyphicon glyphicon-remove"></span>Not Applicable</button>
+							<div class="lineBreak"></div>
+							<p class="questionPadding typeText centerText">Notes:</p>
+							<p class="noteText list-group-item questionText questionPadding" ng-if='question.inputs[0].notes[0]' ng-repeat="note in question.inputs[0].notes | orderBy:'-key' | limitTo:3">
+								{{note.key}} : {{note.value}}
+							</p>
+							<button type="button" class="btn btn-block btn-default" ng-click="note(question)">Add Note <span class="glyphicon glyphicon-edit"></span></button>
+							<div class="lineBreak"></div>
+							<!--/NOTES-->
+							<button type="button" class="btn btn-xs btn-default" ng-click="takePic(question)"><span class="glyphicon glyphicon-camera"></span>Pictures ({{question.inputs[0].photos.length}})</button>
+							<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="startRecording(question)"><span class="glyphicon glyphicon-record"></span>Audio ({{question.inputs[0].recording.length}})</button>
+							<button ng-if="!timer" type="button" class="btn btn-xs btn-default" ng-click="video(question)"><span class="glyphicon glyphicon-facetime-video"></span>Videos ({{question.inputs[0].videos.length}})</button>
+						</div>
+					</div>
+					<!--/INPUTS-->
+					<div class="row">
+						<p class="col-xs-12 centerText inputList{{question.id}}">
+							<span ng-if="question.inputs[0].notes.length > 0" class="glyphicon glyphicon-edit"></span>
+							<span ng-if="question.inputs[0].photos.length > 0" class="glyphicon glyphicon-camera"></span>
+							<span ng-if="question.inputs[0].recording.length > 0" class="glyphicon glyphicon-record"></span>
+							<span ng-if="question.inputs[0].videos.length > 0" class="glyphicon glyphicon-facetime-video"></span>
+						</p>
+					</div>
+					<div class="row">
+						<p class="col-xs-12 centerText">
+							<span class="glyphicon glyphicon-chevron-down"></span>
+						</p>
+					</div>
+				</div>
+				<!--/QUESTION-->
+				<!--MULTIQUESTION-->
+				<div ng-if="question.type === 'multiQuestion'">
+					<div class="list-group-item {{question.type}} {{question.type}}">
+						<div class="{{question.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-2">
+									<!--Some checkmark logic as before-->
+									<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+								</div>
+								<div class="col-xs-7 sectionText">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="changeMenus(question.type, question.id)"><strong>{{$index + 1}}</strong>. {{question.output}}</p>
+								</div>
+								<div class="col-xs-2 sectionText count">
+									<p>{{question.count}}/{{question.amount}}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!--/QUESTIONNAIRE-->
-			<!--QUESTIONNAIREITEM-->
-			<div ng-if="question.type === 'questionnaireItem'">
-				<div class="list-group-item {{question.type}} {{question.type}}">
-					<div class="{{question.type}}">
-						<div class="row resizeDiv">
-							<div class="col-xs-8 sectionText">
-								<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{(question.id+1)}}</strong>. {{question.output}}</p>
-								<!--Some checkmark logic as before-->
+				<!--/MULTIQUESTION-->
+				<!--SELECTQUESTION-->
+				<div ng-if="question.type === 'selectionQuestion'">
+					<div class="list-group-item {{question.type}} {{question.type}}">
+						<div class="{{question.type}} {{question.type}}">
+							<div class="row">
+								<div class="col-xs-8 sectionText">
+									<p class=" questionText questionPadding {{question.type}} {{question.type}}">{{question.output}}</p>
+									<label class=" questionText questionPadding {{question.type}} {{question.type}}">
+										<select ng-model="question.id" ng-options="selection.id as selection.title for selection in question.options" ng-change="showHideInfo(section.type, selection.id)"></select>
+									</label>
+								</div>
 							</div>
-							<div class="col-xs-2">
-								<!--Some checkmark logic as before-->
-								<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
-							</div>
-							<!--On click will hide questions and show either additional output, or additional questions-->
-						</div>
-						<div class="row resizeDiv">
-							<button type="button" class="btn btnQuestionnaire col-xs-5" ng-click="questionYes(question)">Yes</button>
-							<button type="button" class="btn btnQuestionnaire col-xs-5" ng-click="questionNo(question)">No</button>
 						</div>
 					</div>
 				</div>
+				<!--/SELECTQUESTION-->
+				<!--QUESTIONNAIRE-->
+				<div ng-if="question.type === 'questionnaire'" ng-init="questionnaireCheck(question)">
+					<div class="list-group-item {{question.type}} {{question.type}}">
+						<div class="{{question.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-2">
+									<!--Some checkmark logic as before-->
+									<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+								</div>
+								<div class="col-xs-7 sectionText">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}" ng-click="changeMenus(question.type, question.id)"><strong>{{$index + 1}}. </strong> {{question.output}}</p>
+								</div>
+								<div class="col-xs-1 sectionText">
+									<p><span class="glyphicon glyphicon-arrow-right"></span></p>
+								</div>
+								<!--On click will hide questions and show either additional output, or additional questions-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/QUESTIONNAIRE-->
+				<!--QUESTIONNAIREITEM-->
+				<div ng-if="question.type === 'questionnaireItem'">
+					<div class="list-group-item {{question.type}} {{question.type}}">
+						<div class="{{question.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-8 sectionText">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}</strong>. {{question.output}}</p>
+									<!--Some checkmark logic as before-->
+								</div>
+								<div class="col-xs-2">
+									<!--Some checkmark logic as before-->
+									<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+								</div>
+								<!--On click will hide questions and show either additional output, or additional questions-->
+							</div>
+							<div class="row resizeDiv">
+								<button type="button" class="btn btnQuestionnaire col-xs-5" ng-click="questionYes(question)">Yes</button>
+								<button type="button" class="btn btnQuestionnaire col-xs-5" ng-click="questionNo(question)">No</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/QUESTIONNAIREITEM-->
 			</div>
-			<!--/QUESTIONNAIREITEM-->
 		</div>
 	</div>
 </div>

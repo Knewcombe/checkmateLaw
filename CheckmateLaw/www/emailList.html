@@ -1,0 +1,24 @@
+<nav-header></nav-header>
+<div ng-controller="EmailListController">
+	<div class="col-lg-12">
+		<div class="content">
+			<p class="sectionText">Enter in the list of trusted emails you would like to send the file to.</p>
+			<div class="form-group">
+				<label for="emailItem">Email List: &nbsp;</label>
+				<input type="email" class="form-control" ng-model="emailItem" ng-change="emailItem" required/><br/>
+				<div class="btn-toolbar questionText">
+					<button type="button" class="btnWhite btnInput" ng-click="addEmail()">Submit</button>
+				</div>
+			</div>
+			<div class="list-group">
+				<div ng-repeat="email in displayEmail">
+						<div class="list-group-item sectionText row">
+							<p class="col-xs-9">{{email}}</p>
+							<button type="button" class="btn btn-xs btn-danger col-xs-3" ng-click="removeEmail($index)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav-footer></nav-footer>

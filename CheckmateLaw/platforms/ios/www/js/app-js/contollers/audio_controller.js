@@ -2,6 +2,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = false;
 	$scope.currentPath = $location.path();
 	$localStorage.saveIndex = [];
 	$scope.$storage = $localStorage;
@@ -15,7 +16,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 	$scope.init = function () {
 		console.log("INIT");
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-		setTimeout(function () {    
+		setTimeout(function () {
 			$('.loading').show();
 			$('.content').hide();
 			setTimeout(function () {
@@ -30,7 +31,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 		$scope.mediaQuestion = $localStorage.tempInputs;
 		$rootScope.footerBool = false;
 	}else{
-		$scope.mediaQuestion = $rootScope.question;	
+		$scope.mediaQuestion = $rootScope.question;
 		$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 		$rootScope.footerBool = true;
 	}
@@ -113,7 +114,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 				newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].output+"-"+($scope.mediaQuestion.id + 1)+ "_"+$scope.dateAndTime()+"-"+($scope.mediaQuestion.inputs[0].recording.length+1)+".m4a";
 			}
 			if($scope.mediaQuestion.type === 'question'){
-				newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.mediaQuestion.id + 1)+ "_"+$scope.dateAndTime()+"-"+($scope.mediaQuestion.inputs[0].recording.length+1)+".m4a";	
+				newFileName = $scope.viewReport.title+"-"+$scope.viewReport.sections[$scope.selectedSection].title+"-"+($scope.mediaQuestion.id + 1)+ "_"+$scope.dateAndTime()+"-"+($scope.mediaQuestion.inputs[0].recording.length+1)+".m4a";
 			}
 			console.log("New File name: "+ newFileName);
 			var mediaPromise = MediaService.stopMedia(newFileName, "Media");
@@ -211,7 +212,13 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 				itemPromise.then(function(data){
 					$rootScope.input.push(data);
 					$location.path("/report/audioList");
-					alert("Items have successfully been moved");
+					window.plugins.toast.showWithOptions(
+		    	{
+		      	message: "Items have been moved successfully",
+		      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+		      	position: "bottom",
+		      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+		    	})
 				})
 			}
 		}

@@ -1,0 +1,18 @@
+<nav-header></nav-header>
+<div ng-controller="ChangeCodeController">
+	<div class="col-lg-12">
+		<div class="content">
+			<p class="sectionText">From here you are able to change your current Security Code used to operate the app.</p>
+			<div class="form-group">
+				<label for="oldCode">Enter current Security Code: &nbsp;</label>
+				<input type="text" id="oldCode" maxlength="6" pattern="[0-9]*" class="form-control" ng-model="oldCode" ng-change="oldCode" required/><br/>
+				<label for="newCode">Enter new Security Code: &nbsp;</label>
+				<input type="text" id="newCode" maxlength="6" pattern="[0-9]*" class="form-control" ng-model="newCode" ng-change="newCode" required/><br/>
+				<div class="btn-toolbar questionText">
+					<button type="button" class="btnWhite btnInput" ng-click="changeCode()">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav-footer></nav-footer>

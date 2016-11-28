@@ -6,6 +6,9 @@
     "AudioToolbox.framework": 2,
     "libz.dylib": 1,
     "Foundation.framework": 1,
-    "Security.framework": 1,
-    "MediaPlayer.framework": 1
+    "Security.framework": 2,
+    "MediaPlayer.framework": 1,
+    "QuartzCore.framework": 1,
+    "GLKit.framework": 1,
+    "LocalAuthentication.framework": 1
 }

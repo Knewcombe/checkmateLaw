@@ -1,0 +1,16 @@
+<nav-header></nav-header>
+<div ng-controller="SelectEditChecklistController">
+	<div class="content">
+	    <div class="col-lg-6 col-lg-offset-3">
+	        <form name="newForm" ng-submit="next(selection)">
+	            <div class="form-group">
+	                <label for="templateSelect">Select the checklist you would like to edit: &nbsp;</label><select class="form-control selectInput" id="templateSelect" ng-model="selection" ng-options="selection as selection.name for selection in pass" ng-change="selectTemplate(selection)" required>
+									<option disabled="disabled" value="">- Please select -</option>
+									</select>
+							</div>
+	            <input type="submit" value="Edit" class="btnWhite btnInput"/>
+	        </form>
+	    </div>
+		</div>
+</div>
+<nav-footer></nav-footer>

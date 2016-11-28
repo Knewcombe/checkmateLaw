@@ -1,0 +1,27 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div ng-controller="ReportHeaderController">
+			<div class="panel-heading">
+				<div class="navbar-header">
+					<div class="row">
+						<div class="col-xs-9">
+							<a class="navbar-brand"  ng-click="home()"><img class="navLogo" src="img/checkmate-trans.png"/></a>
+						</div>
+						<div ng-if="optionList">
+							<div class="col-xs-3">
+								<div class="dropdown">
+							  	<button class="btn btn-secondary backButton dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-click="dropdown()">
+							    	<span class="glyphicon glyphicon-th-list"></span>
+							  	</button>
+							  	<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+							    	<a class="sectionText dropdown-item" ng-click="email()" herf="#"><span class="glyphicon glyphicon-envelope"></span> Email</a>
+							  	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

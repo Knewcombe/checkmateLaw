@@ -1,0 +1,233 @@
+<nav-header></nav-header>
+<div ng-controller="EditChecklistController">
+	<!--CONTENT-->
+	<div class="content">
+		<!--HEAD TOP-->
+		<div class="row">
+			<div class="col-xs-12 titleTop list-group">
+				<p class="checklistTitle">{{viewReport.name}}</p>
+				<button type="button" class="btn btn-lg btn-default" ng-click="reset()"><span class="glyphicon glyphicon-refresh"></span>Reset</button>
+				<button type="button" class="btn btn-lg btn-default" ng-click="save()"><span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
+			</div>
+		</div>
+		<!--/HEAD TOP-->
+		<div class="content list-group" ng-init="init()">
+			<!--SECTION-->
+			<div ng-if="currentPath === '/settings/editChecklist/sections'" ng-repeat="section in viewReport.sections">
+				<div ng-if=" section.type === 'section' || section.type === 'sectionOption'">
+					<div class="list-group-item {{section.type}} {{section.option}} {{section.type}}">
+						<div class="questionText {{section.type}} {{section.option}} {{section.type}}">
+							<div ng-if="section.hide === false">
+								<div class="row resizeDiv">
+									<div ng-click="question(section.id)" class="col-xs-10 sectionText">
+										<!--On click will hide the sections and show the questions.-->
+										<p class="questionText questionPadding {{section.type}} {{section.option}} {{section.type}}">{{section.title}}</p>
+									</div>
+									<div class="col-xs-2 sectionText count">
+										<p>{{section.amount}}</p>
+									</div>
+								</div>
+								<div class="row sectionText">
+									<button type="button" class="btn btn-xs btn-danger" ng-click="hide(section.type, section.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+								</div>
+							</div>
+							<div ng-if="section.hide === true">
+								<div class="row resizeDiv">
+									<div ng-click="question(section.id)" class="col-xs-10 sectionText grayout">
+										<!--On click will hide the sections and show the questions.-->
+										<p class="questionText questionPadding {{section.type}} {{section.option}} {{section.type}}">{{section.title}}</p>
+									</div>
+									<div class="col-xs-2 sectionText count">
+										<p>{{section.amount}}</p>
+									</div>
+								</div>
+								<div class="row sectionText">
+									<button type="button" class="btn btn-xs btn-success" ng-click="show(section.type, section.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-if="section.type === 'selectionSection'">
+					<div class="list-group-item {{section.type}} {{section.type}}">
+						<div class="questionText {{section.type}} {{section.type}}">
+							<div class="row resizeDiv">
+								<div class="col-xs-9 sectionText">
+									<!--On click will hide the sections and show the questions.-->
+									<p class="questionPadding {{section.type}} {{section.type}}">{{section.title}}</p>
+									<label class="questionPadding {{section.type}} {{section.type}}">
+										<select class="form-control selectInput" ng-model='selectionid' ng-options="selection.id as selection.title for selection in section.options" ng-change="showHideInfo(section.type, section.id, selectionid)">
+											<option disabled="disabled" value="">- Please select -</option>
+										</select>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/SECTION-->
+			<div ng-if="currentPath === '/settings/editChecklist/questions'" ng-repeat="question in viewReport.sections[selectedSection].questions">
+				<div ng-if="question.type === 'question' || question.type === 'questionnaire' || question.type === 'multiQuestion'">
+					<div ng-if="question.type === 'question'">
+						<div class="list-group-item {{question.type}} {{question.type}}">
+							<div class="{{question.type}}">
+								<div ng-if="question.hide === false">
+									<div class="row resizeDiv">
+										<div class="col-xs-12 sectionText">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-danger" ng-click="hide(question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+									</div>
+								</div>
+								<div ng-if="question.hide === true">
+									<div class="row resizeDiv">
+										<div class="col-xs-12 sectionText grayout">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-success" ng-click="show(question.type, question.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div ng-if="question.type === 'multiQuestion'">
+						<div class="list-group-item {{question.type}} {{question.type}}">
+							<div class="{{question.type}}">
+								<div ng-if="question.hide === false">
+									<div class="row resizeDiv">
+										<div ng-click="addQuestion(question.id)" class="col-xs-10 sectionText">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+										</div>
+										<div class="col-xs-2 sectionText count">
+											<p>{{question.amount}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-danger" ng-click="hide(question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+									</div>
+								</div>
+								<div ng-if="question.hide === true">
+									<div class="row resizeDiv">
+										<div ng-click="addQuestion(question.id)" class="col-xs-10 sectionText grayout">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+										</div>
+										<div class="col-xs-2 sectionText count">
+											<p>{{question.amount}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-success" ng-click="show(question.type, question.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div ng-if="question.type === 'questionnaire'">
+						<div class="list-group-item {{question.type}} {{question.type}}">
+							<div class="{{question.type}}">
+								<div ng-if="question.hide === false">
+									<div class="row resizeDiv">
+										<div ng-click="questionnaire(question.id)" class="col-xs-9 sectionText">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}. </strong> {{question.output}}</p>
+										</div>
+										<div class="col-xs-3 sectionText count">
+											<p>{{question.amount}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-danger" ng-click="hide(question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+									</div>
+								</div>
+								<div ng-if="question.hide === true">
+									<div class="row resizeDiv">
+										<div ng-click="questionnaire(question.id)" class="col-xs-9 sectionText grayout">
+											<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}. </strong> {{question.output}}</p>
+										</div>
+										<div class="col-xs-3 sectionText count">
+											<p>{{question.amount}}</p>
+										</div>
+									</div>
+									<div class="row sectionText">
+										<button type="button" class="btn btn-xs btn-success" ng-click="show(question.type, question.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/QUESTIONNAIRE-->
+			<!--QUESTIONNAIREITEM-->
+			<div ng-if="currentPath === '/settings/editChecklist/questionnaire' && question.type === 'questionnaireItem'" ng-repeat="question in viewReport.sections[selectedSection].questions[selectedQuestion].questions">
+				<div class="list-group-item {{question.type}} {{question.type}}">
+					<div class="{{question.type}}">
+						<div ng-if="question.hide === false">
+							<div class="row resizeDiv">
+								<div class="col-xs-8 sectionText">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}</strong>. {{question.output}}</p>
+									<!--Some checkmark logic as before-->
+								</div>
+								<!--On click will hide questions and show either additional output, or additional questions-->
+							</div>
+							<div class="row sectionText">
+								<button type="button" class="btn btn-xs btn-danger" ng-click="hide(question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+							</div>
+						</div>
+						<div ng-if="question.hide === true">
+							<div class="row resizeDiv">
+								<div class="col-xs-8 sectionText grayout">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{$index + 1}}</strong>. {{question.output}}</p>
+									<!--Some checkmark logic as before-->
+								</div>
+								<!--On click will hide questions and show either additional output, or additional questions-->
+							</div>
+							<div class="row sectionText">
+								<button type="button" class="btn btn-xs btn-success" ng-click="show(question.type, question.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div ng-if="currentPath === '/settings/editChecklist/addQuestions'" ng-repeat="question in viewReport.sections[selectedSection].questions[selectedQuestion].additionalQuestions">
+				<div class="list-group-item {{question.type}} {{question.type}}">
+					<div class="{{question.type}}">
+						<div ng-if="question.hide === false">
+							<div class="row resizeDiv">
+								<div class="col-xs-9 sectionText">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+								</div>
+							</div>
+							<div class="row sectionText">
+								<button type="button" class="btn btn-xs btn-danger" ng-click="hide(question.type, question.id)"><span class="glyphicon glyphicon-remove"></span>Remove</button>
+							</div>
+						</div>
+						<div ng-if="question.hide === true">
+							<div class="row resizeDiv">
+								<div class="col-xs-9 sectionText grayout">
+									<p class="questionText questionPadding {{question.type}} {{question.type}}"><strong>{{($index+1)}}</strong>. {{question.output}}</p>
+								</div>
+							</div>
+							<div class="row sectionText">
+								<button type="button" class="btn btn-xs btn-success" ng-click="show(question.type, question.id)"><span class="glyphicon glyphicon-ok"></span>Add</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/CONTENT-->
+	<!--LOADING-->
+	<div class="splash loading">
+		<div id="loadingDiv">
+			<div class="spinner2"></div>
+		</div>
+	</div>
+	<!--/LOADING-->
+</div>
+<nav-footer></nav-footer>

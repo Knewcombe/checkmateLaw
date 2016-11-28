@@ -2,8 +2,8 @@
 	<div ng-init="init()" class="col-lg-12">
 		<div class="content">
 			<div class="form-group">
-				<label for="userCode">Please enter security Code: &nbsp;</label>
-				<input type="number" class="form-control" ng-model="userCode" ng-change="userCode"/><br/>
+				<label for="userCode">Please enter Security Code: &nbsp;</label>
+				<input type="text" id="code" class="form-control" maxlength="6" pattern="[0-9]*" ng-model="userCode" ng-change="userCode"/><br/>
 				<div class="btn-toolbar questionText">
 					<button type="button" class="btnWhite btnInput" ng-click="checkCode()">Submit</button>
 				</div>

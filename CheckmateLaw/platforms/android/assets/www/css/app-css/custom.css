@@ -1,6 +1,6 @@
 @charset "UTF-8";
-body { 
-	padding-bottom: 70px; 
+body {
+	padding-bottom: 70px;
 }
 html, body {
     max-width: 100%;
@@ -10,8 +10,21 @@ html, body {
 	counter-reset: section;
 }
 
+.grayout {
+    opacity: 0.6; /* Real browsers */
+    filter: alpha(opacity = 60); /* MSIE */
+}
+
 .questionPadding {
 	padding-left: 0px;
+}
+
+.savedItem{
+	display:inline-block;
+	max-width: 100%;
+	white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
 }
 .question{
 	padding-bottom: 10px !important;
@@ -47,7 +60,7 @@ html, body {
 	color: #fff;
 	font-size: 25px;
 	margin-top: 2%;
-	border-radius: 50px !important; 
+	border-radius: 50px !important;
 	background-color: transparent;
 }
 
@@ -101,8 +114,8 @@ html, body {
 	margin-bottom: 0;
 }
 
-.navbar-header{ 
-	width: 100%; 
+.navbar-header{
+	width: 100%;
 }
 
 .btnNormal {
@@ -170,8 +183,8 @@ html, body {
 	border-radius: 5px;
 }
 
-.checklistDiv{ 
-	padding-left:0px; 
+.checklistDiv{
+	padding-left:0px;
 	margin-bottom: 10px;
 }
 
@@ -206,8 +219,8 @@ html, body {
 	color: rgba(255,255,255,0.1);
 }
 
-input[type="checkbox"] { 
-	visibility: hidden; 
+input[type="checkbox"] {
+	visibility: hidden;
 }
 input[type=radio], input[type=checkbox]{
 	margin: 0px !important;
@@ -301,14 +314,10 @@ input[type=radio], input[type=checkbox]{
 }
 
 .noteText{
-	color: white;
-	background-color: #BDBDBD;
 	margin: 3px;
 	border-radius: 3px;
 	padding: 5px;
 	text-align: center;
-	border: solid 2px;
-	border-color: #D4D4D4;
 }
 .imageText{
 	font-size: 8px;

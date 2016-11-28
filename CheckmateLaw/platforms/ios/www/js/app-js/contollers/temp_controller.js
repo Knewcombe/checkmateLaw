@@ -2,15 +2,16 @@ angular.module('app').controller('TempMediaController', function ($scope, $local
 
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = false;
 	$scope.currentPath = $location.path();
 	$localStorage.saveIndex = [];
 	$scope.$storage = $localStorage;
 	//	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
-	
-	$('.loading').show();
-	$('.content').hide();
+
+	// $('.loading').show();
+	// $('.content').hide();
 
 	$scope.tempAudio = function(){
 		console.log("Called");
@@ -30,14 +31,6 @@ angular.module('app').controller('TempMediaController', function ($scope, $local
 	$scope.init = function () {
 		console.log("INIT");
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-		setTimeout(function () {    
-			$('.loading').show();
-			$('.content').hide();
-			setTimeout(function () {
-				$('.loading').hide();
-				$('.content').show();
-			}, 1000);
-		}, 100);
 	};
 
 	function gotFS(fileSystem){
@@ -49,12 +42,13 @@ angular.module('app').controller('TempMediaController', function ($scope, $local
 				"inputs": [
 					{
 						"photos": [],
-						"recording": [], 
+						"recording": [],
 						"videos":[]
 					}
-				]	
+				]
 			}
 			console.log("Called");
+			console.log($localStorage.tempInputs);
 		}
 	};
 	//File system is not called.

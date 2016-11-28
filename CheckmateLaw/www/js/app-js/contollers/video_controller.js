@@ -2,20 +2,21 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = false;
 	$scope.currentPath = $location.path();
 	$localStorage.saveIndex = [];
 	$scope.$storage = $localStorage;
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
 	$scope.itemArray = [];
-	
+
 	$('.loading').show();
 	$('.content').hide();
-	
+
 	$scope.init = function () {
 		console.log("INIT");
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-		setTimeout(function () {    
+		setTimeout(function () {
 			$('.loading').show();
 			$('.content').hide();
 			setTimeout(function () {
@@ -24,12 +25,12 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 			}, 1000);
 		}, 100);
 	};
-	
+
 	if($location.path() === '/temp/video' || $location.path() === "/temp/video/select"){
 		$scope.videoQuestion = $localStorage.tempInputs;
 		$rootScope.footerBool = false;
 	}else{
-		$scope.videoQuestion = $rootScope.question;	
+		$scope.videoQuestion = $rootScope.question;
 		$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 		$rootScope.footerBool = true;
 	}
@@ -99,7 +100,7 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 		var filePromise = FileSystemService.removeFile($rootScope.root+$scope.videoQuestion.inputs[0].videos[index]);
 		filePromise.then(function(){
 			$scope.videoQuestion.inputs[0].videos.splice(index, 1);
-			$scope.$apply();	
+			$scope.$apply();
 		})
 	};
 
@@ -143,7 +144,13 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 				itemPromise.then(function(data){
 					$rootScope.input.push(data);
 					$location.path("/report/videoList");
-					alert("Items have successfully been moved");
+					window.plugins.toast.showWithOptions(
+		    	{
+		      	message: "Items have been moved successfully",
+		      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+		      	position: "bottom",
+		      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+		    	})
 				})
 			}
 		}

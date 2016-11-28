@@ -9,8 +9,9 @@
 
 		<title>Checkmate Law</title>
 
-		<link rel="stylesheet" type="text/css" href="css/app-css/custom.css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="css/app.css" media="all"/>
+		<link rel="stylesheet" type="text/css" href="css/app-css/vendor-css/bootstrap-theme.min.css" media="all"/>
+		<link rel="stylesheet" type="text/css" href="css/app-css/custom.css" media="all"/>
 
 	</head>
 	<body ng-class="{homePage: isHomepage}" style="height:100%; width:100%;" onload="onLoad()">
@@ -27,7 +28,9 @@
 			var destinationType; // sets the format of returned value
 
 			function onLoad() {
+				console.log("Is this called?");
 				document.addEventListener("deviceready",onDeviceReady,false);
+				FastClick.attach(document.body);
 			}
 			function onDeviceReady() {
 				pictureSource=navigator.camera.PictureSourceType;
@@ -54,7 +57,8 @@
 		<script type="text/javascript" src="js/app-js/contollers/audio_controller.js"></script>
 		<script type="text/javascript" src="js/app-js/contollers/video_controller.js"></script>
 		<script type="text/javascript" src="js/app-js/contollers/temp_controller.js"></script>
-		
+		<script type="text/javascript" src="js/app-js/contollers/settings_controller.js"></script>
+
 		<script type="text/javascript" src="js/app-js/directives/boolean_value.js"></script>
 		<script type="text/javascript" src="js/app-js/directives/header_directive.js"></script>
 		<script type="text/javascript" src="js/app-js/directives/question_directive.js"></script>
@@ -63,7 +67,7 @@
 		<script type="text/javascript" src="js/app-js/directives/footer_directive.js"></script>
 
 		<script type="text/javascript" src="js/app-js/resources/Steady.js"></script>
-		
+
 		<script type="text/javascript" src="js/app-js/resources/jsPDF-master/jspdf.js"></script>
 		<script type="text/javascript" src="js/app-js/resources/jsPDF-master/libs/png_support/png.js"></script>
 		<script type="text/javascript" src="js/app-js/resources/jsPDF-master/libs/png_support/zlib.js"></script>
@@ -76,6 +80,7 @@
 		<script type="text/javascript" src="js/app-js/resources/FileSaver.js-master/FileSaver.min.js"></script>
 		<script type="text/javascript" src="js/app-js/resources/Stuk-jszip-3d33a96/dist/jszip.min.js"></script>
 		<script type="text/javascript" src="js/app-js/resources/jszip-utils.min.js"></script>
+		<script type="text/javascript" src="js/app-js/resources/fastclick.js"></script>
 
 		<script type="text/javascript" src="js/app-js/services/anchorSmoothScroll_service.js"></script>
 		<script type="text/javascript" src="js/app-js/services/datacontext,js.js"></script>
@@ -90,6 +95,9 @@
 		<script type="text/javascript" src="js/app-js/services/zip_service.js"></script>
 		<script type="text/javascript" src="js/app-js/services/video_service.js"></script>
 		<script type="text/javascript" src="js/app-js/services/txtFile_service.js"></script>
+		<script type="text/javascript" src="js/app-js/services/email_services.js"></script>
+		<script type="text/javascript" src="js/app-js/services/finger_print_auth.js"></script>
+		<script type="text/javascript" src="js/app-js/services/security_service.js"></script>
 		<script type="text/javascript" src="js/app-js/router.js"></script>
 
 		<script type="text/javascript" src="js/generated-angular/template-cache.js"></script>
@@ -97,7 +105,7 @@
 		<script type="text/javascript" src="js/vendor-js/angular-resource.js"></script>
 		<script type="text/javascript" src="js/vendor-js/angular-route.js"></script>
 
-		<script type="text/javascript" src="js/vendor-js/bootstrap.js"></script>
+		<!-- <script type="text/javascript" src="js/vendor-js/bootstrap.js"></script> -->
 		<script type="text/javascript" src="js/vendor-js/ngStorage.js"></script>
 		<script type="text/javascript" src="js/vendor-js/underscore.js"></script>
 

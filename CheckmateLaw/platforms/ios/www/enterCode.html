@@ -3,13 +3,17 @@
 		<div class="content">
 			<div class="form-group">
 				<label for="userCode">Please enter a Code: &nbsp;</label>
-				<input type="number" class="form-control" ng-model="userCode" ng-change="userCode" required/><br/>
-				<label for="confirmCode">Confirm your code: &nbsp;</label><input type="number" class="form-control" ng-model="confirmCode" ng-change="confirmCode" required/><br/>
+				<input type="text" id="usercode" class="form-control" maxlength="6" pattern="[0-9]*" ng-model="userCode" ng-change="userCode" ng-trim="false" required/><br/>
+				<label for="confirmCode">Confirm your code: &nbsp;</label>
+				<input type="text" id="confirmCode" class="form-control" maxlength="6" pattern="[0-9]*" ng-model="confirmCode" ng-change="confirmCode" ng-trim="false" required/><br/>
 				<div class="btn-toolbar questionText">
 					<button type="button" class="btnWhite btnInput" ng-click="submitCode()">Submit</button>
 				</div>
 			</div>
-			<p class="sectionText">Please create a code that will be used to log into the app. That will insure all information in the app remains confidential.</p>
+			<p class="sectionText">Please create a code that will be used to log into the app. This will insure all information in the app remains confidential.</p>
+			<span class="sectionText "><span class="glyphicon glyphicon-info-sign"></span> <strong>Requirements:</strong><br></span>
+			<span class="sectionText">Security code must only be numerical<br></span>
+			<span class="sectionText">Security code must be 6 characters<br></span>
 		</div>
 	</div>
 </div>

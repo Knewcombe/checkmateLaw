@@ -7,6 +7,18 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.hutchind.cordova.plugins.streamingmedia": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-media-with-compression": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-android-fingerprint-auth": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-buildinfo": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
@@ -14,6 +26,9 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-email": {
@@ -31,13 +46,25 @@
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-spinner": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
         "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-touch-id": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "cordova-plugin-zip": {
@@ -47,21 +74,6 @@
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         },
         "org.apache.cordova.plugin.cache": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "cordova-media-with-compression": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "cordova-plugin-buildinfo": {
-            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
-        },
-        "com.hutchind.cordova.plugins.streamingmedia": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },

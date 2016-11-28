@@ -438,6 +438,43 @@ module.exports = [
         "clobbers": [
             "streamingMedia"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "id": "cordova-plugin-x-toast.Toast",
+        "pluginId": "cordova-plugin-x-toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "id": "cordova-plugin-x-toast.tests",
+        "pluginId": "cordova-plugin-x-toast"
+    },
+    {
+        "file": "plugins/cordova-plugin-spinner/www/spinner-plugin.js",
+        "id": "cordova-plugin-spinner.SpinnerPlugin",
+        "pluginId": "cordova-plugin-spinner",
+        "clobbers": [
+            "SpinnerPlugin"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-touch-id/www/TouchID.js",
+        "id": "cordova-plugin-touch-id.TouchID",
+        "pluginId": "cordova-plugin-touch-id",
+        "clobbers": [
+            "window.plugins.touchid"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-android-fingerprint-auth/www/FingerprintAuth.js",
+        "id": "cordova-plugin-android-fingerprint-auth.FingerprintAuth",
+        "pluginId": "cordova-plugin-android-fingerprint-auth",
+        "clobbers": [
+            "FingerprintAuth"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -462,7 +499,11 @@ module.exports.metadata =
     "cordova-media-with-compression": "2.0.20",
     "cordova-plugin-dialogs": "1.2.1",
     "cordova-plugin-buildinfo": "1.1.0",
-    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4"
+    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
+    "cordova-plugin-x-toast": "2.5.2",
+    "cordova-plugin-spinner": "1.1.0",
+    "cordova-plugin-touch-id": "3.2.0",
+    "cordova-plugin-android-fingerprint-auth": "0.2.0"
 }
 // BOTTOM OF METADATA
 });

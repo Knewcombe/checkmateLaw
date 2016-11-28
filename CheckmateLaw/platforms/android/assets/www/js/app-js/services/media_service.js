@@ -116,16 +116,22 @@ angular.module('app').service('MediaService', ['$q', 'FileSystemService','$rootS
 						//Setting the position and duration of the media file.
 						currentPosition = Math.round(position);
 						roundedDuration = Math.round(duration);
-						//Callback is called and will return the values to display to the user.	
+						//Callback is called and will return the values to display to the user.
 						callback(currentPosition, roundedDuration);
 					} else {
 						currentPosition = 0;
 						roudedDuration = 0;
-					}					
+					}
 				},
 										   // error callback
 										   function (e) {
-					alert("Error playing memo");
+												 window.plugins.toast.showWithOptions(
+							 		    	{
+							 		      	message: "Unable to play memo",
+							 		      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+							 		      	position: "bottom",
+							 		      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+							 		    	})
 				}
 										  );
 			}, 1000);

@@ -12,9 +12,47 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         controller: 'HomeController'
     });
 
+    $routeProvider.when('/settings', {
+        templateUrl: 'settings.html',
+        controller: 'SettingsController'
+    });
+
     $routeProvider.when('/report/new', {
         templateUrl: 'report_new.html',
         controller: 'ReportNewController'
+    });
+
+    $routeProvider.when('/settings/changeCode', {
+        templateUrl: 'changeCode.html',
+        controller: 'ChangeCodeController'
+    });
+
+    $routeProvider.when('/settings/selectEditChecklist', {
+        templateUrl: 'selectEditChecklist.html',
+        controller: 'SelectEditChecklistController'
+    });
+
+    $routeProvider.when('/settings/editChecklist/sections', {
+        templateUrl: 'editChecklist.html',
+        controller: 'EditChecklistController'
+    });
+    $routeProvider.when('/settings/editChecklist/questions', {
+        templateUrl: 'editChecklist.html',
+        controller: 'EditChecklistController'
+    });
+    $routeProvider.when('/settings/editChecklist/addQuestions', {
+        templateUrl: 'editChecklist.html',
+        controller: 'EditChecklistController'
+    });
+
+		$routeProvider.when('/settings/editChecklist/questionnaire',{
+			templateUrl: 'editChecklist.html',
+			controller: 'EditChecklistController'
+		});
+
+    $routeProvider.when('/settings/emailList', {
+        templateUrl: 'emailList.html',
+        controller: 'EmailListController'
     });
 
     $routeProvider.when('/report/new_details', {
@@ -37,27 +75,27 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         controller: 'FullImageController'
     });
 
-    $routeProvider.when('/about', {
+    $routeProvider.when('/settings/about', {
         templateUrl: 'about.html',
         controller: 'AboutController'
     });
-    
+
     $routeProvider.when('/sections', {
-       templateUrl: 'sections.html',
-       controller: 'ReportSectionController'
+        templateUrl: 'sections.html',
+        controller: 'ReportSectionController'
     });
-    
-    $routeProvider.when('/newReport',{
+
+    $routeProvider.when('/newReport', {
         templateUrl: 'newReport.html',
         controller: 'ReportNewController'
     });
-    
-    $routeProvider.when('/questions',{
+
+    $routeProvider.when('/questions', {
         templateUrl: 'questions.html',
         controller: 'ReportQuestionController'
     });
-    
-    $routeProvider.when('/addQuestions',{
+
+    $routeProvider.when('/addQuestions', {
         templateUrl: 'questions.html',
         controller: 'ReportQuestionController'
     });
@@ -65,84 +103,84 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         templateUrl: 'guidelines.html',
         controller: 'GuidelinesController'
     });
-    
+
     $routeProvider.when('/questionnaire', {
         templateUrl: 'questionnaire.html',
         controller: 'QuestionnaireController'
     });
-	
-	$routeProvider.when('/questionnaireItem', {
+
+    $routeProvider.when('/questionnaireItem', {
         templateUrl: 'questions.html',
         controller: 'ReportQuestionController'
     });
-    
-    $routeProvider.when('/referanceList',{
+
+    $routeProvider.when('/referanceList', {
         templateUrl: 'referanceList.html',
         controller: 'ReferanceListController'
     });
-    
-    $routeProvider.when('/referanceListItems',{
+
+    $routeProvider.when('/referanceListItems', {
         templateUrl: 'referanceListItems.html',
         controller: 'ReferenceListControllerItems'
     });
-    
-    $routeProvider.when('/referanceListAddItems',{
+
+    $routeProvider.when('/referanceListAddItems', {
         templateUrl: 'referanceListAddItems.html',
         controller: 'ReferenceListControllerAddItems'
     });
-    $routeProvider.when('/report/note',{
+    $routeProvider.when('/report/note', {
         templateUrl: 'note.html',
         controller: 'NoteController'
     });
-	$routeProvider.when('/enterCode', {
+    $routeProvider.when('/enterCode', {
         templateUrl: 'enterCode.html',
         controller: 'EnterCodeController'
     });
-	$routeProvider.when('/securityCode', {
+    $routeProvider.when('/securityCode', {
         templateUrl: 'securityCode.html',
         controller: 'CodeController'
     });
-	$routeProvider.when('/report/imageList', {
+    $routeProvider.when('/report/imageList', {
         templateUrl: 'images.html',
         controller: 'ImageController'
     });
-	$routeProvider.when('/report/audioList', {
+    $routeProvider.when('/report/audioList', {
         templateUrl: 'audio.html',
         controller: 'AudioController'
     });
-	$routeProvider.when('/report/videoList', {
+    $routeProvider.when('/report/videoList', {
         templateUrl: 'videos.html',
         controller: 'VideoController'
     });
-	$routeProvider.when('/temp', {
+    $routeProvider.when('/temp', {
         templateUrl: 'temp.html',
         controller: 'TempMediaController'
     });
-	$routeProvider.when('/temp/audio', {
+    $routeProvider.when('/temp/audio', {
         templateUrl: 'audio.html',
         controller: 'AudioController'
     });
-	$routeProvider.when('/temp/audio/select', {
+    $routeProvider.when('/temp/audio/select', {
         templateUrl: 'audio.html',
         controller: 'AudioController'
     });
-	$routeProvider.when('/temp/video', {
+    $routeProvider.when('/temp/video', {
         templateUrl: 'videos.html',
         controller: 'VideoController'
     });
-	$routeProvider.when('/temp/video/select', {
+    $routeProvider.when('/temp/video/select', {
         templateUrl: 'videos.html',
         controller: 'VideoController'
     });
-	$routeProvider.when('/temp/image', {
+    $routeProvider.when('/temp/image', {
         templateUrl: 'images.html',
         controller: 'ImageController'
     });
-	$routeProvider.when('/temp/image/select', {
+    $routeProvider.when('/temp/image/select', {
         templateUrl: 'images.html',
         controller: 'ImageController'
     });
-    
+
 
     // 404
     $routeProvider.when('/error/notfound', {
@@ -150,5 +188,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
         controller: 'ErrorController'
     });
 
-    $routeProvider.otherwise({ redirectTo: '/error/notfound' });
+    $routeProvider.otherwise({
+        redirectTo: '/error/notfound'
+    });
 });

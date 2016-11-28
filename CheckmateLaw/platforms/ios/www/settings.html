@@ -1,0 +1,19 @@
+<nav-header></nav-header>
+<div class="row topDiv list-group" ng-controller="SettingsController">
+	<div class="col-xs-12 titleTop">
+		<p class="checklistTitle">Settings</p>
+  </div>
+</div>
+<div ng-init="init()">
+	<div class="content">
+    <div class='list-group'>
+      <button type="button" class="btn btn-block btn-default" ng-click="emailList()">Email List</button>
+      <button type="button" class="btn btn-block btn-default" ng-click="changeCode()">Change Security Code</button>
+      <button type="button" class="btn btn-block btn-default" ng-click="editChecklist()">Edit Checklists</button>
+      <button type="button" class="btn btn-block btn-default" ng-click="about()">About</button>
+    </div>
+	<div class="row">
+		<p class="col-xs-12 centerText">Version: {{versionNumber}}   Build: {{buildNumber}}</p>
+	</div>
+  </div>
+</div>

@@ -11,9 +11,8 @@
 angular.module("app").controller('AboutController', function($scope, $rootScope) {
     $rootScope.isHomepage = false;
     $rootScope.isResizeDiv = false;
+		$rootScope.optionsList = false;
 
-        $scope.versionNumber = BuildInfo.version;
-		$scope.buildNumber = BuildInfo.versionCode;
-        $scope.currentDate = new Date();
-        $scope.copyright = "Copyright " + $scope.year + " Checkmate";
+		$scope.currentDate = new Date();
+		$scope.copyright = "Copyright " + $scope.year + " Checkmate";
 });

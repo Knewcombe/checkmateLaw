@@ -8,7 +8,7 @@
  * Question controller is used to control all functionality in the Question page.
  * - Image control: User will be able to take pictures and save it in the app file system
  * - Media control: User will be able to record audio to attach to the question objecy
- * - Change check state: the user will be able to change the state of the checkmark for the 
+ * - Change check state: the user will be able to change the state of the checkmark for the
  * Questions. This can be either true/false/null;
  *
  */
@@ -16,13 +16,15 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = true;
 	$scope.currentPath = $location.path();
 	$localStorage.saveIndex = [];
 	$scope.$storage = $localStorage;
-	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
+	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]); //This is what I need
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
 	$rootScope.footerBool = true;
+
 	$('.loading').show();
 	$('.content').hide();
 
@@ -35,7 +37,6 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	};
 	//If the user has a previous scroll position, the page will scroll to the position.
 	if($rootScope.scrollPos != undefined){
-		$scope.scrollPos = $rootScope.scrollPos;
 		console.log("True");
 	}else{
 		//If the user does no have a scroll position, it will be defined.
@@ -110,7 +111,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 			console.log("Additional Questions Path "+$scope.currentPath);
 			$scope.questionOutput = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].questions;
 		}
-		setTimeout(function () {    
+		setTimeout(function () {
 			$('.section').show();
 			$('.additionalOutput').hide();
 			$('.topDiv').show();
@@ -121,6 +122,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 					if ($scope.viewReport.sections[i].type === 'selectionSection') {
 						if($scope.viewReport.sections[i].selected.length >= 1){
 							$('.' + $scope.viewReport.sections[i].options[$scope.viewReport.sections[i].selected].title).show();
+							$('.inputList'+$sessionStorage.questionselected).show();
 						}
 					}
 				}
@@ -130,6 +132,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 				$('.content').show();
 				if($sessionStorage.questionselected != null){
 					$('.additionalOutput' + $sessionStorage.questionselected).slideDown("slow");
+					$('.inputList'+$sessionStorage.questionselected).hide();
 				}
 			}, 1000);
 		}, 100);
@@ -143,14 +146,14 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	$scope.$on('$routeChangeSuccess', function() {
 		setTimeout(function() { // wait for DOM, then restore scroll position
 			//			angular.element(window).css('overflow', 'hidden');
-			$(document).scrollTop($scope.scrollPos[$location.path()]);
-			$("body").animate({scrollTop: $scope.scrollPos[$location.path()]}, "slow");
+			$(document).scrollTop($scope.scrollPos);
+			$("body").animate({scrollTop: $scope.scrollPos}, "slow");
 			$scope.okSaveScroll = true;
 		}, 100);
 	});
 	$(document).on('scroll', function() {
 		if ($scope.okSaveScroll) { // false between $routeChangeStart and $routeChangeSuccess
-			$scope.scrollPos[$location.path()] = $(document).scrollTop();
+			$scope.scrollPos = $(document).scrollTop();
 		}
 	});
 	//Nan function is used to give the nan checkmark value.
@@ -225,6 +228,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 					if ($scope.previousSection.count === $scope.previousSection.amount) {
 						if ($scope.previousSection.state !== true) {
 							$scope.previousSection.state = true;
+
 						}
 					} else {
 						if ($scope.previousSection.state === true) {
@@ -263,7 +267,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 				if ($scope.viewReport.sections[$scope.selectedSection].state === true) {
 					$scope.viewReport.sections[$scope.selectedSection].state = false;
 				}
-			}	
+			}
 		}else{
 			if(question.type === 'additionalQuestion'){
 				if (state !== true) {
@@ -280,7 +284,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 					question.state = false;
 					$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count--;
 				}
-				if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count ===                                   $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].amount) {
+				if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].count === $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].amount) {
 					if ($scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state !== true) {
 						$scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].state = true;
 						$scope.viewReport.sections[$scope.selectedSection].count++;
@@ -329,19 +333,24 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	//This is for selection sections and questions.
 	$scope.showHideInfo = function (id) {
 
-		$sessionStorage.questionselected = null;
+		//$sessionStorage.questionselected = null;
 
 		if ($('.additionalOutput').is(':visible')) {
 			if ($('.additionalOutput' + id).is(':visible')) {
 				$('.additionalOutput' + id).slideUp("slow");
+				$('.inputList'+id).show();
 				$sessionStorage.questionselected = null;
 			} else {
 				$('.additionalOutput').slideUp("slow");
+				$('.inputList' + $sessionStorage.questionselected).show();
+				$('.inputList'+$sessionStorage.questionselected).show();
 				$('.additionalOutput' + id).slideDown("slow");
+				$('.inputList'+id).hide();
 				$sessionStorage.questionselected = id;
 			}
 		} else {
 			$('.additionalOutput' + id).slideDown("slow");
+			$('.inputList'+id).hide();
 			$sessionStorage.questionselected = id;
 		}
 	};

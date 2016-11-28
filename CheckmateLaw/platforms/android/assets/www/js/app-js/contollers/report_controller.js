@@ -6,7 +6,7 @@
  * @description:
 
  * Controller will be called when the Report menu is loaded
- * This controller handles all variables that are needed, with 
+ * This controller handles all variables that are needed, with
  * functions that are needed for the functions that are used.
  *
  */
@@ -15,10 +15,10 @@
 angular.module('app').controller('ReportNewController', function ($scope, dataContext, JsonTemplateService, $localStorage, $location, $interval, $rootScope) {
 	$scope.templates = dataContext.templates.getAll();
 	$scope.currentPath = $location.path();
-	$scope.$storage = $localStorage;
 	$scope.contentLoaded = false;
 	$scope.loadDropdown = true;
 	$rootScope.isHomepage = false;
+	$rootScope.optionsList = false;
 
 	var promise = JsonTemplateService.getList();
 	$scope.$storage = $localStorage;
@@ -36,32 +36,120 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 			$localStorage.savedChecklist = [];
 		}
 
-		var date = new Date();
-		tempReport.dateStamp = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
+		if(tempReport === undefined){
 
-		$localStorage.savedChecklist.unshift(tempReport);
-		if ($localStorage.savedChecklist.length >= 1) {
-			$scope.$storage.savedIndex = 0;
-		} else {
-			$scope.$storage.savedIndex = 0;
+			window.plugins.toast.showWithOptions(
+			{
+				message: "No checklist selected",
+				duration: "long", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+				position: "bottom",
+				addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+			})
+		}else{
+			var date = new Date();
+			tempReport.dateStamp = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
+			$localStorage.savedChecklist.unshift(tempReport);
+			if ($localStorage.savedChecklist.length >= 1) {
+				$scope.$storage.savedIndex = 0;
+			} else {
+				$scope.$storage.savedIndex = 0;
+			}
+			console.log($scope.$storage.savedIndex);
+			$location.path('/sections');
 		}
-		console.log($scope.$storage.savedIndex);
-		$location.path('/sections');
 	};
 
 	$rootScope.isHomepage = false;
 
 	$scope.saveChecklist = function () {
-		alert('Checklist saved!');
+		window.plugins.toast.showWithOptions(
+		{
+			message: "Checklist saved!",
+			duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+			position: "bottom",
+			addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+		})
 		$location.path('/');
 	};
 
 })
 //Header controller to add functionality in the report menu.
-	.controller('ReportHeaderController', function ($rootScope, $scope, $location, $sessionStorage) {
-	$('.dropdown-toggle').dropdown();
+	.controller('ReportHeaderController', function ($rootScope, $scope, $location, $sessionStorage, $localStorage, EmailServices, FingerPrintAuth) {
+
+		$(document).ready(function() {
+		    $(".dropdown-toggle").dropdown();
+		});
 	$rootScope.isResizeDiv = true;
 	console.log($rootScope.footerBool);
+	$scope.optionList = $rootScope.optionsList;
+
+	$scope.dropdown = function(){
+		console.log("Work");
+		$('.dropdown-toggle').dropdown();
+	}
+
+	$scope.email = function(){
+
+		$localStorage.checklistPdf = $localStorage.savedChecklist[$scope.$storage.savedIndex];
+
+		var options = { dimBackground: true };
+		SpinnerPlugin.activityStart("Loading...", options);
+
+		if($rootScope.platform == 'Android'){
+			var fingerPromisEmail = FingerPrintAuth.fingerPrintAndroid();
+		}else if($rootScope.platform == 'iOS'){
+			var fingerPromisEmail = FingerPrintAuth.fingerPrintiOS();
+		}
+			fingerPromisEmail.then(function(data){
+				console.log("Finger print")
+				console.log(data);
+				if(data == false){
+					promptCallback = function(input){
+						console.log(input.buttonIndex);
+						console.log(input.input1);
+						if(input.buttonIndex == 1){
+							if(input.input1 == $localStorage.userCode){
+								var emailPromis = EmailServices.email($localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf",
+								$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip",
+								$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".txt");
+								console.log("Prompt call");
+								emailPromis.then(function (data){
+									SpinnerPlugin.activityStop();
+								});
+							}else{
+								SpinnerPlugin.activityStop();
+								window.plugins.toast.showWithOptions(
+								{
+									message: "Security Code does not match",
+									duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+									position: "bottom",
+									addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+								})
+							}
+						}else if(input.buttonIndex == 2){
+							SpinnerPlugin.activityStop();
+							window.plugins.toast.showWithOptions(
+							{
+								message: "Cancelled",
+								duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+								position: "bottom",
+								addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+							})
+						}
+					}
+					navigator.notification.prompt("Please enter the security code", promptCallback, ["Security"], ["Confirm", "Cancle"]);
+				}else{
+				var emailPromis = EmailServices.email($localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf",
+				$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip",
+				$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".txt");
+				//$sessionStorage.userCode = $localStorage.userCode;
+				emailPromis.then(function (data){
+					SpinnerPlugin.activityStop();
+				});
+			}
+			});
+
+	}
 
 	$scope.backButton = function () {
 		$scope.currentPath = $location.path();
@@ -120,7 +208,36 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		if($scope.currentPath === "/temp/image/select"){
 			$location.path("/report/imageList");
 		}
-
+		if($scope.currentPath === "/sections"){
+			$location.path("/report/saved/edit");
+		}
+		if($scope.currentPath === "/report/saved/edit"){
+			$location.path("/report/saved");
+		}
+		if($scope.currentPath === "/settings/about"){
+			$location.path("/settings");
+		}
+		if($scope.currentPath === "/settings/emailList"){
+			$location.path("/settings");
+		}
+		if($scope.currentPath === "/settings/changeCode"){
+			$location.path("/settings");
+		}
+		if($scope.currentPath === "/settings/selectEditChecklist"){
+			$location.path("/settings");
+		}
+		if($scope.currentPath === "/settings/editChecklist/sections"){
+			$location.path("/settings/selectEditChecklist");
+		}
+		if($scope.currentPath === "/settings/editChecklist/questions"){
+			$location.path("/settings/editChecklist/sections");
+		}
+		if($scope.currentPath === "/settings/editChecklist/addQuestions"){
+			$location.path("/settings/editChecklist/questions");
+		}
+		if($scope.currentPath === "/settings/editChecklist/questionnaire"){
+			$location.path("/settings/editChecklist/questions");
+		}
 	};
 
 	$scope.homeButton = function (){
@@ -133,80 +250,27 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 })
 //Saved reports controller.
-	.controller('ReportSavedController', function ($scope, $location, dataContext, PdfFromat, FileSystemService, ZipService, $localStorage, $interval, $rootScope, $sessionStorage, TxtService) {
+	.controller('ReportSavedController', function ($scope, $location, dataContext, FileSystemService, $localStorage, $interval, $rootScope, $sessionStorage, EmailServices, FingerPrintAuth) {
 
 	$scope.$storage = $localStorage;
 	console.log($scope.$storage.savedChecklist);
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = false;
-	
-	$('.loading').hide();
-	$('.content').show();
+	$rootScope.footerBool = false;
+	$rootScope.optionsList = false;
+
+	$('.loading').show();
+	$('.content').hide();
 
 	function gotFS(fileSystem){
 		console.log("gotFS called");
 		$scope.fileSystem = fileSystem.root.toURL();
+		$('.loading').hide();
+		$('.content').show();
 	}
 
 	function fail(){
 		alert("Derp");
-	}
-
-	function emailView(attachments){
-		$('.loading').show();
-		$('.content').hide();
-		console.log("Email");
-		console.log(attachments)
-		cordova.plugins.email.open({
-			//			to:          [""], // email addresses for TO field
-			//			cc:          [""], // email addresses for CC field
-			//			bcc:         [""], // email addresses for BCC field
-			attachments: attachments,// file paths or base64 data streams
-			subject:    $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+"_"+$localStorage.checklistPdf.dateStamp, // subject of the email
-			body:       "", // email body (for HTML, set isHtml to true)
-			isHtml:    true, // indicats if the body is HTML or plain text
-		}, function () {
-			console.log('email view dismissed');
-			window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-				//Removing the pdf file after the email.
-				fileSystem.root.getFile($scope.pdfFileName, {create:false}, function(fileEntry){
-					fileEntry.remove(function(file){
-						console.log("PDF File removed!");
-						document.addEventListener('deviceready', onDeviceReady);
-					},function(){
-						console.log("error deleting the file " + error.code);
-					});
-				},function(){
-					console.log("file does not exist");
-				});
-				//Removing the pdf file after the txt.
-				fileSystem.root.getFile($scope.txtFileName, {create:false}, function(fileEntry){
-					fileEntry.remove(function(file){
-						console.log("Txt File removed!");
-						document.addEventListener('deviceready', onDeviceReady);
-					},function(){
-						console.log("error deleting the file " + error.code);
-					});
-				},function(){
-					console.log("file does not exist");
-				});
-				//Removing the zip file after the email is complete.
-				fileSystem.root.getFile($scope.zipFileName, {create:false}, function(fileEntry){
-					fileEntry.remove(function(file){
-						console.log("ZIP File removed!");
-					},function(){
-						console.log("error deleting the file " + error.code);
-					});
-				},function(){
-					console.log("file does not exist");
-				});
-			},function(evt){
-				console.log(evt.target.error.code);
-			});
-			$('.loading').hide();
-			$('.content').show();
-		},
-								   this);
 	}
 
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
@@ -215,97 +279,61 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 		$scope.$storage.savedIndex = $index;
 		$localStorage.checklistPdf = $localStorage.savedChecklist[$index];
 
-		$scope.pdfFileName = $localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf";
+		var options = { dimBackground: true };
+		SpinnerPlugin.activityStart("Loading...", options);
 
-		$scope.zipFileName = $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip";
-
-		$scope.txtFileName = $localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".txt";
-
-		cordova.plugins.email.isAvailable(
-			function (isAvailable){
-				var attachments = [];
-				// alert('Service is not available') unless isAvailable;
-				console.log("------ EMAIL ------");
-				console.log(cordova.file.externalCacheDirectory);
-				console.log(isAvailable);
-				if(isAvailable){
-					console.log("Called");
-					if($rootScope.platform == "Android"){
-						var pdfPromise = PdfFromat.getPDF($localStorage.checklistPdf, $scope.pdfFileName);
-						pdfPromise.then(function(pdfPath){
-							console.log(pdfPath);
-							var pdfFilePromise = FileSystemService.moveEmailFiles(pdfPath, $scope.pdfFileName);
-							pdfFilePromise.then(function (newPdfName){
-								attachments.push($rootScope.fileSys+newPdfName);
-								console.log("------PDF File Complete------");
-								var txtPromise = TxtService.writeTxt($localStorage.checklistPdf, $scope.txtFileName);
-								txtPromise.then(function(txtPath){
-									if(txtPath != ""){
-										var txtFilePromise = FileSystemService.moveEmailFiles(txtPath, $scope.txtFileName);
-										txtFilePromise.then(function(newTxtName){
-											console.log("------Txt file complete------");
-											console.log(newTxtName);
-											attachments.push($rootScope.fileSys+newTxtName);
-											console.log(attachments);
-										});
-									}
-									var zipPromise = ZipService.getZip($scope.zipFileName);
-									zipPromise.then(function (zipPath){
-										console.log("------Zip File Complete------");
-										console.log(zipPath);
-										if(zipPath != ""){
-											console.log("ZIP FILE FOUND");
-											var zipFilePromise = FileSystemService.moveEmailFiles(zipPath, $scope.zipFileName);
-											zipFilePromise.then(function (newZipName){
-												console.log("------Zip File Complete------");
-												console.log(newZipName);
-												attachments.push($rootScope.fileSys+newZipName);
-												//CALLING THE EMAIL
-												//IF the zip file is not generated due to the user not have any images or memos
-												//A check must occur to insure the attachments section for the email plugin does not crash
-												emailView(attachments);
-											})
-										}else{
-											emailView(attachments);
-										}
-									})
+		if($rootScope.platform == 'Android'){
+			var fingerPromisEmail = FingerPrintAuth.fingerPrintAndroid();
+		}else if($rootScope.platform == 'iOS'){
+			var fingerPromisEmail = FingerPrintAuth.fingerPrintiOS();
+		}
+			fingerPromisEmail.then(function(data){
+				console.log("Finger print")
+				console.log(data);
+				if(data == false){
+					promptCallback = function(input){
+						console.log(input.buttonIndex);
+						console.log(input.input1);
+						if(input.buttonIndex == 1){
+							if(input.input1 == $localStorage.userCode){
+								var emailPromis = EmailServices.email($localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf",
+								$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip",
+								$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".txt");
+								console.log("Prompt call");
+								emailPromis.then(function (data){
+									SpinnerPlugin.activityStop();
 								});
-							});
-						})
-					}else{
-						console.log("------IOS------");
-						var pdfPromise = PdfFromat.getPDF($localStorage.checklistPdf, $scope.pdfFileName);
-						pdfPromise.then(function(pdfPath){
-							console.log("------PDF File Complete------");
-							console.log(pdfPath);
-							$scope.pdfFile = $scope.pdfFileName;
-							attachments.push($rootScope.root+$scope.pdfFile);
-							var txtPromise = TxtService.writeTxt($localStorage.checklistPdf, $scope.txtFileName);
-							txtPromise.then(function(txtPath){
-								$scope.txtFile = $scope.txtFileName;
-								if(txtPath != ""){
-									attachments.push($rootScope.root+$scope.txtFile);
-								}
-								var zipPromise = ZipService.getZip($scope.zipFileName);
-								zipPromise.then(function (zipPath){
-									console.log("------Zip File Complete------");
-									console.log(zipPath);
-									$scope.zipFile = $scope.zipFileName;
-									//CALLING THE EMAIL
-									//IF the zip file is not generated due to the user not have any images or memos
-									//A check must occur to insure the attachments section for the email plugin does not crash
-									if(zipPath != ""){
-										console.log("ZIP FILE FOUND");
-										attachments.push($rootScope.root+$scope.zipFile);
-									}
-									emailView(attachments);
+							}else{
+								SpinnerPlugin.activityStop();
+								window.plugins.toast.showWithOptions(
+								{
+									message: "Security Code does not match",
+									duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+									position: "bottom",
+									addPixelsY: 0  // added a negative value to move it up a bit (default 0)
 								})
+							}
+						}else if(input.buttonIndex == 2){
+							SpinnerPlugin.activityStop();
+							window.plugins.toast.showWithOptions(
+							{
+								message: "Cancelled",
+								duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+								position: "bottom",
+								addPixelsY: 0  // added a negative value to move it up a bit (default 0)
 							})
-						})
+						}
 					}
+					navigator.notification.prompt("Please enter the security code", promptCallback, ["Security"], ["Confirm", "Cancle"]);
 				}else{
-					alert("Email not available at this time.");
-				}
+				var emailPromis = EmailServices.email($localStorage.checklistPdf.title+"-"+$localStorage.checklistPdf.name+".pdf",
+				$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".zip",
+				$localStorage.checklistPdf.title +"_"+$localStorage.checklistPdf.name+".txt");
+				//$sessionStorage.userCode = $localStorage.userCode;
+				emailPromis.then(function (data){
+					SpinnerPlugin.activityStop();
+				});
+			}
 			});
 	}
 
@@ -346,6 +374,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
+	$rootScope.optionsList = false;
 	var promise = ListService.getList();
 	//    $scope.$storage = $localStorage.savedChecklist;
 	promise.then(function (data) {
@@ -374,6 +403,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = true;
+	$rootScope.optionsList = false;
 	var promise = ListService.getList();
 	//    $scope.$storage = $localStorage.savedChecklist;
 	promise.then(function (data) {
@@ -391,6 +421,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
+	$rootScope.optionsList = false;
 
 	var promise = ListService.getList();
 	promise.then(function (data){
@@ -409,6 +440,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
+	$rootScope.optionsList = false;
 
 	var promise = ListService.getList();
 	promise.then(function (data){
@@ -427,6 +459,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.currentPath = $location.path;
 	$rootScope.isHomepage = false;
+	$rootScope.optionsList = false;
 
 	console.log($sessionStorage.sectionId);
 
@@ -444,6 +477,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	//Unless I make a array and pass it in
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = false;
 
 	$scope.inputArray = [];
 	$scope.input = "";
@@ -459,7 +493,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.init = function () {
 		console.log("INIT");
-		setTimeout(function () {    
+		setTimeout(function () {
 			$('.loading').show();
 			$('.content').hide();
 			setTimeout(function () {
@@ -473,7 +507,13 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	//When the user submits the comment, I will take the time stamp and note I will pass it into the array, when the user wants to view the items, they will select the button and will be taken to the page that they are able to view it....
 	$scope.submitComment = function(){
 		if($scope.input == ""){
-			alert("Note is empty");
+			window.plugins.toast.showWithOptions(
+    	{
+      	message: "Field cannot be empty",
+      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+      	position: "bottom",
+      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+    	})
 		}else{
 			var date = new Date();
 			$scope.time = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
@@ -489,4 +529,4 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	$scope.done = function(){
 		$location.path('/questions');
 	}
-})
+});

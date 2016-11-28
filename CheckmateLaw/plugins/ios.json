@@ -63,6 +63,18 @@
         },
         "com.hutchind.cordova.plugins.streamingmedia": {
             "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-spinner": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-touch-id": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
+        },
+        "cordova-plugin-android-fingerprint-auth": {
+            "PACKAGE_NAME": "com.checkmate.checkmatelaw"
         }
     },
     "dependent_plugins": {

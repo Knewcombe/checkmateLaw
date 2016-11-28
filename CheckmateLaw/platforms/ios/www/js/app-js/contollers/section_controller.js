@@ -19,17 +19,25 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 	$scope.viewReport = ($localStorage.savedChecklist[$localStorage.savedIndex]);
 	$rootScope.isHomepage = false;
 	$rootScope.isResizeDiv = true;
+	$rootScope.optionsList = true;
 	$rootScope.footerBool = true;
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
 	$('.loading').show();
 	$('.content').hide();
 	$sessionStorage.questionselected = null;
-	
+	$rootScope.footerBool = false;
+	$rootScope.scrollPos = 0;
+
 	function gotFS(fileSystem){
 		console.log("gotFS called");
 		$scope.fileSystem = fileSystem.root.toURL();
 	}
+
+	$(document).ready(function(){
+			//console.log("This is worling");
+			$('.dropdown-toggle').dropdown()
+	});
 
 	function fail(){
 		alert("Derp");
@@ -76,4 +84,3 @@ angular.module('app').controller('ReportSectionController', function ($rootScope
 		$scope.viewReport.sections[id].selected = option;
 	};
 });
-

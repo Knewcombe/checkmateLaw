@@ -19,7 +19,7 @@ angular.module("app").service('ImageService', ['$q','FileSystemService', functio
 		var deferred = $q.defer();
 		//When picture has been taken will call the move_file_Service.
 		var onSuccess = function (FILE_URI) {
-			console.log(" --------TMP FILE NAME--------- "+FILE_URI); 
+			console.log(" --------TMP FILE NAME--------- "+FILE_URI);
 			//Change this to allow the Move file service to move the file.
 			//movePic(FILE_URI, callback);
 			var promise = FileSystemService.moveFile(FILE_URI, folder, newFileName);
@@ -30,7 +30,13 @@ angular.module("app").service('ImageService', ['$q','FileSystemService', functio
 		//Either the image was not able to be taken, or the user cancels the picture.
 		var onFail = function (e) {
 			deferred.reject();
-			alert('Error taking picture' + e);
+			window.plugins.toast.showWithOptions(
+    	{
+      	message: "Image canceled",
+      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+      	position: "bottom",
+      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+    	})
 		};
 		//Options to define the qulity and type of the image.
 		var options = {

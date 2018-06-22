@@ -6,14 +6,15 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 	$scope.currentPath = $location.path();
 	$localStorage.saveIndex = [];
 	$scope.$storage = $localStorage;
-	$scope.itemArray = [];
 	$scope.selectedSection = $sessionStorage.sectionIndex;
 	$scope.selectedQuestion = $sessionStorage.questionIndex;
+	$scope.itemArray;
 
 	$('.loading').show();
 	$('.content').hide();
 
 	$scope.init = function () {
+		$scope.itemArray = [];
 		console.log("INIT");
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 		setTimeout(function () {
@@ -27,7 +28,6 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 	}
 
 	if($location.path() === '/temp/audio' || $location.path() === "/temp/audio/select"){
-		console.log("PATH: "+$rootScope.previousPath);
 		$scope.mediaQuestion = $localStorage.tempInputs;
 		$rootScope.footerBool = false;
 	}else{
@@ -131,17 +131,27 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 		//Function is a callback from the Media service.
 		//This will get the position of duration of the media playback and will diplay it to the user.
 		var mediaTimer = function(position, duration){
+			$('.loading').hide();
+			$('.content').show();
 			$scope.currentPosition = position;
 			$scope.roundedDuration = duration;
 			console.log("Called- "+ position +" : "+duration);
 			$scope.$apply();
 		}
-
-		if($rootScope.platform != "Android"){
-			MediaService.playFile('documents:/'+memo, mediaTimer);
-		}else{
-			MediaService.playFile($rootScope.root+memo, mediaTimer);
-		}
+		$('.loading').show();
+		$('.content').hide();
+		window.plugins.toast.showWithOptions({
+				message: "Starting audio recording",
+				duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+				position: "bottom",
+				addPixelsY: 0 // added a negative value to move it up a bit (default 0)
+		})
+		MediaService.playFile(memo, mediaTimer);
+		// if($rootScope.platform != "Android"){
+		// 	MediaService.playFile('documents:/'+memo, mediaTimer);
+		// }else{
+		// 	MediaService.playFile($rootScope.root+memo, mediaTimer);
+		// }
 	};
 	//Get Time is called in the HTML. It will output the duration and position and in a time formate.
 	$scope.getTime = function (tracker) {
@@ -196,13 +206,18 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 				}
 			}
 		}
+		console.log($scope.itemArray)
 	}
 
 	$scope.selectionFinish = function(){
+		console.log("Test");
+		console.log($scope.itemArray)
 		if($scope.itemArray.length != 0){
+			console.log("Testing length")
 			for(var i = 0; i <= ($scope.itemArray.length - 1); i++){
+				console.log("Looping "+i);
 				var extension = $scope.itemArray[i].split(".").pop();
-				var itemPromise = FileSystemService.moveFile($rootScope.root+$scope.itemArray[i], "Media", $scope.itemArray[i].replace("/Temp/Temporary_",$rootScope.fileName+"-").replace("."+extension, "")+"-"+$rootScope.length+"."+extension);
+				var itemPromise = FileSystemService.moveTempFile($rootScope.root+$scope.itemArray[i], "Media", $scope.itemArray[i].replace("/Temp/Temporary_",$rootScope.fileName+"-").replace("."+extension, "")+"-"+$rootScope.length+"."+extension);
 				for(var e = 0; e <= ($localStorage.tempInputs.inputs[0].recording.length -1); e++){
 					if($localStorage.tempInputs.inputs[0].recording[e] == $scope.itemArray[i]){
 						$localStorage.tempInputs.inputs[0].recording.splice(e,1);
@@ -210,6 +225,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 					}
 				}
 				itemPromise.then(function(data){
+					console.log("Found file");
 					$rootScope.input.push(data);
 					$location.path("/report/audioList");
 					window.plugins.toast.showWithOptions(
@@ -222,6 +238,7 @@ angular.module('app').controller('AudioController', function ($rootScope, $scope
 				})
 			}
 		}
+		console.log($scope.itemArray)
 	}
 
 });

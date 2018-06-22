@@ -78,7 +78,7 @@ function($q, $rootScope, PdfFromat, FileSystemService, ZipService, $interval, $l
 				var attachments = [];
 				// alert('Service is not available') unless isAvailable;
 				console.log("------ EMAIL ------");
-				console.log(cordova.file.externalCacheDirectory);
+				console.log(cordova.plugins.email);
 				console.log(isAvailable);
 				if(isAvailable){
 					console.log("Called");
@@ -129,6 +129,7 @@ function($q, $rootScope, PdfFromat, FileSystemService, ZipService, $interval, $l
 					}else{
 						console.log("------IOS------");
 						var pdfPromise = PdfFromat.getPDF($localStorage.checklistPdf, $rootScope.pdfFileName);
+						console.log('?')
 						pdfPromise.then(function(pdfPath){
 							console.log("------PDF File Complete------");
 							console.log(pdfPath);

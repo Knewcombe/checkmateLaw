@@ -22,12 +22,13 @@ angular.module("app").service('VideoService', ['$localStorage', '$sessionStorage
 		};
 
 		// start video capture
-		navigator.device.capture.captureVideo(captureSuccess, captureError);
+		navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 1, duration: 300, quality: 0});
 
 		return deferred.promise;
 	}
-	
+
 	this.playVideo = function(video){
+		deferred = $q.defer();
 		//If the file is found, will call the file service and move the file to the proper location the we will set.
 		function fail(){
 			alert("An error occured in the application. Please kill and relaunch the app.");
@@ -37,20 +38,25 @@ angular.module("app").service('VideoService', ['$localStorage', '$sessionStorage
 			//Waiting for a promise from file service and will resolve this service promise.
 			var options = {
 				successCallback: function() {
+					deferred.resolve();
 					console.log("Video was closed without error.");
 				},
 				errorCallback: function(errMsg) {
+					deferred.reject(errMsg);
 					console.log("Error! " + errMsg);
 				},
 				orientation: 'landscape'
 			};
-			window.plugins.streamingMedia.playVideo(fileEntry.toURL(), options);
+			FileSystemService.findFile(video, 'Video').then(function(data){
+				window.plugins.streamingMedia.playVideo(data, options);
+			})
 		}
 		//Once the file system is defined, the media file will be taken from the tmp directory.
 		function fileGot(fileSys){
 			fileSys.root.getFile(video, {create: true, exclusive: false}, gotFileEntry, fail);
 		}
 		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileGot, fail);
+		return deferred.promise;
 	}
 
 }]);

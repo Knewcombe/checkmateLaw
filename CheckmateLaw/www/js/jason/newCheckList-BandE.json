@@ -11811,7 +11811,7 @@
 						"id": 0,
 						"type": "question",
 						"state": false, "hide": false,
-						"output": "If suspect on scene or located later, Arrest for theft under/over $5000. (Sec 10(a)C.C.C)",
+						"output": "If suspect on scene or located later, Arrest for assault under/ assault causing bodily harm/ assault with a weapon (Sec 10(a)C.C.C)",
 						"inputs": [{
 							"dateChange":"",
 							"notes": [],

@@ -10,7 +10,46 @@
  * Will use the callback to send the path of the file and the fileName.
  */
 
-angular.module("app").service('FileSystemService', ['$q', '$rootScope', 'JsonTemplateService', function($q, $rootScope, JsonTemplateService) {
+angular.module("app").service('FileSystemService', ['$q', '$rootScope', 'JsonTemplateService', 'SecurityService', function($q, $rootScope, JsonTemplateService, SecurityService) {
+  //Finding the file in the temp directory.
+    this.findFile = function(filePath, folder){
+      var deferred = $q.defer();
+      var fullPath = '';
+      console.log(folder)
+      //Resolve to the temp directory
+      window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function(fileSys) {
+              //The folder is created if doesn't exis
+              fullPath = fileSys.root.toURL().replace('/tmp/', '/tmp')+filePath;
+              console.log(fullPath);
+              window.resolveLocalFileSystemURL(fullPath, onSuccess, fileNotfound);
+        },
+        resOnError);
+
+      function onSuccess(entry){
+        console.log(entry)
+        deferred.resolve(entry.nativeURL);
+      }
+
+      function fileNotfound(){
+        window.plugins.toast.showWithOptions({
+            message: "Decrypting file",
+            duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+            position: "bottom",
+            addPixelsY: 0 // added a negative value to move it up a bit (default 0)
+        })
+        SecurityService.decyptFile($rootScope.root+filePath.replace('/'+folder+'/', folder+'/'), filePath.replace('/'+folder+'/', '').replace('/Temp/', ''), folder).then(function(data){
+          deferred.resolve(data);
+        })
+      }
+
+      function resOnError(error) {
+          deferred.reject(error.code);
+          //alert("Error "+error.code);
+          console.log(error);
+      }
+      return deferred.promise;
+
+    }
     //This function is used when a file is created and needs to be moved from the temp directory in the applicaiton file system.
     this.moveFile = function(file, folder, fileName) {
             var deferred = $q.defer();
@@ -21,7 +60,6 @@ angular.module("app").service('FileSystemService', ['$q', '$rootScope', 'JsonTem
             function resolveOnSuccessImage(entry) {
                 //new file name and folder.
                 console.log("-------Found file-------");
-                console.log(entry);
                 var newFileName = fileName;
                 var myFolderApp = folder;
 
@@ -51,9 +89,18 @@ angular.module("app").service('FileSystemService', ['$q', '$rootScope', 'JsonTem
             //Callback function when the file has been moved successfully - inserting the complete path
             function successMoveImage(entry) {
                 //I do my insert with "entry.fullPath" as for the path
-                deferred.resolve(entry.fullPath);
+
+                //NOTE: Will need to add the encription here --->
+                //  - I will do it before the resolve but I wont wait for it, the path will be given to the promise
+                //  - I will also need to cache the none encrypted version of the file, This will ensure the user is still able to view it???
                 console.log("----------- MOVE FILE SUCCESS -----------");
-                console.log(entry);
+                SecurityService.encyptFile(entry.nativeURL, fileName).then(function(data){
+                  console.log('finished encryption');
+                  //console.log(data);
+                  deferred.resolve(data);
+                });
+
+                // deferred.resolve(entry.fullPath)
                 //**This is where the callback will occur.**
                 //$scope.currentQuestion.inputs[0].photos.push(path);
                 //$scope.$apply();
@@ -77,6 +124,80 @@ angular.module("app").service('FileSystemService', ['$q', '$rootScope', 'JsonTem
             }
             return deferred.promise;
         }
+
+        this.moveTempFile = function(file, folder, fileName) {
+                var deferred = $q.defer();
+                console.log("File service: " + fileName);
+                window.resolveLocalFileSystemURL(file, resolveOnSuccessImage, resOnError);
+
+                //Callback function when the file system uri has been resolved
+                function resolveOnSuccessImage(entry) {
+                    //new file name and folder.
+                    console.log("-------Found file-------");
+                    var newFileName = fileName;
+                    var myFolderApp = folder;
+
+                    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
+                            //The folder is created if doesn't exis
+                            var fileSystem = fileSys.root.toURL();
+                            fileSys.root.getDirectory(myFolderApp, {
+                                    create: true,
+                                    exclusive: false
+                                },
+                                function(directory) {
+                                    console.log(directory);
+                                    console.log(newFileName);
+                                    if ($rootScope.platform != "Android") {
+                                        console.log("----IOS----");
+                                        entry.moveTo(directory, newFileName, successMoveImage, resOnError);
+                                    } else {
+                                        console.log("----ANDROID----");
+                                        entry.copyTo(directory, newFileName, successMoveImage, resOnError);
+                                    }
+                                },
+                                resOnError);
+                        },
+                        resOnError);
+                }
+
+                //Callback function when the file has been moved successfully - inserting the complete path
+                function successMoveImage(entry) {
+                    //I do my insert with "entry.fullPath" as for the path
+
+                    //NOTE: Will need to add the encription here --->
+                    //  - I will do it before the resolve but I wont wait for it, the path will be given to the promise
+                    //  - I will also need to cache the none encrypted version of the file, This will ensure the user is still able to view it???
+                    console.log("----------- MOVE FILE SUCCESS -----------");
+                    // SecurityService.encyptFile(entry.nativeURL, fileName).then(function(data){
+                    //   console.log('finished encryption');
+                    //   //console.log(data);
+                    //   deferred.resolve(data);
+                    // });
+
+                    deferred.resolve(entry.fullPath);
+                    //**This is where the callback will occur.**
+                    //$scope.currentQuestion.inputs[0].photos.push(path);
+                    //$scope.$apply();
+                    document.addEventListener('deviceready', onDeviceReady);
+
+                    function onDeviceReady() {
+                        var success = function(status) {
+                            //				alert('Message: ' + status);
+                        }
+
+                        var error = function(status) {
+                            //				alert('Error: ' + status);
+                        }
+                    }
+                }
+
+                function resOnError(error) {
+                    deferred.reject(error.code);
+                    //alert("Error "+error.code);
+                    console.log(error);
+                }
+                return deferred.promise;
+            }
         //Function is used when a file needs to be removed from the application file directory.
     this.removeFile = function(fileUri) {
         var deferred = $q.defer();

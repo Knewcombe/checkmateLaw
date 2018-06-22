@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-security" version="1.1.3">
+	<name>Security</name>
+	<author>tomkrus</author>
+	<description>JS call AES algorithm from Java or Objective-C</description>
+	<keywords>AES Cryptography iOS android</keywords>
+	<license>Apache 2.0 License</license>
+	<!-- <engines>
+		<engine name="cordova" version=">=4.0.0" />
+		<engine name="cordova-android" version=">=4.0.2" />
+	</engines> -->
+	<js-module src="www/Security.js" name="Security">
+		<clobbers target="Security" />
+	</js-module>
+	<platform name="android">
+		<source-file src="src/android/Security.java" target-dir="src/cn/sunline/cipher" />
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Security" >
+				<param name="android-package" value="cn.sunline.cipher.Security"/>
+			</feature>
+		</config-file>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+            <feature name="Security">
+                <param name="ios-package" value="Security"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Security.h" />
+        <source-file src="src/ios/Security.m" />
+        <header-file src="src/ios/GTMBase64.h" />
+        <header-file src="src/ios/GTMDefines.h" />
+        <source-file src="src/ios/GTMBase64.m" />
+	</platform>
+</plugin>

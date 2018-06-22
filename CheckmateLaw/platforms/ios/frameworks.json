@@ -1,14 +1,15 @@
 {
-    "ImageIO.framework": 1,
-    "CoreLocation.framework": 2,
-    "AVFoundation.framework": 1,
-    "MessageUI.framework": 1,
-    "AudioToolbox.framework": 2,
-    "libz.dylib": 1,
-    "Foundation.framework": 1,
-    "Security.framework": 2,
     "MediaPlayer.framework": 1,
+    "CoreLocation.framework": 2,
+    "AudioToolbox.framework": 2,
+    "MessageUI.framework": 1,
+    "LocalAuthentication.framework": 1,
+    "Security.framework": 2,
+    "libz.dylib": 2,
+    "CFNetwork.framework": 1,
+    "SystemConfiguration.framework": 1,
     "QuartzCore.framework": 1,
-    "GLKit.framework": 1,
-    "LocalAuthentication.framework": 1
+    "Foundation.framework": 1,
+    "ImageIO.framework": 1,
+    "AVFoundation.framework": 1
 }

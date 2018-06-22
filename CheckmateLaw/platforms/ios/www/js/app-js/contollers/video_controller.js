@@ -91,8 +91,28 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 	}
 
 	$scope.playVideo = function(video){
-		console.log($scope.fileSystem+video)
-		VideoService.playVideo(video);
+		$('.loading').show();
+		$('.content').hide();
+		VideoService.playVideo(video).then(function(){
+			window.plugins.toast.showWithOptions({
+          message: "Ready",
+          duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+          position: "bottom",
+          addPixelsY: 0 // added a negative value to move it up a bit (default 0)
+      })
+			$('.loading').hide();
+			$('.content').show();
+		}, function error(err){
+			$('.loading').hide();
+			$('.content').show();
+			console.log(err)
+			window.plugins.toast.showWithOptions({
+          message: "Error playing video",
+          duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+          position: "bottom",
+          addPixelsY: 0 // added a negative value to move it up a bit (default 0)
+      })
+		})
 	}
 
 	$scope.deleteVideo = function (index) {
@@ -134,7 +154,7 @@ angular.module('app').controller('VideoController', function ($rootScope, $scope
 		if($scope.itemArray.length != 0){
 			for(var i = 0; i <= ($scope.itemArray.length - 1); i++){
 				var extension = $scope.itemArray[i].split(".").pop();
-				var itemPromise = FileSystemService.moveFile($rootScope.root+$scope.itemArray[i], "Video", $scope.itemArray[i].replace("/Temp/Temporary_",$rootScope.fileName+"-").replace("."+extension, "")+"-"+$rootScope.length+"."+extension);
+				var itemPromise = FileSystemService.moveTempFile($rootScope.root+$scope.itemArray[i], "Video", $scope.itemArray[i].replace("/Temp/Temporary_",$rootScope.fileName+"-").replace("."+extension, "")+"-"+$rootScope.length+"."+extension);
 				for(var e = 0; e <= ($localStorage.tempInputs.inputs[0].videos.length -1); e++){
 					if($localStorage.tempInputs.inputs[0].videos[e] == $scope.itemArray[i]){
 						$localStorage.tempInputs.inputs[0].videos.splice(e,1);

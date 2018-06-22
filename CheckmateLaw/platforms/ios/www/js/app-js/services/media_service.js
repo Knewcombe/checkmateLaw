@@ -101,8 +101,17 @@ angular.module('app').service('MediaService', ['$q', 'FileSystemService','$rootS
 			console.log(error);
 		}
 
-		myMedia = new Media(recording, onSucess, onError);
-		myMedia.play();
+		//Decrypt the file here.
+		FileSystemService.findFile(recording, 'Media').then(function(data){
+			window.plugins.toast.showWithOptions({
+					message: "Ready",
+					duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+					position: "bottom",
+					addPixelsY: 0 // added a negative value to move it up a bit (default 0)
+			})
+			myMedia = new Media(recording, onSucess, onError);
+			myMedia.play();
+		})
 		//Media timer will be setting the duration and position for the media file that is playing.
 		if (mediaTimer === null) {
 			//Setting an interval to loop for the position of the media file.

@@ -72,7 +72,7 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 	};
 
 	$scope.questionNo = function(question){
-		question.state = false;
+		question.state = null;
 	};
 
 	$scope.questionnaireCheck = function(questionnaire){
@@ -111,6 +111,23 @@ angular.module('app').controller('ReportQuestionController', function ($rootScop
 			console.log("Additional Questions Path "+$scope.currentPath);
 			$scope.questionOutput = $scope.viewReport.sections[$scope.selectedSection].questions[$scope.selectedQuestion].questions;
 		}
+
+		$.each($scope.questionOutput, function(index, question){
+			// console.log(question);
+			if($scope.questionOutput.state != true){
+				console.log("Checking input");
+				if(question.inputs[0].notes.length != 0){
+					question.state = true;
+				}else if(question.inputs[0].photos.length != 0){
+					question.state = true;
+				}else if(question.inputs[0].recording.length != 0){
+					question.state = true;
+				}else if(question.inputs[0].videos.length != 0){
+					question.state = true;
+				}
+			}
+		})
+
 		setTimeout(function () {
 			$('.section').show();
 			$('.additionalOutput').hide();

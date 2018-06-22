@@ -54,9 +54,12 @@ angular.module("app").controller('HomeController', function($scope, $location, $
 						if($rootScope.platform == 'Android'){
 							var fingerPromis = FingerPrintAuth.fingerPrintAndroid();
 						}else if($rootScope.platform == 'iOS'){
+              console.log("Ios");
 							var fingerPromis = FingerPrintAuth.fingerPrintiOS();
 						}
 							fingerPromis.then(function(data){
+                console.log("Finger print givin");
+                console.log(data);
 								if(data == true){
 									console.log(data);
 									$sessionStorage.userCode = $localStorage.userCode;

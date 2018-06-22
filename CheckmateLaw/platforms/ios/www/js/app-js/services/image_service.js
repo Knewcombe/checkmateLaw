@@ -24,6 +24,7 @@ angular.module("app").service('ImageService', ['$q','FileSystemService', functio
 			//movePic(FILE_URI, callback);
 			var promise = FileSystemService.moveFile(FILE_URI, folder, newFileName);
 			promise.then(function(data){
+				console.log('Image taken');
 				deferred.resolve(data);
 			})
 		};

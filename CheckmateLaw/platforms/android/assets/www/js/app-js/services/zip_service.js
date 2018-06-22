@@ -1,4 +1,4 @@
-angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage', function ($rootScope, $q, $localStorage){
+angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage', 'SecurityService', function ($rootScope, $q, $localStorage, SecurityService){
 
 	this.getZip = function(name){
 		var zipDeffered = $q.defer();
@@ -18,13 +18,13 @@ angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage'
 								});
 							}
 							if($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording.length > 0){
-								$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording, function(recording){		
+								$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording, function(recording){
 									//ADDING TO RECORDING ARRAY
 									inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording[recording].replace('documents://',''));
 								});
 							}
 							if($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].videos.length > 0){
-								$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].recording, function(video){
+								$.each($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].videos, function(video){
 									//ADDING TO RECORDING ARRAY
 									inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].additionalQuestions[additional].inputs[0].videos[video].replace('documents://',''));
 								});
@@ -45,7 +45,7 @@ angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage'
 								});
 							}
 							if($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].videos.length > 0){
-								$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].recording, function(video){
+								$.each($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].videos, function(video){
 									//ADDING TO RECORDING ARRAY
 									inputsArray.push($localStorage.checklistPdf.sections[sections].questions[questions].inputs[0].videos[video].replace('documents://',''));
 								});
@@ -75,7 +75,7 @@ angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage'
 						writer.onwrite = function(evt) {
 							console.log("write success");
 							//USING A CALLBACK FOR THE PDF STUFF
-//							PdfFromat.getPDF($localStorage.checklistPdf, email, zipFileName);				
+//							PdfFromat.getPDF($localStorage.checklistPdf, email, zipFileName);
 							console.log(zipFileName);
 							zipDeffered.resolve(entry.nativeURL);
 						};
@@ -102,22 +102,27 @@ angular.module('app').service('ZipService', ['$rootScope', '$q', '$localStorage'
 			console.log(link);
 			console.log(zip);
 			var deferred = $.Deferred();
-			JSZipUtils.getBinaryContent($rootScope.root+link, function (err, data) {
-				if(err) {
-					console.log(err);
-					deferred.resolve(zip);
-				}
+			// JSZipUtils.getBinaryContent($rootScope.root+link, function (err, data) {
+			// 	if(err) {
+			// 		console.log(err);
+			// 		deferred.resolve(zip);
+			// 	}
+			//
+			// });
+
+			SecurityService.decyptFileBase64($rootScope.root+link).then(function(data){
 				zip.file(link, data, {base64:true});
 				deferred.resolve(zip);
-			});
+			})
 			return deferred;
 		}
+
 		if(inputsArray.length > 0){
 			console.log("No files are added.");
 			for(var pIndex=0; pIndex<inputsArray.length; pIndex++){
 				arrayList.push(addToZip(inputsArray[pIndex], zip))
 			}
-			$.when.apply(window, arrayList).done(saveZip);	
+			$.when.apply(window, arrayList).done(saveZip);
 		}else{
 			console.log("File are in");
 //			PdfFromat.getPDF($localStorage.checklistPdf, email, "");

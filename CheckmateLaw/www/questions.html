@@ -153,7 +153,8 @@
 								</div>
 								<div class="col-xs-2">
 									<!--Some checkmark logic as before-->
-									<img ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+									<img ng-if="question.state !== null " ng-src="{{question.state === true && 'img/checked.png' || 'img/unchecked.png'}}" class="checkmarkImg" alt="question mark">
+									<img ng-if="question.state === null " ng-src="{{'img/nancheck.png'}}" class="checkmarkImg" alt="question mark">
 								</div>
 								<!--On click will hide questions and show either additional output, or additional questions-->
 							</div>

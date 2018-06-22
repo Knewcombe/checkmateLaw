@@ -481,6 +481,7 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 
 	$scope.inputArray = [];
 	$scope.input = "";
+	$scope.editInput = "";
 	$scope.mainTitle = $localStorage.savedChecklist[$localStorage.savedIndex].title;
 
 	$scope.dateStamp = $localStorage.savedChecklist[$localStorage.savedIndex].dateStamp;
@@ -527,6 +528,61 @@ angular.module('app').controller('ReportNewController', function ($scope, dataCo
 	}
 
 	$scope.done = function(){
-		$location.path('/questions');
+		if($scope.input != ""){
+			var date = new Date();
+			$scope.time = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
+
+			$scope.inputArray = {key: $scope.time, value: $scope.input};
+
+			$scope.testOutput.inputs[0].notes.push($scope.inputArray);
+		}
+		console.log($sessionStorage.notePath);
+		$location.path($sessionStorage.notePath);
+	}
+
+	$scope.editNote = function(index, key){
+		console.log(index);
+		if($("#editFeild_"+index).val() == ""){
+			window.plugins.toast.showWithOptions(
+    	{
+      	message: "Field cannot be empty",
+      	duration: "short", // which is 2000 ms. "long" is 4000. Or specify the nr of ms yourself.
+      	position: "bottom",
+      	addPixelsY: 0  // added a negative value to move it up a bit (default 0)
+    	})
+		}else{
+			var date = new Date();
+			$scope.time = date.getFullYear()+'-'+("0" + (date.getMonth() + 1)).slice(-2)+'-'+("0" + date.getDate()).slice(-2)+"-"+("0" + date.getHours()).slice(-2)+"-"+("0" + date.getMinutes()).slice(-2)+"-"+("0" + date.getSeconds()).slice(-2);
+
+			$scope.inputArray = {key: $scope.time, value: $("#editFeild_"+index).val()};
+			//console.log($scope.testOutput.inputs[0].notes[index]);
+			$.each($scope.testOutput.inputs[0].notes, function(indexInput, note){
+				if(note.key === key){
+					$scope.testOutput.inputs[0].notes[indexInput] = $scope.inputArray;
+				}
+			})
+			//$scope.testOutput.inputs[0].notes[index] = $scope.inputArray;
+			//console.log($scope.testOutput.inputs[0]);
+			$("#editFeild_"+index).val() = "";
+			$scope.$apply();
+			$("#editNote_"+index).hide();
+		}
+		// $("#textarea_"+index).val("");
+		// $("#editNote_"+index).hide();
+	}
+
+	$scope.cancelEdit = function(index){
+		$scope.editInput = "";
+		$("#editNote_"+index).hide();
+	}
+
+	$scope.showEdit = function(index, value){
+		$(".editInput").each(function(){
+			$(this).hide();
+		})
+		$("#editNote_"+index).show();
+		$("#editFeild_"+index).focus();
+		$scope.editInput = value;
+		//$("#textarea_"+index).val(value);
 	}
 });
